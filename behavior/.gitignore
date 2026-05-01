@@ -1,0 +1,20 @@
+data/
+output/
+outputs/
+results/
+figures/
+plots/
+
+*.csv
+*.xlsx
+
+__pycache__/
+*.pyc
+
+.env
+venv/
+.venv/
+
+git add .
+git commit -m "update project"
+git push
