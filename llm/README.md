@@ -71,6 +71,7 @@
   - 讀取 `source_data/reddit_posts_2025.csv`
   - 清理 `title` / `selftext`
   - 合併成可分析文字
+  - 偵測並排除高度重複貼文的 functional-bot-like accounts
   - 去掉空值、過短內容、重複貼文
   - 輸出 `processed_data/processed_data.csv`
 
@@ -106,6 +107,7 @@
 ```text
 data-cleaning/source_data/reddit_posts_2025.csv
     -> preprocess_posts.py
+    -> remove highly repetitive functional-bot-like posts
     -> data-cleaning/processed_data/processed_data.csv
     -> analyze_posts_with_gemini.py
     -> gemini-cloud/output/post_analysis_<START>_<END>.csv
@@ -138,6 +140,28 @@ data-cleaning/temp/comment_replies/comment_replies.csv
 - `title`
 - `selftext`
 - `num_comments`
+
+## 貼文清理中的高相似度過濾
+
+`data-cleaning/preprocess_posts.py` 會先找出高度重複貼文的帳號，作為 functional-bot-like account candidates，並在正式輸出 `processed_data/processed_data.csv` 前排除這些帳號的貼文。
+
+目前規則是：
+
+- 每個帳號至少需要 `5` 篇貼文才會被檢查
+- 最多比較該帳號最近 `10` 篇貼文
+- 將 `title` 與 `selftext` 合併成 `analysis_text`
+- 使用正規化後文字做 pairwise similarity
+- 如果平均相似度大於等於 `0.70`，該帳號的貼文會被列為高重複貼文候選並排除
+
+同時會輸出檢查紀錄到：
+
+```text
+data-cleaning/temp/bot_candidates/functional_bot_posts.csv
+data-cleaning/temp/bot_candidates/functional_bot_recent_check_posts.csv
+data-cleaning/temp/bot_candidates/functional_bot_account_summary.csv
+```
+
+這個步驟比較適合表述為「排除高度模板化/重複貼文帳號」，不應單獨當作嚴格的 bot detection 結論。
 
 ## 貼文分析輸出內容
 
