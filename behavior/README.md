@@ -1,23 +1,23 @@
 # Behavior Analysis Module
 
-This module analyzes Reddit account behavior and market-aligned comment signals for the MCA detector project.
+這個資料夾是 MCA-detector 專案中的 behavior analysis 模組，主要用來分析 Reddit 帳號的活動行為，以及留言方向與 BTC 價格變化之間的關係。
 
-It is separate from the LLM pipeline in `../llm/`.
+它和 `../llm/` 裡的 LLM 分析流程是分開的模組。
 
-## Purpose
+## 模組目的
 
-The behavior module focuses on account-level activity patterns, including:
+behavior 模組主要關注帳號層級的行為特徵，例如：
 
-- Posting and commenting frequency
-- Active-day and per-day activity features
-- Comment/post ratio
-- Burst behavior
-- Night/weekend activity ratios
-- Isolation Forest anomaly scoring
-- Directional crypto market comments and future BTC return alignment
-- Predictive / contrarian account ranking
+- 發文與留言頻率
+- 活躍天數與每日活動量
+- 留言/發文比例
+- 短時間爆發式活動
+- 夜間與週末活動比例
+- 使用 Isolation Forest 做異常帳號評分
+- 將方向性加密貨幣留言與未來 BTC 報酬對齊
+- 排名較具 predictive 或 contrarian 特徵的帳號
 
-## Folder Structure
+## 資料夾結構
 
 ```text
 behavior/
@@ -35,15 +35,21 @@ behavior/
 └── output/    # generated tables and figures, not committed
 ```
 
-## Expected Local Data
+其中：
 
-Place raw files under:
+- `src/`：主要程式碼
+- `data/`：本機資料，不放進 GitHub
+- `output/`：分析產生的表格與圖表，不放進 GitHub
+
+## 本機資料需求
+
+請將原始資料放在：
 
 ```text
 behavior/data/raw/
 ```
 
-Expected filenames:
+預期檔名：
 
 ```text
 reddit_posts_2025.csv
@@ -51,45 +57,45 @@ reddit_comments_2025.csv
 BTCUSDT_1h_close_2025.csv
 ```
 
-These files are ignored by Git.
+這些資料檔會被 Git 忽略，不會推上 GitHub。
 
-## Pipeline
+## 執行流程
 
-Run commands from inside `behavior/` so paths resolve correctly.
+以下指令請在 `behavior/` 資料夾中執行，這樣相對路徑才會正確。
 
-### 1. Preprocess Raw Reddit Data
+### 1. 清理 Reddit 原始資料
 
 ```bash
 cd behavior
 ../.venv/bin/python src/preprocess.py
 ```
 
-Outputs:
+輸出：
 
 ```text
 data/processed/cleaned_posts_2025.csv
 data/processed/cleaned_comments_2025.csv
 ```
 
-### 2. Merge Posts And Comments
+### 2. 合併貼文與留言資料
 
 ```bash
 ../.venv/bin/python src/merge_data.py
 ```
 
-Output:
+輸出：
 
 ```text
 data/processed/merged_reddit_2025.csv
 ```
 
-### 3. Build Behavior Features And Detect Anomalies
+### 3. 建立帳號行為特徵並偵測異常
 
 ```bash
 ../.venv/bin/python src/behavior_analysis.py
 ```
 
-Outputs:
+輸出：
 
 ```text
 output/tables/behavior_features.csv
@@ -97,25 +103,25 @@ output/tables/suspicious_accounts_behavior.csv
 output/figures/
 ```
 
-### 4. Align Directional Comments With BTC Returns
+### 4. 將方向性留言與 BTC 報酬對齊
 
 ```bash
 ../.venv/bin/python src/market_alignment.py
 ```
 
-Output:
+輸出：
 
 ```text
 output/tables/directional_comments_with_returns.csv
 ```
 
-### 5. Rank Predictive And Contrarian Accounts
+### 5. 排名 predictive / contrarian 帳號
 
 ```bash
 ../.venv/bin/python src/account_prediction_performance.py
 ```
 
-Outputs:
+輸出：
 
 ```text
 output/tables/account_prediction_performance.csv
@@ -123,9 +129,9 @@ output/tables/top_predictive_accounts.csv
 output/tables/top_contrarian_accounts.csv
 ```
 
-## Notes
+## 補充說明
 
-- `src/config.py` centralizes input and output paths.
-- `src/column_mapping.py` maps raw CSV columns into standard internal column names.
-- `src/main.py` is currently a lightweight raw-data inspection script, not the main pipeline runner.
-- Generated data, outputs, plots, and local environments are intentionally ignored by Git.
+- `src/config.py` 集中管理輸入與輸出路徑。
+- `src/column_mapping.py` 負責將原始 CSV 欄位名稱對應到內部標準欄位。
+- `src/main.py` 目前只是簡單檢查 raw data 的腳本，不是主要 pipeline runner。
+- 產生的資料、輸出表格、圖表與本機環境都不會放進 GitHub。
