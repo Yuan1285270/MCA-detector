@@ -8,18 +8,18 @@ __pycache__/
 google-cloud-sdk/
 
 # Raw, processed, final, and intermediate datasets
-Export/
+llm/Export/
 Archive/
-RAG DATA/
-data-cleaning/source_data/
-data-cleaning/processed_data/
-data-cleaning/temp/
-data-cleaning/post-clustering/output/
-gemini-cloud/output/
-gemini-cloud/temp/
-ollama-local/source_data/
-ollama-local/data/
-ollama-local/output/
+llm/RAG DATA/
+llm/data-cleaning/source_data/
+llm/data-cleaning/processed_data/
+llm/data-cleaning/temp/
+llm/data-cleaning/post-clustering/output/
+llm/gemini-cloud/output/
+llm/gemini-cloud/temp/
+llm/ollama-local/source_data/
+llm/ollama-local/data/
+llm/ollama-local/output/
 
 # Local notebooks / scratch artifacts
 *.log

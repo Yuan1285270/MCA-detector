@@ -13,7 +13,7 @@ It builds a post-level feature matrix from:
 
 - `cluster_analyzed_posts.py`: builds final post features, runs K-Means, and writes cluster-level outputs
 - `visualize_post_clusters.py`: writes an HTML visualization of the final clusters
-- `../../Archive/legacy_scripts/clean_posts.py`: legacy raw-post cleaning script kept for reproducibility, not used by the final clustering step
+- `../../../Archive/legacy_scripts/clean_posts.py`: legacy raw-post cleaning script kept for reproducibility, not used by the final clustering step
 - `output/`: generated CSV and JSON outputs
 
 ## Default data flow
@@ -33,8 +33,8 @@ Outputs:
 ## Run
 
 ```bash
-../../.venv/bin/python cluster_analyzed_posts.py
-../../.venv/bin/python visualize_post_clusters.py
+../../../.venv/bin/python cluster_analyzed_posts.py
+../../../.venv/bin/python visualize_post_clusters.py
 ```
 
 ## Notes
