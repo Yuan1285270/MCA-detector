@@ -23,3 +23,12 @@ llm/ollama-local/output/
 
 # Local notebooks / scratch artifacts
 *.log
+
+# Reddit crawler outputs / runtime files
+**/output/
+**/state/
+**/logs/
+
+# Reddit crawler data files
+*.csv
+*.json
