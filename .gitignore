@@ -1,0 +1,25 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+.venv/
+
+# Google SDK / local tooling
+google-cloud-sdk/
+
+# Raw, processed, final, and intermediate datasets
+llm/Export/
+Archive/
+llm/RAG DATA/
+llm/data-cleaning/source_data/
+llm/data-cleaning/processed_data/
+llm/data-cleaning/temp/
+llm/data-cleaning/post-clustering/output/
+llm/gemini-cloud/output/
+llm/gemini-cloud/temp/
+llm/ollama-local/source_data/
+llm/ollama-local/data/
+llm/ollama-local/output/
+
+# Local notebooks / scratch artifacts
+*.log
