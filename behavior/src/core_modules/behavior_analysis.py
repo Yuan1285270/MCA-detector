@@ -15,14 +15,14 @@ from sklearn.ensemble import IsolationForest
 # =========================
 # 路徑設定
 # =========================
-from config import (
+from src.data_sources.config import (
     CLEAN_POSTS_PATH,
     MERGED_REDDIT_PATH,
     BEHAVIOR_FEATURES_PATH,
     SUSPICIOUS_BEHAVIOR_PATH,
     FIGURE_DIR,
 )
-from io_utils import ensure_dirs, read_csv, save_csv
+from src.variable_modules.io_utils import ensure_dirs, read_csv, save_csv
 
 def load_posts():
     df = read_csv(CLEAN_POSTS_PATH)

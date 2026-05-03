@@ -1,6 +1,6 @@
 import pandas as pd
 
-from config import RAW_POSTS_PATH, RAW_COMMENTS_PATH, CLEAN_POSTS_PATH, CLEAN_COMMENTS_PATH
+from src.data_sources.config import RAW_POSTS_PATH, RAW_COMMENTS_PATH, CLEAN_POSTS_PATH, CLEAN_COMMENTS_PATH
 from io_utils import ensure_dirs, read_csv, save_csv
 from standardize import standardize_posts, standardize_comments
 

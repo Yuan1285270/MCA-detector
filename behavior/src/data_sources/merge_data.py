@@ -1,7 +1,7 @@
 import pandas as pd
 
 from config import CLEAN_POSTS_PATH, CLEAN_COMMENTS_PATH, MERGED_REDDIT_PATH
-from io_utils import ensure_dirs, read_csv, save_csv
+from src.variable_modules.io_utils import ensure_dirs, read_csv, save_csv
 
 
 def main():

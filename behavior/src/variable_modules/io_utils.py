@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-from config import OUTPUT_DIR, TABLE_DIR, FIGURE_DIR, PROCESSED_DIR
+from src.data_sources.config import OUTPUT_DIR, TABLE_DIR, FIGURE_DIR, PROCESSED_DIR
 
 def ensure_dirs():
     for path in [OUTPUT_DIR, TABLE_DIR, FIGURE_DIR, PROCESSED_DIR]:
