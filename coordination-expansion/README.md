@@ -106,6 +106,47 @@ Archive/export_working_files/comment_feedback_all_merged.csv.bak
 
 如果使用 Pullpush 或不同 group member list，結果可能和 local scan 不完全一致。
 
+### Candidate Validation
+
+把 Stage 1 expansion、MCA score、新版 full-population cluster、Stage 2 temporal evidence 接成一張 review table：
+
+```bash
+.venv/bin/python coordination-expansion/build_candidate_validation_table.py
+```
+
+預設讀取新版 full-cluster feature matrix：
+
+```text
+Archive/export_working_files/account_feature_matrix_with_clusters.csv
+```
+
+這份檔案是 full population `68,256` accounts 的 cluster 版本，包含：
+
+```text
+cluster_kmeans
+is_extreme_outlier
+anomaly_label
+anomaly_score
+behavior features
+```
+
+輸出：
+
+```text
+candidate-validation/candidate_validation_table.csv
+candidate-validation/candidate_validation_report.md
+```
+
+目前 `review_priority` 是用來排序人工 review，不是最終 bot verdict：
+
+```text
+high_confidence_temporal_candidate
+high_confidence_extreme_outlier
+high_mca_review_candidate
+temporal_only_review_candidate
+low_priority_context_member
+```
+
 ## Interpretation
 
 輸出是 review evidence，不是最終判決。最有用的是看：
