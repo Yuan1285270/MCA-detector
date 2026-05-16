@@ -57,8 +57,10 @@ def group_priority_label(row: pd.Series) -> str:
 
 
 def group_interpretation(row: pd.Series) -> str:
-    if row["p1_count"] >= 2 and row["strong_temporal_sync"] > 0:
-        return "candidate group with multiple high-priority accounts and temporal evidence"
+    if row["p1_count"] >= 2 and row["robust_temporal_pairs"] > 0:
+        return "candidate group with multiple high-priority accounts and robust temporal evidence"
+    if row["p1_count"] >= 2 and row["moderate_review_temporal_pairs"] > 0:
+        return "candidate group with multiple high-priority accounts and reviewable temporal evidence"
     if row["p1_count"] >= 2:
         return "candidate group with multiple high-priority accounts"
     if row["p1_count"] == 1 and row["p2_count"] >= 1:
@@ -86,15 +88,17 @@ def build_markdown(summary: pd.DataFrame) -> str:
         "",
         "## Ranked Groups",
         "",
-        "| rank | group_seed | group_priority | members | P1 | P2 | P3 | strong temporal pairs | moderate temporal pairs | interpretation |",
-        "|---:|---|---|---:|---:|---:|---:|---:|---:|---|",
+        "| rank | group_seed | group_priority | members | P1 | P2 | P3 | robust | moderate review | fragile | strong labels | moderate labels | interpretation |",
+        "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|",
     ]
     for row in summary.itertuples(index=False):
         lines.append(
             f"| {int(row.group_rank)} | {row.seed_group} | {row.group_priority} | "
             f"{int(row.member_count)} | {int(row.p1_count)} | {int(row.p2_count)} | "
-            f"{int(row.p3_count)} | {int(row.strong_temporal_sync)} | "
-            f"{int(row.moderate_temporal_sync)} | {row.interpretation} |"
+            f"{int(row.p3_count)} | {int(row.robust_temporal_pairs)} | "
+            f"{int(row.moderate_review_temporal_pairs)} | {int(row.fragile_temporal_pairs)} | "
+            f"{int(row.strong_temporal_sync)} | {int(row.moderate_temporal_sync)} | "
+            f"{row.interpretation} |"
         )
     return "\n".join(lines) + "\n"
 
@@ -124,6 +128,8 @@ def main() -> None:
             extreme_outlier_count=("is_extreme_outlier", "sum"),
             temporal_5min_events=("temporal_within_5min_events", "sum"),
             temporal_30min_events=("temporal_within_30min_events", "sum"),
+            reliable_temporal_pair_count=("reliable_temporal_pair_count", "sum"),
+            fragile_temporal_pair_count=("fragile_temporal_pair_count", "sum"),
             avg_mca_score=("mca_score_primary", "mean"),
             max_mca_score=("mca_score_primary", "max"),
             top_accounts=(
@@ -136,7 +142,15 @@ def main() -> None:
 
     if not stage2.empty:
         grouped = grouped.merge(stage2, on="seed_group", how="left")
-    for col in ["strong_temporal_sync", "moderate_temporal_sync", "weak_temporal_overlap", "no_temporal_sync"]:
+    for col in [
+        "strong_temporal_sync",
+        "moderate_temporal_sync",
+        "weak_temporal_overlap",
+        "no_temporal_sync",
+        "robust_temporal_pairs",
+        "moderate_review_temporal_pairs",
+        "fragile_temporal_pairs",
+    ]:
         if col not in grouped.columns:
             grouped[col] = 0
         grouped[col] = pd.to_numeric(grouped[col], errors="coerce").fillna(0).astype(int)
@@ -164,13 +178,15 @@ def main() -> None:
         [
             "p1_count",
             "p2_count",
+            "robust_temporal_pairs",
+            "moderate_review_temporal_pairs",
             "strong_temporal_sync",
             "moderate_temporal_sync",
             "extreme_outlier_count",
             "high_mca_count",
             "internal_coordination_edge_count",
         ],
-        ascending=[False, False, False, False, False, False, False],
+        ascending=[False, False, False, False, False, False, False, False, False],
     ).reset_index(drop=True)
     grouped.insert(0, "group_rank", range(1, len(grouped) + 1))
 
@@ -190,6 +206,9 @@ def main() -> None:
                 "p1_count",
                 "p2_count",
                 "p3_count",
+                "robust_temporal_pairs",
+                "moderate_review_temporal_pairs",
+                "fragile_temporal_pairs",
                 "strong_temporal_sync",
                 "moderate_temporal_sync",
             ]

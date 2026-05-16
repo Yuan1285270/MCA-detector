@@ -173,6 +173,27 @@ def label_pair(metrics: dict[str, object]) -> str:
     return "no_temporal_sync"
 
 
+def temporal_confidence(metrics: dict[str, object]) -> str:
+    """Separate robust repeated timing evidence from coincidence-prone overlap."""
+    same_post = int(metrics["same_post_count"])
+    within_5 = int(metrics["within_5min_count"])
+    within_30 = int(metrics["within_30min_count"])
+    median_delay = metrics["median_delay_minutes"]
+    median = float(median_delay) if pd.notna(median_delay) else np.inf
+
+    if same_post == 0:
+        return "none"
+    if within_5 >= 2 or (same_post >= 3 and within_30 >= 2 and median <= 90):
+        return "robust"
+    if same_post == 1 and within_5 == 1 and within_30 == 1:
+        return "fragile_single_event"
+    if median > 120 and (within_5 > 0 or within_30 > 0):
+        return "fragile_long_median"
+    if within_5 > 0 or within_30 > 0:
+        return "moderate_review"
+    return "weak_context"
+
+
 def build_markdown(pair_rows: pd.DataFrame, summary: pd.DataFrame) -> str:
     lines = [
         "# Stage 2 Temporal Synchrony Verification",
@@ -186,15 +207,24 @@ def build_markdown(pair_rows: pd.DataFrame, summary: pd.DataFrame) -> str:
         "- `weak_temporal_overlap`: same thread overlap, but no short-window synchrony",
         "- `no_temporal_sync`: no same-thread overlap in the local comments file",
         "",
+        "Confidence:",
+        "",
+        "- `robust`: repeated or multi-post short-window synchrony",
+        "- `moderate_review`: useful timing evidence that still needs manual review",
+        "- `fragile_single_event`: label rests on one short-window event",
+        "- `fragile_long_median`: has short-window evidence, but typical delay is long",
+        "",
         "## Group Summary",
         "",
-        "| group_seed | pairs | strong | moderate | weak | no sync |",
-        "|---|---:|---:|---:|---:|---:|",
+        "| group_seed | pairs | strong | moderate | robust | moderate review | fragile | weak | no sync |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for row in summary.itertuples(index=False):
         lines.append(
             f"| {row.group_seed} | {int(row.total_pairs)} | {int(row.strong_temporal_sync)} | "
-            f"{int(row.moderate_temporal_sync)} | {int(row.weak_temporal_overlap)} | "
+            f"{int(row.moderate_temporal_sync)} | {int(row.robust_temporal_pairs)} | "
+            f"{int(row.moderate_review_temporal_pairs)} | {int(row.fragile_temporal_pairs)} | "
+            f"{int(row.weak_temporal_overlap)} | "
             f"{int(row.no_temporal_sync)} |"
         )
 
@@ -213,7 +243,7 @@ def build_markdown(pair_rows: pd.DataFrame, summary: pd.DataFrame) -> str:
             median = "" if pd.isna(row.median_delay_minutes) else f"{row.median_delay_minutes:.1f}"
             lines.append(
                 f"- {row.group_seed}: {row.account_a} <-> {row.account_b} | "
-                f"{row.verification_label} | same_post={int(row.same_post_count)} | "
+                f"{row.verification_label} / {row.temporal_confidence} | same_post={int(row.same_post_count)} | "
                 f"<5min={int(row.within_5min_count)} | <30min={int(row.within_30min_count)} | "
                 f"median_delay={median}min | co_neg={row.co_negative_weight:.3f}"
             )
@@ -242,6 +272,7 @@ def main() -> None:
                 moderate_window=args.window_moderate_minutes,
             )
             label = label_pair(metrics)
+            confidence = temporal_confidence(metrics)
             rows.append(
                 {
                     "group_seed": seed,
@@ -252,6 +283,7 @@ def main() -> None:
                     "text_fingerprint_distance": np.nan,
                     "account_lifecycle_overlap": np.nan,
                     "verification_label": label,
+                    "temporal_confidence": confidence,
                 }
             )
 
@@ -283,6 +315,23 @@ def main() -> None:
             "no_temporal_sync",
         ]
     ].sum(axis=1)
+    confidence_counts = (
+        pair_rows.pivot_table(
+            index="group_seed",
+            columns="temporal_confidence",
+            values="account_a",
+            aggfunc="count",
+            fill_value=0,
+        )
+        .reset_index()
+        .rename_axis(None, axis=1)
+    )
+    for col in ["robust", "moderate_review", "fragile_single_event", "fragile_long_median"]:
+        if col not in confidence_counts.columns:
+            confidence_counts[col] = 0
+    confidence_counts["fragile_temporal_pairs"] = (
+        confidence_counts["fragile_single_event"] + confidence_counts["fragile_long_median"]
+    )
     summary = label_counts[
         [
             "group_seed",
@@ -292,7 +341,25 @@ def main() -> None:
             "weak_temporal_overlap",
             "no_temporal_sync",
         ]
-    ]
+    ].merge(
+        confidence_counts[
+            [
+                "group_seed",
+                "robust",
+                "moderate_review",
+                "fragile_temporal_pairs",
+            ]
+        ].rename(
+            columns={
+                "robust": "robust_temporal_pairs",
+                "moderate_review": "moderate_review_temporal_pairs",
+            }
+        ),
+        on="group_seed",
+        how="left",
+    )
+    for col in ["robust_temporal_pairs", "moderate_review_temporal_pairs", "fragile_temporal_pairs"]:
+        summary[col] = pd.to_numeric(summary[col], errors="coerce").fillna(0).astype(int)
 
     pair_path = args.output_dir / "stage2_verification_evidence.csv"
     summary_path = args.output_dir / "stage2_group_summary.csv"

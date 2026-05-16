@@ -114,6 +114,8 @@ def load_temporal_account_summary(path: Path) -> pd.DataFrame:
         return pd.DataFrame(columns=["seed_group", "account"])
 
     rows = []
+    if "temporal_confidence" not in pairs.columns:
+        pairs["temporal_confidence"] = "none"
     for side in ["account_a", "account_b"]:
         other = "account_b" if side == "account_a" else "account_a"
         temp = pairs[
@@ -126,6 +128,7 @@ def load_temporal_account_summary(path: Path) -> pd.DataFrame:
                 "within_30min_count",
                 "median_delay_minutes",
                 "verification_label",
+                "temporal_confidence",
             ]
         ].copy()
         temp = temp.rename(
@@ -144,7 +147,18 @@ def load_temporal_account_summary(path: Path) -> pd.DataFrame:
         "moderate_temporal_sync": 2,
         "strong_temporal_sync": 3,
     }
+    confidence_rank = {
+        "none": 0,
+        "weak_context": 0,
+        "fragile_single_event": 1,
+        "fragile_long_median": 1,
+        "moderate_review": 2,
+        "robust": 3,
+    }
     account_pairs["temporal_rank"] = account_pairs["verification_label"].map(label_rank).fillna(0)
+    account_pairs["temporal_confidence_rank"] = (
+        account_pairs["temporal_confidence"].map(confidence_rank).fillna(0)
+    )
     account_pairs["median_delay_minutes"] = pd.to_numeric(
         account_pairs["median_delay_minutes"], errors="coerce"
     )
@@ -157,26 +171,38 @@ def load_temporal_account_summary(path: Path) -> pd.DataFrame:
             temporal_within_5min_events=("within_5min_count", "sum"),
             temporal_within_30min_events=("within_30min_count", "sum"),
             best_temporal_rank=("temporal_rank", "max"),
+            best_temporal_confidence_rank=("temporal_confidence_rank", "max"),
+            reliable_temporal_pair_count=("temporal_confidence_rank", lambda s: int((s >= 2).sum())),
+            fragile_temporal_pair_count=("temporal_confidence_rank", lambda s: int((s == 1).sum())),
             min_median_delay_minutes=("median_delay_minutes", "min"),
         )
         .reset_index()
     )
     reverse_label = {value: key for key, value in label_rank.items()}
+    reverse_confidence = {
+        0: "none",
+        1: "fragile",
+        2: "moderate_review",
+        3: "robust",
+    }
     grouped["best_temporal_label"] = grouped["best_temporal_rank"].map(reverse_label)
+    grouped["best_temporal_confidence"] = grouped["best_temporal_confidence_rank"].map(reverse_confidence)
     return grouped
 
 
 def assign_review_priority(row: pd.Series, high_mca_threshold: float) -> str:
     high_mca = row.get("mca_score_primary", 0.0) >= high_mca_threshold
     temporal_rank = row.get("best_temporal_rank", 0.0)
+    confidence_rank = row.get("best_temporal_confidence_rank", 0.0)
+    reliable_temporal = temporal_rank >= 2 and confidence_rank >= 2
     extreme = bool(row.get("is_extreme_outlier", False))
-    if high_mca and temporal_rank >= 2:
+    if high_mca and reliable_temporal:
         return "high_confidence_temporal_candidate"
     if high_mca and extreme:
         return "high_confidence_extreme_outlier"
     if high_mca:
         return "high_mca_review_candidate"
-    if temporal_rank >= 2:
+    if reliable_temporal:
         return "temporal_only_review_candidate"
     return "low_priority_context_member"
 
@@ -219,6 +245,7 @@ def build_markdown(table: pd.DataFrame) -> str:
                 f"- {row.account} ({row.seed_group}) | {row.review_priority} | "
                 f"MCA={row.mca_score_primary:.3f} | cluster={row.full_cluster_kmeans} | "
                 f"extreme={row.is_extreme_outlier} | temporal={row.best_temporal_label} | "
+                f"confidence={row.best_temporal_confidence} | "
                 f"<30min={int(row.temporal_within_30min_events)}"
             )
 
@@ -241,6 +268,8 @@ def main() -> None:
         columns=["user_id"]
     )
     table = table.merge(temporal, on=["seed_group", "account"], how="left")
+    if "best_temporal_confidence" not in table.columns:
+        table["best_temporal_confidence"] = "none"
 
     numeric_fill_cols = [
         "temporal_pair_count",
@@ -248,11 +277,15 @@ def main() -> None:
         "temporal_within_5min_events",
         "temporal_within_30min_events",
         "best_temporal_rank",
+        "best_temporal_confidence_rank",
+        "reliable_temporal_pair_count",
+        "fragile_temporal_pair_count",
     ]
     for col in numeric_fill_cols:
         if col in table.columns:
             table[col] = pd.to_numeric(table[col], errors="coerce").fillna(0.0)
     table["best_temporal_label"] = table["best_temporal_label"].fillna("no_temporal_sync")
+    table["best_temporal_confidence"] = table["best_temporal_confidence"].fillna("none")
     table["mca_score_primary"] = pd.to_numeric(
         table["mca_score_primary"], errors="coerce"
     ).fillna(0.0)
