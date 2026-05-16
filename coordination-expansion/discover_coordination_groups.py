@@ -19,11 +19,12 @@ import pandas as pd
 
 DEFAULT_GRAPH_DIR = Path("adjacency/output")
 DEFAULT_FEATURES_PATH = Path("Archive/export_working_files/account_feature_matrix.csv")
-DEFAULT_OUTPUT_DIR = Path("adjacency/output/group-discovery")
+DEFAULT_OUTPUT_DIR = Path("coordination-expansion/output")
 
 LAYER_FILES = {
     "co_negative_target": ("multi-graph/edges_co_negative_target.csv", "weight_co_negative_target"),
     "co_target": ("multi-graph/edges_co_target.csv", "weight_co_target"),
+    "tag_similarity": ("multi-graph/edges_tag_similarity.csv", "weight_tag_similarity"),
 }
 
 NONNEUTRAL_TAG_COUNT_COLUMNS = [
@@ -47,7 +48,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument(
         "--group-layer",
-        choices=sorted(LAYER_FILES),
+        choices=["co_negative_target", "co_target"],
         default="co_negative_target",
         help="Undirected projection layer used to discover groups.",
     )
@@ -72,6 +73,22 @@ def parse_args() -> argparse.Namespace:
         help="Optional seed accounts to expand into local coordination neighborhoods.",
     )
     parser.add_argument("--seed-top-neighbors", type=int, default=15)
+    parser.add_argument("--tier-co-negative-threshold", type=float, default=0.20)
+    parser.add_argument("--tier-tag-threshold", type=float, default=0.90)
+    parser.add_argument("--tier-trigger-threshold", type=float, default=0.50)
+    parser.add_argument("--tier-co-target-threshold", type=float, default=0.30)
+    parser.add_argument(
+        "--tier-two-hop-min-links",
+        type=int,
+        default=2,
+        help="For 2-hop co-negative expansion, require links to this many accepted members.",
+    )
+    parser.add_argument(
+        "--tier-max-members",
+        type=int,
+        default=100,
+        help="Maximum tiered seed-expansion members retained per seed.",
+    )
     return parser.parse_args()
 
 
@@ -434,6 +451,196 @@ def trigger_neighbors(trigger_edges: pd.DataFrame, seed: str, top_n: int) -> pd.
     return pd.concat([incoming[cols], outgoing[cols]], ignore_index=True)
 
 
+def undirected_weight_map(df: pd.DataFrame, weight_col: str) -> dict[tuple[str, str], float]:
+    weights: dict[tuple[str, str], float] = {}
+    for row in df[["source_author", "target_author", weight_col]].itertuples(index=False):
+        source = str(row.source_author)
+        target = str(row.target_author)
+        key = tuple(sorted((source, target)))
+        weights[key] = max(weights.get(key, 0.0), float(getattr(row, weight_col)))
+    return weights
+
+
+def trigger_weight_map(trigger_edges: pd.DataFrame) -> dict[tuple[str, str], float]:
+    weights: dict[tuple[str, str], float] = {}
+    for row in trigger_edges[
+        ["source_author", "target_author", "weight_trigger_response"]
+    ].itertuples(index=False):
+        source = str(row.source_author)
+        target = str(row.target_author)
+        key = tuple(sorted((source, target)))
+        weights[key] = max(weights.get(key, 0.0), float(row.weight_trigger_response))
+    return weights
+
+
+def pair_weight(weights: dict[tuple[str, str], float], left: str, right: str) -> float:
+    return weights.get(tuple(sorted((str(left), str(right)))), 0.0)
+
+
+def tiered_seed_expansion(
+    *,
+    seed: str,
+    co_negative: pd.DataFrame,
+    co_target: pd.DataFrame,
+    tag_similarity: pd.DataFrame,
+    trigger_edges: pd.DataFrame,
+    co_negative_threshold: float,
+    tag_threshold: float,
+    trigger_threshold: float,
+    co_target_threshold: float,
+    two_hop_min_links: int,
+    max_members: int,
+) -> pd.DataFrame:
+    """Expand a seed with explicit evidence tiers instead of weighted sums."""
+    co_neg_weights = undirected_weight_map(co_negative, "weight_co_negative_target")
+    co_target_weights = undirected_weight_map(co_target, "weight_co_target")
+    tag_weights = undirected_weight_map(tag_similarity, "weight_tag_similarity")
+    trigger_weights = trigger_weight_map(trigger_edges)
+
+    direct_candidates = set()
+    for weights in (co_neg_weights, co_target_weights, tag_weights, trigger_weights):
+        for left, right in weights:
+            if left == seed:
+                direct_candidates.add(right)
+            elif right == seed:
+                direct_candidates.add(left)
+
+    accepted: dict[str, dict] = {
+        seed: {
+            "seed": seed,
+            "candidate": seed,
+            "tier": 0,
+            "include": True,
+            "include_reason": "seed",
+            "co_negative_weight": 0.0,
+            "tag_similarity_weight": 0.0,
+            "trigger_response_weight": 0.0,
+            "co_target_weight": 0.0,
+            "two_hop_link_count": 0,
+            "two_hop_connectors": "",
+        }
+    }
+    evaluated_rows = []
+
+    for candidate in sorted(direct_candidates):
+        co_neg = pair_weight(co_neg_weights, seed, candidate)
+        tag = pair_weight(tag_weights, seed, candidate)
+        trigger = pair_weight(trigger_weights, seed, candidate)
+        co_t = pair_weight(co_target_weights, seed, candidate)
+
+        include = False
+        tier = 99
+        reason = "not_included"
+        if co_neg >= co_negative_threshold:
+            include = True
+            tier = 1
+            reason = "tier1_co_negative_direct"
+        elif tag >= tag_threshold and (
+            co_neg > 0 or co_t >= co_target_threshold or trigger >= trigger_threshold
+        ):
+            include = True
+            tier = 2
+            reason = "tier2_tag_similarity_with_structure"
+        elif trigger >= trigger_threshold and (co_neg > 0 or tag >= tag_threshold):
+            include = True
+            tier = 3
+            reason = "tier3_trigger_with_co_negative_or_tag"
+        elif co_t >= co_target_threshold:
+            reason = "support_only_co_target"
+        elif tag >= tag_threshold:
+            reason = "support_only_tag_similarity"
+        elif trigger >= trigger_threshold:
+            reason = "support_only_trigger_response"
+
+        row = {
+            "seed": seed,
+            "candidate": candidate,
+            "tier": tier,
+            "include": include,
+            "include_reason": reason,
+            "co_negative_weight": co_neg,
+            "tag_similarity_weight": tag,
+            "trigger_response_weight": trigger,
+            "co_target_weight": co_t,
+            "two_hop_link_count": 0,
+            "two_hop_connectors": "",
+        }
+        evaluated_rows.append(row)
+        if include:
+            accepted[candidate] = row
+
+    # Conservative 2-hop expansion: walk only through co-negative edges, and
+    # require the new candidate to link back to multiple already accepted users.
+    second_hop_candidates: set[str] = set()
+    accepted_direct = set(accepted)
+    for left, right in co_neg_weights:
+        if left in accepted_direct and right not in accepted_direct:
+            second_hop_candidates.add(right)
+        elif right in accepted_direct and left not in accepted_direct:
+            second_hop_candidates.add(left)
+
+    for candidate in sorted(second_hop_candidates):
+        connectors = [
+            member
+            for member in accepted_direct
+            if member != candidate and pair_weight(co_neg_weights, member, candidate) >= co_negative_threshold
+        ]
+        if len(connectors) < two_hop_min_links:
+            continue
+        co_neg_to_seed = pair_weight(co_neg_weights, seed, candidate)
+        tag = pair_weight(tag_weights, seed, candidate)
+        trigger = pair_weight(trigger_weights, seed, candidate)
+        co_t = pair_weight(co_target_weights, seed, candidate)
+        row = {
+            "seed": seed,
+            "candidate": candidate,
+            "tier": 4,
+            "include": True,
+            "include_reason": "tier4_two_hop_co_negative_multi_link",
+            "co_negative_weight": co_neg_to_seed,
+            "tag_similarity_weight": tag,
+            "trigger_response_weight": trigger,
+            "co_target_weight": co_t,
+            "two_hop_link_count": len(connectors),
+            "two_hop_connectors": ", ".join(sorted(connectors)[:12]),
+        }
+        evaluated_rows.append(row)
+        accepted[candidate] = row
+
+    accepted_rows = [accepted[key] for key in accepted if key != seed]
+    accepted_rows = sorted(
+        accepted_rows,
+        key=lambda row: (
+            row["tier"],
+            -row["co_negative_weight"],
+            -row["tag_similarity_weight"],
+            -row["trigger_response_weight"],
+            -row["co_target_weight"],
+            row["candidate"],
+        ),
+    )
+    accepted_rows = [accepted[seed], *accepted_rows[: max(0, max_members - 1)]]
+
+    output = pd.DataFrame(accepted_rows)
+    if output.empty:
+        return pd.DataFrame(
+            columns=[
+                "seed",
+                "candidate",
+                "tier",
+                "include",
+                "include_reason",
+                "co_negative_weight",
+                "tag_similarity_weight",
+                "trigger_response_weight",
+                "co_target_weight",
+                "two_hop_link_count",
+                "two_hop_connectors",
+            ]
+        )
+    return output
+
+
 def shared_targets_with_seed(
     seed: str,
     neighbors: list[str],
@@ -472,11 +679,18 @@ def build_seed_expansions(
     seeds: list[str],
     co_target: pd.DataFrame,
     co_negative: pd.DataFrame,
+    tag_similarity: pd.DataFrame,
     trigger_edges: pd.DataFrame,
     target_edges: pd.DataFrame,
     features: pd.DataFrame,
     output_dir: Path,
     top_neighbors: int,
+    co_negative_threshold: float,
+    tag_threshold: float,
+    trigger_threshold: float,
+    co_target_threshold: float,
+    two_hop_min_links: int,
+    max_members: int,
 ) -> pd.DataFrame:
     summary_rows = []
     for raw_seed in seeds:
@@ -498,15 +712,39 @@ def build_seed_expansions(
             top_neighbors,
         )
         trigger = trigger_neighbors(trigger_edges, seed, top_neighbors)
+        tag_neighbors = undirected_neighbors(
+            tag_similarity,
+            seed,
+            "weight_tag_similarity",
+            "tag_similarity",
+            top_neighbors,
+        )
 
         coordination_neighbors = pd.concat(
-            [co_target_neighbors, co_negative_neighbors], ignore_index=True, sort=False
+            [co_target_neighbors, co_negative_neighbors, tag_neighbors],
+            ignore_index=True,
+            sort=False,
         )
         coordination_neighbors.to_csv(seed_dir / "coordination_neighbors.csv", index=False)
         trigger.to_csv(seed_dir / "trigger_neighbors.csv", index=False)
 
+        tiered_members = tiered_seed_expansion(
+            seed=seed,
+            co_negative=co_negative,
+            co_target=co_target,
+            tag_similarity=tag_similarity,
+            trigger_edges=trigger_edges,
+            co_negative_threshold=co_negative_threshold,
+            tag_threshold=tag_threshold,
+            trigger_threshold=trigger_threshold,
+            co_target_threshold=co_target_threshold,
+            two_hop_min_links=two_hop_min_links,
+            max_members=max_members,
+        )
+        tiered_members.to_csv(seed_dir / "tiered_expansion_members.csv", index=False)
+
         candidate_members = {seed}
-        candidate_members.update(coordination_neighbors["neighbor"].dropna().astype(str).tolist())
+        candidate_members.update(tiered_members["candidate"].dropna().astype(str).tolist())
         candidate_members_list = sorted(candidate_members)
 
         internal_co_target = co_target.loc[
@@ -548,8 +786,22 @@ def build_seed_expansions(
         seed_summary = {
             "seed": seed,
             "candidate_member_count": len(candidate_members),
+            "tiered_expansion_member_count": int(len(tiered_members)),
+            "tier1_co_negative_count": int(
+                tiered_members["include_reason"].eq("tier1_co_negative_direct").sum()
+            ),
+            "tier2_tag_with_structure_count": int(
+                tiered_members["include_reason"].eq("tier2_tag_similarity_with_structure").sum()
+            ),
+            "tier3_trigger_with_support_count": int(
+                tiered_members["include_reason"].eq("tier3_trigger_with_co_negative_or_tag").sum()
+            ),
+            "tier4_two_hop_count": int(
+                tiered_members["include_reason"].eq("tier4_two_hop_co_negative_multi_link").sum()
+            ),
             "co_target_neighbor_count": int(len(co_target_neighbors)),
             "co_negative_neighbor_count": int(len(co_negative_neighbors)),
+            "tag_similarity_neighbor_count": int(len(tag_neighbors)),
             "internal_coordination_edge_count": int(len(internal_edges)),
             "shared_negative_target_count": int(
                 (shared_negative["shared_target_count"] > 0).sum()
@@ -572,7 +824,7 @@ def build_seed_expansions(
 def write_readme(output_dir: Path) -> None:
     text = """# Coordination Group Discovery Output
 
-This folder is generated by `adjacency/discover_coordination_groups.py`.
+This folder is generated by `coordination-expansion/discover_coordination_groups.py`.
 
 Useful files:
 
@@ -595,6 +847,7 @@ def main() -> None:
     group_edges, group_weight_col = read_layer(args.graph_dir, args.group_layer)
     co_target, _ = read_layer(args.graph_dir, "co_target")
     co_negative, _ = read_layer(args.graph_dir, "co_negative_target")
+    tag_similarity, _ = read_layer(args.graph_dir, "tag_similarity")
     negative_edges = read_negative_edges(args.graph_dir)
     count_edges = read_count_edges(args.graph_dir)
     trigger_edges = read_trigger_edges(args.graph_dir)
@@ -625,11 +878,18 @@ def main() -> None:
         seeds=args.seeds,
         co_target=co_target,
         co_negative=co_negative,
+        tag_similarity=tag_similarity,
         trigger_edges=trigger_edges,
         target_edges=negative_edges,
         features=features,
         output_dir=args.output_dir,
         top_neighbors=args.seed_top_neighbors,
+        co_negative_threshold=args.tier_co_negative_threshold,
+        tag_threshold=args.tier_tag_threshold,
+        trigger_threshold=args.tier_trigger_threshold,
+        co_target_threshold=args.tier_co_target_threshold,
+        two_hop_min_links=args.tier_two_hop_min_links,
+        max_members=args.tier_max_members,
     )
     write_readme(args.output_dir)
 

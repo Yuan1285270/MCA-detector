@@ -21,6 +21,8 @@ llm/ollama-local/source_data/
 llm/ollama-local/data/
 llm/ollama-local/output/
 adjacency/output/
+coordination-expansion/output/
+mca-scoring/output/
 candidate-ranking/output/
 role-analysis/output/
 

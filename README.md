@@ -20,6 +20,16 @@ The project does not claim that an account is a confirmed bot, paid operator, or
   - Builds single-graph and multi-graph sparse adjacency artifacts from LLM-analyzed Reddit comment feedback and account rhetoric features.
   - See `adjacency/README.md` for details.
 
+- `mca-scoring/`
+  - Account-level MCA review-priority scoring module.
+  - Combines manipulative, coordinative, interaction reach, and automation signals.
+  - See `mca-scoring/README.md` for details.
+
+- `coordination-expansion/`
+  - Seed expansion and group discovery module.
+  - Turns graph layers into reviewable coordination evidence tables.
+  - See `coordination-expansion/README.md` for details.
+
 ## Branch Workflow
 
 - `main`: shared stable baseline
