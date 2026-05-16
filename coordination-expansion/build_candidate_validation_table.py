@@ -98,6 +98,7 @@ def load_clusters(path: Path) -> pd.DataFrame:
         "night_activity_ratio",
         "weekend_activity_ratio",
         "comment_label_oppositional_ratio",
+        "comment_label_supportive_ratio",
         "avg_manipulative_rhetoric_score",
     ]
     df = pd.read_csv(path, usecols=lambda col: col in cols, low_memory=False)

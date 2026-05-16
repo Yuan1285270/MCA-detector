@@ -246,6 +246,39 @@ night_activity_ratio
 is_extreme_outlier
 ```
 
+### Account Roles
+
+用簡單、可解釋的四類角色標註 candidate group 裡的帳號：
+
+```bash
+.venv/bin/python coordination-expansion/build_account_role_table.py
+```
+
+輸出：
+
+```text
+account-roles/account_role_table.csv
+account-roles/account_role_report.md
+```
+
+角色：
+
+```text
+leader_instigator = 帶頭起鬨
+comment_attacker  = 留言攻擊者
+comment_supporter = 留言支持者
+context_member    = 背景成員
+```
+
+目前規則保持保守：
+
+```text
+seed 本人 -> leader_instigator
+oppositional comment ratio >= 0.50 -> comment_attacker
+supportive comment ratio >= 0.50 -> comment_supporter
+其他 -> context_member
+```
+
 ## Interpretation
 
 輸出是 review evidence，不是最終判決。最有用的是看：
