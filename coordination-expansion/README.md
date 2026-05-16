@@ -92,11 +92,13 @@ weak_temporal_overlap  = same thread overlap without short-window synchrony
 no_temporal_sync       = no same-thread overlap in the local comments file
 ```
 
-預設每個帳號只取最近 100 則 local comments，資料來自 raw comments export：
+預設每個帳號只取最近 100 則 analyzed comments，資料來自正式 merged feedback export：
 
 ```text
-Archive/duplicate_local_data/ollama-local-source_data/reddit_comments_2025.csv
+Archive/export_working_files/comment_feedback_all_merged.csv
 ```
+
+這樣 Stage 2 temporal verification 會和 Stage 1 adjacency / co-negative graph 使用同一批 analyzed comments。若要做 raw comment diagnostic，可以用 `--comments-path` 指到 raw comments export。
 
 如果要掃完整 local comments，可以加：
 

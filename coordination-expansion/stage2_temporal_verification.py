@@ -17,7 +17,7 @@ import pandas as pd
 
 
 DEFAULT_SEED_DIR = Path("coordination-expansion/output/seeds")
-DEFAULT_COMMENTS_PATH = Path("Archive/duplicate_local_data/ollama-local-source_data/reddit_comments_2025.csv")
+DEFAULT_COMMENTS_PATH = Path("Archive/export_working_files/comment_feedback_all_merged.csv")
 DEFAULT_OUTPUT_DIR = Path("coordination-expansion/output/stage2-verification")
 
 
