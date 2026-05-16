@@ -67,6 +67,45 @@ seeds/<seed>/candidate_member_features.csv
 seeds/<seed>/summary.json
 ```
 
+### Stage 2 Temporal Verification
+
+Stage 1 找到的是 candidate coordination groups；Stage 2 檢查群內帳號是否在同一篇 post 下短時間一起出現。
+
+```bash
+.venv/bin/python coordination-expansion/stage2_temporal_verification.py
+```
+
+預設輸出：
+
+```text
+stage2-verification/stage2_verification_evidence.csv
+stage2-verification/stage2_group_summary.csv
+stage2-verification/stage2_temporal_verification_report.md
+```
+
+pair-level labels:
+
+```text
+strong_temporal_sync   = at least one co-comment event within 5 minutes
+moderate_temporal_sync = at least two co-comment events within 30 minutes
+weak_temporal_overlap  = same thread overlap without short-window synchrony
+no_temporal_sync       = no same-thread overlap in the local comments file
+```
+
+預設每個帳號只取最近 100 則 local comments，資料來自：
+
+```text
+Archive/export_working_files/comment_feedback_all_merged.csv.bak
+```
+
+如果要掃完整 local comments，可以加：
+
+```bash
+.venv/bin/python coordination-expansion/stage2_temporal_verification.py --max-comments-per-author 0
+```
+
+如果使用 Pullpush 或不同 group member list，結果可能和 local scan 不完全一致。
+
 ## Interpretation
 
 輸出是 review evidence，不是最終判決。最有用的是看：
@@ -75,4 +114,5 @@ seeds/<seed>/summary.json
 這群人是否共同反對同一批 target？
 這群內部是否有 co-negative / co-target structure？
 這群是否也有 manipulative rhetoric 或 automation anomaly evidence？
+這群是否有 temporal synchrony evidence？
 ```
