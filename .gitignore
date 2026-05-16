@@ -20,6 +20,9 @@ llm/gemini-cloud/temp/
 llm/ollama-local/source_data/
 llm/ollama-local/data/
 llm/ollama-local/output/
+adjacency/output/
+candidate-ranking/output/
+role-analysis/output/
 
 # Local notebooks / scratch artifacts
 *.log
