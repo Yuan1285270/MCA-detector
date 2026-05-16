@@ -181,6 +181,45 @@ G3_single_review_candidate
 G4_context_group
 ```
 
+### Behavior Profile
+
+用本地 feature matrix 的活動行為欄位，建立 candidate account 的 behavior profile：
+
+```bash
+.venv/bin/python coordination-expansion/build_behavior_profile_table.py
+```
+
+輸出：
+
+```text
+behavior-profile/behavior_profile_table.csv
+behavior-profile/behavior_profile_report.md
+```
+
+目前 labels:
+
+```text
+extreme_outlier_behavior
+short_window_high_activity
+high_frequency_activity
+bursty_activity
+low_activity_unknown
+normal_range_activity
+```
+
+注意：本地 raw exports 沒有 `subreddit` 欄位，所以這張表不能重現 Pullpush 的 subreddit distribution / BTC ratio 檢查。它只使用本地可重建的 behavior features，例如：
+
+```text
+comment_count
+post_count
+active_days
+comments_per_day
+posts_per_day
+burst_ratio
+night_activity_ratio
+is_extreme_outlier
+```
+
 ## Interpretation
 
 輸出是 review evidence，不是最終判決。最有用的是看：
