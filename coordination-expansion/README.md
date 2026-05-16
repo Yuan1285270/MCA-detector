@@ -23,6 +23,30 @@ coordination-expansion/output/
 
 ## What It Does
 
+### Seed Selection
+
+目前 seed selection 使用最小可重現規則：直接取 MCA primary ranking top 20。
+
+```bash
+.venv/bin/python coordination-expansion/select_seeds.py --top-n 20
+```
+
+輸出：
+
+```text
+selected_seeds.csv
+```
+
+欄位：
+
+```text
+selected_rank
+seed
+mca_score_primary
+selection_method
+selection_reason
+```
+
 ### Group Discovery
 
 預設從 `A_co_negative_target` 找小型 connected components：
