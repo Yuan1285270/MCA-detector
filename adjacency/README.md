@@ -96,6 +96,8 @@ adjacency/output/single-graph/matrix_single_signed.npz
 | `A_negative` | `max(-A_signed, 0)` | 反對、批評、攻擊、削弱 |
 | `A_degree_adjusted` | Zaman-inspired degree adjusted count | 強調高資訊量互動邊 |
 | `A_trigger_response` | response coverage × log frequency | A 發文是否穩定觸發 B 留言 |
+| `A_co_target` | cosine similarity over shared targets | 兩個帳號是否常常留言到同一批作者 |
+| `A_co_negative_target` | cosine similarity over shared oppositional targets | 兩個帳號是否常常反對同一批作者 |
 | `A_tag_similarity` | cosine similarity of rhetoric profiles | 內容/修辭相似度，不是互動關係 |
 
 ### `A_count`
@@ -183,6 +185,51 @@ response_coverage
 
 這樣可以避免「A 只發一篇、B 留一次」就得到過強訊號，同時保留穩定跟隨與重複互動的 evidence。輸出也包含 `median_response_delay_minutes` 和 `p90_response_delay_minutes`，方便判斷 B 是否總是在 A 發文後很快出現。
 
+### `A_co_target`
+
+這張圖捕捉的不是直接互動，而是兩個 commenter 的 target set 是否重疊：
+
+```text
+A_co_target[i,j] = cosine_similarity(target_profile_i, target_profile_j)
+```
+
+其中 `target_profile_i` 是帳號 `i` 留言過的 post authors，權重使用：
+
+```text
+log(1 + n_comments_to_target)
+```
+
+所以這層回答：
+
+```text
+i 和 j 是否常常去同一批作者底下留言？
+```
+
+這是 undirected projected graph。edge list 每對帳號只存一次，`.npz` sparse matrix 會 mirror 成雙向。
+
+為了避免熱門 target 讓 projection 爆炸，預設限制：
+
+- 每個 target 最多保留互動最強的 200 個 source accounts
+- co-target edge 至少要有 2 個 shared targets
+- cosine similarity 至少 0.15
+- 每個帳號最多保留 top 25 co-target neighbors
+
+### `A_co_negative_target`
+
+這張圖是 `A_co_target` 的負向版本，只看 shared oppositional targets：
+
+```text
+target_negative_profile_i[target] = log(1 + oppositional_count_i_to_target)
+```
+
+因此它回答：
+
+```text
+i 和 j 是否常常反對 / 攻擊同一批作者？
+```
+
+這層很適合後續 suspicious coordination scoring，因為它比單純 rhetoric similarity 更接近「行動目標一致」。但它仍然不是最終判決；例如兩個正常使用者也可能共同批評同一個高爭議作者，所以應該和 trigger-response、stance pattern、tag similarity 一起使用。
+
 ### `A_tag_similarity`
 
 這張圖不是互動圖，而是內容相似圖。
@@ -222,6 +269,8 @@ adjacency/output/
     ├── edges_negative.csv
     ├── edges_degree_adjusted.csv
     ├── edges_trigger_response.csv
+    ├── edges_co_target.csv
+    ├── edges_co_negative_target.csv
     ├── edges_tag_similarity.csv
     ├── tag_similarity_candidate_nodes.csv
     └── matrix_*.npz
@@ -256,7 +305,7 @@ So interaction graphs remain directed. Direction matters because frequently crit
 
 ### Undirected tag similarity graph
 
-Tag similarity is symmetric. If two accounts use similar rhetoric profiles, there is no natural source/target direction. The edge list stores each pair once; the sparse matrix mirrors it.
+Tag similarity and co-target projection are symmetric. If two accounts use similar rhetoric profiles, or point at similar target sets, there is no natural source/target direction. The edge list stores each pair once; the sparse matrix mirrors it.
 
 ### Mean score times log frequency
 
@@ -281,6 +330,22 @@ A 的多少篇發文會引來 B 留言？
 ```
 
 所以兩者方向和意義不同。前者是 commenter-to-author interaction，後者是 post-author-to-responder frequency relation。這層更接近「固定跟隨某個發文者」的 coordinated behavior evidence。
+
+### Co-target is different from direct interaction
+
+`A_count[i,j]` answers:
+
+```text
+i 是否直接留言給 j？
+```
+
+`A_co_target[i,j]` answers:
+
+```text
+i 和 j 是否經常留言到同一批 target？
+```
+
+所以 co-target 是 commenter-commenter relation，不是 commenter-author relation。這層能捕捉沒有直接互動、但行動目標高度一致的帳號對。
 
 ### Tag similarity is optional and secondary
 
