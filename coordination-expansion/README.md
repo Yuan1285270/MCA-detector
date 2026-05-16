@@ -147,6 +147,40 @@ temporal_only_review_candidate
 low_priority_context_member
 ```
 
+### Final Group Summary
+
+把 account-level `review_priority` 聚合成 group-level 排序：
+
+```bash
+.venv/bin/python coordination-expansion/build_final_group_summary.py
+```
+
+輸出：
+
+```text
+final-summary/final_group_summary.csv
+final-summary/final_group_summary_report.md
+```
+
+group 排序使用 review priority bucket：
+
+```text
+P1 = MCA plus temporal evidence, or MCA plus extreme outlier
+P2 = high MCA only, or temporal evidence only
+P3 = context member retained by expansion, with weak validation evidence
+```
+
+group-level label 代表 review priority，不是 final verdict：
+
+```text
+G1_multiple_high_priority_accounts
+G1_high_priority_plus_support
+G2_single_high_priority_account
+G2_multiple_review_candidates
+G3_single_review_candidate
+G4_context_group
+```
+
 ## Interpretation
 
 輸出是 review evidence，不是最終判決。最有用的是看：
