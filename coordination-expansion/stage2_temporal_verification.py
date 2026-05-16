@@ -166,7 +166,7 @@ def label_pair(metrics: dict[str, object]) -> str:
     same_post = int(metrics["same_post_count"])
     if within_5 > 0:
         return "strong_temporal_sync"
-    if within_30 >= 2:
+    if within_30 >= 2 or (same_post >= 3 and within_30 > 0):
         return "moderate_temporal_sync"
     if same_post > 0:
         return "weak_temporal_overlap"

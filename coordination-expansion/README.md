@@ -21,6 +21,20 @@ seed account / graph layer -> candidate group -> evidence tables
 coordination-expansion/output/
 ```
 
+## Run Full Pipeline
+
+一鍵重跑 MCA seed selection、seed expansion、temporal verification、candidate validation、group summary、behavior profile、account roles：
+
+```bash
+.venv/bin/python coordination-expansion/run_pipeline.py --top-n-seeds 20
+```
+
+如果已經有最新 MCA output，可以跳過 MCA 重算：
+
+```bash
+.venv/bin/python coordination-expansion/run_pipeline.py --top-n-seeds 20 --skip-mca
+```
+
 ## What It Does
 
 ### Seed Selection
