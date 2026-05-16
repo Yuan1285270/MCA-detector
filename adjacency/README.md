@@ -98,7 +98,7 @@ adjacency/output/single-graph/matrix_single_signed.npz
 | `A_trigger_response` | response coverage × log frequency | A 發文是否穩定觸發 B 留言 |
 | `A_co_target` | cosine similarity over shared targets | 兩個帳號是否常常留言到同一批作者 |
 | `A_co_negative_target` | cosine similarity over shared oppositional targets | 兩個帳號是否常常反對同一批作者 |
-| `A_tag_similarity` | cosine similarity of rhetoric profiles | 內容/修辭相似度，不是互動關係 |
+| `A_tag_similarity` | cosine similarity of rhetoric profiles | 內容/修辭相似度，只作 EDA / 解釋輔助 |
 
 ### `A_count`
 
@@ -228,11 +228,11 @@ target_negative_profile_i[target] = log(1 + oppositional_count_i_to_target)
 i 和 j 是否常常反對 / 攻擊同一批作者？
 ```
 
-這層很適合後續 suspicious coordination scoring，因為它比單純 rhetoric similarity 更接近「行動目標一致」。但它仍然不是最終判決；例如兩個正常使用者也可能共同批評同一個高爭議作者，所以應該和 trigger-response、stance pattern、tag similarity 一起使用。
+這層很適合後續 suspicious coordination scoring，因為它比 rhetoric similarity 更接近「行動目標一致」。但它仍然不是最終判決；例如兩個正常使用者也可能共同批評同一個高爭議作者，所以應該和 trigger-response、manipulative signal、interaction reach 一起看。
 
 ### `A_tag_similarity`
 
-這張圖不是互動圖，而是內容相似圖。
+這張圖不是互動圖，也不進 MCA 主分數；它是內容/修辭相似的 EDA 與解釋輔助圖。
 
 ```text
 A_tag_similarity[i,j] = cosine_similarity(tag_profile_i, tag_profile_j)
@@ -250,7 +250,27 @@ A_tag_similarity[i,j] = cosine_similarity(tag_profile_i, tag_profile_j)
 - cosine similarity `>= 0.75`
 - 每個帳號最多 top 10 neighbors
 
-這個限制是刻意的。全體帳號中只有一部分有 post-level rhetoric tags，如果把 tag similarity 當主圖會很稀疏；但在 anomaly subset 中，tag coverage 明顯更高，所以它很適合作為 multi-graph 裡的一層，補足「帳號之間沒有直接互動但使用相似動員話術」的情況。
+這個限制是刻意的。全體帳號中只有一部分有 post-level rhetoric tags，而且保留下來的 pair similarity 分數通常偏高，所以它不適合單獨用來排序帳號或加進 MCA score。
+
+這層保留的用途是：
+
+- EDA / visualization
+- 解釋 top accounts 的 rhetoric-similar neighbors
+- 檢查 co-target group 裡是否也有相似 rhetoric profile
+
+換句話說，`A_tag_similarity` 回答的是：
+
+```text
+這兩個帳號的 rhetoric tag profile 像不像？
+```
+
+它不直接回答：
+
+```text
+這個帳號是否可疑？
+```
+
+因此正式 MCA scoring 不使用這層作為主分數來源。
 
 ## Output Files
 
@@ -347,9 +367,17 @@ i 和 j 是否經常留言到同一批 target？
 
 所以 co-target 是 commenter-commenter relation，不是 commenter-author relation。這層能捕捉沒有直接互動、但行動目標高度一致的帳號對。
 
-### Tag similarity is optional and secondary
+### Tag similarity is diagnostic, not scoring
 
-The account feature matrix already contains tag ratios as node features. `A_tag_similarity` converts those node features into a content-similarity relation. This is useful, but should not replace the interaction graph because tag coverage is lower than comment feedback coverage.
+The account feature matrix already contains tag ratios as node features. `A_tag_similarity` converts those node features into a pairwise rhetoric-similarity relation. This is useful for EDA and explanation, but it is not used as a primary MCA scoring input because it measures pair similarity rather than account suspiciousness.
+
+For MCA scoring, rhetoric information enters through the manipulative signal instead:
+
+```text
+avg_rhetorical_score
+non_neutral_post_ratio
+oppositional_stance_ratio
+```
 
 ## Literature Rationale
 
