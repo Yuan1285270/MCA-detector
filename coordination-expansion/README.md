@@ -92,10 +92,10 @@ weak_temporal_overlap  = same thread overlap without short-window synchrony
 no_temporal_sync       = no same-thread overlap in the local comments file
 ```
 
-預設每個帳號只取最近 100 則 local comments，資料來自：
+預設每個帳號只取最近 100 則 local comments，資料來自 raw comments export：
 
 ```text
-Archive/export_working_files/comment_feedback_all_merged.csv.bak
+Archive/duplicate_local_data/ollama-local-source_data/reddit_comments_2025.csv
 ```
 
 如果要掃完整 local comments，可以加：

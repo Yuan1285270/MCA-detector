@@ -17,7 +17,7 @@ import pandas as pd
 
 
 DEFAULT_SEED_DIR = Path("coordination-expansion/output/seeds")
-DEFAULT_COMMENTS_PATH = Path("Archive/export_working_files/comment_feedback_all_merged.csv.bak")
+DEFAULT_COMMENTS_PATH = Path("Archive/duplicate_local_data/ollama-local-source_data/reddit_comments_2025.csv")
 DEFAULT_OUTPUT_DIR = Path("coordination-expansion/output/stage2-verification")
 
 
@@ -65,8 +65,28 @@ def load_group_members(seed_dir: Path, seed: str) -> list[str]:
 
 
 def load_comments(path: Path, authors: set[str], max_comments_per_author: int) -> pd.DataFrame:
-    usecols = ["comment_id", "post_id", "author", "created_utc"]
-    comments = pd.read_csv(path, usecols=usecols, low_memory=False)
+    header = pd.read_csv(path, nrows=0)
+    if {"comment_id", "post_id", "author", "created_utc"}.issubset(header.columns):
+        comments = pd.read_csv(
+            path,
+            usecols=["comment_id", "post_id", "author", "created_utc"],
+            low_memory=False,
+        )
+    elif {"comment_id", "link_id", "author", "created_utc"}.issubset(header.columns):
+        comments = pd.read_csv(
+            path,
+            usecols=["comment_id", "link_id", "author", "created_utc"],
+            low_memory=False,
+        )
+        comments = comments.rename(columns={"link_id": "post_id"})
+        comments["post_id"] = comments["post_id"].astype("string").str.replace(
+            r"^t3_", "", regex=True
+        )
+    else:
+        raise ValueError(
+            "Comments file must contain either comment_id/post_id/author/created_utc "
+            "or comment_id/link_id/author/created_utc."
+        )
     comments["author"] = normalize_user_id(comments["author"])
     comments = comments.loc[comments["author"].isin(authors)].copy()
     comments["post_id"] = comments["post_id"].astype("string").str.strip()
