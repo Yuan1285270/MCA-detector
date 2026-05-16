@@ -30,6 +30,33 @@ The project does not claim that an account is a confirmed bot, paid operator, or
   - Turns graph layers into reviewable coordination evidence tables.
   - See `coordination-expansion/README.md` for details.
 
+## Full Pipeline Runner
+
+從兩個原始 Reddit 檔案一路跑到 group summary / account roles：
+
+```bash
+.venv/bin/python run_full_pipeline.py \
+  --raw-posts llm/data-cleaning/source_data/reddit_posts_2025.csv \
+  --raw-comments llm/data-cleaning/source_data/reddit_comments_2025.csv \
+  --llm-provider ollama \
+  --top-n-seeds 20
+```
+
+可選 LLM backend：
+
+```text
+--llm-provider ollama   # local Ollama，之後主要使用
+--llm-provider gemini   # Vertex/Gemini
+--llm-provider none     # 不跑 LLM，直接使用既有 llm/Export/*.csv.gz
+```
+
+輸出終點：
+
+```text
+coordination-expansion/output/final-summary/final_group_summary.csv
+coordination-expansion/output/account-roles/account_role_table.csv
+```
+
 ## Branch Workflow
 
 - `main`: shared stable baseline
