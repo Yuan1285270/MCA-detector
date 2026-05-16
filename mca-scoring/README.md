@@ -54,19 +54,19 @@ mca-scoring/output/
 Primary:
 
 ```text
-Manipulative:       0.40
-Coordinative:       0.40
-Interaction reach:  0.10
-Automatic behavior: 0.10
+Manipulative:       0.30
+Coordinative:       0.35
+Interaction reach:  0.15
+Automatic behavior: 0.20
 ```
 
 Alternative:
 
 ```text
-Manipulative:       0.30
-Coordinative:       0.35
-Interaction reach:  0.15
-Automatic behavior: 0.20
+Manipulative:       0.40
+Coordinative:       0.40
+Interaction reach:  0.10
+Automatic behavior: 0.10
 ```
 
 Interpretation:

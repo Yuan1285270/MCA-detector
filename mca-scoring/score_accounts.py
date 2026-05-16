@@ -40,7 +40,7 @@ def parse_args() -> argparse.Namespace:
         "--primary-weights",
         nargs=4,
         type=float,
-        default=[0.40, 0.40, 0.10, 0.10],
+        default=[0.30, 0.35, 0.15, 0.20],
         metavar=("M", "C", "R", "A"),
         help="Signal weights for manipulative, coordinative, reach, automation.",
     )
@@ -48,7 +48,7 @@ def parse_args() -> argparse.Namespace:
         "--alt-weights",
         nargs=4,
         type=float,
-        default=[0.30, 0.35, 0.15, 0.20],
+        default=[0.40, 0.40, 0.10, 0.10],
         metavar=("M", "C", "R", "A"),
         help="Comparison signal weights.",
     )
