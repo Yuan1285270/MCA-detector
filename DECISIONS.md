@@ -170,6 +170,29 @@ Accepted and implemented.
 
 ---
 
+## 2026-05-17 — Demo Output 分成群體協同與單一異常帳號
+
+Decision:
+demo website 和報告輸出分成兩條結果線：
+
+- `Suspicious Coordination Groups`
+- `Individual Abnormal Accounts`
+
+Why:
+MCA/anomaly features 可能抓到值得注意的單一異常帳號，例如 spam/scam-like account，但這不代表它一定屬於 coordinated manipulation group。把兩類結果分開，可以保留有價值的異常發現，同時避免把所有異常帳號都硬說成網軍。
+
+Alternatives considered:
+- 只輸出 group-level suspicious coordination
+- 把所有高 MCA 或 extreme outlier 都塞進同一個網軍排名
+
+Impact:
+網站第一層會同時呈現 group-level evidence 和 account-level risk。PPT/demo 應明確說明：系統主要找 coordinated behavior，但也能額外標出 individual abnormal manipulation accounts。
+
+Status:
+Accepted and implemented in `MCA-demo-site`.
+
+---
+
 ## 2026-05-17 — Stage 2 補上 Text Fingerprint 與 Lifecycle Evidence
 
 Decision:

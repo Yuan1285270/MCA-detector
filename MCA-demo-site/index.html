@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCA Coordination Review Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">MCA</div>
+          <div>
+            <p class="eyebrow">Manipulative Coordination Analysis</p>
+            <h1>Review Dashboard</h1>
+          </div>
+        </div>
+
+        <nav class="section-nav" aria-label="Dashboard sections">
+          <a href="#groups">Groups</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#abnormal">Abnormal Accounts</a>
+          <a href="#method">Method</a>
+        </nav>
+
+        <div class="run-meta" id="runMeta"></div>
+      </aside>
+
+      <main>
+        <section class="summary-band" aria-labelledby="summaryTitle">
+          <div>
+            <p class="eyebrow">Evidence-based suspicious coordination review</p>
+            <h2 id="summaryTitle">From graph candidates to multi-evidence verification</h2>
+            <p class="lede">
+              The dashboard separates group-level coordinated behavior from account-level abnormal manipulation, so the demo can show both network evidence and individual risk without overclaiming.
+            </p>
+          </div>
+          <div class="metric-grid" id="metricGrid"></div>
+        </section>
+
+        <section class="workspace-grid" id="groups">
+          <div class="panel group-list-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Stage 1 + validation</p>
+                <h2>Suspicious Coordination Groups</h2>
+              </div>
+              <select id="groupSort" aria-label="Sort groups">
+                <option value="rank">Rank</option>
+                <option value="p1">P1 accounts</option>
+                <option value="robust">Robust temporal</option>
+                <option value="mca">Max MCA</option>
+              </select>
+            </div>
+            <div class="group-list" id="groupList"></div>
+          </div>
+
+          <div class="panel detail-panel" id="evidence">
+            <div class="panel-header detail-header">
+              <div>
+                <p class="eyebrow">Selected group</p>
+                <h2 id="selectedGroupTitle">Group</h2>
+              </div>
+              <div class="status-pill" id="groupPriorityPill"></div>
+            </div>
+
+            <div class="detail-stats" id="detailStats"></div>
+
+            <div class="graph-toolbar">
+              <div class="legend">
+                <span><i class="dot seed"></i> Seed</span>
+                <span><i class="dot p1"></i> P1</span>
+                <span><i class="dot p2"></i> P2</span>
+                <span><i class="line co-neg"></i> Co-negative</span>
+                <span><i class="line temporal"></i> Temporal</span>
+              </div>
+              <button id="fitGraph" type="button">Reset View</button>
+            </div>
+            <div class="graph-stage">
+              <svg id="groupGraph" role="img" aria-label="Selected group relationship graph"></svg>
+            </div>
+
+            <div class="tab-strip" role="tablist" aria-label="Evidence tabs">
+              <button class="tab-button active" type="button" data-tab="members">Members</button>
+              <button class="tab-button" type="button" data-tab="pairs">Pair Evidence</button>
+              <button class="tab-button" type="button" data-tab="targets">Shared Targets</button>
+            </div>
+
+            <div class="tab-panel active" id="tab-members"></div>
+            <div class="tab-panel" id="tab-pairs"></div>
+            <div class="tab-panel" id="tab-targets"></div>
+          </div>
+        </section>
+
+        <section class="panel abnormal-panel" id="abnormal">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Separate output stream</p>
+              <h2>Individual Abnormal Accounts</h2>
+            </div>
+            <p class="panel-note">Detected as high-risk accounts even when group coordination is not confirmed.</p>
+          </div>
+          <div id="abnormalTable"></div>
+        </section>
+
+        <section class="method-band" id="method">
+          <div>
+            <p class="eyebrow">Pipeline story</p>
+            <h2>How the system makes a reviewable result</h2>
+          </div>
+          <div class="flow-grid">
+            <div class="flow-step">
+              <strong>1. MCA seed selection</strong>
+              <span>Find accounts with high manipulation, coordination, reach, and automation signals.</span>
+            </div>
+            <div class="flow-step">
+              <strong>2. Graph expansion</strong>
+              <span>Expand from seeds through co-negative and related graph evidence to form candidate groups.</span>
+            </div>
+            <div class="flow-step">
+              <strong>3. Multi-evidence verification</strong>
+              <span>Check temporal synchrony, text fingerprint distance, and activation window overlap.</span>
+            </div>
+            <div class="flow-step">
+              <strong>4. Review output</strong>
+              <span>Separate suspicious coordination groups from individual abnormal manipulation accounts.</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./data/demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
