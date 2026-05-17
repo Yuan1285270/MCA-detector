@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MCA Coordination Review Dashboard</title>
+    <title>MCA Sentinel</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <aside class="sidebar">
         <div class="brand-block">
-          <div class="brand-mark">MCA</div>
+          <img class="brand-logo" src="./assets/mca-sentinel-logo.svg" alt="MCA Sentinel logo" />
           <div>
-            <p class="eyebrow">Manipulative Coordination Analysis</p>
-            <h1 id="appTitle">Risk Dashboard</h1>
+            <p class="eyebrow" id="brandEyebrow">Coordination Risk Intelligence</p>
+            <h1 id="appTitle">MCA Sentinel</h1>
           </div>
         </div>
 
@@ -46,6 +46,17 @@
             <p class="lede" id="summaryLede"></p>
           </div>
           <div class="metric-grid" id="metricGrid"></div>
+        </section>
+
+        <section class="executive-band" aria-labelledby="executiveTitle">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow" id="executiveEyebrow">Executive summary</p>
+              <h2 id="executiveTitle">Current review priorities</h2>
+            </div>
+            <p class="panel-note" id="executiveNote"></p>
+          </div>
+          <div class="executive-grid" id="executiveGrid"></div>
         </section>
 
         <section class="reader-guide" aria-labelledby="guideTitle">

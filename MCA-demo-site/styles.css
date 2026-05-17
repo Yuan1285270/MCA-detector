@@ -1,17 +1,17 @@
 :root {
-  --ink: #17202a;
-  --muted: #617082;
-  --quiet: #eef2f5;
+  --ink: #17212b;
+  --muted: #647180;
+  --quiet: #eef3f1;
   --panel: #ffffff;
-  --line: #d8e0e7;
-  --bg: #f7f8f4;
-  --red: #c84038;
-  --amber: #c98618;
-  --teal: #167c77;
-  --blue: #4267b2;
+  --line: #dce4e8;
+  --bg: #f6f8f7;
+  --red: #b8423b;
+  --amber: #b98224;
+  --teal: #14756f;
+  --blue: #365f91;
   --green: #4f7f39;
   --purple: #7a5aa6;
-  --shadow: 0 16px 44px rgba(32, 42, 53, 0.12);
+  --shadow: 0 14px 34px rgba(32, 42, 53, 0.1);
 }
 
 * {
@@ -57,7 +57,7 @@ button {
   height: 100vh;
   padding: 28px 24px;
   border-right: 1px solid var(--line);
-  background: #fbfcf8;
+  background: #fbfcfa;
 }
 
 .brand-block {
@@ -67,15 +67,10 @@ button {
   margin-bottom: 22px;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
+.brand-logo {
   width: 58px;
   height: 58px;
-  border: 2px solid var(--ink);
-  color: var(--ink);
-  font-weight: 800;
-  letter-spacing: 0;
+  flex: 0 0 auto;
 }
 
 .eyebrow {
@@ -176,7 +171,8 @@ main {
 
 .summary-band,
 .method-band,
-.reader-guide {
+.reader-guide,
+.executive-band {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(440px, 0.9fr);
   gap: 26px;
@@ -187,9 +183,68 @@ main {
   box-shadow: var(--shadow);
 }
 
+.summary-band {
+  border-top: 4px solid var(--teal);
+}
+
 .reader-guide {
   grid-template-columns: minmax(240px, 0.32fr) minmax(0, 1fr);
   box-shadow: none;
+}
+
+.executive-band {
+  display: block;
+  padding: 0;
+  box-shadow: none;
+}
+
+.executive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.executive-card {
+  min-height: 158px;
+  padding: 18px;
+  border-right: 1px solid var(--line);
+  background: #fff;
+}
+
+.executive-card:last-child {
+  border-right: 0;
+}
+
+.executive-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.executive-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.executive-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.executive-card.accent {
+  background: rgba(20, 117, 111, 0.06);
+}
+
+.executive-card.action {
+  background: #fbfcfd;
 }
 
 .guide-grid {
@@ -240,7 +295,7 @@ main {
   min-height: 98px;
   padding: 16px;
   border: 1px solid var(--line);
-  background: #f9fbfd;
+  background: #fbfcfd;
 }
 
 .metric strong {
@@ -266,7 +321,7 @@ main {
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 28px rgba(32, 42, 53, 0.08);
 }
 
 .panel-header {
@@ -682,6 +737,7 @@ td.account-name {
   .workspace-grid,
   .summary-band,
   .reader-guide,
+  .executive-band,
   .method-band {
     grid-template-columns: 1fr;
   }
@@ -692,9 +748,14 @@ td.account-name {
 
   .detail-stats,
   .group-story,
+  .executive-grid,
   .guide-grid,
   .flow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .executive-card:nth-child(2) {
+    border-right: 0;
   }
 }
 
@@ -705,17 +766,32 @@ td.account-name {
 
   .summary-band,
   .reader-guide,
+  .executive-band,
   .method-band,
   .panel-header {
     padding: 16px;
   }
 
+  .executive-band {
+    padding: 0;
+  }
+
   .metric-grid,
   .detail-stats,
   .group-story,
+  .executive-grid,
   .guide-grid,
   .flow-grid {
     grid-template-columns: 1fr;
+  }
+
+  .executive-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .executive-card:last-child {
+    border-bottom: 0;
   }
 
   .graph-stage {

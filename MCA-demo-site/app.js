@@ -24,17 +24,29 @@ const pct = (value) => `${fmt(Number(value) * 100, 0)}%`;
 const UI = {
   en: {
     client: {
-      appTitle: "Risk Dashboard",
+      brandEyebrow: "Coordination Risk Intelligence",
+      appTitle: "MCA Sentinel",
       navGroups: "Risk Groups",
-      navEvidence: "Evidence",
+      navEvidence: "Review Evidence",
       navAbnormal: "Abnormal Accounts",
-      navMethod: "Method",
-      summaryEyebrow: "Client risk monitoring",
-      summaryTitle: "Which account groups need attention first?",
+      navMethod: "Operating Model",
+      summaryEyebrow: "Client risk operations",
+      summaryTitle: "Prioritize coordinated account risk with reviewable evidence",
       summaryLede:
-        "This dashboard turns social-media activity into a review queue. It highlights risky groups, explains the evidence, and separates group coordination from individual abnormal accounts.",
+        "MCA Sentinel converts social-media activity into an analyst-ready risk queue. It highlights suspicious groups, explains why they matter, and separates coordinated behavior from individual abnormal accounts.",
+      executiveEyebrow: "Executive summary",
+      executiveTitle: "Current review priorities",
+      executiveNote: "Designed for triage: decide what to review first, what to monitor, and what not to overclaim.",
+      executiveCards: {
+        topCase: "Top priority case",
+        queue: "Review queue",
+        evidence: "Evidence standard",
+        action: "Recommended action",
+        actionBody: "Review synchronized account pairs, inspect linked comments, and monitor whether the group reappears around new targets.",
+        evidenceBody: "A group is prioritized when shared-target graph evidence is supported by short-window timing behavior.",
+      },
       guideEyebrow: "How to read this",
-      guideTitle: "Start with the business question",
+      guideTitle: "A triage workflow for social risk teams",
       guide: [
         ["What needs review?", "The ranked groups show where coordinated activity is most likely worth investigating."],
         ["Why is it risky?", "Each group includes network links, timing evidence, and account-level risk signals."],
@@ -45,8 +57,8 @@ const UI = {
       abnormalEyebrow: "Separate risk stream",
       abnormalTitle: "Individual Abnormal Accounts",
       abnormalNote: "High-risk accounts detected even when group coordination is not confirmed.",
-      methodEyebrow: "Client-facing method",
-      methodTitle: "From raw activity to risk review",
+      methodEyebrow: "Operating model",
+      methodTitle: "How MCA Sentinel supports analyst review",
       flow: [
         ["1. Detect signals", "Measure suspicious language, abnormal behavior, interaction reach, and coordination."],
         ["2. Build risk groups", "Connect accounts that repeatedly appear around the same targets or behaviors."],
@@ -55,7 +67,8 @@ const UI = {
       ],
     },
     demo: {
-      appTitle: "Review Dashboard",
+      brandEyebrow: "Manipulative Coordination Analysis",
+      appTitle: "Research Demo",
       navGroups: "Groups",
       navEvidence: "Evidence",
       navAbnormal: "Abnormal Accounts",
@@ -64,6 +77,17 @@ const UI = {
       summaryTitle: "From graph candidates to multi-evidence verification",
       summaryLede:
         "This demo is a review tool. It does not declare accounts guilty; it shows which groups deserve attention and why.",
+      executiveEyebrow: "Demo summary",
+      executiveTitle: "Pipeline output overview",
+      executiveNote: "This view keeps research terminology visible for method explanation and debugging.",
+      executiveCards: {
+        topCase: "Top ranked group",
+        queue: "Candidate groups",
+        evidence: "Verification rule",
+        action: "Research next step",
+        actionBody: "Compare Stage 1 graph candidates against Stage 2 temporal synchrony labels and known validation cases.",
+        evidenceBody: "Stage 2 uses temporal synchrony and temporal confidence; removed text and lifecycle signals are documented in the decision log.",
+      },
       guideEyebrow: "How to read this",
       guideTitle: "Start with the question, then inspect the evidence",
       guide: [
@@ -88,17 +112,29 @@ const UI = {
   },
   zh: {
     client: {
-      appTitle: "風險監測面板",
+      brandEyebrow: "協同風險情資",
+      appTitle: "MCA Sentinel",
       navGroups: "風險群組",
-      navEvidence: "證據",
+      navEvidence: "審查證據",
       navAbnormal: "異常帳號",
-      navMethod: "方法",
-      summaryEyebrow: "客戶風險監測",
-      summaryTitle: "哪些帳號群需要優先處理？",
+      navMethod: "作業流程",
+      summaryEyebrow: "客戶風險營運",
+      summaryTitle: "用可審查證據排序協同帳號風險",
       summaryLede:
-        "這個面板把社群資料轉成可審查的風險清單：先看高風險群組，再看它為什麼可疑，並把群體協同和單一異常帳號分開。",
+        "MCA Sentinel 把社群互動轉成分析師可處理的風險隊列：先看哪些群組值得優先審查，再看它們為什麼可疑，並把群體協同和單一異常帳號分開。",
+      executiveEyebrow: "管理摘要",
+      executiveTitle: "目前審查優先事項",
+      executiveNote: "這個頁面是給 triage 用的：決定先看誰、持續監控誰，以及哪些結論不能過度宣稱。",
+      executiveCards: {
+        topCase: "最高優先案件",
+        queue: "審查隊列",
+        evidence: "證據標準",
+        action: "建議下一步",
+        actionBody: "優先檢查同步帳號對、回看相關留言內容，並監控這群帳號是否在新目標周圍再次出現。",
+        evidenceBody: "當共同目標圖證據同時出現短時間同步行為，群組才會被提高優先級。",
+      },
       guideEyebrow: "閱讀方式",
-      guideTitle: "先看商業問題，再看證據",
+      guideTitle: "給風險團隊的審查流程",
       guide: [
         ["哪些對象要先看？", "左側排名列出最值得優先審查的風險群組。"],
         ["為什麼它可疑？", "每個群組會顯示帳號關係、時間同步，以及帳號本身的風險特徵。"],
@@ -109,8 +145,8 @@ const UI = {
       abnormalEyebrow: "獨立風險輸出",
       abnormalTitle: "單一異常帳號",
       abnormalNote: "即使沒有確認群體協同，仍可能有值得處理的高風險帳號。",
-      methodEyebrow: "客戶版方法摘要",
-      methodTitle: "從原始互動到風險審查",
+      methodEyebrow: "作業流程",
+      methodTitle: "MCA Sentinel 如何支援分析師審查",
       flow: [
         ["1. 偵測風險訊號", "衡量操縱性語言、異常行為、互動觸及和協同跡象。"],
         ["2. 建立風險群組", "把反覆出現在相同目標或相似行為附近的帳號連起來。"],
@@ -119,7 +155,8 @@ const UI = {
       ],
     },
     demo: {
-      appTitle: "研究展示面板",
+      brandEyebrow: "Manipulative Coordination Analysis",
+      appTitle: "研究展示",
       navGroups: "群組",
       navEvidence: "證據",
       navAbnormal: "異常帳號",
@@ -128,6 +165,17 @@ const UI = {
       summaryTitle: "從圖結構候選群到多證據驗證",
       summaryLede:
         "這是研究 demo，不直接宣判帳號有罪，而是說明哪些群組值得被檢查，以及背後有哪些證據。",
+      executiveEyebrow: "Demo 摘要",
+      executiveTitle: "Pipeline 輸出總覽",
+      executiveNote: "這個模式保留研究術語，方便說明方法與 debug。",
+      executiveCards: {
+        topCase: "最高排名群組",
+        queue: "候選群組",
+        evidence: "驗證規則",
+        action: "研究下一步",
+        actionBody: "比較 Stage 1 圖結構候選群、Stage 2 時間同步標籤，以及已知正反案例。",
+        evidenceBody: "Stage 2 使用 temporal synchrony 與 temporal confidence；被移除的文字與 lifecycle 訊號記錄在 decision log。",
+      },
       guideEyebrow: "閱讀方式",
       guideTitle: "先看問題，再檢查證據",
       guide: [
@@ -229,6 +277,7 @@ function renderChrome() {
 
   [
     "appTitle",
+    "brandEyebrow",
     "navGroups",
     "navEvidence",
     "navAbnormal",
@@ -236,6 +285,9 @@ function renderChrome() {
     "summaryEyebrow",
     "summaryTitle",
     "summaryLede",
+    "executiveEyebrow",
+    "executiveTitle",
+    "executiveNote",
     "guideEyebrow",
     "guideTitle",
     "groupListEyebrow",
@@ -319,6 +371,46 @@ function renderMetrics() {
     <div class="metric"><strong>${reliable}</strong><span>${labels[3]}</span></div>
     <div class="metric"><strong>${outliers}</strong><span>${labels[4]}</span></div>
     <div class="metric"><strong>${data.groups[0]?.seed || "n/a"}</strong><span>${labels[5]}</span></div>
+  `;
+}
+
+function renderExecutiveSummary() {
+  const copy = ui().executiveCards;
+  const top = data.groups[0] || {};
+  const p1 = data.groups.reduce((sum, g) => sum + Number(g.p1 || 0), 0);
+  const reliable = data.groups.reduce((sum, g) => sum + Number(g.reliableTemporalPairs || 0), 0);
+  const zh = currentLang === "zh";
+  const caseBody = zh
+    ? `${top.seed || "n/a"} 排名最高，包含 ${top.memberCount || 0} 個成員、${top.p1 || 0} 個高優先帳號。`
+    : `${top.seed || "n/a"} is currently ranked highest, with ${top.memberCount || 0} members and ${top.p1 || 0} high-priority accounts.`;
+  const queueBody = zh
+    ? `${data.groups.length} 個群組、${p1} 個高優先帳號、${data.abnormalAccounts.length} 個單一異常帳號等待審查。`
+    : `${data.groups.length} groups, ${p1} high-priority accounts, and ${data.abnormalAccounts.length} individual abnormal accounts are queued for review.`;
+  const evidenceBody = zh
+    ? `${copy.evidenceBody} 目前共有 ${reliable} 組可信時間證據。`
+    : `${copy.evidenceBody} The current run contains ${reliable} reliable timing pairs.`;
+
+  $("#executiveGrid").innerHTML = `
+    <div class="executive-card accent">
+      <span>01</span>
+      <strong>${copy.topCase}</strong>
+      <p>${caseBody}</p>
+    </div>
+    <div class="executive-card">
+      <span>02</span>
+      <strong>${copy.queue}</strong>
+      <p>${queueBody}</p>
+    </div>
+    <div class="executive-card">
+      <span>03</span>
+      <strong>${copy.evidence}</strong>
+      <p>${evidenceBody}</p>
+    </div>
+    <div class="executive-card action">
+      <span>04</span>
+      <strong>${copy.action}</strong>
+      <p>${copy.actionBody}</p>
+    </div>
   `;
 }
 
@@ -752,6 +844,7 @@ function renderAll() {
   renderChrome();
   renderMeta();
   renderMetrics();
+  renderExecutiveSummary();
   renderGroups();
   renderGroupHeader();
   renderGraph();

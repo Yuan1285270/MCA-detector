@@ -266,6 +266,27 @@ Accepted and implemented.
 
 ---
 
+## 2026-05-17 — Demo Site 採用 Enterprise Client Presentation
+
+Decision:
+`MCA-demo-site` 的 client mode 重新定位成企業風險審查產品頁，品牌命名為 `MCA Sentinel`，加入專用 SVG logo，並在第一屏增加 executive summary。
+
+Why:
+原本畫面偏研究 dashboard，對外行人和企業客戶來說資訊密度太高，也有明顯 AI demo 感。Client mode 應先回答「目前有哪些風險、為什麼重要、下一步該做什麼」，而不是先展示 pipeline 術語。
+
+Alternatives considered:
+- 只微調顏色
+- 保留研究式 dashboard，把解釋交給口頭報告
+- 另做完全獨立的商業網站
+
+Impact:
+同一套資料現在有兩種展示語氣：Client mode 用企業風險營運語言；Demo mode 保留研究與 pipeline 語言。這讓網站可同時支援商業展示和專題答辯。
+
+Status:
+Accepted and implemented.
+
+---
+
 ## 2026-05-17 — Stage 2 補上 Text Fingerprint 與 Lifecycle Evidence
 
 Decision:
