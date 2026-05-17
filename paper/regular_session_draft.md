@@ -1,8 +1,7 @@
 # 結合操縱性內容分析與圖擴張之社群協同行為偵測系統
 
-作者：XXX、XXX、XXX  
-單位：XXX  
-通訊作者：XXX
+學生：林琮原、張鈞浩、賴嘉安  
+指導教授：李俊宏
 
 ## 摘要
 
@@ -172,4 +171,3 @@ none            = 無可用同步證據
 [7] M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and G. Stringhini, “TROLLMAGNIFIER: Detecting State-Sponsored Troll Accounts on Reddit,” arXiv:2112.00443, 2021.
 
 [8] S. Mohammad, S. Kiritchenko, P. Sobhani, X. Zhu, and C. Cherry, “SemEval-2016 Task 6: Detecting Stance in Tweets,” *Proceedings of the 10th International Workshop on Semantic Evaluation*, pp. 31–41, 2016.
-
