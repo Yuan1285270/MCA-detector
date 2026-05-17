@@ -8,6 +8,17 @@
 seed account / graph layer -> candidate group -> evidence tables
 ```
 
+簡化版順序：
+
+```text
+MCA top accounts
+  -> seed expansion / group discovery
+  -> Stage 2 temporal verification
+  -> candidate validation table
+  -> final group summary
+  -> account roles
+```
+
 ## Run
 
 ```bash
@@ -109,6 +120,15 @@ seeds/<seed>/summary.json
 
 Stage 1 找到的是 candidate coordination groups；Stage 2 檢查群內帳號是否在同一篇 post 下短時間一起出現。
 
+目前正式 Stage 2 是 pure temporal verification，只使用：
+
+```text
+temporal synchrony   = 帳號是否在同一篇 post 下短時間共同出現
+temporal confidence  = 這個同步證據是穩定重複，還是單次脆弱巧合
+```
+
+`text_fingerprint_distance` 與 `account_lifecycle_overlap` 欄位仍保留在 CSV schema 中，但只作為相容欄位，正式輸出會填空值。它們不參與 ranking、validation、demo 解讀或成果敘事。
+
 ```bash
 .venv/bin/python coordination-expansion/stage2_temporal_verification.py
 ```
@@ -128,6 +148,15 @@ strong_temporal_sync   = at least one co-comment event within 5 minutes
 moderate_temporal_sync = at least two co-comment events within 30 minutes
 weak_temporal_overlap  = same thread overlap without short-window synchrony
 no_temporal_sync       = no same-thread overlap in the local comments file
+```
+
+temporal confidence:
+
+```text
+robust          = repeated or multi-post short-window synchrony
+moderate_review = has short-window synchrony, but should still be reviewed
+fragile         = single-event or long-delay synchrony; useful as context only
+none            = no usable synchrony evidence
 ```
 
 預設每個帳號只取最近 100 則 analyzed comments，資料來自正式 merged feedback export：
@@ -302,4 +331,12 @@ supportive comment ratio >= 0.50 -> comment_supporter
 這群內部是否有 co-negative / co-target structure？
 這群是否也有 manipulative rhetoric 或 automation anomaly evidence？
 這群是否有 temporal synchrony evidence？
+```
+
+正式報告建議講法：
+
+```text
+Stage 1 catches candidate coordinated groups.
+Stage 2 checks whether the group shows short-window synchronized behavior.
+High-priority groups are review targets, not confirmed real-world operators.
 ```

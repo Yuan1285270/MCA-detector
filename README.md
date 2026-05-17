@@ -2,17 +2,38 @@
 
 Collaborative capstone repository for detecting suspicious cryptocurrency social media accounts that may coordinate to steer public opinion.
 
-The project does not claim that an account is a confirmed bot, paid operator, or real-world cyber troop. It produces evidence-backed review candidates based on manipulative rhetoric, coordination proxies, interaction reach, and automation signals.
+The project does not claim that an account is a confirmed bot, paid operator, or real-world cyber troop. It produces evidence-backed review candidates based on manipulative rhetoric, coordination proxies, interaction reach, automation signals, graph expansion, and temporal synchrony.
+
+Current core pipeline:
+
+```text
+raw posts/comments
+  -> LLM post/comment analysis
+  -> account feature matrix + adjacency graphs
+  -> MCA seed ranking
+  -> coordination expansion
+  -> temporal verification
+  -> group summary + account roles
+  -> demo site
+```
+
+The main research claim is not "MCA score alone finds cyber troops." The claim is:
+
+```text
+MCA score helps choose suspicious seed accounts.
+Graph expansion turns those seeds into candidate coordination groups.
+Temporal synchrony helps separate same-ideology activity from stronger coordinated action evidence.
+```
 
 ## Modules
 
 - `behavior/`
-  - Behavior analysis module.
+  - Account-level behavior feature and anomaly analysis module.
   - See `behavior/README.md` for details.
 
 - `llm/`
   - LLM-based Reddit post/comment analysis pipeline.
-  - Includes data cleaning, Gemini / Vertex AI batch analysis, local Ollama experiments, and exploratory post clustering.
+  - Includes data cleaning, local Ollama analysis, Gemini / Vertex AI compatibility, and exploratory post clustering.
   - See `llm/README.md` for details.
 
 - `adjacency/`
@@ -23,12 +44,18 @@ The project does not claim that an account is a confirmed bot, paid operator, or
 - `mca-scoring/`
   - Account-level MCA review-priority scoring module.
   - Combines manipulative, coordinative, interaction reach, and automation signals.
+  - Used mainly for seed selection and review priority, not as a final verdict.
   - See `mca-scoring/README.md` for details.
 
 - `coordination-expansion/`
   - Seed expansion and group discovery module.
-  - Turns graph layers into reviewable coordination evidence tables.
+  - Turns graph layers into reviewable coordination groups, then verifies them with temporal synchrony.
   - See `coordination-expansion/README.md` for details.
+
+- `MCA-demo-site/`
+  - Static multi-page client/demo dashboard.
+  - Shows group-level risk review, account-level abnormal accounts, and methodology notes.
+  - See `MCA-demo-site/README.md` for details.
 
 ## Full Pipeline Runner
 

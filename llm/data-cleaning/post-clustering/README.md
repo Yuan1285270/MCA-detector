@@ -4,7 +4,7 @@ This folder contains the post clustering pipeline for the final capstone outputs
 
 It builds a post-level feature matrix from:
 
-1. Final Gemini post analysis scores and rhetoric tags
+1. Final LLM post analysis scores and rhetoric tags
 2. Comment feedback labels aggregated per post
 3. Lightweight text and metadata features
 4. K-Means clusters ranked by a review-oriented suspicion score
@@ -40,5 +40,5 @@ Outputs:
 ## Notes
 
 - The clustering step uses only packages already available in the repo environment: `pandas` and `numpy`
-- Suspicious clusters are heuristic review targets, not final labels
+- Suspicious clusters are heuristic post-level review targets, not final account or group labels
 - The final clustering should be regenerated whenever the files in `../../Export/` change

@@ -1,11 +1,11 @@
 # SocialMedia_LLM
 
-這個專案主要用來分析加密貨幣相關的 Reddit 討論，重點分成兩層：
+這個資料夾主要用來分析加密貨幣相關的 Reddit 討論，重點分成兩層：
 
-- 貼文層級：用 Gemini + Vertex AI + RAG 評估每篇貼文的情緒傾向與操縱式修辭強度。
+- 貼文層級：用 LLM 評估每篇貼文的情緒傾向與操縱式修辭強度。
 - 互動層級：分析留言對文章的支持/反對關係，之後可轉成帳號間 signed weighted adjacency matrix。
 
-目前的資料流分成三段：`data-cleaning/` 負責原始資料清理與共用 processed data，`gemini-cloud/` 負責正式 Gemini / Vertex AI 批次分析，`ollama-local/` 保留作為本地 Ollama 替代實驗。
+目前的資料流分成三段：`data-cleaning/` 負責原始資料清理與共用 processed data，`ollama-local/` 是目前建議使用的本地分析 backend，`gemini-cloud/` 保留 Vertex/Gemini 批次分析與舊流程相容。
 
 ## 專案重點
 
@@ -18,15 +18,16 @@
   - `feedback_label`
   - `feedback_score`
   - `edge_weight`
-- 主要模型：Gemini on Vertex AI
+- 主要建議 backend：local Ollama
+- 備用 / 舊流程 backend：Gemini on Vertex AI
 - 主要輔助方式：RAG retrieval，提供背景參考但不直接替貼文貼標
 
 ## 目前建議使用的流程
 
 1. 將原始 Reddit 貼文與留言放進 `data-cleaning/source_data/`
 2. 用 `data-cleaning/` 產生共用 processed data
-3. 將 processed data 送進 `gemini-cloud/` 做正式 Gemini / Vertex AI 批次分析
-4. 如需本地替代實驗，將同一份 processed data 送進 `ollama-local/`
+3. 優先將 processed data 送進 `ollama-local/` 做本地 LLM 分析
+4. 如需雲端備用或舊流程相容，將同一份 processed data 送進 `gemini-cloud/`
 5. 最終產出可繼續統計、人工審查或建 network matrix 的 CSV
 
 ## 目錄說明
@@ -37,12 +38,12 @@
   - 原始資料清理、共用 processed data 產生
   - 也保留 post-level clustering 作為探索性分析
 - `gemini-cloud/`
-  - 正式 Gemini / Vertex AI 批次分析、續跑與輸出結果
+  - Gemini / Vertex AI 批次分析、續跑與輸出結果
+- `ollama-local/`
+  - 目前建議使用的本地 Ollama 分析流程
 
 ### 實驗性資料夾
 
-- `ollama-local/`
-  - 本地 Ollama + PDF RAG 的實驗版本
 - `RAG DATA/`
   - RAG 相關參考資料與 PDF
 
@@ -86,9 +87,21 @@
   - post-level clustering 的探索性分析
   - 不作為正式 suspicious account group detection 主線
 
+## LLM Backend
+
+repo 根目錄的一鍵 runner 可以選 backend：
+
+```text
+--llm-provider ollama   # local Ollama，之後主要使用
+--llm-provider gemini   # Vertex/Gemini
+--llm-provider none     # 不跑 LLM，直接使用既有 llm/Export/*.csv.gz
+```
+
+正式 downstream pipeline 只要求最後輸出 schema 一致，不綁定特定 LLM provider。
+
 ## `gemini-cloud/` 在做什麼
 
-`gemini-cloud/` 有兩個核心分析檔案：
+`gemini-cloud/` 有兩個核心分析檔案，主要保留給 Vertex/Gemini 流程：
 
 - `analyze_posts_with_gemini.py`
   - 主力批次分析腳本
@@ -193,14 +206,21 @@ source_author -> target_author
 
 ## 快速開始
 
+建議優先使用 repo 根目錄的一鍵 runner：
+
+```bash
+.venv/bin/python run_front_pipeline.py --llm-provider ollama --llm-workers 2
+```
+
+下面的步驟主要保留給需要單獨 debug data-cleaning 或 Gemini 舊流程時使用。
+
 ### 1. 準備環境
 
 你需要：
 
 - Python 虛擬環境
-- 可用的 Google Cloud / Vertex AI 專案
-- 已啟用 Vertex AI
-- 能夠存取對應的 RAG corpus
+- 若使用 Ollama：本機可用的 Ollama model
+- 若使用 Gemini：可用的 Google Cloud / Vertex AI 專案、已啟用 Vertex AI、能夠存取對應的 RAG corpus
 
 如果要使用 GCP 認證，先確認本機已完成登入與授權。
 
@@ -235,7 +255,7 @@ data-cleaning/processed_data/processed_comments.csv
 data-cleaning/temp/comment_replies/comment_replies.csv
 ```
 
-### 4. 執行 Gemini 貼文分析
+### 4. 執行 Gemini 貼文分析（舊流程 / 備用）
 
 ```bash
 cd gemini-cloud

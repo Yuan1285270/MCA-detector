@@ -32,13 +32,27 @@ Automatic behavior
 - isolation tree anomaly score
 ```
 
-`A_tag_similarity` 不進 MCA 主分數；它留給 `coordination-expansion/` 做 rhetoric-similarity evidence。
+`A_tag_similarity` 不進 MCA 主分數。tag similarity 目前只作為 EDA / visualization / expansion context，不作為正式 MCA 分數或 Stage 2 verification evidence。
+
+MCA score 的正式定位：
+
+```text
+MCA score = seed selection + review priority, not a final verdict.
+```
 
 ## Run
 
 ```bash
 .venv/bin/python mca-scoring/score_accounts.py
 ```
+
+加上 `--min-score` 可以讓 `top_accounts_*.csv` 只輸出分數達標的帳號，避免資料集整體分數偏低時仍強制產出 top-N：
+
+```bash
+.venv/bin/python mca-scoring/score_accounts.py --min-score 0.60
+```
+
+預設 `--min-score 0.0`（不過濾），行為與之前相同。
 
 預設輸出：
 
