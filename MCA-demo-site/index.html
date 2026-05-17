@@ -13,15 +13,26 @@
           <div class="brand-mark">MCA</div>
           <div>
             <p class="eyebrow">Manipulative Coordination Analysis</p>
-            <h1>Review Dashboard</h1>
+            <h1 id="appTitle">Risk Dashboard</h1>
+          </div>
+        </div>
+
+        <div class="mode-controls" aria-label="View controls">
+          <div class="segmented-control" aria-label="Audience mode">
+            <button class="active" type="button" data-mode="client">Client</button>
+            <button type="button" data-mode="demo">Demo</button>
+          </div>
+          <div class="segmented-control" aria-label="Language">
+            <button class="active" type="button" data-lang="zh">中文</button>
+            <button type="button" data-lang="en">EN</button>
           </div>
         </div>
 
         <nav class="section-nav" aria-label="Dashboard sections">
-          <a href="#groups">Groups</a>
-          <a href="#evidence">Evidence</a>
-          <a href="#abnormal">Abnormal Accounts</a>
-          <a href="#method">Method</a>
+          <a href="#groups" id="navGroups">Risk Groups</a>
+          <a href="#evidence" id="navEvidence">Evidence</a>
+          <a href="#abnormal" id="navAbnormal">Abnormal Accounts</a>
+          <a href="#method" id="navMethod">Method</a>
         </nav>
 
         <div class="run-meta" id="runMeta"></div>
@@ -30,42 +41,27 @@
       <main>
         <section class="summary-band" aria-labelledby="summaryTitle">
           <div>
-            <p class="eyebrow">Evidence-based suspicious coordination review</p>
-            <h2 id="summaryTitle">From graph candidates to multi-evidence verification</h2>
-            <p class="lede">
-              This demo is a review tool. It does not declare accounts guilty; it shows which groups deserve attention and why.
-            </p>
+            <p class="eyebrow" id="summaryEyebrow">Client risk monitoring</p>
+            <h2 id="summaryTitle">Which account groups need attention first?</h2>
+            <p class="lede" id="summaryLede"></p>
           </div>
           <div class="metric-grid" id="metricGrid"></div>
         </section>
 
         <section class="reader-guide" aria-labelledby="guideTitle">
           <div>
-            <p class="eyebrow">How to read this</p>
-            <h2 id="guideTitle">Start with the question, then inspect the evidence</h2>
+            <p class="eyebrow" id="guideEyebrow">How to read this</p>
+            <h2 id="guideTitle">Start with the business question</h2>
           </div>
-          <div class="guide-grid">
-            <div class="guide-card">
-              <strong>1. Is there a group?</strong>
-              <span>Stage 1 expands from suspicious seed accounts and finds nearby accounts in the coordination graph.</span>
-            </div>
-            <div class="guide-card">
-              <strong>2. Is the group acting together?</strong>
-              <span>Stage 2 checks timing, writing similarity, and activation-window overlap.</span>
-            </div>
-            <div class="guide-card">
-              <strong>3. Is it group behavior or one abnormal account?</strong>
-              <span>The site separates suspicious groups from individual spam/scam-like accounts.</span>
-            </div>
-          </div>
+          <div class="guide-grid" id="guideGrid"></div>
         </section>
 
         <section class="workspace-grid" id="groups">
           <div class="panel group-list-panel">
             <div class="panel-header">
               <div>
-                <p class="eyebrow">Stage 1 + validation</p>
-                <h2>Suspicious Coordination Groups</h2>
+                <p class="eyebrow" id="groupListEyebrow">Prioritized review list</p>
+                <h2 id="groupListTitle">Risk Groups</h2>
               </div>
               <select id="groupSort" aria-label="Sort groups">
                 <option value="rank">Rank</option>
@@ -92,22 +88,22 @@
 
             <div class="graph-toolbar">
               <div class="legend">
-                <span><i class="dot seed"></i> Seed</span>
-                <span><i class="dot p1"></i> P1</span>
-                <span><i class="dot p2"></i> P2</span>
-                <span><i class="line co-neg"></i> Co-negative</span>
-                <span><i class="line temporal"></i> Temporal</span>
+                <span><i class="dot seed"></i> <b id="legendSeed">Seed</b></span>
+                <span><i class="dot p1"></i> <b id="legendP1">High priority</b></span>
+                <span><i class="dot p2"></i> <b id="legendP2">Review</b></span>
+                <span><i class="line co-neg"></i> <b id="legendGraph">Shared target</b></span>
+                <span><i class="line temporal"></i> <b id="legendTiming">Timing link</b></span>
               </div>
-              <button id="fitGraph" type="button">Reset View</button>
+              <button id="fitGraph" type="button">Reset</button>
             </div>
             <div class="graph-stage">
               <svg id="groupGraph" role="img" aria-label="Selected group relationship graph"></svg>
             </div>
 
             <div class="tab-strip" role="tablist" aria-label="Evidence tabs">
-              <button class="tab-button active" type="button" data-tab="members">Members</button>
-              <button class="tab-button" type="button" data-tab="pairs">Pair Evidence</button>
-              <button class="tab-button" type="button" data-tab="targets">Shared Targets</button>
+              <button class="tab-button active" type="button" data-tab="members" id="tabMembersButton">Accounts</button>
+              <button class="tab-button" type="button" data-tab="pairs" id="tabPairsButton">Behavior Links</button>
+              <button class="tab-button" type="button" data-tab="targets" id="tabTargetsButton">Shared Targets</button>
             </div>
 
             <div class="tab-panel active" id="tab-members"></div>
@@ -119,37 +115,20 @@
         <section class="panel abnormal-panel" id="abnormal">
           <div class="panel-header">
             <div>
-              <p class="eyebrow">Separate output stream</p>
-              <h2>Individual Abnormal Accounts</h2>
+              <p class="eyebrow" id="abnormalEyebrow">Separate risk stream</p>
+              <h2 id="abnormalTitle">Individual Abnormal Accounts</h2>
             </div>
-            <p class="panel-note">Detected as high-risk accounts even when group coordination is not confirmed.</p>
+            <p class="panel-note" id="abnormalNote"></p>
           </div>
           <div id="abnormalTable"></div>
         </section>
 
         <section class="method-band" id="method">
           <div>
-            <p class="eyebrow">Pipeline story</p>
-            <h2>How the system makes a reviewable result</h2>
+            <p class="eyebrow" id="methodEyebrow">Method summary</p>
+            <h2 id="methodTitle">How the system makes a reviewable result</h2>
           </div>
-          <div class="flow-grid">
-            <div class="flow-step">
-              <strong>1. MCA seed selection</strong>
-              <span>Find accounts with high manipulation, coordination, reach, and automation signals.</span>
-            </div>
-            <div class="flow-step">
-              <strong>2. Graph expansion</strong>
-              <span>Expand from seeds through co-negative and related graph evidence to form candidate groups.</span>
-            </div>
-            <div class="flow-step">
-              <strong>3. Multi-evidence verification</strong>
-              <span>Check temporal synchrony, text fingerprint distance, and activation window overlap.</span>
-            </div>
-            <div class="flow-step">
-              <strong>4. Review output</strong>
-              <span>Separate suspicious coordination groups from individual abnormal manipulation accounts.</span>
-            </div>
-          </div>
+          <div class="flow-grid" id="flowGrid"></div>
         </section>
       </main>
     </div>

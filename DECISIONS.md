@@ -193,6 +193,27 @@ Accepted and implemented in `MCA-demo-site`.
 
 ---
 
+## 2026-05-17 — Demo Site 預設為 Client Mode
+
+Decision:
+`MCA-demo-site` 預設使用中文 `Client mode`，並提供 `Client/Demo` 與 `中文/EN` 切換。
+
+Why:
+給外部觀眾或老師看的第一畫面應該先回答「哪些群組需要優先處理、為什麼、下一步是什麼」，而不是先展示 pipeline 內部術語。Demo mode 保留 Stage 1、Stage 2、MCA 等研究語言，方便我們自己講方法與 debug。
+
+Alternatives considered:
+- 只做研究 demo，不做 client view
+- 只做 client view，把研究細節移除
+- 只翻譯文字，不區分 audience mode
+
+Impact:
+網站第一層敘事以風險審查與處置優先級為主；研究細節仍可用 Demo mode 切回。這讓同一套輸出可以同時服務商業展示與專題答辯。
+
+Status:
+Accepted and implemented.
+
+---
+
 ## 2026-05-17 — Stage 2 補上 Text Fingerprint 與 Lifecycle Evidence
 
 Decision:

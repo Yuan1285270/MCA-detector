@@ -28,6 +28,14 @@ body {
   line-height: 1.45;
 }
 
+body[data-mode="client"] .method-band {
+  box-shadow: none;
+}
+
+body[data-mode="client"] .method-band .flow-step {
+  background: #fbfcfd;
+}
+
 button,
 select {
   font: inherit;
@@ -56,7 +64,7 @@ button {
   display: flex;
   gap: 14px;
   align-items: center;
-  margin-bottom: 34px;
+  margin-bottom: 22px;
 }
 
 .brand-mark {
@@ -104,6 +112,37 @@ h3 {
   display: grid;
   gap: 8px;
   margin-bottom: 32px;
+}
+
+.mode-controls {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.segmented-control {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.segmented-control button {
+  min-height: 36px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.segmented-control button:last-child {
+  border-right: 0;
+}
+
+.segmented-control button.active {
+  background: rgba(22, 124, 119, 0.1);
+  color: var(--teal);
 }
 
 .section-nav a {

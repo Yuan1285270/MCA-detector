@@ -8,6 +8,8 @@ Static dashboard for presenting MCA pipeline results.
 - Group relationship graphs using co-negative and temporal evidence.
 - Stage 2 evidence: temporal synchrony, text fingerprint distance, and activation window overlap.
 - Individual abnormal accounts as a separate output stream.
+- Client/Demo audience modes.
+- Chinese/English language switching.
 
 ## Build Data
 
@@ -46,3 +48,5 @@ The demo intentionally separates:
 2. Account-level abnormal manipulation
 
 This keeps the site from overclaiming that every abnormal account is part of a coordinated group.
+
+The default view is **Client mode** in Chinese. Client mode frames the output as a risk review queue. Demo mode keeps the research and pipeline language visible for presentation or debugging.
