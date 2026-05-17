@@ -67,6 +67,17 @@ raw data -> LLM analysis -> features / graphs -> scoring -> expansion -> verific
 
 `MCA-demo-site/` is a separate presentation layer. It reads the generated output tables and turns them into a clearer client/demo experience. The demo site should not be treated as the research method, the source of truth, or a replacement for the pipeline outputs.
 
+## Project Manual
+
+For a detailed handoff-style explanation of the full project, see:
+
+```text
+docs/project_manual.md
+output/pdf/mca_detector_project_manual.pdf
+```
+
+The manual explains the project goal, module responsibilities, pipeline runners, graph layers, MCA scoring, seed expansion, temporal verification, demo-site boundary, current outputs, case studies, and known limitations.
+
 ## Full Pipeline Runner
 
 目前 runner 拆成前半、後半、整份三個入口。
