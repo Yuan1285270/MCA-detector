@@ -136,7 +136,8 @@ main {
 }
 
 .summary-band,
-.method-band {
+.method-band,
+.reader-guide {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(440px, 0.9fr);
   gap: 26px;
@@ -145,6 +146,42 @@ main {
   background: #fff;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+}
+
+.reader-guide {
+  grid-template-columns: minmax(240px, 0.32fr) minmax(0, 1fr);
+  box-shadow: none;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.guide-card,
+.story-card,
+.tab-intro {
+  border: 1px solid var(--line);
+  background: #fbfcfd;
+}
+
+.guide-card {
+  padding: 16px;
+}
+
+.guide-card strong,
+.story-card strong,
+.tab-intro strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.guide-card span,
+.story-card span,
+.tab-intro span {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .lede {
@@ -255,6 +292,12 @@ select,
   overflow-wrap: anywhere;
 }
 
+.group-row-summary {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .rank {
   color: var(--muted);
   font-size: 12px;
@@ -321,6 +364,24 @@ select,
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   border-bottom: 1px solid var(--line);
+}
+
+.group-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.story-card {
+  padding: 14px;
+}
+
+.story-card.primary {
+  border-color: rgba(22, 124, 119, 0.32);
+  background: rgba(22, 124, 119, 0.07);
 }
 
 .stat-cell {
@@ -463,6 +524,15 @@ select,
   display: block;
 }
 
+.tab-intro {
+  padding: 14px 16px;
+  border-width: 0 0 1px;
+}
+
+.tab-intro.standalone {
+  border-width: 0 0 1px;
+}
+
 .table-wrap {
   max-height: 430px;
   overflow: auto;
@@ -572,6 +642,7 @@ td.account-name {
 
   .workspace-grid,
   .summary-band,
+  .reader-guide,
   .method-band {
     grid-template-columns: 1fr;
   }
@@ -581,6 +652,8 @@ td.account-name {
   }
 
   .detail-stats,
+  .group-story,
+  .guide-grid,
   .flow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -592,6 +665,7 @@ td.account-name {
   }
 
   .summary-band,
+  .reader-guide,
   .method-band,
   .panel-header {
     padding: 16px;
@@ -599,6 +673,8 @@ td.account-name {
 
   .metric-grid,
   .detail-stats,
+  .group-story,
+  .guide-grid,
   .flow-grid {
     grid-template-columns: 1fr;
   }

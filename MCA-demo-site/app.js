@@ -19,11 +19,30 @@ const fmt = (value, digits = 2) => {
 };
 const pct = (value) => `${fmt(Number(value) * 100, 0)}%`;
 
+const LABELS = {
+  high_confidence_temporal_candidate: "High priority: group evidence",
+  high_confidence_extreme_outlier: "High priority: abnormal account",
+  high_mca_review_candidate: "Review: high MCA",
+  temporal_only_review_candidate: "Review: timing evidence",
+  low_priority_context_member: "Context member",
+  strong_temporal_sync: "Strong timing sync",
+  moderate_temporal_sync: "Moderate timing sync",
+  weak_temporal_overlap: "Weak timing overlap",
+  no_temporal_sync: "No timing evidence",
+  robust: "Robust",
+  moderate_review: "Reviewable",
+  fragile_single_event: "Fragile: single event",
+  fragile_long_median: "Fragile: long delay",
+  weak_context: "Weak context",
+  none: "None",
+  extreme_outlier_behavior: "Extreme behavior outlier",
+  high_activity_behavior: "High activity",
+  low_activity_unknown: "Low activity / unknown",
+};
+
 function priorityLabel(value) {
-  return String(value || "")
-    .replaceAll("_", " ")
-    .replace("G1", "G1")
-    .replace("G2", "G2");
+  const raw = String(value || "");
+  return LABELS[raw] || raw.replaceAll("_", " ");
 }
 
 function scoreBar(value, className = "") {
@@ -77,12 +96,16 @@ function renderGroups() {
   $("#groupList").innerHTML = sortedGroups()
     .map((group) => {
       const active = group.seed === selectedSeed ? "active" : "";
+      const evidenceLine = group.reliableTemporalPairs > 0
+        ? `${group.reliableTemporalPairs} reliable timing pair${group.reliableTemporalPairs === 1 ? "" : "s"}`
+        : `${group.moderateReviewTemporalPairs} reviewable timing pair${group.moderateReviewTemporalPairs === 1 ? "" : "s"}`;
       return `
         <button class="group-row ${active}" type="button" data-seed="${group.seed}">
           <div class="group-row-top">
             <span class="group-row-title">${group.seed}</span>
             <span class="rank">#${group.rank}</span>
           </div>
+          <p class="group-row-summary">${evidenceLine}; ${group.p1} high-priority member${group.p1 === 1 ? "" : "s"}.</p>
           <div class="mini-metrics">
             <span class="chip hot">P1 ${group.p1}</span>
             <span class="chip">members ${group.memberCount}</span>
@@ -118,6 +141,31 @@ function renderGroupHeader() {
     <div class="stat-cell"><strong>${group.sharedNegativeTargets}</strong><span>shared negative targets</span></div>
     <div class="stat-cell"><strong>${fmt(group.maxMca, 2)}</strong><span>max MCA score</span></div>
     <div class="stat-cell"><strong>${pct(group.automationFraction)}</strong><span>automation anomaly fraction</span></div>
+  `;
+  $("#groupStory").innerHTML = renderGroupStory(group);
+}
+
+function renderGroupStory(group) {
+  const coordination = group.tier1CoNegative > 0
+    ? `Stage 1 found ${group.tier1CoNegative} direct co-negative links around the seed.`
+    : `Stage 1 found this group through weaker or indirect graph context.`;
+  const temporal = group.robustTemporalPairs > 0
+    ? `Stage 2 found ${group.robustTemporalPairs} robust timing pair${group.robustTemporalPairs === 1 ? "" : "s"}, so this group has stronger evidence of acting together.`
+    : group.moderateReviewTemporalPairs > 0
+      ? `Stage 2 found ${group.moderateReviewTemporalPairs} reviewable timing pair${group.moderateReviewTemporalPairs === 1 ? "" : "s"}, but the evidence still needs human inspection.`
+      : `Stage 2 did not find reliable timing evidence, so this is mainly a graph-based candidate group.`;
+  const caution = group.fragileTemporalPairs > 0
+    ? `${group.fragileTemporalPairs} timing pair${group.fragileTemporalPairs === 1 ? "" : "s"} are fragile and should not be overread.`
+    : `No fragile timing pair dominates the group summary.`;
+  return `
+    <div class="story-card primary">
+      <strong>Plain-language takeaway</strong>
+      <span>${coordination} ${temporal}</span>
+    </div>
+    <div class="story-card">
+      <strong>What to be careful about</strong>
+      <span>${caution} This dashboard says “review this,” not “confirmed bot network.”</span>
+    </div>
   `;
 }
 
@@ -209,12 +257,16 @@ function renderMembers() {
   const group = selectedGroup();
   const accounts = data.accountsByGroup[group.seed] || [];
   $("#tab-members").innerHTML = `
+    <div class="tab-intro">
+      <strong>Members are sorted by review priority.</strong>
+      <span>P1 means the account has stronger supporting evidence. Context members are shown so the graph remains explainable.</span>
+    </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Account</th>
-            <th>Priority</th>
+            <th>Why it is shown</th>
             <th>Role</th>
             <th>MCA</th>
             <th>Temporal</th>
@@ -247,6 +299,10 @@ function renderPairs() {
   const pairs = data.pairsByGroup[group.seed] || [];
   const usefulPairs = pairs.filter((pair) => pair.label !== "no_temporal_sync" || pair.textDistance < 0.35).slice(0, 50);
   $("#tab-pairs").innerHTML = `
+    <div class="tab-intro">
+      <strong>Pair evidence explains why two accounts are connected.</strong>
+      <span>Timing sync asks whether they appeared together; reliability asks whether that pattern is stable enough to trust.</span>
+    </div>
     <div class="table-wrap">
       <table>
         <thead>
@@ -284,6 +340,10 @@ function renderTargets() {
   const group = selectedGroup();
   const targets = data.sharedTargetsByGroup[group.seed] || [];
   $("#tab-targets").innerHTML = `
+    <div class="tab-intro">
+      <strong>Shared targets are the graph reason for expansion.</strong>
+      <span>These accounts reacted negatively toward overlapping targets. This is useful for discovery, but not enough by itself to prove manipulation.</span>
+    </div>
     <div class="table-wrap">
       <table>
         <thead>
@@ -315,6 +375,10 @@ function renderTargets() {
 
 function renderAbnormalAccounts() {
   $("#abnormalTable").innerHTML = `
+    <div class="tab-intro standalone">
+      <strong>This is a separate result type.</strong>
+      <span>An account can be abnormal or spam-like without being part of a coordinated group. Keeping this separate prevents overclaiming.</span>
+    </div>
     <div class="table-wrap">
       <table>
         <thead>
