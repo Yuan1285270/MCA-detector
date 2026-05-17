@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCA Sentinel | Risk Groups</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="groups">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="MCA Sentinel home">
+        <img src="./assets/mca-sentinel-logo.svg" alt="" />
+        <span><strong>MCA Sentinel</strong><small data-copy="brandTag">協同風險情資</small></span>
+      </a>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="./index.html" data-copy="navOverview">總覽</a>
+        <a class="active" href="./groups.html" data-copy="navGroups">風險群組</a>
+        <a href="./accounts.html" data-copy="navAccounts">異常帳號</a>
+        <a href="./methodology.html" data-copy="navMethod">方法</a>
+      </nav>
+      <div class="toolbar">
+        <div class="toggle" aria-label="Audience mode">
+          <button class="active" type="button" data-mode="client">Client</button>
+          <button type="button" data-mode="demo">Demo</button>
+        </div>
+        <div class="toggle" aria-label="Language">
+          <button class="active" type="button" data-lang="zh">中文</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-title">
+        <p class="eyebrow" data-copy="groupsEyebrow">風險群組審查</p>
+        <h1 data-copy="groupsTitle">從候選群組到可解釋證據</h1>
+        <p data-copy="groupsLead"></p>
+      </section>
+
+      <section class="investigation-layout">
+        <aside class="panel group-panel">
+          <div class="panel-heading compact">
+            <div>
+              <p class="eyebrow" data-copy="queueEyebrow">審查隊列</p>
+              <h2 data-copy="queueTitle">群組排名</h2>
+            </div>
+            <select id="groupSort" aria-label="Sort groups">
+              <option value="rank">Rank</option>
+              <option value="p1">P1 accounts</option>
+              <option value="robust">Robust timing</option>
+              <option value="mca">Max MCA</option>
+            </select>
+          </div>
+          <div class="group-list" id="groupList"></div>
+        </aside>
+
+        <section class="panel evidence-panel">
+          <div class="panel-heading compact">
+            <div>
+              <p class="eyebrow" data-copy="selectedEyebrow">選取案件</p>
+              <h2 id="selectedGroupTitle">Group</h2>
+            </div>
+            <span class="status-pill" id="groupPriorityPill"></span>
+          </div>
+          <div class="detail-stats" id="detailStats"></div>
+          <div class="case-summary" id="groupStory"></div>
+          <div class="graph-card">
+            <div class="graph-head">
+              <div class="legend">
+                <span><i class="dot seed"></i><b data-copy="legendSeed">Seed</b></span>
+                <span><i class="dot p1"></i><b data-copy="legendP1">高優先</b></span>
+                <span><i class="line co-neg"></i><b data-copy="legendGraph">共同目標</b></span>
+                <span><i class="line temporal"></i><b data-copy="legendTiming">時間連結</b></span>
+              </div>
+            </div>
+            <svg id="groupGraph" role="img" aria-label="Selected group relationship graph"></svg>
+          </div>
+          <div class="tabs">
+            <button class="active" type="button" data-tab="members" data-copy="tabAccounts">帳號</button>
+            <button type="button" data-tab="pairs" data-copy="tabLinks">行為連結</button>
+            <button type="button" data-tab="targets" data-copy="tabTargets">共同目標</button>
+          </div>
+          <div class="tab-panel active" id="tab-members"></div>
+          <div class="tab-panel" id="tab-pairs"></div>
+          <div class="tab-panel" id="tab-targets"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./data/demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

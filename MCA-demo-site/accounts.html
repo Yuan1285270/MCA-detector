@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCA Sentinel | Abnormal Accounts</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="accounts">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="MCA Sentinel home">
+        <img src="./assets/mca-sentinel-logo.svg" alt="" />
+        <span><strong>MCA Sentinel</strong><small data-copy="brandTag">協同風險情資</small></span>
+      </a>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="./index.html" data-copy="navOverview">總覽</a>
+        <a href="./groups.html" data-copy="navGroups">風險群組</a>
+        <a class="active" href="./accounts.html" data-copy="navAccounts">異常帳號</a>
+        <a href="./methodology.html" data-copy="navMethod">方法</a>
+      </nav>
+      <div class="toolbar">
+        <div class="toggle" aria-label="Audience mode">
+          <button class="active" type="button" data-mode="client">Client</button>
+          <button type="button" data-mode="demo">Demo</button>
+        </div>
+        <div class="toggle" aria-label="Language">
+          <button class="active" type="button" data-lang="zh">中文</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-title">
+        <p class="eyebrow" data-copy="accountsEyebrow">單一帳號風險</p>
+        <h1 data-copy="accountsTitle">不一定屬於群組，但仍值得審查</h1>
+        <p data-copy="accountsLead"></p>
+      </section>
+      <section class="panel">
+        <div class="panel-heading compact">
+          <div>
+            <p class="eyebrow" data-copy="abnormalEyebrow">獨立風險輸出</p>
+            <h2 data-copy="abnormalTitle">單一異常帳號</h2>
+          </div>
+        </div>
+        <div id="abnormalTable"></div>
+      </section>
+    </main>
+
+    <script src="./data/demo-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

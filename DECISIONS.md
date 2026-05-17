@@ -287,6 +287,32 @@ Accepted and implemented.
 
 ---
 
+## 2026-05-17 — Demo Site 改為多頁 Enterprise Product Flow
+
+Decision:
+`MCA-demo-site` 從單頁 dashboard 改成多頁產品式導覽：
+
+- `index.html`: executive overview
+- `groups.html`: risk group investigation
+- `accounts.html`: individual abnormal accounts
+- `methodology.html`: method and signal pruning
+
+Why:
+單頁 dashboard 資訊密度太高，容易讓外行人覺得像 AI 生成的研究工具，而不是企業產品。多頁設計可以讓 client 先理解風險摘要，再逐步進入群組、帳號和方法細節。
+
+Alternatives considered:
+- 只在原頁面增加更多說明文字
+- 保留左側 sidebar dashboard
+- 做成完整前端框架，但增加部署成本
+
+Impact:
+網站更像 B2B 風險產品 demo，也更容易在答辯中分段展示：先講 overview，再講 case investigation，最後講 method。
+
+Status:
+Accepted and implemented.
+
+---
+
 ## 2026-05-17 — Stage 2 補上 Text Fingerprint 與 Lifecycle Evidence
 
 Decision:

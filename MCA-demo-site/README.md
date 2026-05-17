@@ -4,12 +4,11 @@ Static dashboard for presenting MCA pipeline results.
 
 ## What It Shows
 
-- Suspicious coordination groups from seed expansion and validation.
-- Group relationship graphs using co-negative and temporal evidence.
-- Stage 2 evidence: temporal synchrony and temporal confidence.
-- Individual abnormal accounts as a separate output stream.
-- Client/Demo audience modes.
-- Chinese/English language switching.
+- `index.html`: executive overview and review priorities.
+- `groups.html`: risk group queue, relationship graph, and pair evidence.
+- `accounts.html`: individual abnormal account stream.
+- `methodology.html`: pipeline and signal-pruning summary.
+- Client/Demo audience modes and Chinese/English language switching.
 
 ## Build Data
 

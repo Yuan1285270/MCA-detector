@@ -1,148 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MCA Sentinel</title>
+    <title>MCA Sentinel | Overview</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <div class="app-shell">
-      <aside class="sidebar">
-        <div class="brand-block">
-          <img class="brand-logo" src="./assets/mca-sentinel-logo.svg" alt="MCA Sentinel logo" />
-          <div>
-            <p class="eyebrow" id="brandEyebrow">Coordination Risk Intelligence</p>
-            <h1 id="appTitle">MCA Sentinel</h1>
+  <body data-page="overview">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="MCA Sentinel home">
+        <img src="./assets/mca-sentinel-logo.svg" alt="" />
+        <span>
+          <strong>MCA Sentinel</strong>
+          <small data-copy="brandTag">協同風險情資</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a class="active" href="./index.html" data-copy="navOverview">總覽</a>
+        <a href="./groups.html" data-copy="navGroups">風險群組</a>
+        <a href="./accounts.html" data-copy="navAccounts">異常帳號</a>
+        <a href="./methodology.html" data-copy="navMethod">方法</a>
+      </nav>
+      <div class="toolbar">
+        <div class="toggle" aria-label="Audience mode">
+          <button class="active" type="button" data-mode="client">Client</button>
+          <button type="button" data-mode="demo">Demo</button>
+        </div>
+        <div class="toggle" aria-label="Language">
+          <button class="active" type="button" data-lang="zh">中文</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-copy="overviewEyebrow">社群風險營運面板</p>
+          <h1 data-copy="overviewTitle">把大量帳號互動轉成可審查的風險案件</h1>
+          <p class="hero-copy" data-copy="overviewLead"></p>
+          <div class="hero-actions">
+            <a class="button primary" href="./groups.html" data-copy="reviewGroups">檢視風險群組</a>
+            <a class="button" href="./methodology.html" data-copy="viewMethod">查看方法</a>
           </div>
         </div>
+        <div class="hero-card" id="topCaseCard"></div>
+      </section>
 
-        <div class="mode-controls" aria-label="View controls">
-          <div class="segmented-control" aria-label="Audience mode">
-            <button class="active" type="button" data-mode="client">Client</button>
-            <button type="button" data-mode="demo">Demo</button>
+      <section class="kpi-grid" id="metricGrid" aria-label="Run metrics"></section>
+
+      <section class="split-layout">
+        <div class="panel">
+          <div class="panel-heading">
+            <p class="eyebrow" data-copy="priorityEyebrow">優先處理</p>
+            <h2 data-copy="priorityTitle">目前最值得審查的群組</h2>
           </div>
-          <div class="segmented-control" aria-label="Language">
-            <button class="active" type="button" data-lang="zh">中文</button>
-            <button type="button" data-lang="en">EN</button>
-          </div>
+          <div id="priorityGroups"></div>
         </div>
-
-        <nav class="section-nav" aria-label="Dashboard sections">
-          <a href="#groups" id="navGroups">Risk Groups</a>
-          <a href="#evidence" id="navEvidence">Evidence</a>
-          <a href="#abnormal" id="navAbnormal">Abnormal Accounts</a>
-          <a href="#method" id="navMethod">Method</a>
-        </nav>
-
-        <div class="run-meta" id="runMeta"></div>
-      </aside>
-
-      <main>
-        <section class="summary-band" aria-labelledby="summaryTitle">
-          <div>
-            <p class="eyebrow" id="summaryEyebrow">Client risk monitoring</p>
-            <h2 id="summaryTitle">Which account groups need attention first?</h2>
-            <p class="lede" id="summaryLede"></p>
+        <div class="panel quiet-panel">
+          <div class="panel-heading">
+            <p class="eyebrow" data-copy="workflowEyebrow">作業流程</p>
+            <h2 data-copy="workflowTitle">給分析師的下一步</h2>
           </div>
-          <div class="metric-grid" id="metricGrid"></div>
-        </section>
-
-        <section class="executive-band" aria-labelledby="executiveTitle">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow" id="executiveEyebrow">Executive summary</p>
-              <h2 id="executiveTitle">Current review priorities</h2>
-            </div>
-            <p class="panel-note" id="executiveNote"></p>
-          </div>
-          <div class="executive-grid" id="executiveGrid"></div>
-        </section>
-
-        <section class="reader-guide" aria-labelledby="guideTitle">
-          <div>
-            <p class="eyebrow" id="guideEyebrow">How to read this</p>
-            <h2 id="guideTitle">Start with the business question</h2>
-          </div>
-          <div class="guide-grid" id="guideGrid"></div>
-        </section>
-
-        <section class="workspace-grid" id="groups">
-          <div class="panel group-list-panel">
-            <div class="panel-header">
-              <div>
-                <p class="eyebrow" id="groupListEyebrow">Prioritized review list</p>
-                <h2 id="groupListTitle">Risk Groups</h2>
-              </div>
-              <select id="groupSort" aria-label="Sort groups">
-                <option value="rank">Rank</option>
-                <option value="p1">P1 accounts</option>
-                <option value="robust">Robust temporal</option>
-                <option value="mca">Max MCA</option>
-              </select>
-            </div>
-            <div class="group-list" id="groupList"></div>
-          </div>
-
-          <div class="panel detail-panel" id="evidence">
-            <div class="panel-header detail-header">
-              <div>
-                <p class="eyebrow">Selected group</p>
-                <h2 id="selectedGroupTitle">Group</h2>
-              </div>
-              <div class="status-pill" id="groupPriorityPill"></div>
-            </div>
-
-            <div class="detail-stats" id="detailStats"></div>
-
-            <div class="group-story" id="groupStory"></div>
-
-            <div class="graph-toolbar">
-              <div class="legend">
-                <span><i class="dot seed"></i> <b id="legendSeed">Seed</b></span>
-                <span><i class="dot p1"></i> <b id="legendP1">High priority</b></span>
-                <span><i class="dot p2"></i> <b id="legendP2">Review</b></span>
-                <span><i class="line co-neg"></i> <b id="legendGraph">Shared target</b></span>
-                <span><i class="line temporal"></i> <b id="legendTiming">Timing link</b></span>
-              </div>
-              <button id="fitGraph" type="button">Reset</button>
-            </div>
-            <div class="graph-stage">
-              <svg id="groupGraph" role="img" aria-label="Selected group relationship graph"></svg>
-            </div>
-
-            <div class="tab-strip" role="tablist" aria-label="Evidence tabs">
-              <button class="tab-button active" type="button" data-tab="members" id="tabMembersButton">Accounts</button>
-              <button class="tab-button" type="button" data-tab="pairs" id="tabPairsButton">Behavior Links</button>
-              <button class="tab-button" type="button" data-tab="targets" id="tabTargetsButton">Shared Targets</button>
-            </div>
-
-            <div class="tab-panel active" id="tab-members"></div>
-            <div class="tab-panel" id="tab-pairs"></div>
-            <div class="tab-panel" id="tab-targets"></div>
-          </div>
-        </section>
-
-        <section class="panel abnormal-panel" id="abnormal">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow" id="abnormalEyebrow">Separate risk stream</p>
-              <h2 id="abnormalTitle">Individual Abnormal Accounts</h2>
-            </div>
-            <p class="panel-note" id="abnormalNote"></p>
-          </div>
-          <div id="abnormalTable"></div>
-        </section>
-
-        <section class="method-band" id="method">
-          <div>
-            <p class="eyebrow" id="methodEyebrow">Method summary</p>
-            <h2 id="methodTitle">How the system makes a reviewable result</h2>
-          </div>
-          <div class="flow-grid" id="flowGrid"></div>
-        </section>
-      </main>
-    </div>
+          <div class="workflow-list" id="workflowList"></div>
+        </div>
+      </section>
+    </main>
 
     <script src="./data/demo-data.js"></script>
     <script src="./app.js"></script>
