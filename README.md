@@ -14,7 +14,6 @@ raw posts/comments
   -> coordination expansion
   -> temporal verification
   -> group summary + account roles
-  -> demo site
 ```
 
 The main research claim is not "MCA score alone finds cyber troops." The claim is:
@@ -55,7 +54,18 @@ Temporal synchrony helps separate same-ideology activity from stronger coordinat
 - `MCA-demo-site/`
   - Static multi-page client/demo dashboard.
   - Shows group-level risk review, account-level abnormal accounts, and methodology notes.
+  - Presentation layer only; it consumes pipeline outputs but does not define the analysis method.
   - See `MCA-demo-site/README.md` for details.
+
+## Project vs Demo Site
+
+The core project is the reproducible analysis pipeline:
+
+```text
+raw data -> LLM analysis -> features / graphs -> scoring -> expansion -> verification -> output tables
+```
+
+`MCA-demo-site/` is a separate presentation layer. It reads the generated output tables and turns them into a clearer client/demo experience. The demo site should not be treated as the research method, the source of truth, or a replacement for the pipeline outputs.
 
 ## Full Pipeline Runner
 

@@ -336,3 +336,30 @@ Impact:
 
 Status:
 Superseded. Both text fingerprint and lifecycle evidence were later removed from formal evidence because they behaved like topic/time-window noise in this dataset.
+
+---
+
+## 2026-05-17 — Demo Site 與 Project Pipeline 分開定位
+
+Decision:
+`MCA-demo-site` 只作為 presentation layer，不作為分析方法本身。正式 project pipeline 仍是：
+
+```text
+raw data -> LLM analysis -> feature / graph artifacts -> MCA seed ranking -> coordination expansion -> temporal verification -> output tables
+```
+
+Demo site 只讀取已產生的 `coordination-expansion/output`，再轉成 client-facing / demo-facing dashboard。
+
+Why:
+網站是展示產品概念與結果的介面，不能讓人誤會它就是研究方法或資料來源。專題與論文要能獨立描述、重跑、驗證 pipeline；demo site 則負責讓老師或 client 更容易看懂結果。
+
+Alternatives considered:
+- 把 demo site 當成 pipeline 的最後一個正式 stage
+- 讓網站端自己重新計算 score / group / verification
+- 不區分研究 pipeline 和展示介面
+
+Impact:
+README 與報告敘事要明確分成兩層：project pipeline 產生 evidence tables；demo site 呈現 evidence tables。未來網站可以重設計，但不應改變核心分析定義。
+
+Status:
+Accepted and documented.

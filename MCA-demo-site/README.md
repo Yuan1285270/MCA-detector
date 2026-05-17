@@ -2,6 +2,14 @@
 
 Static multi-page dashboard for presenting MCA pipeline results as a client-facing risk review product and a research demo.
 
+This folder is separate from the core analysis pipeline. It is a presentation layer only:
+
+```text
+coordination-expansion/output -> MCA-demo-site/data/demo-data.js -> browser dashboard
+```
+
+The demo site does not compute MCA scores, discover groups, verify temporal synchrony, or decide final review priority. Those outputs are produced by the project pipeline before the site reads them.
+
 ## What It Shows
 
 - `index.html`: executive overview and review priorities.
