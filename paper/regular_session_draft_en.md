@@ -1,7 +1,8 @@
 # A Social Coordination Behavior Detection System Combining Manipulative Content Analysis and Graph Expansion
 
 Students: Cong-Yuan Lin, Jun-Hao Chang, Jia-An Lai  
-Advisor: Jun-Hong Li
+Advisor: Jun-Hong Li  
+Affiliation: Department of Computer Science and Information Engineering, Feng Chia University
 
 ## Abstract
 
