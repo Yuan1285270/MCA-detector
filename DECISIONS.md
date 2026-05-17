@@ -170,6 +170,33 @@ Accepted and implemented.
 
 ---
 
+## 2026-05-17 — Text Fingerprint 視為 Topic Noise 並移出正式證據
+
+Decision:
+`text_fingerprint_distance` 不再作為 Stage 2 verification evidence，也不在 demo site 主畫面呈現。Stage 2 的正式驗證訊號改為：
+
+- `temporal synchrony`
+- `temporal confidence`
+- `account_lifecycle_overlap` / activation window overlap
+
+程式輸出可暫時保留 `text_fingerprint_distance` 欄位作為相容欄位，但填入空值，不參與 ranking、validation、demo 解讀或成果敘事。
+
+Why:
+在 r/Bitcoin 這種單一主題資料集中，TF-IDF cosine distance 容易測到「大家都在講同一個主題」，而不是同操控者的寫作指紋。反過來，真正有意識的操控者也可能刻意變換語氣。因此 text fingerprint 在目前資料上更像噪音，放進正式證據會混淆結果。
+
+Alternatives considered:
+- 保留 text fingerprint 作為輔助加分
+- 改用更複雜的 stylometry
+- 等更多 ground truth 後再校準 threshold
+
+Impact:
+Stage 2 敘事更乾淨：核心看 temporal synchrony，輔助看 activation window overlap。報告可誠實說明 text fingerprint 曾被測試，但因單一主題社群的 topic similarity 問題而移除。
+
+Status:
+Accepted and implemented.
+
+---
+
 ## 2026-05-17 — Demo Output 分成群體協同與單一異常帳號
 
 Decision:
@@ -236,4 +263,4 @@ Impact:
 `stage2_verification_evidence.csv` 會從 temporal-only evidence 升級成 multi-signal verification table。PPT 可以說明我們有 temporal synchrony 與 text fingerprint 兩種驗證訊號。
 
 Status:
-Accepted and implemented.
+Partially superseded. Lifecycle evidence remains accepted; text fingerprint was later removed from formal evidence because it behaved like topic-noise in this dataset.
