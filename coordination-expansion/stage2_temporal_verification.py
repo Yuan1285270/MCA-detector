@@ -128,35 +128,6 @@ def account_post_times(comments: pd.DataFrame) -> dict[str, dict[str, np.ndarray
     return output
 
 
-def account_lifecycle_ranges(comments: pd.DataFrame) -> dict[str, tuple[float, float]]:
-    ranges = (
-        comments.groupby("author")["created_utc"]
-        .agg(start_utc="min", end_utc="max")
-        .reset_index()
-    )
-    return {
-        str(row.author): (float(row.start_utc), float(row.end_utc))
-        for row in ranges.itertuples(index=False)
-    }
-
-
-def lifecycle_overlap(
-    left: tuple[float, float] | None,
-    right: tuple[float, float] | None,
-) -> float:
-    if left is None or right is None:
-        return np.nan
-    left_start, left_end = left
-    right_start, right_end = right
-    union_start = min(left_start, right_start)
-    union_end = max(left_end, right_end)
-    union = union_end - union_start
-    if union <= 0:
-        return 1.0
-    overlap = max(0.0, min(left_end, right_end) - max(left_start, right_start))
-    return float(overlap / union)
-
-
 def pair_temporal_metrics(
     left_posts: dict[str, np.ndarray],
     right_posts: dict[str, np.ndarray],
@@ -243,13 +214,15 @@ def build_markdown(pair_rows: pd.DataFrame, summary: pd.DataFrame) -> str:
         "- `fragile_single_event`: label rests on one short-window event",
         "- `fragile_long_median`: has short-window evidence, but typical delay is long",
         "",
-        "Additional evidence:",
+        "Formal evidence:",
         "",
-        "- `account_lifecycle_overlap`: overlap ratio between each pair's observed comment active windows",
+        "- `verification_label`: temporal synchrony strength",
+        "- `temporal_confidence`: reliability calibration for temporal synchrony",
         "",
         "Deprecated:",
         "",
         "- `text_fingerprint_distance`: retained as a compatibility column, but intentionally left blank. TF-IDF text distance is treated as topic-noise in this single-topic dataset and is not used as verification evidence.",
+        "- `account_lifecycle_overlap`: retained as a compatibility column, but intentionally left blank. Lifecycle overlap is treated as topic/activity-window noise and is not used as verification evidence.",
         "",
         "## Group Summary",
         "",
@@ -282,8 +255,7 @@ def build_markdown(pair_rows: pd.DataFrame, summary: pd.DataFrame) -> str:
                 f"- {row.group_seed}: {row.account_a} <-> {row.account_b} | "
                 f"{row.verification_label} / {row.temporal_confidence} | same_post={int(row.same_post_count)} | "
                 f"<5min={int(row.within_5min_count)} | <30min={int(row.within_30min_count)} | "
-                f"median_delay={median}min | lifecycle_overlap={row.account_lifecycle_overlap:.3f} | "
-                f"co_neg={row.co_negative_weight:.3f}"
+                f"median_delay={median}min | co_neg={row.co_negative_weight:.3f}"
             )
 
     return "\n".join(lines) + "\n"
@@ -298,7 +270,6 @@ def main() -> None:
     all_authors = {member for members in group_members.values() for member in members}
     comments = load_comments(args.comments_path, all_authors, args.max_comments_per_author)
     post_times = account_post_times(comments)
-    lifecycle_ranges = account_lifecycle_ranges(comments)
 
     rows: list[dict[str, object]] = []
     for seed, members in group_members.items():
@@ -312,10 +283,6 @@ def main() -> None:
             )
             label = label_pair(metrics)
             confidence = temporal_confidence(metrics)
-            lifecycle = lifecycle_overlap(
-                lifecycle_ranges.get(account_a),
-                lifecycle_ranges.get(account_b),
-            )
             rows.append(
                 {
                     "group_seed": seed,
@@ -324,7 +291,7 @@ def main() -> None:
                     "co_negative_weight": co_neg_weights.get(tuple(sorted((account_a, account_b))), 0.0),
                     **metrics,
                     "text_fingerprint_distance": np.nan,
-                    "account_lifecycle_overlap": lifecycle,
+                    "account_lifecycle_overlap": np.nan,
                     "verification_label": label,
                     "temporal_confidence": confidence,
                 }

@@ -50,7 +50,7 @@ const UI = {
       flow: [
         ["1. Detect signals", "Measure suspicious language, abnormal behavior, interaction reach, and coordination."],
         ["2. Build risk groups", "Connect accounts that repeatedly appear around the same targets or behaviors."],
-        ["3. Verify evidence", "Check whether accounts act together in time and activation window."],
+        ["3. Verify evidence", "Check whether accounts repeatedly arrive in the same thread within short time windows."],
         ["4. Prioritize action", "Separate group-level coordination from individual abnormal accounts for review."],
       ],
     },
@@ -68,7 +68,7 @@ const UI = {
       guideTitle: "Start with the question, then inspect the evidence",
       guide: [
         ["1. Is there a group?", "Stage 1 expands from suspicious seed accounts and finds nearby accounts in the coordination graph."],
-        ["2. Is the group acting together?", "Stage 2 checks timing evidence and activation-window overlap."],
+        ["2. Is the group acting together?", "Stage 2 checks short-window timing evidence."],
         ["3. Is it group behavior or one abnormal account?", "The site separates suspicious groups from individual spam/scam-like accounts."],
       ],
       groupListEyebrow: "Stage 1 + validation",
@@ -81,7 +81,7 @@ const UI = {
       flow: [
         ["1. MCA seed selection", "Find accounts with high manipulation, coordination, reach, and automation signals."],
         ["2. Graph expansion", "Expand from seeds through co-negative and related graph evidence to form candidate groups."],
-        ["3. Multi-evidence verification", "Check temporal synchrony and activation window overlap."],
+        ["3. Temporal verification", "Check temporal synchrony and reliability."],
         ["4. Review output", "Separate suspicious coordination groups from individual abnormal manipulation accounts."],
       ],
     },
@@ -114,7 +114,7 @@ const UI = {
       flow: [
         ["1. 偵測風險訊號", "衡量操縱性語言、異常行為、互動觸及和協同跡象。"],
         ["2. 建立風險群組", "把反覆出現在相同目標或相似行為附近的帳號連起來。"],
-        ["3. 驗證證據", "檢查帳號是否在時間同步和活躍窗口上呈現共同痕跡。"],
+        ["3. 驗證證據", "檢查帳號是否反覆在短時間內抵達同一討論串。"],
         ["4. 排定處理優先級", "把群體協同風險和單一異常帳號分開，方便後續處置。"],
       ],
     },
@@ -132,7 +132,7 @@ const UI = {
       guideTitle: "先看問題，再檢查證據",
       guide: [
         ["1. 有沒有形成群？", "Stage 1 從高風險 seed 出發，在協同圖中找出附近帳號。"],
-        ["2. 這群人有沒有一起行動？", "Stage 2 檢查時間同步和活躍窗口重疊。"],
+        ["2. 這群人有沒有一起行動？", "Stage 2 檢查短時間同步證據。"],
         ["3. 是群體協同還是單一異常？", "網站把可疑群組和 spam/scam-like 的單一帳號分開呈現。"],
       ],
       groupListEyebrow: "Stage 1 + validation",
@@ -145,7 +145,7 @@ const UI = {
       flow: [
         ["1. MCA seed selection", "找出操縱、協同、觸及和自動化訊號較高的帳號。"],
         ["2. Graph expansion", "從 seed 沿著 co-negative 等圖邊擴張成候選群。"],
-        ["3. Multi-evidence verification", "檢查 temporal synchrony 和 activation window overlap。"],
+        ["3. Temporal verification", "檢查 temporal synchrony 和 reliability。"],
         ["4. Review output", "分開輸出可疑協同群組與單一異常操縱帳號。"],
       ],
     },
@@ -579,17 +579,17 @@ function renderMembers() {
 function renderPairs() {
   const group = selectedGroup();
   const pairs = data.pairsByGroup[group.seed] || [];
-  const usefulPairs = pairs.filter((pair) => pair.label !== "no_temporal_sync" || pair.activationOverlap > 0.5).slice(0, 50);
+  const usefulPairs = pairs.filter((pair) => pair.label !== "no_temporal_sync").slice(0, 50);
   const intro = currentMode === "client"
     ? currentLang === "zh"
-      ? ["行為連結說明兩個帳號為什麼被放在一起看。", "時間同步越穩定，越值得優先人工審查；活躍窗口是輔助證據。"]
-      : ["Behavior links explain why two accounts should be reviewed together.", "Stable timing evidence increases review priority; activation overlap is a supporting signal."]
+      ? ["行為連結說明兩個帳號為什麼被放在一起看。", "時間同步越穩定，越值得優先人工審查。"]
+      : ["Behavior links explain why two accounts should be reviewed together.", "Stable timing evidence increases review priority."]
     : currentLang === "zh"
       ? ["Pair evidence 解釋兩個帳號為什麼被連起來。", "Timing sync 看是否一起出現；reliability 看這個同步是否穩定。"]
       : ["Pair evidence explains why two accounts are connected.", "Timing sync asks whether they appeared together; reliability asks whether that pattern is stable enough to trust."];
   const headers = currentLang === "zh"
-    ? ["帳號對", "時間同步", "可信度", "活躍重疊", "共同目標"]
-    : ["Pair", "Timing", "Reliability", "Activation overlap", "Shared target"];
+    ? ["帳號對", "時間同步", "可信度", "共同目標"]
+    : ["Pair", "Timing", "Reliability", "Shared target"];
   $("#tab-pairs").innerHTML = `
     <div class="tab-intro">
       <strong>${intro[0]}</strong>
@@ -603,7 +603,6 @@ function renderPairs() {
             <th>${headers[1]}</th>
             <th>${headers[2]}</th>
             <th>${headers[3]}</th>
-            <th>${headers[4]}</th>
           </tr>
         </thead>
         <tbody>
@@ -614,7 +613,6 @@ function renderPairs() {
                   <td class="account-name">${pair.a}<br><span class="muted">↔ ${pair.b}</span></td>
                   <td>${priorityLabel(pair.label)}<br><span class="muted">${pair.samePost} ${currentLang === "zh" ? "篇同文" : "same post"} · ${pair.within30} ${currentLang === "zh" ? "次 30 分內" : "within 30m"}</span></td>
                   <td>${priorityLabel(pair.confidence)}<br><span class="muted">${currentLang === "zh" ? "中位延遲" : "median"} ${fmt(pair.medianDelay, 1)} min</span></td>
-                  <td>${pct(pair.activationOverlap)}${scoreBar(pair.activationOverlap)}</td>
                   <td>${fmt(pair.coNegative, 3)}</td>
                 </tr>
               `

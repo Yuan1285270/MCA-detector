@@ -177,7 +177,6 @@ Decision:
 
 - `temporal synchrony`
 - `temporal confidence`
-- `account_lifecycle_overlap` / activation window overlap
 
 程式輸出可暫時保留 `text_fingerprint_distance` 欄位作為相容欄位，但填入空值，不參與 ranking、validation、demo 解讀或成果敘事。
 
@@ -190,7 +189,33 @@ Alternatives considered:
 - 等更多 ground truth 後再校準 threshold
 
 Impact:
-Stage 2 敘事更乾淨：核心看 temporal synchrony，輔助看 activation window overlap。報告可誠實說明 text fingerprint 曾被測試，但因單一主題社群的 topic similarity 問題而移除。
+Stage 2 敘事更乾淨：核心看 temporal synchrony 與 temporal confidence。報告可誠實說明 text fingerprint 曾被測試，但因單一主題社群的 topic similarity 問題而移除。
+
+Status:
+Accepted and implemented.
+
+---
+
+## 2026-05-17 — Lifecycle / Activation Window 視為時間背景噪音並移出正式證據
+
+Decision:
+`account_lifecycle_overlap` / activation window overlap 不再作為 Stage 2 verification evidence，也不在 demo site 主畫面呈現。Stage 2 正式收斂為純時序驗證：
+
+- `temporal synchrony`
+- `temporal confidence`
+
+程式輸出可暫時保留 `account_lifecycle_overlap` 欄位作為相容欄位，但填入空值，不參與 ranking、validation、demo 解讀或成果敘事。
+
+Why:
+harvested 正樣本與 JG87919 反樣本在 lifecycle IoU、活化窗口、活躍時段相似度上完全重疊，無法區分同操控者與獨立但同主題帳號。操控者可能刻意混用老帳號與新帳號，而同一社群的獨立帳號也自然會在相近時間活躍。因此 lifecycle 類訊號更像時間背景噪音。
+
+Alternatives considered:
+- 保留 activation window overlap 作為輔助欄位
+- 改成只在網站 detail 顯示
+- 等更多 ground truth 後再校準 threshold
+
+Impact:
+Stage 2 變成更可解釋的 pure temporal synchrony verification。系統不再宣稱 lifecycle 可以支持 same-operator 判斷，避免把同社群活躍模式誤當操控痕跡。
 
 Status:
 Accepted and implemented.
@@ -263,4 +288,4 @@ Impact:
 `stage2_verification_evidence.csv` 會從 temporal-only evidence 升級成 multi-signal verification table。PPT 可以說明我們有 temporal synchrony 與 text fingerprint 兩種驗證訊號。
 
 Status:
-Partially superseded. Lifecycle evidence remains accepted; text fingerprint was later removed from formal evidence because it behaved like topic-noise in this dataset.
+Superseded. Both text fingerprint and lifecycle evidence were later removed from formal evidence because they behaved like topic/time-window noise in this dataset.

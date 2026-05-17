@@ -163,7 +163,6 @@ def compact_pair(row: dict[str, str]) -> dict[str, object]:
         "within30": integer(row.get("within_30min_count")),
         "medianDelay": num(row.get("median_delay_minutes"), None),
         "minDelay": num(row.get("min_delay_minutes"), None),
-        "activationOverlap": num(row.get("account_lifecycle_overlap"), None),
         "label": row.get("verification_label", ""),
         "confidence": row.get("temporal_confidence", ""),
     }

@@ -1,6 +1,6 @@
 window.MCA_DEMO_DATA = {
   "metadata": {
-    "generatedAt": "2026-05-17T05:24:51.403760+00:00",
+    "generatedAt": "2026-05-17T05:32:17.661935+00:00",
     "source": "coordination-expansion/output",
     "groupCount": 20,
     "candidateAccountRows": 178,
@@ -7428,7 +7428,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 38.65833333333333,
         "minDelay": 2.816666666666667,
-        "activationOverlap": 0.24783232280726256,
         "label": "strong_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -7441,7 +7440,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 180.19166666666666,
         "minDelay": 2.3333333333333335,
-        "activationOverlap": 0.459432140701246,
         "label": "strong_temporal_sync",
         "confidence": "fragile_long_median"
       },
@@ -7454,7 +7452,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 65.31666666666666,
         "minDelay": 20.5,
-        "activationOverlap": 0.7648321845817612,
         "label": "moderate_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -7467,7 +7464,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 5.883333333333334,
         "minDelay": 5.883333333333334,
-        "activationOverlap": 0.9891083681903341,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -7480,7 +7476,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 16.8,
         "minDelay": 16.8,
-        "activationOverlap": 0.03852155293110282,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -7493,7 +7488,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 23.316666666666666,
         "minDelay": 23.316666666666666,
-        "activationOverlap": 0.22938995250152067,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -7506,7 +7500,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 302.5416666666667,
         "minDelay": 73.96666666666667,
-        "activationOverlap": 0.8616682294854954,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7519,7 +7512,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 122.31666666666666,
         "minDelay": 103.38333333333334,
-        "activationOverlap": 0.7975474385052851,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7532,7 +7524,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 137.13333333333333,
         "minDelay": 64.58333333333333,
-        "activationOverlap": 0.8006902089570466,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7545,7 +7536,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 380.9833333333333,
         "minDelay": 249.91666666666666,
-        "activationOverlap": 0.4334792769417215,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7558,7 +7548,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 84.46666666666667,
         "minDelay": 36.28333333333333,
-        "activationOverlap": 0.09943441013545858,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7571,7 +7560,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 41.43333333333333,
         "minDelay": 41.43333333333333,
-        "activationOverlap": 0.8650636707095608,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7584,7 +7572,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 487.3666666666667,
         "minDelay": 487.3666666666667,
-        "activationOverlap": 0.36786281673966387,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7597,7 +7584,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 42.61666666666667,
         "minDelay": 42.61666666666667,
-        "activationOverlap": 0.7860531553591797,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7610,7 +7596,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 425.28333333333336,
         "minDelay": 425.28333333333336,
-        "activationOverlap": 0.04470578305307154,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7623,7 +7608,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 104.13333333333334,
         "minDelay": 104.13333333333334,
-        "activationOverlap": 0.0011386099009128743,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7636,7 +7620,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 233.56666666666666,
         "minDelay": 233.56666666666666,
-        "activationOverlap": 0.1574876211833413,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7649,7 +7632,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 145.78333333333333,
         "minDelay": 145.78333333333333,
-        "activationOverlap": 0.1974648949766487,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7662,7 +7644,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 186.85,
         "minDelay": 186.85,
-        "activationOverlap": 0.9435109965969908,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7675,7 +7656,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 586.55,
         "minDelay": 586.55,
-        "activationOverlap": 0.29280530808942734,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7688,7 +7668,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 475.76666666666665,
         "minDelay": 475.76666666666665,
-        "activationOverlap": 0.0,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7701,7 +7680,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 44.81666666666667,
         "minDelay": 44.81666666666667,
-        "activationOverlap": 0.7829678364648791,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7714,7 +7692,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 235.43333333333334,
         "minDelay": 235.43333333333334,
-        "activationOverlap": 0.42524363141724314,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7727,7 +7704,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 617.4666666666667,
         "minDelay": 617.4666666666667,
-        "activationOverlap": 0.8712141021350737,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7740,7 +7716,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 18339.95,
         "minDelay": 18339.95,
-        "activationOverlap": 0.0920350273911937,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7753,7 +7728,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 146.21666666666667,
         "minDelay": 146.21666666666667,
-        "activationOverlap": 0.46798720192347854,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7766,7 +7740,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 399.7,
         "minDelay": 399.7,
-        "activationOverlap": 0.320766933915788,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7779,7 +7752,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 288.9166666666667,
         "minDelay": 288.9166666666667,
-        "activationOverlap": 0.026036244821121664,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7792,7 +7764,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 110.78333333333333,
         "minDelay": 110.78333333333333,
-        "activationOverlap": 0.35111656266268076,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -7805,7 +7776,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.038673348789835346,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7818,7 +7788,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.15810820802053413,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7831,7 +7800,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.34708261283301645,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7844,7 +7812,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.19843691433485727,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7857,7 +7824,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.079616158628881,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7870,7 +7836,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.24460051299052538,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7883,7 +7848,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7896,7 +7860,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.048300014608908495,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7909,7 +7872,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7922,7 +7884,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.04919940658741318,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7935,7 +7896,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7948,7 +7908,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7961,7 +7920,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.18277060218104785,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7974,7 +7932,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0142204390594916,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -7987,7 +7944,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.20114187818289214,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8000,7 +7956,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8013,7 +7968,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8026,7 +7980,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3457202869699931,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8039,7 +7992,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4012220424750065,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8052,7 +8004,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4415510712814584,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8065,7 +8016,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.36641892698327844,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8078,7 +8028,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.1976580342337472,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8091,7 +8040,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.07930365910281895,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8104,7 +8052,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6508400981958676,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8117,7 +8064,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2524471951825998,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8130,7 +8076,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.10128597294733983,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -8145,7 +8090,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 95.04166666666666,
         "minDelay": 12.733333333333333,
-        "activationOverlap": 0.4824248660098327,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8158,7 +8102,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 24.816666666666666,
         "minDelay": 24.816666666666666,
-        "activationOverlap": 0.3989153468843455,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8171,7 +8114,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 22.25,
         "minDelay": 22.25,
-        "activationOverlap": 0.910687714023534,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8184,7 +8126,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 205.88333333333333,
         "minDelay": 80.18333333333334,
-        "activationOverlap": 0.4948444912502528,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8197,7 +8138,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 414.10833333333335,
         "minDelay": 284.1166666666667,
-        "activationOverlap": 0.4439363502879731,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8210,7 +8150,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 591.55,
         "minDelay": 591.55,
-        "activationOverlap": 0.8224660639136251,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8223,7 +8162,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 116.96666666666667,
         "minDelay": 116.96666666666667,
-        "activationOverlap": 0.43803747513171865,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8236,7 +8174,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 617.6666666666666,
         "minDelay": 617.6666666666666,
-        "activationOverlap": 0.6320342826248004,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8249,7 +8186,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 708.5166666666667,
         "minDelay": 708.5166666666667,
-        "activationOverlap": 0.3929734723488944,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8262,7 +8198,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 14827.6,
         "minDelay": 14827.6,
-        "activationOverlap": 0.6970972716280863,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8275,7 +8210,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 155.1,
         "minDelay": 155.1,
-        "activationOverlap": 0.505122323598147,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8288,7 +8222,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1014.45,
         "minDelay": 1014.45,
-        "activationOverlap": 0.3600474942447651,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8301,7 +8234,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5951257247045963,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8314,7 +8246,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4913788138047124,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8327,7 +8258,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3578761132053051,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8340,7 +8270,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3953578034494718,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8353,7 +8282,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8852022865304451,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8366,7 +8294,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4466298940540232,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8379,7 +8306,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.36179930637600516,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8392,7 +8318,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8061428467688164,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -8405,7 +8330,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5253454754970647,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -8420,7 +8344,6 @@ window.MCA_DEMO_DATA = {
         "within30": 2,
         "medianDelay": 6.45,
         "minDelay": 1.1,
-        "activationOverlap": 0.7829403635363609,
         "label": "strong_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -8433,7 +8356,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 1.2333333333333334,
         "minDelay": 1.2333333333333334,
-        "activationOverlap": 0.5702752178474264,
         "label": "strong_temporal_sync",
         "confidence": "fragile_single_event"
       },
@@ -8446,7 +8368,6 @@ window.MCA_DEMO_DATA = {
         "within30": 2,
         "medianDelay": 101.14166666666667,
         "minDelay": 21.333333333333332,
-        "activationOverlap": 0.9041446542125928,
         "label": "moderate_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -8459,7 +8380,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 53.766666666666666,
         "minDelay": 8.516666666666667,
-        "activationOverlap": 0.5158481166712374,
         "label": "moderate_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -8472,7 +8392,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 81.64166666666667,
         "minDelay": 19.416666666666668,
-        "activationOverlap": 0.6648357434851343,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8485,7 +8404,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 33.975,
         "minDelay": 21.816666666666666,
-        "activationOverlap": 0.8220494028531732,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8498,7 +8416,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 23.833333333333332,
         "minDelay": 23.833333333333332,
-        "activationOverlap": 0.7066751009151766,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8511,7 +8428,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 25.433333333333334,
         "minDelay": 25.433333333333334,
-        "activationOverlap": 0.6781777503804094,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8524,7 +8440,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 8.3,
         "minDelay": 8.3,
-        "activationOverlap": 0.5329574451284899,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8537,7 +8452,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 10.366666666666667,
         "minDelay": 10.366666666666667,
-        "activationOverlap": 0.1438107349089711,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -8550,7 +8464,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 219.89166666666665,
         "minDelay": 7.066666666666666,
-        "activationOverlap": 0.7897459807079767,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -8563,7 +8476,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 124.8,
         "minDelay": 28.45,
-        "activationOverlap": 0.7477548590814163,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -8576,7 +8488,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 248.625,
         "minDelay": 40.13333333333333,
-        "activationOverlap": 0.7759031034750192,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8589,7 +8500,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 159.65,
         "minDelay": 136.5,
-        "activationOverlap": 0.8286803076012677,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8602,7 +8512,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 285.45,
         "minDelay": 83.03333333333333,
-        "activationOverlap": 0.7334836550187377,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8615,7 +8524,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 197.15,
         "minDelay": 65.8,
-        "activationOverlap": 0.8847610238612031,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8628,7 +8536,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 204.38333333333333,
         "minDelay": 71.4,
-        "activationOverlap": 0.9470812296014645,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8641,7 +8548,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1231.3333333333333,
         "minDelay": 49.266666666666666,
-        "activationOverlap": 0.9055316314303392,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8654,7 +8560,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 407.0833333333333,
         "minDelay": 125.8,
-        "activationOverlap": 0.8187315837781491,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8667,7 +8572,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 722.65,
         "minDelay": 339.26666666666665,
-        "activationOverlap": 0.9382670618110198,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8680,7 +8584,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 276.4166666666667,
         "minDelay": 79.61666666666666,
-        "activationOverlap": 0.909201198086035,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8693,7 +8596,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 477.5166666666667,
         "minDelay": 101.96666666666667,
-        "activationOverlap": 0.6097564493933565,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8706,7 +8608,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 199.33333333333334,
         "minDelay": 58.43333333333333,
-        "activationOverlap": 0.7082296978489406,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8719,7 +8620,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 163.43333333333334,
         "minDelay": 60.833333333333336,
-        "activationOverlap": 0.47662422355835316,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8732,7 +8632,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 868.0916666666667,
         "minDelay": 106.38333333333334,
-        "activationOverlap": 0.5443220212159072,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8745,7 +8644,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 136.13333333333333,
         "minDelay": 93.6,
-        "activationOverlap": 0.6947343548220591,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8758,7 +8656,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 190.48333333333335,
         "minDelay": 52.53333333333333,
-        "activationOverlap": 0.9045599397048486,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8771,7 +8668,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 227.79166666666666,
         "minDelay": 57.11666666666667,
-        "activationOverlap": 0.6011076834015388,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8784,7 +8680,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 134.2,
         "minDelay": 122.05,
-        "activationOverlap": 0.5465278259274,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8797,7 +8692,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 366.1166666666667,
         "minDelay": 164.81666666666666,
-        "activationOverlap": 0.7685670664039373,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8810,7 +8704,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 99.67500000000001,
         "minDelay": 39.016666666666666,
-        "activationOverlap": 0.9387289822841319,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8823,7 +8716,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 60.06666666666666,
         "minDelay": 32.766666666666666,
-        "activationOverlap": 0.6316490865680089,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8836,7 +8728,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 273.275,
         "minDelay": 208.91666666666666,
-        "activationOverlap": 0.8037130433991109,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8849,7 +8740,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1150.475,
         "minDelay": 114.28333333333333,
-        "activationOverlap": 0.7117077817282771,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8862,7 +8752,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1455.5333333333333,
         "minDelay": 995.3833333333333,
-        "activationOverlap": 0.9172637389137482,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8875,7 +8764,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 317.39166666666665,
         "minDelay": 313.6166666666667,
-        "activationOverlap": 0.6960881482639572,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8888,7 +8776,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 341.825,
         "minDelay": 117.53333333333333,
-        "activationOverlap": 0.8153224047926768,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8901,7 +8788,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1072.625,
         "minDelay": 569.2166666666667,
-        "activationOverlap": 0.9476892291054756,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8914,7 +8800,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 999.0583333333334,
         "minDelay": 756.4166666666666,
-        "activationOverlap": 0.16832363582013987,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8927,7 +8812,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 804.2416666666667,
         "minDelay": 72.28333333333333,
-        "activationOverlap": 0.7834966234760671,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8940,7 +8824,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 648.3916666666667,
         "minDelay": 39.833333333333336,
-        "activationOverlap": 0.742511311108777,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8953,7 +8836,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 552.0416666666666,
         "minDelay": 68.28333333333333,
-        "activationOverlap": 0.9438643234603794,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8966,7 +8848,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 141.825,
         "minDelay": 39.416666666666664,
-        "activationOverlap": 0.14367517574113647,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8979,7 +8860,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 213.20833333333334,
         "minDelay": 121.55,
-        "activationOverlap": 0.8114803745289157,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -8992,7 +8872,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 124.17500000000001,
         "minDelay": 50.266666666666666,
-        "activationOverlap": 0.8704121126283816,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9005,7 +8884,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 234.975,
         "minDelay": 124.01666666666667,
-        "activationOverlap": 0.6645305159077417,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9018,7 +8896,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 170.55,
         "minDelay": 91.33333333333333,
-        "activationOverlap": 0.7349825194580973,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9031,7 +8908,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 136.575,
         "minDelay": 69.51666666666667,
-        "activationOverlap": 0.6041919412280496,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9044,7 +8920,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 82.55,
         "minDelay": 82.55,
-        "activationOverlap": 0.36227881363475195,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9057,7 +8932,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 140.98333333333332,
         "minDelay": 140.98333333333332,
-        "activationOverlap": 0.5863356852286921,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9070,7 +8944,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 183.48333333333332,
         "minDelay": 183.48333333333332,
-        "activationOverlap": 0.8456511153799982,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9083,7 +8956,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 965.5333333333333,
         "minDelay": 965.5333333333333,
-        "activationOverlap": 0.038998041696892805,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9096,7 +8968,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1062.6166666666666,
         "minDelay": 1062.6166666666666,
-        "activationOverlap": 0.5450649491627705,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9109,7 +8980,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 72.55,
         "minDelay": 72.55,
-        "activationOverlap": 0.5847821914249353,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9122,7 +8992,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1124.05,
         "minDelay": 1124.05,
-        "activationOverlap": 0.7472509761802792,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9135,7 +9004,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 96.11666666666666,
         "minDelay": 96.11666666666666,
-        "activationOverlap": 0.5169059889710637,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9148,7 +9016,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 386.1666666666667,
         "minDelay": 386.1666666666667,
-        "activationOverlap": 0.4163770665679388,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9161,7 +9028,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1048.0833333333333,
         "minDelay": 1048.0833333333333,
-        "activationOverlap": 0.05649206381748769,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9174,7 +9040,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 419.76666666666665,
         "minDelay": 419.76666666666665,
-        "activationOverlap": 0.6296534534229048,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9187,7 +9052,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 388.1,
         "minDelay": 388.1,
-        "activationOverlap": 0.1707648541439295,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9200,7 +9064,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 324.46666666666664,
         "minDelay": 324.46666666666664,
-        "activationOverlap": 0.7111584019780519,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9213,7 +9076,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1106.5166666666667,
         "minDelay": 1106.5166666666667,
-        "activationOverlap": 0.040009357288322375,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9226,7 +9088,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 62.733333333333334,
         "minDelay": 62.733333333333334,
-        "activationOverlap": 0.7283627306762043,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9239,7 +9100,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 237.1,
         "minDelay": 237.1,
-        "activationOverlap": 0.8850932612426924,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9252,7 +9112,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 115.55,
         "minDelay": 115.55,
-        "activationOverlap": 0.8487467910866257,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9265,7 +9124,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 782.05,
         "minDelay": 782.05,
-        "activationOverlap": 0.03689961764794081,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9278,7 +9136,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 327.26666666666665,
         "minDelay": 327.26666666666665,
-        "activationOverlap": 0.004314877927466174,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9291,7 +9148,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 61.21666666666667,
         "minDelay": 61.21666666666667,
-        "activationOverlap": 0.8367155756164439,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9304,7 +9160,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 941.7,
         "minDelay": 941.7,
-        "activationOverlap": 0.03074987435979292,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9317,7 +9172,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 869.4166666666666,
         "minDelay": 869.4166666666666,
-        "activationOverlap": 0.03924697750880891,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9330,7 +9184,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 990.9666666666667,
         "minDelay": 990.9666666666667,
-        "activationOverlap": 0.033957813611901914,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9343,7 +9196,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1067.5,
         "minDelay": 1067.5,
-        "activationOverlap": 0.037557943249109084,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9356,7 +9208,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 816.45,
         "minDelay": 816.45,
-        "activationOverlap": 0.5984354025465827,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9369,7 +9220,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 923.9833333333333,
         "minDelay": 923.9833333333333,
-        "activationOverlap": 0.8687232697192694,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9382,7 +9232,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1245.15,
         "minDelay": 1245.15,
-        "activationOverlap": 0.8012771989967532,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9395,7 +9244,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1121.1333333333334,
         "minDelay": 1121.1333333333334,
-        "activationOverlap": 0.829339106041921,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9408,7 +9256,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1041.5166666666667,
         "minDelay": 1041.5166666666667,
-        "activationOverlap": 0.7540361088329157,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9421,7 +9268,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 107.53333333333333,
         "minDelay": 107.53333333333333,
-        "activationOverlap": 0.5842069973962474,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9434,7 +9280,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 428.7,
         "minDelay": 428.7,
-        "activationOverlap": 0.43561986180616985,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9447,7 +9292,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 304.68333333333334,
         "minDelay": 304.68333333333334,
-        "activationOverlap": 0.557721573546209,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       }
@@ -9462,7 +9306,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 767.6083333333333,
         "minDelay": 644.8333333333334,
-        "activationOverlap": 0.7935768457628307,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9475,7 +9318,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 102.28333333333333,
         "minDelay": 102.28333333333333,
-        "activationOverlap": 0.8574646289593887,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9488,7 +9330,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 477.8666666666667,
         "minDelay": 477.8666666666667,
-        "activationOverlap": 0.9011999228458893,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9501,7 +9342,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 715.7333333333333,
         "minDelay": 715.7333333333333,
-        "activationOverlap": 0.9628502806915517,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9514,7 +9354,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 70.9,
         "minDelay": 70.9,
-        "activationOverlap": 0.7640956886930577,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9527,7 +9366,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8478647959490812,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -9542,7 +9380,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 1.8,
         "minDelay": 1.8,
-        "activationOverlap": 0.8939476829066699,
         "label": "strong_temporal_sync",
         "confidence": "fragile_single_event"
       },
@@ -9555,7 +9392,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 5.683333333333334,
         "minDelay": 5.683333333333334,
-        "activationOverlap": 0.968079870162546,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -9568,7 +9404,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 126.91666666666666,
         "minDelay": 7.483333333333333,
-        "activationOverlap": 0.8646742869699564,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -9581,7 +9416,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 156.61666666666667,
         "minDelay": 156.61666666666667,
-        "activationOverlap": 0.26696467658807854,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9594,7 +9428,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 250.26666666666668,
         "minDelay": 250.26666666666668,
-        "activationOverlap": 0.2863303367988961,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9607,7 +9440,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.18087523345231546,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -9622,7 +9454,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 230.36666666666667,
         "minDelay": 29.866666666666667,
-        "activationOverlap": 0.7551156600991443,
         "label": "moderate_temporal_sync",
         "confidence": "fragile_long_median"
       },
@@ -9635,7 +9466,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 24.191666666666666,
         "minDelay": 12.15,
-        "activationOverlap": 0.16298501859861766,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -9648,7 +9478,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 6.633333333333334,
         "minDelay": 6.633333333333334,
-        "activationOverlap": 0.3166294250310833,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -9661,7 +9490,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 54.2,
         "minDelay": 40.13333333333333,
-        "activationOverlap": 0.8604165672421663,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9674,7 +9502,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 145.08333333333334,
         "minDelay": 38.983333333333334,
-        "activationOverlap": 0.864818837342918,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9687,7 +9514,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 126.925,
         "minDelay": 118.5,
-        "activationOverlap": 0.7771677859159183,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9700,7 +9526,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 145.68333333333334,
         "minDelay": 113.41666666666667,
-        "activationOverlap": 0.8302555273197818,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9713,7 +9538,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 367.9916666666667,
         "minDelay": 46.766666666666666,
-        "activationOverlap": 0.2724332029731055,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9726,7 +9550,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 353.95,
         "minDelay": 119.98333333333333,
-        "activationOverlap": 0.7904250017961502,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9739,7 +9562,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 598.425,
         "minDelay": 532.6166666666667,
-        "activationOverlap": 0.8164047460859774,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9752,7 +9574,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 220.14166666666665,
         "minDelay": 163.01666666666668,
-        "activationOverlap": 0.7937957982194237,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9765,7 +9586,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 834.725,
         "minDelay": 63.7,
-        "activationOverlap": 0.46675983624820083,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9778,7 +9598,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 414.81666666666666,
         "minDelay": 414.81666666666666,
-        "activationOverlap": 0.7779182227600956,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9791,7 +9610,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 493.6333333333333,
         "minDelay": 493.6333333333333,
-        "activationOverlap": 0.7015006613913884,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9804,7 +9622,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 545.4666666666667,
         "minDelay": 545.4666666666667,
-        "activationOverlap": 0.2153913748859131,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9817,7 +9634,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 240.03333333333333,
         "minDelay": 240.03333333333333,
-        "activationOverlap": 0.29825459504328233,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9830,7 +9646,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1165.1333333333334,
         "minDelay": 1165.1333333333334,
-        "activationOverlap": 0.413005197087004,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9843,7 +9658,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 403.05,
         "minDelay": 403.05,
-        "activationOverlap": 0.23675324434499329,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9856,7 +9670,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 78.81666666666666,
         "minDelay": 78.81666666666666,
-        "activationOverlap": 0.8088597344238891,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9869,7 +9682,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 412.6166666666667,
         "minDelay": 412.6166666666667,
-        "activationOverlap": 0.8851921818747018,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9882,7 +9694,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 130.65,
         "minDelay": 130.65,
-        "activationOverlap": 0.10130256312658374,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9895,7 +9706,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 453.8,
         "minDelay": 453.8,
-        "activationOverlap": 0.9032459572540781,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9908,7 +9718,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 120.56666666666666,
         "minDelay": 120.56666666666666,
-        "activationOverlap": 0.740823521779143,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9921,7 +9730,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 59.21666666666667,
         "minDelay": 59.21666666666667,
-        "activationOverlap": 0.769259426645006,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9934,7 +9742,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 294.9166666666667,
         "minDelay": 294.9166666666667,
-        "activationOverlap": 0.12169237319535231,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9947,7 +9754,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 39.68333333333333,
         "minDelay": 39.68333333333333,
-        "activationOverlap": 0.9442705245004672,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9960,7 +9766,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 51.833333333333336,
         "minDelay": 51.833333333333336,
-        "activationOverlap": 0.12340512661079919,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9973,7 +9778,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 88.93333333333334,
         "minDelay": 88.93333333333334,
-        "activationOverlap": 0.09433131139217452,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9986,7 +9790,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1694.6833333333334,
         "minDelay": 1694.6833333333334,
-        "activationOverlap": 0.11692434202630568,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -9999,7 +9802,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 337.98333333333335,
         "minDelay": 337.98333333333335,
-        "activationOverlap": 0.7221570022530535,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10012,7 +9814,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 2009.8833333333334,
         "minDelay": 2009.8833333333334,
-        "activationOverlap": 0.5732451940432087,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10025,7 +9826,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 115.5,
         "minDelay": 115.5,
-        "activationOverlap": 0.666241464736775,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10038,7 +9838,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 131.48333333333332,
         "minDelay": 131.48333333333332,
-        "activationOverlap": 0.5109438489014922,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10051,7 +9850,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 584.45,
         "minDelay": 584.45,
-        "activationOverlap": 0.18942570936427025,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10064,7 +9862,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.31287910537196534,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10077,7 +9874,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6490648770065109,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10090,7 +9886,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.360031631480563,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10103,7 +9898,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.15452030501464953,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10116,7 +9910,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8834741360906684,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10129,7 +9922,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7575669932939221,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10142,7 +9934,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.300384917493311,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10155,7 +9946,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6752332149951727,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10168,7 +9958,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.30463594687725204,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10181,7 +9970,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.28515708303596177,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10194,7 +9982,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4287035234701243,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10207,7 +9994,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2464077510871041,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10220,7 +10006,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.49386584901842057,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10233,7 +10018,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.13786424587920432,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10246,7 +10030,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.463364506401247,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10259,7 +10042,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10272,7 +10054,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.275161187451146,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10285,7 +10066,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8333432640811294,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10298,7 +10078,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.35054618566315626,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10311,7 +10090,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.15044929054606454,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10324,7 +10102,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7376080229156952,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10337,7 +10114,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.454413005441459,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10350,7 +10126,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6162320355777114,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10363,7 +10138,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3281317546329023,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10376,7 +10150,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8641123287687337,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10389,7 +10162,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.1408293449171715,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10402,7 +10174,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6904442971837238,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10415,7 +10186,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5621881708574561,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10428,7 +10198,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4958923484642409,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10441,7 +10210,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.04192194266690128,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10454,7 +10222,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.28354269463880794,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10467,7 +10234,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.21116685513704267,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10480,7 +10246,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3432031305585201,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10493,7 +10258,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4752472516194714,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10506,7 +10270,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0017260273727965278,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10519,7 +10282,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5331959736061516,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10532,7 +10294,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10545,7 +10306,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5966214295245192,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10558,7 +10318,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.48579372952587113,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10571,7 +10330,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5317795119890542,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10584,7 +10342,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.14729775880469584,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10597,7 +10354,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.20396916230839335,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10610,7 +10366,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2288399053588532,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10623,7 +10378,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10636,7 +10390,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.13589271345747697,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10649,7 +10402,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3830559307960193,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -10664,7 +10416,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 39.858333333333334,
         "minDelay": 21.666666666666668,
-        "activationOverlap": 0.3782560726975351,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -10677,7 +10428,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 87.10833333333333,
         "minDelay": 6.433333333333334,
-        "activationOverlap": 0.7189763304324389,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -10690,7 +10440,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 25.85,
         "minDelay": 25.85,
-        "activationOverlap": 0.9066229546928845,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -10703,7 +10452,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 15.783333333333333,
         "minDelay": 15.783333333333333,
-        "activationOverlap": 0.3063219270956288,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -10716,7 +10464,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 8.7,
         "minDelay": 8.7,
-        "activationOverlap": 0.5616632017861694,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -10729,7 +10476,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 381.7083333333333,
         "minDelay": 29.116666666666667,
-        "activationOverlap": 0.8517098368017602,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -10742,7 +10488,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 177.43333333333334,
         "minDelay": 54.96666666666667,
-        "activationOverlap": 0.7666782110320048,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10755,7 +10500,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1131.5916666666667,
         "minDelay": 278.5833333333333,
-        "activationOverlap": 0.15134316489273084,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10768,7 +10512,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 172.64166666666668,
         "minDelay": 40.75,
-        "activationOverlap": 0.3059105678185431,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10781,7 +10524,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 337.51666666666665,
         "minDelay": 178.76666666666668,
-        "activationOverlap": 0.677792414660898,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10794,7 +10536,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 481.06666666666666,
         "minDelay": 457.1666666666667,
-        "activationOverlap": 0.852554319082801,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10807,7 +10548,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 105.69999999999999,
         "minDelay": 73.83333333333333,
-        "activationOverlap": 0.8098268585910398,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10820,7 +10560,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 241.28333333333333,
         "minDelay": 241.28333333333333,
-        "activationOverlap": 0.5152249325259797,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10833,7 +10572,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 382.3,
         "minDelay": 382.3,
-        "activationOverlap": 0.24144861776064433,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10846,7 +10584,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 519.8666666666667,
         "minDelay": 519.8666666666667,
-        "activationOverlap": 0.14231745893001754,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10859,7 +10596,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1816.8166666666666,
         "minDelay": 1816.8166666666666,
-        "activationOverlap": 0.13674906331798206,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10872,7 +10608,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 141.01666666666668,
         "minDelay": 141.01666666666668,
-        "activationOverlap": 0.12440034779421902,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10885,7 +10620,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 400.45,
         "minDelay": 400.45,
-        "activationOverlap": 0.39080950541735565,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10898,7 +10632,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 215.25,
         "minDelay": 215.25,
-        "activationOverlap": 0.24483380851820874,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10911,7 +10644,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 221.68333333333334,
         "minDelay": 221.68333333333334,
-        "activationOverlap": 0.2750277058603823,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10924,7 +10656,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 185.2,
         "minDelay": 185.2,
-        "activationOverlap": 0.46084330814766994,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -10937,7 +10668,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2784430049164694,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10950,7 +10680,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10963,7 +10692,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10976,7 +10704,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -10989,7 +10716,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11002,7 +10728,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2654052907226067,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11015,7 +10740,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2654162380060803,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11028,7 +10752,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.24473961788626447,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11041,7 +10764,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.14346077842041896,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11054,7 +10776,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.25685037909169595,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11067,7 +10788,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3532561032793503,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11080,7 +10800,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.28569210896969205,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11093,7 +10812,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4942088087140651,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11106,7 +10824,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9350497716333424,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11119,7 +10836,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.900041766003365,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11132,7 +10848,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8671383855847875,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11145,7 +10860,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11158,7 +10872,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11171,7 +10884,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11184,7 +10896,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11197,7 +10908,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.14064430722542803,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11210,7 +10920,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.1476261389164924,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11223,7 +10932,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7270939601815797,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11236,7 +10944,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8990461095267569,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11249,7 +10956,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.25180780437476347,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11262,7 +10968,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2643079883020316,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11275,7 +10980,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2227248230624139,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11288,7 +10992,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7316550777493085,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11301,7 +11004,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5374951888195543,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11314,7 +11016,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.34632085832741427,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11327,7 +11028,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3367292563633255,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11340,7 +11040,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3635128370974572,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11353,7 +11052,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4346935060128021,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11366,7 +11064,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.28008330352189714,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11379,7 +11076,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.27232619764862254,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11392,7 +11088,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.29398713314176844,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11405,7 +11100,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.24773459414629198,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11418,7 +11112,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5680426113896392,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11431,7 +11124,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5641416467234981,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11444,7 +11136,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8500469109503674,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11457,7 +11148,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.952705992703543,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11470,7 +11160,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8845032568209618,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11483,7 +11172,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.842698872112847,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11496,7 +11184,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8923694378382871,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -11509,7 +11196,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8426715533391311,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -11524,7 +11210,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 59.733333333333334,
         "minDelay": 4.916666666666667,
-        "activationOverlap": 0.3048143214386394,
         "label": "strong_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -11537,7 +11222,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 97.14166666666667,
         "minDelay": 2.1166666666666667,
-        "activationOverlap": 0.7166327978185325,
         "label": "strong_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -11550,7 +11234,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 2.8,
         "minDelay": 2.8,
-        "activationOverlap": 0.3814184482683422,
         "label": "strong_temporal_sync",
         "confidence": "fragile_single_event"
       },
@@ -11563,7 +11246,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 4.366666666666666,
         "minDelay": 4.366666666666666,
-        "activationOverlap": 0.7588158526275522,
         "label": "strong_temporal_sync",
         "confidence": "fragile_single_event"
       },
@@ -11576,7 +11258,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 55.74166666666667,
         "minDelay": 12.35,
-        "activationOverlap": 0.7953812465450951,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11589,7 +11270,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 90.31666666666666,
         "minDelay": 5.066666666666666,
-        "activationOverlap": 0.9510616591831933,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11602,7 +11282,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 30.2,
         "minDelay": 13.65,
-        "activationOverlap": 0.8245486798927174,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11615,7 +11294,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 26.0,
         "minDelay": 26.0,
-        "activationOverlap": 0.8203191560541517,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11628,7 +11306,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 5.483333333333333,
         "minDelay": 5.483333333333333,
-        "activationOverlap": 0.795890341561782,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11641,7 +11318,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 14.45,
         "minDelay": 14.45,
-        "activationOverlap": 0.7296741847344494,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11654,7 +11330,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 19.816666666666666,
         "minDelay": 19.816666666666666,
-        "activationOverlap": 0.48115449075000377,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11667,7 +11342,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 20.8,
         "minDelay": 20.8,
-        "activationOverlap": 0.9586580558862732,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -11680,7 +11354,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 131.48333333333332,
         "minDelay": 9.333333333333334,
-        "activationOverlap": 0.22988755744772557,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -11693,7 +11366,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 142.4,
         "minDelay": 100.61666666666666,
-        "activationOverlap": 0.7564528502760413,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11706,7 +11378,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 100.0,
         "minDelay": 71.51666666666667,
-        "activationOverlap": 0.756517824587949,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11719,7 +11390,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 593.2,
         "minDelay": 431.1,
-        "activationOverlap": 0.38701136196345737,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11732,7 +11402,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 133.70833333333331,
         "minDelay": 107.81666666666666,
-        "activationOverlap": 0.40121447897051854,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11745,7 +11414,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 578.0583333333334,
         "minDelay": 492.6166666666667,
-        "activationOverlap": 0.41280546944032004,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11758,7 +11426,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 352.3583333333333,
         "minDelay": 91.28333333333333,
-        "activationOverlap": 0.9239998534041337,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11771,7 +11438,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 92.16666666666667,
         "minDelay": 92.16666666666667,
-        "activationOverlap": 0.8577690903379704,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11784,7 +11450,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 142.9,
         "minDelay": 142.9,
-        "activationOverlap": 0.40615835872186173,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11797,7 +11462,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 68.51666666666667,
         "minDelay": 68.51666666666667,
-        "activationOverlap": 0.1581585208487522,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11810,7 +11474,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 205.23333333333332,
         "minDelay": 205.23333333333332,
-        "activationOverlap": 0.4186952553272384,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11823,7 +11486,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 80.66666666666667,
         "minDelay": 80.66666666666667,
-        "activationOverlap": 0.158354316972228,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11836,7 +11498,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 202.08333333333334,
         "minDelay": 202.08333333333334,
-        "activationOverlap": 0.791747048736491,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11849,7 +11510,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 200.7,
         "minDelay": 200.7,
-        "activationOverlap": 0.435873881959928,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11862,7 +11522,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 104.11666666666666,
         "minDelay": 104.11666666666666,
-        "activationOverlap": 0.6951667273066976,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11875,7 +11534,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 424.4,
         "minDelay": 424.4,
-        "activationOverlap": 0.5414384937914892,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11888,7 +11546,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 82.88333333333334,
         "minDelay": 82.88333333333334,
-        "activationOverlap": 0.454820689191943,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11901,7 +11558,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 201.4,
         "minDelay": 201.4,
-        "activationOverlap": 0.028375851200753588,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11914,7 +11570,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 269.75,
         "minDelay": 269.75,
-        "activationOverlap": 0.03598833891569537,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11927,7 +11582,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 47.166666666666664,
         "minDelay": 47.166666666666664,
-        "activationOverlap": 0.8177250620082738,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11940,7 +11594,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 87.25,
         "minDelay": 87.25,
-        "activationOverlap": 0.5236376567905027,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11953,7 +11606,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 52.233333333333334,
         "minDelay": 52.233333333333334,
-        "activationOverlap": 0.7732654325354411,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11966,7 +11618,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1783.05,
         "minDelay": 1783.05,
-        "activationOverlap": 0.8693202213882978,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11979,7 +11630,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 111.03333333333333,
         "minDelay": 111.03333333333333,
-        "activationOverlap": 0.40295217517841064,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -11992,7 +11642,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 81.11666666666666,
         "minDelay": 81.11666666666666,
-        "activationOverlap": 0.735342718531759,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12005,7 +11654,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 507.28333333333336,
         "minDelay": 507.28333333333336,
-        "activationOverlap": 0.8283219649739761,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12018,7 +11666,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 31.866666666666667,
         "minDelay": 31.866666666666667,
-        "activationOverlap": 0.5963056970898805,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12031,7 +11678,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 223.0,
         "minDelay": 223.0,
-        "activationOverlap": 0.0,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12044,7 +11690,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 154.65,
         "minDelay": 154.65,
-        "activationOverlap": 0.007508255319200159,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12057,7 +11702,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 912.4,
         "minDelay": 912.4,
-        "activationOverlap": 0.43514624635974974,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12070,7 +11714,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 471.56666666666666,
         "minDelay": 471.56666666666666,
-        "activationOverlap": 0.4496636750525401,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12083,7 +11726,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 511.65,
         "minDelay": 511.65,
-        "activationOverlap": 0.8169380929129401,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12096,7 +11738,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 476.6333333333333,
         "minDelay": 476.6333333333333,
-        "activationOverlap": 0.45111588875183684,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12109,7 +11750,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 429.8833333333333,
         "minDelay": 429.8833333333333,
-        "activationOverlap": 0.5471064350142818,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12122,7 +11762,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 284.28333333333336,
         "minDelay": 284.28333333333336,
-        "activationOverlap": 0.0026644626570645827,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12135,7 +11774,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 352.6333333333333,
         "minDelay": 352.6333333333333,
-        "activationOverlap": 0.013721707102862673,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12148,7 +11786,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 35.71666666666667,
         "minDelay": 35.71666666666667,
-        "activationOverlap": 0.3777277473565419,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12161,7 +11798,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 30.65,
         "minDelay": 30.65,
-        "activationOverlap": 0.3789476400001973,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12174,7 +11810,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 77.4,
         "minDelay": 77.4,
-        "activationOverlap": 0.45958188914874304,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12187,7 +11822,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 92.31666666666666,
         "minDelay": 92.31666666666666,
-        "activationOverlap": 0.7297368589355615,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12200,7 +11834,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1894.0833333333333,
         "minDelay": 1894.0833333333333,
-        "activationOverlap": 0.40291756721616173,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12213,7 +11846,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 225.86666666666667,
         "minDelay": 225.86666666666667,
-        "activationOverlap": 0.9243270780820816,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12226,7 +11858,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 66.46666666666667,
         "minDelay": 66.46666666666667,
-        "activationOverlap": 0.9544277183360137,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12239,7 +11870,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 102.8,
         "minDelay": 102.8,
-        "activationOverlap": 0.59798383899695,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12252,7 +11882,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 64.26666666666667,
         "minDelay": 64.26666666666667,
-        "activationOverlap": 0.9582494042282437,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12265,7 +11894,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 68.35,
         "minDelay": 68.35,
-        "activationOverlap": 0.7546309681253641,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12278,7 +11906,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 248.56666666666666,
         "minDelay": 248.56666666666666,
-        "activationOverlap": 0.20106654136439356,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12291,7 +11918,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 288.65,
         "minDelay": 288.65,
-        "activationOverlap": 0.10744105680049135,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12304,7 +11930,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 206.88333333333333,
         "minDelay": 206.88333333333333,
-        "activationOverlap": 0.12747955602381753,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12317,7 +11942,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 316.9166666666667,
         "minDelay": 316.9166666666667,
-        "activationOverlap": 0.18341972468476864,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12330,7 +11954,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 357.0,
         "minDelay": 357.0,
-        "activationOverlap": 0.12652305740992995,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12343,7 +11966,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 321.98333333333335,
         "minDelay": 321.98333333333335,
-        "activationOverlap": 0.18401208882642925,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12356,7 +11978,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 275.23333333333335,
         "minDelay": 275.23333333333335,
-        "activationOverlap": 0.14176135814532842,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12369,7 +11990,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1115.0166666666667,
         "minDelay": 1115.0166666666667,
-        "activationOverlap": 0.4817147332041604,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12382,7 +12002,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 434.8333333333333,
         "minDelay": 434.8333333333333,
-        "activationOverlap": 0.9375151024238264,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12395,7 +12014,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 40.083333333333336,
         "minDelay": 40.083333333333336,
-        "activationOverlap": 0.4977857882760141,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12408,7 +12026,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 41.68333333333333,
         "minDelay": 41.68333333333333,
-        "activationOverlap": 0.8218943267241996,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12421,7 +12038,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 35.016666666666666,
         "minDelay": 35.016666666666666,
-        "activationOverlap": 0.4993934150005103,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12434,7 +12050,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 81.76666666666667,
         "minDelay": 81.76666666666667,
-        "activationOverlap": 0.6056566788336702,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12447,7 +12062,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 80.5,
         "minDelay": 80.5,
-        "activationOverlap": 0.8668355427712902,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12460,7 +12074,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5598606150762793,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12473,7 +12086,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5935987953277638,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12486,7 +12098,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5679017913733606,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12499,7 +12110,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9473595050332909,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12512,7 +12122,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.12628408225238144,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12525,7 +12134,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.16578845651342913,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12538,7 +12146,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.629493779973589,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12551,7 +12158,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.26672159735890355,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -12566,7 +12172,6 @@ window.MCA_DEMO_DATA = {
         "within30": 2,
         "medianDelay": 29.033333333333335,
         "minDelay": 26.133333333333333,
-        "activationOverlap": 0.7379911310755121,
         "label": "moderate_temporal_sync",
         "confidence": "robust"
       },
@@ -12579,7 +12184,6 @@ window.MCA_DEMO_DATA = {
         "within30": 2,
         "medianDelay": 54.483333333333334,
         "minDelay": 8.533333333333333,
-        "activationOverlap": 0.2587952367419322,
         "label": "moderate_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -12592,7 +12196,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 160.9,
         "minDelay": 18.766666666666666,
-        "activationOverlap": 0.2548337761414199,
         "label": "moderate_temporal_sync",
         "confidence": "fragile_long_median"
       },
@@ -12605,7 +12208,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 10.9,
         "minDelay": 10.9,
-        "activationOverlap": 0.2443128690322624,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -12618,7 +12220,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 440.4083333333333,
         "minDelay": 215.03333333333333,
-        "activationOverlap": 0.1134236166099256,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12631,7 +12232,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 163.43333333333334,
         "minDelay": 82.3,
-        "activationOverlap": 0.9600500696717226,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12644,7 +12244,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 138.675,
         "minDelay": 111.33333333333333,
-        "activationOverlap": 0.7687006692555723,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12657,7 +12256,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 145.025,
         "minDelay": 71.4,
-        "activationOverlap": 0.23455258693612197,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12670,7 +12268,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 464.14166666666665,
         "minDelay": 439.15,
-        "activationOverlap": 0.8018034213456274,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12683,7 +12280,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1043.5833333333333,
         "minDelay": 1043.5833333333333,
-        "activationOverlap": 0.09361689916161943,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12696,7 +12292,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1125.8833333333334,
         "minDelay": 1125.8833333333334,
-        "activationOverlap": 0.09892702422954498,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12709,7 +12304,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1054.4833333333333,
         "minDelay": 1054.4833333333333,
-        "activationOverlap": 0.3302068141445804,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12722,7 +12316,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1154.9166666666667,
         "minDelay": 1154.9166666666667,
-        "activationOverlap": 0.06247306783045524,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12735,7 +12328,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 377.8,
         "minDelay": 377.8,
-        "activationOverlap": 0.9296307182467889,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12748,7 +12340,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 460.1,
         "minDelay": 460.1,
-        "activationOverlap": 0.9086366749576771,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       }
@@ -12763,7 +12354,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 0.08333333333333333,
         "minDelay": 0.08333333333333333,
-        "activationOverlap": 0.7360507096939161,
         "label": "strong_temporal_sync",
         "confidence": "fragile_single_event"
       },
@@ -12776,7 +12366,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 109.16666666666667,
         "minDelay": 28.55,
-        "activationOverlap": 0.36216466201127895,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -12789,7 +12378,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 9.483333333333333,
         "minDelay": 9.483333333333333,
-        "activationOverlap": 0.7599309571178591,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -12802,7 +12390,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 228.68333333333334,
         "minDelay": 30.683333333333334,
-        "activationOverlap": 0.985550224768931,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12815,7 +12402,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 947.4,
         "minDelay": 324.8333333333333,
-        "activationOverlap": 0.6932431886192908,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12828,7 +12414,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 271.1166666666667,
         "minDelay": 112.06666666666666,
-        "activationOverlap": 0.9545800649198507,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12841,7 +12426,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 87.46666666666667,
         "minDelay": 36.2,
-        "activationOverlap": 0.9722926288358905,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12854,7 +12438,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 223.05,
         "minDelay": 182.15,
-        "activationOverlap": 0.25306770712064347,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12867,7 +12450,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 755.0,
         "minDelay": 755.0,
-        "activationOverlap": 0.7262284370850522,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12880,7 +12462,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 210.7,
         "minDelay": 210.7,
-        "activationOverlap": 0.6987642187816827,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12893,7 +12474,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 85.38333333333334,
         "minDelay": 85.38333333333334,
-        "activationOverlap": 0.25911385520981944,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12906,7 +12486,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 372.68333333333334,
         "minDelay": 372.68333333333334,
-        "activationOverlap": 0.35032244762052084,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12919,7 +12498,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 864.8833333333333,
         "minDelay": 864.8833333333333,
-        "activationOverlap": 0.9659538280512256,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12932,7 +12510,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 148.8,
         "minDelay": 148.8,
-        "activationOverlap": 0.3421480433781807,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12945,7 +12522,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 81.38333333333334,
         "minDelay": 81.38333333333334,
-        "activationOverlap": 0.9685757670479539,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -12958,7 +12534,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5224208011803047,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12971,7 +12546,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7098057561151373,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12984,7 +12558,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.13199697905264385,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -12997,7 +12570,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8460136342783655,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13010,7 +12582,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3650489630120563,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13023,7 +12594,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9826305598703517,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13036,7 +12606,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4935469240738239,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13049,7 +12618,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7157345994027626,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13062,7 +12630,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.056725514800243154,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13075,7 +12642,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.37939684194189344,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13088,7 +12654,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9542874784189812,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13101,7 +12666,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.24519843725749804,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13114,7 +12678,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7710727855559366,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13127,7 +12690,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2651089378677647,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13140,7 +12702,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7390655926484423,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13153,7 +12714,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.35842781129826806,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13166,7 +12726,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.04119568195622558,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13179,7 +12738,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3708172917920619,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13192,7 +12750,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13205,7 +12762,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4219177173859631,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13218,7 +12774,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5133466443517204,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13231,7 +12786,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5877874021170064,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13244,7 +12798,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3739146428524556,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13257,7 +12810,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13270,7 +12822,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.23965360383626147,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13283,7 +12834,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7536360098595786,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13296,7 +12846,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7223526166424022,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13309,7 +12858,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.040264096923807,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13322,7 +12870,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.24219362126157146,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13335,7 +12882,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13348,7 +12894,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.23406154015550842,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13361,7 +12906,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.13513485144911402,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13374,7 +12918,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13387,7 +12930,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2416553749521178,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13400,7 +12942,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13413,7 +12954,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3438183046190944,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13426,7 +12966,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8415502378034462,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13439,7 +12978,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.46484303169881014,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13452,7 +12990,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.05342645043103662,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13465,7 +13002,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.35870826690462826,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13478,7 +13014,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6119523714112559,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13491,7 +13026,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2612781733038281,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13504,7 +13038,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13517,7 +13050,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.705497281410378,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13530,7 +13062,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.03932457675619134,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13543,7 +13074,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4849742903249516,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13556,7 +13086,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7283862609536556,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13569,7 +13098,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.05574022436709685,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13582,7 +13110,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3532486099884441,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13595,7 +13122,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.032262423148764985,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13608,7 +13134,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.04060041361146752,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -13623,7 +13148,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 108.76666666666667,
         "minDelay": 28.75,
-        "activationOverlap": 0.7950017278759232,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -13636,7 +13160,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 18.633333333333333,
         "minDelay": 18.633333333333333,
-        "activationOverlap": 0.19227834739172178,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -13649,7 +13172,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 774.45,
         "minDelay": 33.56666666666667,
-        "activationOverlap": 0.8352211992145687,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13662,7 +13184,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 499.2583333333333,
         "minDelay": 81.56666666666666,
-        "activationOverlap": 0.9902167306449338,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13675,7 +13196,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 70.39166666666667,
         "minDelay": 56.05,
-        "activationOverlap": 0.8470552090255004,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13688,7 +13208,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 628.1666666666666,
         "minDelay": 106.48333333333333,
-        "activationOverlap": 0.986029234358235,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13701,7 +13220,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 547.9833333333333,
         "minDelay": 313.93333333333334,
-        "activationOverlap": 0.9973780153841113,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13714,7 +13232,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 47.38333333333333,
         "minDelay": 47.38333333333333,
-        "activationOverlap": 0.24185903080418322,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13727,7 +13244,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 658.8,
         "minDelay": 658.8,
-        "activationOverlap": 0.19278382361142313,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13740,7 +13256,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 239.31666666666666,
         "minDelay": 239.31666666666666,
-        "activationOverlap": 0.852608280103969,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13753,7 +13268,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 398.6666666666667,
         "minDelay": 398.6666666666667,
-        "activationOverlap": 0.8448342432986271,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13766,7 +13280,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 888.8166666666667,
         "minDelay": 888.8166666666667,
-        "activationOverlap": 0.6527226787493288,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13779,7 +13292,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 2147.1,
         "minDelay": 2147.1,
-        "activationOverlap": 0.6549181297138698,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -13792,7 +13304,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.19404766363493803,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13805,7 +13316,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.22759298515289506,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13818,7 +13328,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.19009048599222456,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13831,7 +13340,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13844,7 +13352,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2922745635156663,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13857,7 +13364,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9768311864400585,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13870,7 +13376,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2981137055623265,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13883,7 +13388,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.80231721341861,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13896,7 +13400,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6597175142137732,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13909,7 +13412,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9908820533570306,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13922,7 +13424,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.34964908565745323,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13935,7 +13436,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9410150383723385,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13948,7 +13448,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7537309652537676,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13961,7 +13460,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.29203432862709555,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13974,7 +13472,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7859557088282879,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -13987,7 +13484,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6439944327434597,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14000,7 +13496,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.9844076530586625,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14013,7 +13508,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3715658851342447,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14026,7 +13520,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.44901882114482217,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14039,7 +13532,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2961720793371491,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14052,7 +13544,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.29539552070147135,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14065,7 +13556,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7214252112782623,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14078,7 +13568,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7970916900246204,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -14093,7 +13582,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 1.15,
         "minDelay": 1.15,
-        "activationOverlap": 0.7080229750451805,
         "label": "strong_temporal_sync",
         "confidence": "fragile_single_event"
       },
@@ -14106,7 +13594,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 5.25,
         "minDelay": 5.25,
-        "activationOverlap": 0.5682192790462371,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -14119,7 +13606,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 80.65,
         "minDelay": 80.65,
-        "activationOverlap": 0.37947617954405277,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14132,7 +13618,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 541.5833333333334,
         "minDelay": 541.5833333333334,
-        "activationOverlap": 0.656701620529276,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14145,7 +13630,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 460.93333333333334,
         "minDelay": 460.93333333333334,
-        "activationOverlap": 0.5822376911679492,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14158,7 +13642,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 76.43333333333334,
         "minDelay": 76.43333333333334,
-        "activationOverlap": 0.7110038252450351,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14171,7 +13654,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 81.8,
         "minDelay": 81.8,
-        "activationOverlap": 0.3938400906598236,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14184,7 +13666,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 108.2,
         "minDelay": 108.2,
-        "activationOverlap": 0.017202696242954476,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14197,7 +13678,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 542.7333333333333,
         "minDelay": 542.7333333333333,
-        "activationOverlap": 0.5862565009875864,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14210,7 +13690,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 3377.4166666666665,
         "minDelay": 3377.4166666666665,
-        "activationOverlap": 0.16664983226199181,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14223,7 +13702,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 31.283333333333335,
         "minDelay": 31.283333333333335,
-        "activationOverlap": 0.5136544517936208,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14236,7 +13714,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.20448611613951467,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14249,7 +13726,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5674508885154734,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14262,7 +13738,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.36640028889601417,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14275,7 +13750,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14288,7 +13762,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14301,7 +13774,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14314,7 +13786,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3830904289991894,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14327,7 +13798,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8460818599267103,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14340,7 +13810,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5470773952076218,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14353,7 +13822,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.13267780826751657,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -14368,7 +13836,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 49.3,
         "minDelay": 19.65,
-        "activationOverlap": 0.623597292356414,
         "label": "moderate_temporal_sync",
         "confidence": "moderate_review"
       },
@@ -14381,7 +13848,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 15.316666666666666,
         "minDelay": 15.316666666666666,
-        "activationOverlap": 0.9078072665460879,
         "label": "weak_temporal_overlap",
         "confidence": "moderate_review"
       },
@@ -14394,7 +13860,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1247.2833333333333,
         "minDelay": 1247.2833333333333,
-        "activationOverlap": 0.1260805255753194,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14407,7 +13872,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3132440272702837,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14420,7 +13884,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.20218260585913303,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14433,7 +13896,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5758191983560264,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14446,7 +13908,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.03824230358683502,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14459,7 +13920,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.46293114886062914,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14472,7 +13932,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4274627973827187,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14485,7 +13944,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.11642062602733842,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -14500,7 +13958,6 @@ window.MCA_DEMO_DATA = {
         "within30": 4,
         "medianDelay": 83.23333333333333,
         "minDelay": 3.1,
-        "activationOverlap": 0.5119578734181599,
         "label": "strong_temporal_sync",
         "confidence": "robust"
       },
@@ -14513,7 +13970,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 144.18333333333334,
         "minDelay": 53.516666666666666,
-        "activationOverlap": 0.35337002879054014,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14526,7 +13982,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 454.525,
         "minDelay": 119.8,
-        "activationOverlap": 0.6902631543625448,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14539,7 +13994,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 237.81666666666666,
         "minDelay": 59.65,
-        "activationOverlap": 0.4622590714920392,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14552,7 +14006,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 100.81666666666666,
         "minDelay": 100.81666666666666,
-        "activationOverlap": 0.610015691353639,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14565,7 +14018,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.019328063328054527,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14578,7 +14030,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.48446836801416054,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14591,7 +14042,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.07728829930721472,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14604,7 +14054,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.15669801737835784,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14617,7 +14066,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7873378072554547,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14630,7 +14078,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3458409714045372,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14643,7 +14090,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14656,7 +14102,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.22856621280784561,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14669,7 +14114,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.574381948517846,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14682,7 +14126,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.42149549975012746,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14695,7 +14138,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.1595402831560502,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14708,7 +14150,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.025120433426892574,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14721,7 +14162,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.32444747994369366,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14734,7 +14174,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14747,7 +14186,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14760,7 +14198,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5016173823966615,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14773,7 +14210,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.1290329944224413,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14786,7 +14222,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2506712535949788,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14799,7 +14234,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.40742688858590853,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14812,7 +14246,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.17496970477979695,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14825,7 +14258,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.16131777445436868,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14838,7 +14270,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3050143276526445,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -14851,7 +14282,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.28438586951182654,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -14866,7 +14296,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 193.26666666666668,
         "minDelay": 192.25,
-        "activationOverlap": 0.8007703557958802,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14879,7 +14308,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 424.83333333333337,
         "minDelay": 256.71666666666664,
-        "activationOverlap": 0.17696176726251484,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14892,7 +14320,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 307.76666666666665,
         "minDelay": 179.73333333333332,
-        "activationOverlap": 0.7939409411061897,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14905,7 +14332,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 2355.3416666666667,
         "minDelay": 550.05,
-        "activationOverlap": 0.047178378048500225,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14918,7 +14344,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 628.9916666666667,
         "minDelay": 271.78333333333336,
-        "activationOverlap": 0.20541244037028217,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14931,7 +14356,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 64.46666666666667,
         "minDelay": 64.46666666666667,
-        "activationOverlap": 0.2209894084885719,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14944,7 +14368,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 3903.9166666666665,
         "minDelay": 3903.9166666666665,
-        "activationOverlap": 0.11223747088467,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14957,7 +14380,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 393.25,
         "minDelay": 393.25,
-        "activationOverlap": 0.8614948877658949,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14970,7 +14392,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 3968.383333333333,
         "minDelay": 3968.383333333333,
-        "activationOverlap": 0.05891623947743415,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14983,7 +14404,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 88.28333333333333,
         "minDelay": 88.28333333333333,
-        "activationOverlap": 0.39588844407051776,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -14996,7 +14416,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 96.46666666666667,
         "minDelay": 96.46666666666667,
-        "activationOverlap": 0.45054724155599096,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15009,7 +14428,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 278.26666666666665,
         "minDelay": 278.26666666666665,
-        "activationOverlap": 0.22967634269596898,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15022,7 +14440,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 469.98333333333335,
         "minDelay": 469.98333333333335,
-        "activationOverlap": 0.07420733259497458,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15035,7 +14452,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 191.71666666666667,
         "minDelay": 191.71666666666667,
-        "activationOverlap": 0.32309523795058664,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15048,7 +14464,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 80.06666666666666,
         "minDelay": 80.06666666666666,
-        "activationOverlap": 0.6357643698905194,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15061,7 +14476,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 223.75,
         "minDelay": 223.75,
-        "activationOverlap": 0.31701573021382595,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15074,7 +14488,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 327.1166666666667,
         "minDelay": 327.1166666666667,
-        "activationOverlap": 0.36078487492364325,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15087,7 +14500,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 347.51666666666665,
         "minDelay": 347.51666666666665,
-        "activationOverlap": 0.3143220561478916,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15100,7 +14512,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 550.8666666666667,
         "minDelay": 550.8666666666667,
-        "activationOverlap": 0.20097994009214934,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15113,7 +14524,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2783448957559358,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15126,7 +14536,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15139,7 +14548,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.08844532883692595,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15152,7 +14560,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.25651853728541707,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15165,7 +14572,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15178,7 +14584,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15191,7 +14596,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15204,7 +14608,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0883753098189282,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -15217,7 +14620,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5674820609808182,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -15232,7 +14634,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 624.2583333333333,
         "minDelay": 19.066666666666666,
-        "activationOverlap": 0.9287955435709845,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -15245,7 +14646,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1200.45,
         "minDelay": 967.0833333333334,
-        "activationOverlap": 0.971213812102441,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15258,7 +14658,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1345.3,
         "minDelay": 1345.3,
-        "activationOverlap": 0.3395841340685717,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15271,7 +14670,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 43.85,
         "minDelay": 43.85,
-        "activationOverlap": 0.3450293883243674,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15284,7 +14682,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 262.3666666666667,
         "minDelay": 262.3666666666667,
-        "activationOverlap": 0.9287268309810613,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15297,7 +14694,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3204380504138238,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -15312,7 +14708,6 @@ window.MCA_DEMO_DATA = {
         "within30": 2,
         "medianDelay": 48.275,
         "minDelay": 3.65,
-        "activationOverlap": 0.9247057983661824,
         "label": "strong_temporal_sync",
         "confidence": "robust"
       },
@@ -15325,7 +14720,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 47.18333333333333,
         "minDelay": 44.233333333333334,
-        "activationOverlap": 0.603930224981535,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15338,7 +14732,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 135.09166666666667,
         "minDelay": 95.6,
-        "activationOverlap": 0.40959884940195423,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15351,7 +14744,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 221.11666666666667,
         "minDelay": 69.73333333333333,
-        "activationOverlap": 0.3154428861270872,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15364,7 +14756,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 418.5,
         "minDelay": 210.33333333333334,
-        "activationOverlap": 0.8866854225517553,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15377,7 +14768,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 310.5833333333333,
         "minDelay": 55.4,
-        "activationOverlap": 0.4783396485841482,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15390,7 +14780,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 260.60833333333335,
         "minDelay": 244.31666666666666,
-        "activationOverlap": 0.49744904486773395,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15403,7 +14792,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 226.33333333333334,
         "minDelay": 226.33333333333334,
-        "activationOverlap": 0.2381163839355193,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15416,7 +14804,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 400.3333333333333,
         "minDelay": 400.3333333333333,
-        "activationOverlap": 0.24923288129272042,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15429,7 +14816,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 277.1666666666667,
         "minDelay": 277.1666666666667,
-        "activationOverlap": 0.3645911262644537,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15442,7 +14828,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 229.98333333333332,
         "minDelay": 229.98333333333332,
-        "activationOverlap": 0.22018760091116277,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15455,7 +14840,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 51.75,
         "minDelay": 51.75,
-        "activationOverlap": 0.4628888306888355,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15468,7 +14852,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 50.833333333333336,
         "minDelay": 50.833333333333336,
-        "activationOverlap": 0.653105264451234,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15481,7 +14864,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 296.06666666666666,
         "minDelay": 296.06666666666666,
-        "activationOverlap": 0.754863699286551,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15494,7 +14876,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 574.9166666666666,
         "minDelay": 574.9166666666666,
-        "activationOverlap": 0.5368161282946867,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15507,7 +14888,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 102.58333333333333,
         "minDelay": 102.58333333333333,
-        "activationOverlap": 0.633142047641895,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15520,7 +14900,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 677.5,
         "minDelay": 677.5,
-        "activationOverlap": 0.683595576903704,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15533,7 +14912,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 630.3166666666667,
         "minDelay": 630.3166666666667,
-        "activationOverlap": 0.8834612823520489,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15546,7 +14924,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 330.6,
         "minDelay": 330.6,
-        "activationOverlap": 0.7901046187876567,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15559,7 +14936,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 346.9,
         "minDelay": 346.9,
-        "activationOverlap": 0.7832460954322942,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15572,7 +14948,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 299.71666666666664,
         "minDelay": 299.71666666666664,
-        "activationOverlap": 0.69802683970642,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       }
@@ -15587,7 +14962,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 448.1166666666667,
         "minDelay": 13.85,
-        "activationOverlap": 0.019994113448489618,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -15600,7 +14974,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 568.15,
         "minDelay": 8.55,
-        "activationOverlap": 0.6792861487025368,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -15613,7 +14986,6 @@ window.MCA_DEMO_DATA = {
         "within30": 1,
         "medianDelay": 1301.5916666666667,
         "minDelay": 7.433333333333334,
-        "activationOverlap": 0.05427079888700878,
         "label": "weak_temporal_overlap",
         "confidence": "fragile_long_median"
       },
@@ -15626,7 +14998,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 561.35,
         "minDelay": 185.61666666666667,
-        "activationOverlap": 0.9026262021403284,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15639,7 +15010,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 284.6,
         "minDelay": 194.16666666666666,
-        "activationOverlap": 0.6883963817341485,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15652,7 +15022,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 993.3333333333334,
         "minDelay": 553.9333333333333,
-        "activationOverlap": 0.4969089417414235,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15665,7 +15034,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 607.2,
         "minDelay": 359.76666666666665,
-        "activationOverlap": 0.667353274404251,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15678,7 +15046,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 894.2,
         "minDelay": 791.7166666666667,
-        "activationOverlap": 0.5299662709711332,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15691,7 +15058,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 54.45,
         "minDelay": 37.583333333333336,
-        "activationOverlap": 0.034418002715568205,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15704,7 +15070,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 585.0166666666667,
         "minDelay": 79.86666666666666,
-        "activationOverlap": 0.05066790009086442,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15717,7 +15082,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 459.93333333333334,
         "minDelay": 114.3,
-        "activationOverlap": 0.03655236541668709,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15730,7 +15094,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 285.45,
         "minDelay": 96.83333333333333,
-        "activationOverlap": 0.025177332614411616,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15743,7 +15106,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 955.9583333333334,
         "minDelay": 121.73333333333333,
-        "activationOverlap": 0.658282221381527,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15756,7 +15118,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1917.1666666666667,
         "minDelay": 658.65,
-        "activationOverlap": 0.0538837268010715,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15769,7 +15130,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1061.6166666666668,
         "minDelay": 188.58333333333334,
-        "activationOverlap": 0.8567854679509168,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15782,7 +15142,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1202.5166666666667,
         "minDelay": 1031.7333333333333,
-        "activationOverlap": 0.9482512290333105,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15795,7 +15154,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 948.65,
         "minDelay": 829.3,
-        "activationOverlap": 0.018240380553444017,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15808,7 +15166,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 687.5,
         "minDelay": 298.45,
-        "activationOverlap": 0.026852278069093356,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15821,7 +15178,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 608.75,
         "minDelay": 522.6166666666667,
-        "activationOverlap": 0.013343137078659617,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15834,7 +15190,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1728.4250000000002,
         "minDelay": 874.95,
-        "activationOverlap": 0.368413840564926,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15847,7 +15202,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 339.9,
         "minDelay": 134.41666666666666,
-        "activationOverlap": 0.7229953496028643,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15860,7 +15214,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 972.8249999999999,
         "minDelay": 193.05,
-        "activationOverlap": 0.04951057355900149,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15873,7 +15226,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1540.975,
         "minDelay": 201.6,
-        "activationOverlap": 0.07288618155039468,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15886,7 +15238,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1119.675,
         "minDelay": 352.3333333333333,
-        "activationOverlap": 0.03621779534177989,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15899,7 +15250,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1156.1833333333334,
         "minDelay": 683.1,
-        "activationOverlap": 0.5768777703309801,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15912,7 +15262,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 3078.85,
         "minDelay": 3078.85,
-        "activationOverlap": 0.4672529928629761,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15925,7 +15274,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 226.16666666666666,
         "minDelay": 226.16666666666666,
-        "activationOverlap": 0.0,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15938,7 +15286,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 2852.6833333333334,
         "minDelay": 2852.6833333333334,
-        "activationOverlap": 0.027536018546001823,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15951,7 +15298,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 3870.5666666666666,
         "minDelay": 3870.5666666666666,
-        "activationOverlap": 0.24762832622769296,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15964,7 +15310,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 3041.266666666667,
         "minDelay": 3041.266666666667,
-        "activationOverlap": 0.07366031516391255,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15977,7 +15322,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 4169.016666666666,
         "minDelay": 4169.016666666666,
-        "activationOverlap": 0.10843782889524047,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -15990,7 +15334,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 3884.4166666666665,
         "minDelay": 3884.4166666666665,
-        "activationOverlap": 0.06622046118225867,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16003,7 +15346,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1288.6666666666667,
         "minDelay": 1288.6666666666667,
-        "activationOverlap": 0.6721471860231406,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16016,7 +15358,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 72.08333333333333,
         "minDelay": 72.08333333333333,
-        "activationOverlap": 0.43647317412174136,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16029,7 +15370,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 161.36666666666667,
         "minDelay": 161.36666666666667,
-        "activationOverlap": 0.22862621299627509,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16042,7 +15382,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 36.28333333333333,
         "minDelay": 36.28333333333333,
-        "activationOverlap": 0.6358972381264341,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16055,7 +15394,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1017.8833333333333,
         "minDelay": 1017.8833333333333,
-        "activationOverlap": 0.0,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16068,7 +15406,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1316.3333333333333,
         "minDelay": 1316.3333333333333,
-        "activationOverlap": 0.6423459832647608,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16081,7 +15418,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 323.0,
         "minDelay": 323.0,
-        "activationOverlap": 0.6505230949557878,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16094,7 +15430,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 1564.0166666666667,
         "minDelay": 1564.0166666666667,
-        "activationOverlap": 0.01530091228923764,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16107,7 +15442,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16120,7 +15454,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.04364413730133209,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16133,7 +15466,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16146,7 +15478,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.09340579507883627,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16159,7 +15490,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16172,7 +15502,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3883776510326386,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16185,7 +15514,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.4170356883748809,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16198,7 +15526,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16211,7 +15538,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.26410511657554636,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16224,7 +15550,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6771524191781325,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16237,7 +15562,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.023129920695339107,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16250,7 +15574,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7886054082805231,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16263,7 +15586,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.8613764774751592,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16276,7 +15598,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.7215262442151883,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16289,7 +15610,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.06278244232049392,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -16304,7 +15624,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 298.95,
         "minDelay": 183.73333333333332,
-        "activationOverlap": 0.684825423976955,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16317,7 +15636,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 115.875,
         "minDelay": 64.3,
-        "activationOverlap": 0.7125944323154234,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16330,7 +15648,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 618.3833333333333,
         "minDelay": 545.75,
-        "activationOverlap": 0.10721074140333725,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16343,7 +15660,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 966.05,
         "minDelay": 966.05,
-        "activationOverlap": 0.1152520483790193,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16356,7 +15672,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 414.9,
         "minDelay": 414.9,
-        "activationOverlap": 0.10790256441626382,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16369,7 +15684,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 351.18333333333334,
         "minDelay": 351.18333333333334,
-        "activationOverlap": 0.48800278423402743,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16382,7 +15696,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 194.56666666666666,
         "minDelay": 194.56666666666666,
-        "activationOverlap": 0.21969288878467358,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16395,7 +15708,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 378.3,
         "minDelay": 378.3,
-        "activationOverlap": 0.15045127570668612,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16408,7 +15720,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16421,7 +15732,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16434,7 +15744,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16447,7 +15756,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16460,7 +15768,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.28083293770876133,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16473,7 +15780,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16486,7 +15792,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.5291241660102155,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16499,7 +15804,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.2275985783134081,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16512,7 +15816,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.6503661626496572,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16525,7 +15828,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.25087414515830075,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16538,7 +15840,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.16484673951447582,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16551,7 +15852,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16564,7 +15864,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.3857429238572533,
         "label": "no_temporal_sync",
         "confidence": "none"
       }
@@ -16579,7 +15878,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": 571.3833333333333,
         "minDelay": 571.3833333333333,
-        "activationOverlap": 0.4812967102075265,
         "label": "weak_temporal_overlap",
         "confidence": "weak_context"
       },
@@ -16592,7 +15890,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.1885264461756981,
         "label": "no_temporal_sync",
         "confidence": "none"
       },
@@ -16605,7 +15902,6 @@ window.MCA_DEMO_DATA = {
         "within30": 0,
         "medianDelay": null,
         "minDelay": null,
-        "activationOverlap": 0.0,
         "label": "no_temporal_sync",
         "confidence": "none"
       }

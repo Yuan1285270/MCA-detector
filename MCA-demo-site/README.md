@@ -6,7 +6,7 @@ Static dashboard for presenting MCA pipeline results.
 
 - Suspicious coordination groups from seed expansion and validation.
 - Group relationship graphs using co-negative and temporal evidence.
-- Stage 2 evidence: temporal synchrony and activation window overlap.
+- Stage 2 evidence: temporal synchrony and temporal confidence.
 - Individual abnormal accounts as a separate output stream.
 - Client/Demo audience modes.
 - Chinese/English language switching.
