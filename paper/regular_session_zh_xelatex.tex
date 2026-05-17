@@ -1,0 +1,239 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\makeatletter
+\def\ps@IEEEtitlepagestyle{%
+  \def\@oddhead{}\def\@evenhead{}}
+\makeatother
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{ctex}
+\setCJKmainfont{PingFang TC}
+\setCJKsansfont{PingFang TC}
+\setCJKmonofont{PingFang TC}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+\begin{document}
+
+\title{結合操縱性內容分析與圖擴張之\\社群協同行為偵測系統}
+
+\author{
+  \IEEEauthorblockN{林琮原、張鈞浩、賴嘉安}
+  \IEEEauthorblockA{逢甲大學資訊工程學系\\
+  指導教授：李俊宏}
+}
+
+\maketitle
+
+%------------------------------------------------------------------------
+\begin{abstract}
+社群平台上的操縱式資訊操作不一定表現為單一帳號的自動化行為。許多可疑帳號可能在內容、互動目標與發文時間上呈現群體協同，但一般高活躍使用者或立場相近的社群成員也可能攻擊同一批目標，導致單一帳號分數或共同攻擊目標容易產生誤判。本研究提出 MCA Detector，一套可重現且可人工審查的社群協同行為偵測流程。系統先以大型語言模型分析 Reddit 加密貨幣討論中的貼文修辭與留言立場，建立帳號特徵矩陣與多層 adjacency graph。接著以 Manipulative Coordination Account（MCA）分數選出高風險 seed accounts，並沿共同負向目標圖進行 seed expansion，形成候選協同群。最後以同一討論串中的短時間共同出現作為 temporal synchrony verification，將「共同立場」與「更可疑的同步行動」分開。初步實驗產生 20 個 seed groups、172 個不重複候選帳號，並辨識出 13 組 strong temporal sync pairs 與 8 組 moderate temporal sync pairs。案例分析顯示，harvested 群組同時具有共同攻擊目標與穩定時間同步，而 JG87919 類型案例雖具有共同負向目標，卻缺乏有效時間同步。本文強調輸出為可審查的高優先候選群，而非直接宣稱帳號為確認網軍。
+\end{abstract}
+
+\begin{IEEEkeywords}
+社群媒體分析，協同行為偵測，操縱式修辭，圖擴張，時間同步，Reddit
+\end{IEEEkeywords}
+
+%------------------------------------------------------------------------
+\section{緒論}
+
+社群媒體已成為公共議題、金融討論與投資情緒形成的重要場域。然而，社群平台也可能被自動化帳號、協同帳號或操縱式內容用來放大特定敘事。既有 social bot detection 研究指出，機器人帳號可能透過內容、網路互動、時間行為與情緒表達影響人類使用者 \cite{ferrara2016rise,varol2017online}。然而，帳號是否「像機器人」並不等同於帳號是否屬於「協同行動」。在加密貨幣社群中，正常使用者也可能高度活躍、語氣強烈，並共同批評同一批反對者。因此，若僅依據帳號層級分數或共同攻擊目標，容易將有機社群行為誤判為網軍。
+
+本研究關注的問題不是直接證明某帳號為真實世界中的操控者，而是設計一個可重跑、可解釋、可人工審查的流程：先找出值得調查的候選群，再提供群內關係、內容操縱性與時間同步證據。本文的主要貢獻如下：
+
+\begin{itemize}
+  \item 提出兩階段 suspicious coordination pipeline，將 MCA seed selection、graph expansion 與 temporal verification 分開處理。
+  \item 將共同負向目標圖用於候選群發現，而非直接作為最終網軍判決。
+  \item 以短時間同串出現作為 Stage 2 驗證訊號，降低「同立場但獨立行動」造成的誤判。
+  \item 輸出 group summary、pair evidence、candidate validation 與 account roles 等可審查表格，並將 demo website 與分析 pipeline 明確分離。
+\end{itemize}
+
+%------------------------------------------------------------------------
+\section{相關研究}
+
+\subsection{社群機器人與協同行為偵測}
+
+早期社群機器人研究多聚焦於帳號層級分類。Ferrara 等人整理 social bots 對政治、經濟與公共討論的影響 \cite{ferrara2016rise}；Varol 等人則以 metadata、內容、情緒、網路與時間序列等多種特徵建立 human-bot interaction detection framework \cite{varol2017online}。這類方法適合估計單一帳號是否自動化，但較難回答多個帳號是否共同操作。
+
+另一類研究轉向群體與行為序列。Cresci 等人提出 Social Fingerprinting，透過類 DNA 的行為序列相似性偵測 spambot groups \cite{cresci2018social}；Mazza 等人提出 RTbust，以 retweet time series 中的時間模式偵測可疑 botnets \cite{mazza2019rtbust}。這些研究顯示，群體行為與時間模式能揭露單一帳號特徵看不到的協同訊號。
+
+\subsection{協同行為網路與立場分析}
+
+近年的 coordinated behavior detection 更直接處理「共同動作」問題。Pacheco 等人以 shared behavioral traces 建立 coordination networks，並在多個案例中使用 identity、image、hashtag sequence、retweet 與 temporal patterns 偵測協同網路 \cite{pacheco2021uncovering}。Graham 等人提出 Coordination Network Toolkit，以 weighted directed multigraph 表示多種 coordinated behavior，支援 online influence、digital astroturfing 與 online activism 分析 \cite{graham2024coordination}。在 Reddit 場景中，Saeed 等人的 TROLLMAGNIFIER 以已知 troll accounts 為基礎，指出可疑帳號可能呈現 loose coordination、相似主題與 temporal synchronization \cite{saeed2021trollmagnifier}。
+
+本研究也使用 stance detection 的概念。SemEval-2016 stance detection task 將文本相對於特定 target 的立場分為支持、反對或中立 \cite{mohammad2016semeval}。本文延伸此概念，將留言對原貼文作者的支持或反對關係轉為 signed account-to-account edges，並進一步建立共同負向目標圖。
+
+%------------------------------------------------------------------------
+\section{系統架構}
+
+圖~\ref{fig:pipeline} 為 MCA Detector 的核心流程。系統分成分析 pipeline 與展示層。分析 pipeline 負責從原始 Reddit 貼文與留言產生可審查證據；demo website 只讀取輸出表格並呈現結果，不重新計算分數、不發現群組，也不作 final verdict。
+
+\begin{figure}[htbp]
+  \centering
+  \framebox[0.95\columnwidth]{\parbox{0.9\columnwidth}{\centering
+    \vspace{0.6cm}
+    \small
+    Raw Posts/Comments $\rightarrow$ LLM Analysis\\[3pt]
+    $\downarrow$\\[3pt]
+    Account Feature Matrix + Adjacency Graphs\\[3pt]
+    $\downarrow$\\[3pt]
+    MCA Seed Ranking\\[3pt]
+    $\downarrow$\\[3pt]
+    Stage 1: Coordination Expansion\\[3pt]
+    $\downarrow$\\[3pt]
+    Stage 2: Temporal Verification\\[3pt]
+    $\downarrow$\\[3pt]
+    Group Summary + Account Roles
+    \vspace{0.6cm}
+  }}
+  \caption{MCA Detector 分析流程}
+  \label{fig:pipeline}
+\end{figure}
+
+\subsection{LLM 內容與立場分析}
+
+系統先對貼文進行情緒與操縱式修辭分析，輸出 \texttt{sentiment\_score}、\texttt{manipulative\_rhetoric\_score} 與 \texttt{rhetoric\_tags}。留言分析則判斷留言對原貼文的立場，輸出 \texttt{feedback\_label}、\texttt{feedback\_score} 與 \texttt{edge\_weight}。每則直回原貼文的留言可轉為一條有向邊：
+
+\begin{equation}
+comment\_author \rightarrow post\_author
+\end{equation}
+
+若留言為反對、攻擊或否定，則形成負向互動；若留言支持、補充或認同，則形成正向互動。這讓後續 adjacency graph 能保留互動方向與立場，而不是只計算留言次數。
+
+\subsection{MCA 分數}
+
+MCA score 是 seed selection 與 review priority，不是最終判決。本文使用四類訊號，如表~\ref{tab:mca-signals} 所示。主權重設定為 manipulative 0.30、coordinative 0.35、interaction reach 0.15、automatic behavior 0.20。由於目前缺乏大規模 ground truth，本研究不宣稱此權重為最佳化結果，而是將其視為可解釋的初始排序。
+
+\begin{table}[htbp]
+\centering
+\caption{MCA score 的四類訊號}
+\label{tab:mca-signals}
+\small
+\begin{tabular}{p{0.26\columnwidth}p{0.62\columnwidth}}
+\toprule
+Signal & 主要特徵 \\
+\midrule
+Manipulative & 平均修辭分數、非中立貼文比例、反對立場比例 \\
+Coordinative & co-target、co-negative-target、trigger-response frequency \\
+Interaction reach & outgoing volume、incoming attention、interaction breadth \\
+Automatic behavior & Isolation Forest anomaly score \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{多層 Adjacency Graph}
+
+系統建立多層 account-level graph，包括 \texttt{A\_count}、\texttt{A\_signed}、\texttt{A\_positive}、\texttt{A\_negative}、\texttt{A\_trigger\_response}、\texttt{A\_co\_target}、\texttt{A\_co\_negative\_target} 與 \texttt{A\_tag\_similarity}。其中候選群發現主要使用共同負向目標圖：
+
+\begin{equation}
+A_{co\_negative}(i,j)=cosine(\mathrm{negative\_target}_i, \mathrm{negative\_target}_j)
+\end{equation}
+
+此圖回答「兩個帳號是否常常反對或攻擊同一批作者？」但它只是協同線索，不是同操控者證據。正常使用者也可能因為立場相同而批評同一批人，因此本文將它用於 candidate discovery，而非 final verdict。
+
+%------------------------------------------------------------------------
+\section{候選群擴張與驗證}
+
+\subsection{Stage 1: Seed Expansion}
+
+第一階段從 MCA top accounts 選出 seed accounts，並沿 graph layers 擴張候選群。擴張規則採分層制，而非黑箱加權總分。每個候選人必須有明確納入理由，如表~\ref{tab:tiers} 所示。
+
+\begin{table}[htbp]
+\centering
+\caption{Seed expansion 納入規則}
+\label{tab:tiers}
+\small
+\begin{tabular}{p{0.18\columnwidth}p{0.70\columnwidth}}
+\toprule
+Tier & 納入條件 \\
+\midrule
+Tier 1 & \texttt{co\_negative\_target >= 0.20} \\
+Tier 2 & \texttt{tag\_similarity >= 0.90} 且有結構訊號支持 \\
+Tier 3 & \texttt{trigger\_response >= 0.50} 且有 co-negative 或 tag support \\
+Tier 4 & 2-hop co-negative，且連到至少兩個已納入成員 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\texttt{co\_target} 只作輔助，不單獨納入。這個設計保留了每位候選人的納入理由，也方便後續人工審查。
+
+\subsection{Stage 2: Temporal Verification}
+
+Stage 1 找到的是 candidate coordination groups，不是同操控者證據。Stage 2 檢查群內帳號是否在同一篇 post 下短時間共同出現。本文使用四種 pair-level labels：
+
+\begin{itemize}
+  \item \textbf{strong temporal sync}: 至少一次同串留言時間差小於 5 分鐘。
+  \item \textbf{moderate temporal sync}: 至少兩次同串留言時間差小於 30 分鐘。
+  \item \textbf{weak temporal overlap}: 有同串共現，但沒有短時間同步。
+  \item \textbf{no temporal sync}: 沒有同串共現。
+\end{itemize}
+
+此外，為避免熱門貼文造成單次巧合同步，系統加入 temporal confidence：\texttt{robust} 表示重複或跨多篇貼文的短時間同步；\texttt{moderate\_review} 表示有可審查同步證據但仍需人工檢查；\texttt{fragile} 表示單次或典型延遲過長，只作 context；\texttt{none} 表示無可用同步證據。
+
+\subsection{訊號刪減}
+
+早期版本曾測試 \texttt{text\_fingerprint\_distance} 與 \texttt{account\_lifecycle\_overlap}。然而在單一主題的 Bitcoin 社群中，TF-IDF 類文字距離容易測到 topic similarity，而不是 same operator；帳號生命週期與活化窗口也無法區分 harvested 正樣本與 JG87919 類型反樣本。因此正式 Stage 2 收斂為 pure temporal verification，只使用 temporal synchrony 與 temporal confidence。
+
+%------------------------------------------------------------------------
+\section{實驗與案例分析}
+
+\subsection{整體輸出}
+
+目前 pipeline 以 MCA ranking 選出 20 個 seed accounts，經 seed expansion 後形成 20 個候選 seed groups。總計有 178 筆 group membership，去除重複後為 172 個候選帳號。Stage 2 pair-level temporal verification 共找出 13 組 strong temporal sync pairs 與 8 組 moderate temporal sync pairs；其中 3 組達到 robust confidence，44 組為 moderate review confidence。表~\ref{tab:top-groups} 顯示前五個候選群摘要。此排序為 review priority，不代表最終網軍判決。
+
+\begin{table}[htbp]
+\centering
+\caption{前五個候選群摘要}
+\label{tab:top-groups}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Seed & Members & P1 & P2 & Strong & Robust \\
+\midrule
+lol\_camis & 23 & 2 & 3 & 4 & 0 \\
+BtcKing1111 & 11 & 2 & 3 & 2 & 0 \\
+tzacPACO & 6 & 2 & 1 & 0 & 1 \\
+harvested & 8 & 2 & 0 & 1 & 1 \\
+iPurchaseBitcoin & 7 & 2 & 0 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{harvested 群組}
+
+harvested 群組包含 8 名成員，在 Stage 1 中具有 7 名 Tier 1 co-negative direct members、9 條群內協同邊與 11 個 shared negative targets。Stage 2 中，NectarineDirect936 與 harvested 在 17 篇共同貼文下出現，包含 2 次 5 分鐘內同步與 4 次 30 分鐘內同步，因此被標為 \texttt{strong\_temporal\_sync / robust}。此案例顯示，當共同攻擊目標與重複短時間同步同時存在時，該群可被列為高優先審查對象。
+
+\subsection{JG87919 類型案例}
+
+JG87919 類型案例說明 Stage 1 不能被當成最終判斷。該 seed expansion 形成 15 名成員、34 條群內協同邊與 20 個 shared negative targets，表面上具有強烈共同攻擊目標。然而人工檢查與時間同步分析顯示，該群更像是同一社群內立場相近的獨立使用者，而非同操控來源。此案例支持本文核心設計：co-negative-target 適合找候選群，但必須透過 Stage 2 temporal verification 或人工審查再分級。
+
+%------------------------------------------------------------------------
+\section{討論}
+
+本文方法的主要優點是可解釋與可審查。MCA 分數提供 seed selection，但不直接宣稱帳號有罪；co-negative-target graph 找出共同攻擊目標，但不將其視為網軍充分證據；temporal synchrony 則作為第二階段過濾器，協助區分同立場活躍用戶與更可疑的同步行動。
+
+本研究仍有三項限制。第一，目前缺乏大規模 ground truth，因此結果應解讀為 review candidates，而非 supervised accuracy。第二，時間同步可能受到熱門貼文與高活躍使用者影響，因此本文加入 temporal confidence，但仍需要人工檢查。第三，資料來源集中於 Reddit 加密貨幣社群，未來若應用到其他平台，需依平台互動形式重新定義 action traces，例如轉推、分享連結、按讚或共同 hashtag。
+
+%------------------------------------------------------------------------
+\section{結論}
+
+本文提出一套結合 LLM 內容分析、MCA seed ranking、graph-based seed expansion 與 temporal synchrony verification 的社群協同行為偵測流程。相較於單純帳號分數排序，本文將偵測目標從「誰最像可疑帳號」推進到「哪些帳號像是在一起行動」。初步結果顯示，系統能從大量帳號中縮小至可審查的候選群，並透過時間同步證據進一步排序審查優先級。未來工作將擴充跨平台 action traces、建立更完整的人工標註集，並評估 temporal threshold 在不同社群與平台上的穩定性。
+
+\begin{thebibliography}{8}
+\bibitem{ferrara2016rise} E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, ``The Rise of Social Bots,'' \textit{Communications of the ACM}, vol. 59, no. 7, pp. 96--104, 2016.
+\bibitem{varol2017online} O. Varol, E. Ferrara, C. Davis, F. Menczer, and A. Flammini, ``Online Human-Bot Interactions: Detection, Estimation, and Characterization,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 11, no. 1, pp. 280--289, 2017.
+\bibitem{cresci2018social} S. Cresci, R. Di Pietro, M. Petrocchi, A. Spognardi, and M. Tesconi, ``Social Fingerprinting: Detection of Spambot Groups Through DNA-Inspired Behavioral Modeling,'' \textit{IEEE Transactions on Dependable and Secure Computing}, vol. 15, no. 4, pp. 561--576, 2018.
+\bibitem{mazza2019rtbust} M. Mazza, S. Cresci, M. Avvenuti, W. Quattrociocchi, and M. Tesconi, ``RTbust: Exploiting Temporal Patterns for Botnet Detection on Twitter,'' arXiv:1902.04506, 2019.
+\bibitem{pacheco2021uncovering} D. Pacheco, P.-M. Hui, C. Torres-Lugo, B. T. Truong, A. Flammini, and F. Menczer, ``Uncovering Coordinated Networks on Social Media: Methods and Case Studies,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 15, no. 1, pp. 455--466, 2021.
+\bibitem{graham2024coordination} T. Graham, S. Hames, and E. Alpert, ``The Coordination Network Toolkit: A Framework for Detecting and Analysing Coordinated Behaviour on Social Media,'' \textit{Journal of Computational Social Science}, vol. 7, pp. 1139--1160, 2024.
+\bibitem{saeed2021trollmagnifier} M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and G. Stringhini, ``TROLLMAGNIFIER: Detecting State-Sponsored Troll Accounts on Reddit,'' arXiv:2112.00443, 2021.
+\bibitem{mohammad2016semeval} S. Mohammad, S. Kiritchenko, P. Sobhani, X. Zhu, and C. Cherry, ``SemEval-2016 Task 6: Detecting Stance in Tweets,'' \textit{Proceedings of the 10th International Workshop on Semantic Evaluation}, pp. 31--41, 2016.
+\end{thebibliography}
+
+\end{document}

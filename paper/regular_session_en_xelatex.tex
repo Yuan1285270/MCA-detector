@@ -1,0 +1,238 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\makeatletter
+\def\ps@IEEEtitlepagestyle{%
+  \def\@oddhead{}\def\@evenhead{}}
+\makeatother
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+\begin{document}
+
+\title{Detecting Social Coordination Behavior via\\Manipulative Content Analysis and Graph Expansion}
+
+\author{
+  \IEEEauthorblockN{Cong-Yuan Lin, Jun-Hao Chang, Jia-An Lai}
+  \IEEEauthorblockA{Department of Computer Science and Information Engineering\\
+  Feng Chia University\\
+  Advisor: Jun-Hong Li}
+}
+
+\maketitle
+
+%------------------------------------------------------------------------
+\begin{abstract}
+Manipulative information operations on social platforms do not always appear as isolated automated accounts. Suspicious accounts may coordinate through similar targets, repeated interactions, or synchronized timing, while ordinary highly active users may also share the same ideology and attack the same targets. Therefore, relying only on an account-level suspiciousness score or shared negative targets can easily produce false positives. This paper presents MCA Detector, a reproducible and review-oriented pipeline for detecting suspicious social coordination. The system first uses large language models to analyze cryptocurrency-related Reddit posts and comment stances, then constructs account-level feature matrices and multi-layer adjacency graphs. A Manipulative Coordination Account (MCA) score is used to select high-risk seed accounts, and a co-negative-target graph is used to expand those seeds into candidate coordination groups. The second stage verifies whether group members appear in the same discussion thread within short time windows, using temporal synchrony to separate ideological alignment from stronger coordinated action evidence. In the current Reddit cryptocurrency dataset, the pipeline produced 20 seed groups and 172 unique candidate accounts, identifying 13 strong temporal synchrony pairs and 8 moderate temporal synchrony pairs. Case analysis shows that the harvested group contains both shared negative targets and robust temporal synchrony, while a JG87919-type case contains shared negative targets but lacks effective temporal synchrony. The system outputs review candidates rather than direct claims that accounts are confirmed bots or real-world operators.
+\end{abstract}
+
+\begin{IEEEkeywords}
+social media analysis, coordinated behavior detection, manipulative rhetoric, graph expansion, temporal synchrony, Reddit
+\end{IEEEkeywords}
+
+%------------------------------------------------------------------------
+\section{Introduction}
+
+Social media has become an important space for public discussion, financial narratives, and investment sentiment formation. At the same time, social platforms can be exploited by automated accounts, coordinated accounts, or manipulative content campaigns to amplify specific narratives. Prior studies on social bot detection have shown that bots may influence users through content generation, network interaction, temporal behavior, and emotional expression \cite{ferrara2016rise,varol2017online}. However, whether an account looks automated is not the same as whether it belongs to a coordinated operation. In cryptocurrency communities, ordinary users can also be highly active, emotionally intense, and jointly critical of the same opponents. As a result, account-level scores or shared attack targets alone can misclassify organic ideological alignment as manipulation.
+
+This paper focuses on a practical review problem: not to prove that an account is a real-world cyber troop, but to generate interpretable suspicious coordination candidates. The goal is to identify candidate groups, provide evidence, and allow analysts to inspect the relationship between account suspiciousness, shared targets, and short-window synchronized behavior.
+
+The contributions of this work are as follows:
+
+\begin{itemize}
+  \item We propose a two-stage suspicious coordination pipeline that separates MCA seed selection, graph expansion, and temporal verification.
+  \item We use the co-negative-target graph for candidate group discovery, rather than treating shared targets as a final verdict.
+  \item We use short-window co-appearance in the same thread as a verification signal to distinguish ideological alignment from stronger coordinated action evidence.
+  \item We produce review-oriented outputs, including group summaries, pair evidence, candidate validation tables, and account role labels, while keeping the demo website separate from the analysis pipeline.
+\end{itemize}
+
+%------------------------------------------------------------------------
+\section{Related Work}
+
+\subsection{Social Bot and Coordination Detection}
+
+Early social bot detection research mainly focused on account-level classification. Ferrara et al. described the rise of social bots and discussed how bots can affect political, economic, and public discussions \cite{ferrara2016rise}. Varol et al. proposed a human-bot interaction detection framework using metadata, content, sentiment, network, and temporal features \cite{varol2017online}. These methods are useful for estimating whether a single account is automated, but they are less directly suited to explaining whether multiple accounts act together.
+
+Another line of research emphasizes group behavior and behavioral sequences. Cresci et al. proposed Social Fingerprinting, which detects groups of spambots through DNA-inspired behavioral modeling \cite{cresci2018social}. Mazza et al. introduced RTbust, which exploits temporal patterns in retweet time series to detect suspicious botnets \cite{mazza2019rtbust}. These studies show that group-level behavior and timing can reveal coordination that is not visible from single-account features alone.
+
+\subsection{Coordination Networks and Stance Analysis}
+
+Recent coordinated behavior detection research more directly addresses shared actions. Pacheco et al. proposed building coordination networks from shared behavioral traces and demonstrated how identity, image, hashtag sequence, retweet behavior, and temporal patterns can uncover coordinated networks \cite{pacheco2021uncovering}. Graham et al. introduced the Coordination Network Toolkit, which represents coordinated behavior using weighted directed multigraphs \cite{graham2024coordination}. In the Reddit context, Saeed et al. proposed TROLLMAGNIFIER and observed that accounts linked to troll behavior may show loose coordination, similar topics, and temporal synchronization \cite{saeed2021trollmagnifier}.
+
+This work also builds on stance detection. The SemEval-2016 stance detection task formulated the problem of identifying whether a text is in favor of, against, or neutral toward a target \cite{mohammad2016semeval}. We extend this idea by converting comment feedback toward post authors into signed account-to-account edges and then projecting those edges into shared negative target relations.
+
+%------------------------------------------------------------------------
+\section{System Architecture}
+
+Fig.~\ref{fig:pipeline-en} shows the core pipeline of MCA Detector. The project is divided into an analysis pipeline and a presentation layer. The analysis pipeline produces reviewable evidence from raw Reddit posts and comments. The demo website only reads the generated output tables and presents them in a client-facing interface; it does not compute scores, discover groups, verify temporal synchrony, or make final decisions.
+
+\begin{figure}[htbp]
+  \centering
+  \framebox[0.95\columnwidth]{\parbox{0.9\columnwidth}{\centering
+    \vspace{0.6cm}
+    \small
+    Raw Posts/Comments $\rightarrow$ LLM Analysis\\[3pt]
+    $\downarrow$\\[3pt]
+    Account Feature Matrix + Adjacency Graphs\\[3pt]
+    $\downarrow$\\[3pt]
+    MCA Seed Ranking\\[3pt]
+    $\downarrow$\\[3pt]
+    Stage 1: Coordination Expansion\\[3pt]
+    $\downarrow$\\[3pt]
+    Stage 2: Temporal Verification\\[3pt]
+    $\downarrow$\\[3pt]
+    Group Summary + Account Roles
+    \vspace{0.6cm}
+  }}
+  \caption{MCA Detector analysis pipeline}
+  \label{fig:pipeline-en}
+\end{figure}
+
+\subsection{LLM-Based Content and Stance Analysis}
+
+The system first analyzes posts to produce sentiment and manipulative rhetoric features, including \texttt{sentiment\_score}, \texttt{manipulative\_rhetoric\_score}, and \texttt{rhetoric\_tags}. It then analyzes comments to determine the stance of a comment toward the original post, producing \texttt{feedback\_label}, \texttt{feedback\_score}, and \texttt{edge\_weight}. Each direct comment can be converted into a directed account-to-account edge:
+
+\begin{equation}
+comment\_author \rightarrow post\_author
+\end{equation}
+
+Oppositional comments form negative interactions, while supportive comments form positive interactions. This representation preserves both interaction direction and stance.
+
+\subsection{MCA Score}
+
+The MCA score is used for seed selection and review priority, not as a final verdict. It includes four signal groups, as shown in Table~\ref{tab:mca-signals-en}. The current primary weights are 0.30 for manipulative signals, 0.35 for coordinative signals, 0.15 for interaction reach, and 0.20 for automatic behavior. Since large-scale ground truth is not available, these weights are treated as interpretable initial review weights rather than supervised optimal weights.
+
+\begin{table}[htbp]
+\centering
+\caption{Four signal groups used in MCA scoring}
+\label{tab:mca-signals-en}
+\small
+\begin{tabular}{p{0.26\columnwidth}p{0.62\columnwidth}}
+\toprule
+Signal & Main features \\
+\midrule
+Manipulative & average rhetoric score, non-neutral post ratio, oppositional stance ratio \\
+Coordinative & co-target, co-negative-target, trigger-response frequency \\
+Interaction reach & outgoing volume, incoming attention, interaction breadth \\
+Automatic behavior & Isolation Forest anomaly score \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Multi-Layer Adjacency Graphs}
+
+The system constructs several account-level graphs, including \texttt{A\_count}, \texttt{A\_signed}, \texttt{A\_positive}, \texttt{A\_negative}, \texttt{A\_trigger\_response}, \texttt{A\_co\_target}, \texttt{A\_co\_negative\_target}, and \texttt{A\_tag\_similarity}. Candidate group discovery mainly uses the co-negative-target graph:
+
+\begin{equation}
+A_{co\_negative}(i,j)=cosine(\mathrm{negative\_target}_i, \mathrm{negative\_target}_j).
+\end{equation}
+
+This graph asks whether two accounts often oppose or attack the same post authors. However, shared negative targets are only a coordination clue, not sufficient evidence of shared operators. Ordinary users with the same ideology may naturally criticize the same controversial authors. Therefore, this graph is used for candidate discovery, not as a final verdict.
+
+%------------------------------------------------------------------------
+\section{Candidate Expansion and Verification}
+
+\subsection{Stage 1: Seed Expansion}
+
+The first stage selects seed accounts from the MCA top ranking and expands each seed through graph layers. The expansion strategy is tiered rather than a black-box weighted sum. Each candidate must have a clear inclusion reason, as shown in Table~\ref{tab:tiers-en}.
+
+\begin{table}[htbp]
+\centering
+\caption{Seed expansion rules}
+\label{tab:tiers-en}
+\small
+\begin{tabular}{p{0.18\columnwidth}p{0.70\columnwidth}}
+\toprule
+Tier & Inclusion condition \\
+\midrule
+Tier 1 & \texttt{co\_negative\_target >= 0.20} \\
+Tier 2 & \texttt{tag\_similarity >= 0.90} plus structural support \\
+Tier 3 & \texttt{trigger\_response >= 0.50} plus co-negative or tag support \\
+Tier 4 & 2-hop co-negative links to at least two accepted members \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The co-target graph is used only as supporting context and does not independently include a candidate. This design keeps each membership decision interpretable.
+
+\subsection{Stage 2: Temporal Verification}
+
+Stage 1 finds candidate coordination groups, not shared-operator evidence. Stage 2 checks whether accounts within a candidate group appear in the same post thread within short time windows. The pair-level labels are:
+
+\begin{itemize}
+  \item \textbf{strong temporal sync}: at least one same-thread comment event within 5 minutes.
+  \item \textbf{moderate temporal sync}: at least two same-thread comment events within 30 minutes.
+  \item \textbf{weak temporal overlap}: same-thread overlap without short-window synchrony.
+  \item \textbf{no temporal sync}: no same-thread overlap.
+\end{itemize}
+
+To avoid overinterpreting one-off coincidences in popular threads, the system also assigns temporal confidence. \texttt{robust} indicates repeated or multi-post short-window synchrony; \texttt{moderate\_review} indicates useful timing evidence that still requires human review; \texttt{fragile} indicates single-event or long-delay evidence used only as context; and \texttt{none} indicates no usable synchrony evidence.
+
+\subsection{Signal Pruning}
+
+Earlier versions tested \texttt{text\_fingerprint\_distance} and \texttt{account\_lifecycle\_overlap}. However, in a single-topic Bitcoin community, TF-IDF text distance often captures topic similarity rather than shared operators. Account lifecycle overlap also failed to separate the harvested positive case from the JG87919-type negative case. Therefore, the formal Stage 2 is pure temporal verification and uses only temporal synchrony and temporal confidence.
+
+%------------------------------------------------------------------------
+\section{Experiments and Case Studies}
+
+\subsection{Overall Output}
+
+The current pipeline selected 20 seed accounts from MCA ranking and expanded them into 20 candidate seed groups. The resulting output contains 178 group membership rows and 172 unique candidate accounts. Stage 2 temporal verification identified 13 strong temporal synchrony pairs and 8 moderate temporal synchrony pairs. Among them, 3 pairs reached robust confidence and 44 pairs were labeled as moderate-review evidence. Table~\ref{tab:top-groups-en} shows the top five candidate groups. The ranking represents review priority, not a final cyber-troop verdict.
+
+\begin{table}[htbp]
+\centering
+\caption{Top five candidate groups}
+\label{tab:top-groups-en}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Seed & Members & P1 & P2 & Strong & Robust \\
+\midrule
+lol\_camis & 23 & 2 & 3 & 4 & 0 \\
+BtcKing1111 & 11 & 2 & 3 & 2 & 0 \\
+tzacPACO & 6 & 2 & 1 & 0 & 1 \\
+harvested & 8 & 2 & 0 & 1 & 1 \\
+iPurchaseBitcoin & 7 & 2 & 0 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The harvested Group}
+
+The harvested group contains 8 members. In Stage 1, it includes 7 Tier 1 co-negative direct members, 9 internal coordination edges, and 11 shared negative targets. In Stage 2, NectarineDirect936 and harvested appeared together in 17 shared posts, including 2 events within 5 minutes and 4 events within 30 minutes. This pair was labeled \texttt{strong\_temporal\_sync / robust}. This case shows that when shared targets and repeated short-window synchrony appear together, the group deserves high review priority.
+
+\subsection{A JG87919-Type Case}
+
+The JG87919-type case illustrates why Stage 1 should not be treated as a final judgment. Its seed expansion produced 15 members, 34 internal coordination edges, and 20 shared negative targets. At first glance, the group appears strongly coordinated by target overlap. However, manual inspection and temporal analysis suggest that it is more likely a group of independent users with similar ideology rather than a shared-operator group. This supports the core design decision: co-negative-target expansion is useful for candidate discovery, but Stage 2 temporal verification or manual review is needed before interpreting the group as high-risk coordination.
+
+%------------------------------------------------------------------------
+\section{Discussion}
+
+The main strength of the proposed method is interpretability. MCA ranking identifies suspicious entry points, the co-negative-target graph expands those seeds into candidate groups, and temporal synchrony provides a second-stage verification signal. This avoids presenting a single black-box suspiciousness score as a final verdict.
+
+There are still limitations. First, the current project does not have large-scale ground truth, so the output should be interpreted as review candidates rather than supervised accuracy. Second, temporal synchrony can still be affected by popular threads and highly active users. The temporal confidence layer mitigates this problem but does not remove the need for human review. Third, the current dataset is centered on Reddit cryptocurrency discussions. Applying the system to other platforms would require redefining action traces such as reposts, link sharing, hashtags, likes, or reply chains.
+
+%------------------------------------------------------------------------
+\section{Conclusion}
+
+This paper presents a suspicious social coordination detection pipeline that combines LLM-based content analysis, MCA seed ranking, graph-based seed expansion, and temporal synchrony verification. Compared with simple account ranking, the proposed method shifts the question from ``which account looks suspicious'' to ``which accounts appear to act together.'' Preliminary results show that the system can reduce a large account population into reviewable candidate groups and further prioritize them using temporal evidence. Future work will expand cross-platform action traces, build a larger human-labeled validation set, and evaluate the stability of temporal thresholds across different communities and platforms.
+
+\begin{thebibliography}{8}
+\bibitem{ferrara2016rise} E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, ``The Rise of Social Bots,'' \textit{Communications of the ACM}, vol. 59, no. 7, pp. 96--104, 2016.
+\bibitem{varol2017online} O. Varol, E. Ferrara, C. Davis, F. Menczer, and A. Flammini, ``Online Human-Bot Interactions: Detection, Estimation, and Characterization,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 11, no. 1, pp. 280--289, 2017.
+\bibitem{cresci2018social} S. Cresci, R. Di Pietro, M. Petrocchi, A. Spognardi, and M. Tesconi, ``Social Fingerprinting: Detection of Spambot Groups Through DNA-Inspired Behavioral Modeling,'' \textit{IEEE Transactions on Dependable and Secure Computing}, vol. 15, no. 4, pp. 561--576, 2018.
+\bibitem{mazza2019rtbust} M. Mazza, S. Cresci, M. Avvenuti, W. Quattrociocchi, and M. Tesconi, ``RTbust: Exploiting Temporal Patterns for Botnet Detection on Twitter,'' arXiv:1902.04506, 2019.
+\bibitem{pacheco2021uncovering} D. Pacheco, P.-M. Hui, C. Torres-Lugo, B. T. Truong, A. Flammini, and F. Menczer, ``Uncovering Coordinated Networks on Social Media: Methods and Case Studies,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 15, no. 1, pp. 455--466, 2021.
+\bibitem{graham2024coordination} T. Graham, S. Hames, and E. Alpert, ``The Coordination Network Toolkit: A Framework for Detecting and Analysing Coordinated Behaviour on Social Media,'' \textit{Journal of Computational Social Science}, vol. 7, pp. 1139--1160, 2024.
+\bibitem{saeed2021trollmagnifier} M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and G. Stringhini, ``TROLLMAGNIFIER: Detecting State-Sponsored Troll Accounts on Reddit,'' arXiv:2112.00443, 2021.
+\bibitem{mohammad2016semeval} S. Mohammad, S. Kiritchenko, P. Sobhani, X. Zhu, and C. Cherry, ``SemEval-2016 Task 6: Detecting Stance in Tweets,'' \textit{Proceedings of the 10th International Workshop on Semantic Evaluation}, pp. 31--41, 2016.
+\end{thebibliography}
+
+\end{document}
