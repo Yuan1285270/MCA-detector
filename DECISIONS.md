@@ -167,3 +167,29 @@ candidate validation 和 group ranking 應優先使用 robust/moderate_review te
 
 Status:
 Accepted and implemented.
+
+---
+
+## 2026-05-17 — Stage 2 補上 Text Fingerprint 與 Lifecycle Evidence
+
+Decision:
+在 `stage2_temporal_verification.py` 裡正式填入原本預留的兩個欄位：
+
+- `text_fingerprint_distance`
+- `account_lifecycle_overlap`
+
+`text_fingerprint_distance` 使用同一 group 內帳號 comments 的 TF-IDF cosine distance。`account_lifecycle_overlap` 使用帳號觀測到的 comment 活躍時間區間重疊比例。
+
+Why:
+只靠 temporal synchrony 可能把同時在線的正常活躍用戶誤判成可疑。text fingerprint 可以補「語言/模板相似」證據，lifecycle overlap 可以補「帳號活動週期是否重疊」證據。這讓 Stage 2 不只看時間同步，也能提供更完整的 verification evidence。
+
+Alternatives considered:
+- 繼續把兩個欄位保留為 `NaN`
+- 把 text fingerprint 做成獨立腳本，不接進 Stage 2
+- 等網站端才做文字相似分析
+
+Impact:
+`stage2_verification_evidence.csv` 會從 temporal-only evidence 升級成 multi-signal verification table。PPT 可以說明我們有 temporal synchrony 與 text fingerprint 兩種驗證訊號。
+
+Status:
+Accepted and implemented.

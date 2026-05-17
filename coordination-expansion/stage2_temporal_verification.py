@@ -10,6 +10,9 @@ from __future__ import annotations
 
 import argparse
 import itertools
+import math
+import re
+from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -19,6 +22,7 @@ import pandas as pd
 DEFAULT_SEED_DIR = Path("coordination-expansion/output/seeds")
 DEFAULT_COMMENTS_PATH = Path("Archive/export_working_files/comment_feedback_all_merged.csv")
 DEFAULT_OUTPUT_DIR = Path("coordination-expansion/output/stage2-verification")
+TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z0-9_']+")
 
 
 def parse_args() -> argparse.Namespace:
@@ -66,16 +70,23 @@ def load_group_members(seed_dir: Path, seed: str) -> list[str]:
 
 def load_comments(path: Path, authors: set[str], max_comments_per_author: int) -> pd.DataFrame:
     header = pd.read_csv(path, nrows=0)
+    text_col = "analysis_text" if "analysis_text" in header.columns else "body" if "body" in header.columns else None
     if {"comment_id", "post_id", "author", "created_utc"}.issubset(header.columns):
+        usecols = ["comment_id", "post_id", "author", "created_utc"]
+        if text_col:
+            usecols.append(text_col)
         comments = pd.read_csv(
             path,
-            usecols=["comment_id", "post_id", "author", "created_utc"],
+            usecols=usecols,
             low_memory=False,
         )
     elif {"comment_id", "link_id", "author", "created_utc"}.issubset(header.columns):
+        usecols = ["comment_id", "link_id", "author", "created_utc"]
+        if text_col:
+            usecols.append(text_col)
         comments = pd.read_csv(
             path,
-            usecols=["comment_id", "link_id", "author", "created_utc"],
+            usecols=usecols,
             low_memory=False,
         )
         comments = comments.rename(columns={"link_id": "post_id"})
@@ -91,6 +102,10 @@ def load_comments(path: Path, authors: set[str], max_comments_per_author: int) -
     comments = comments.loc[comments["author"].isin(authors)].copy()
     comments["post_id"] = comments["post_id"].astype("string").str.strip()
     comments["created_utc"] = pd.to_numeric(comments["created_utc"], errors="coerce")
+    if text_col:
+        comments["comment_text"] = comments[text_col].fillna("").astype(str)
+    else:
+        comments["comment_text"] = ""
     comments = comments.dropna(subset=["author", "post_id", "created_utc"])
     comments = comments.drop_duplicates(subset=["comment_id"])
     comments = comments.sort_values(["author", "created_utc"], ascending=[True, False])
@@ -126,6 +141,85 @@ def account_post_times(comments: pd.DataFrame) -> dict[str, dict[str, np.ndarray
     for (author, post_id), group in comments.groupby(["author", "post_id"], sort=False):
         output.setdefault(str(author), {})[str(post_id)] = group["created_utc"].to_numpy(dtype=float)
     return output
+
+
+def account_lifecycle_ranges(comments: pd.DataFrame) -> dict[str, tuple[float, float]]:
+    ranges = (
+        comments.groupby("author")["created_utc"]
+        .agg(start_utc="min", end_utc="max")
+        .reset_index()
+    )
+    return {
+        str(row.author): (float(row.start_utc), float(row.end_utc))
+        for row in ranges.itertuples(index=False)
+    }
+
+
+def lifecycle_overlap(
+    left: tuple[float, float] | None,
+    right: tuple[float, float] | None,
+) -> float:
+    if left is None or right is None:
+        return np.nan
+    left_start, left_end = left
+    right_start, right_end = right
+    union_start = min(left_start, right_start)
+    union_end = max(left_end, right_end)
+    union = union_end - union_start
+    if union <= 0:
+        return 1.0
+    overlap = max(0.0, min(left_end, right_end) - max(left_start, right_start))
+    return float(overlap / union)
+
+
+def tokenize(text: str) -> list[str]:
+    return TOKEN_RE.findall(str(text).lower())
+
+
+def build_text_fingerprint_vectors(comments: pd.DataFrame, members: list[str]) -> dict[str, dict[str, float]]:
+    """Build account-level TF-IDF vectors inside one candidate group."""
+    member_set = set(members)
+    grouped_text = (
+        comments.loc[comments["author"].isin(member_set)]
+        .groupby("author")["comment_text"]
+        .apply(lambda values: " ".join(values.astype(str)))
+    )
+    counts: dict[str, Counter[str]] = {}
+    for member in members:
+        tokens = tokenize(grouped_text.get(member, ""))
+        counts[member] = Counter(tokens)
+
+    doc_count = len(members)
+    document_frequency: Counter[str] = Counter()
+    for counter in counts.values():
+        document_frequency.update(counter.keys())
+
+    vectors: dict[str, dict[str, float]] = {}
+    for member, counter in counts.items():
+        total_terms = sum(counter.values())
+        if total_terms == 0:
+            vectors[member] = {}
+            continue
+        vector = {}
+        for term, count in counter.items():
+            tf = count / total_terms
+            idf = math.log((1 + doc_count) / (1 + document_frequency[term])) + 1.0
+            vector[term] = tf * idf
+        vectors[member] = vector
+    return vectors
+
+
+def cosine_distance(left: dict[str, float], right: dict[str, float]) -> float:
+    if not left or not right:
+        return np.nan
+    shared = set(left) & set(right)
+    dot = sum(left[term] * right[term] for term in shared)
+    left_norm = math.sqrt(sum(value * value for value in left.values()))
+    right_norm = math.sqrt(sum(value * value for value in right.values()))
+    if left_norm <= 0 or right_norm <= 0:
+        return np.nan
+    similarity = max(0.0, min(1.0, dot / (left_norm * right_norm)))
+    return float(1.0 - similarity)
 
 
 def pair_temporal_metrics(
@@ -214,6 +308,11 @@ def build_markdown(pair_rows: pd.DataFrame, summary: pd.DataFrame) -> str:
         "- `fragile_single_event`: label rests on one short-window event",
         "- `fragile_long_median`: has short-window evidence, but typical delay is long",
         "",
+        "Additional evidence:",
+        "",
+        "- `text_fingerprint_distance`: TF-IDF cosine distance between each pair's local comment text",
+        "- `account_lifecycle_overlap`: overlap ratio between each pair's observed comment active windows",
+        "",
         "## Group Summary",
         "",
         "| group_seed | pairs | strong | moderate | robust | moderate review | fragile | weak | no sync |",
@@ -245,7 +344,8 @@ def build_markdown(pair_rows: pd.DataFrame, summary: pd.DataFrame) -> str:
                 f"- {row.group_seed}: {row.account_a} <-> {row.account_b} | "
                 f"{row.verification_label} / {row.temporal_confidence} | same_post={int(row.same_post_count)} | "
                 f"<5min={int(row.within_5min_count)} | <30min={int(row.within_30min_count)} | "
-                f"median_delay={median}min | co_neg={row.co_negative_weight:.3f}"
+                f"median_delay={median}min | text_dist={row.text_fingerprint_distance:.3f} | "
+                f"lifecycle_overlap={row.account_lifecycle_overlap:.3f} | co_neg={row.co_negative_weight:.3f}"
             )
 
     return "\n".join(lines) + "\n"
@@ -260,10 +360,12 @@ def main() -> None:
     all_authors = {member for members in group_members.values() for member in members}
     comments = load_comments(args.comments_path, all_authors, args.max_comments_per_author)
     post_times = account_post_times(comments)
+    lifecycle_ranges = account_lifecycle_ranges(comments)
 
     rows: list[dict[str, object]] = []
     for seed, members in group_members.items():
         co_neg_weights = load_co_negative_weights(args.seed_dir, seed)
+        text_vectors = build_text_fingerprint_vectors(comments, members)
         for account_a, account_b in itertools.combinations(sorted(members), 2):
             metrics = pair_temporal_metrics(
                 post_times.get(account_a, {}),
@@ -273,6 +375,14 @@ def main() -> None:
             )
             label = label_pair(metrics)
             confidence = temporal_confidence(metrics)
+            text_distance = cosine_distance(
+                text_vectors.get(account_a, {}),
+                text_vectors.get(account_b, {}),
+            )
+            lifecycle = lifecycle_overlap(
+                lifecycle_ranges.get(account_a),
+                lifecycle_ranges.get(account_b),
+            )
             rows.append(
                 {
                     "group_seed": seed,
@@ -280,8 +390,8 @@ def main() -> None:
                     "account_b": account_b,
                     "co_negative_weight": co_neg_weights.get(tuple(sorted((account_a, account_b))), 0.0),
                     **metrics,
-                    "text_fingerprint_distance": np.nan,
-                    "account_lifecycle_overlap": np.nan,
+                    "text_fingerprint_distance": text_distance,
+                    "account_lifecycle_overlap": lifecycle,
                     "verification_label": label,
                     "temporal_confidence": confidence,
                 }
