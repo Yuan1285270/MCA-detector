@@ -5,7 +5,6 @@
   \def\@oddhead{}\def\@evenhead{}}
 \makeatother
 
-\usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -14,24 +13,6 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{array}
-
-\makeatletter
-\@ifundefined{thebibliography}{%
-  \providecommand{\refname}{References}%
-  \providecommand{\@biblabel}[1]{[#1]}%
-  \newenvironment{thebibliography}[1]{%
-    \section*{\refname}%
-    \small
-    \list{\@biblabel{\arabic{enumiv}}}{%
-      \usecounter{enumiv}%
-      \leftmargin=1.5em%
-      \itemindent=0pt%
-      \itemsep=0pt%
-      \parsep=0pt%
-    }%
-  }{\endlist}%
-}{}
-\makeatother
 
 \begin{document}
 
@@ -58,7 +39,7 @@ social media analysis, coordinated behavior detection, manipulative rhetoric, gr
 %------------------------------------------------------------------------
 \section{Introduction}
 
-Social media has become an important space for public discussion, financial narratives, and investment sentiment formation. At the same time, social platforms can be exploited by automated accounts, coordinated accounts, or manipulative content campaigns to amplify specific narratives. Prior studies on social bot detection have shown that bots may influence users through content generation, network interaction, temporal behavior, and emotional expression \cite{ferrara2016rise,varol2017online}. However, whether an account looks automated is not the same as whether it belongs to a coordinated operation. In cryptocurrency communities, ordinary users can also be highly active, emotionally intense, and jointly critical of the same opponents. As a result, account-level scores or shared attack targets alone can misclassify organic ideological alignment as manipulation.
+Social media has become an important space for public discussion, financial narratives, and investment sentiment formation. At the same time, social platforms can be exploited by automated accounts, coordinated accounts, or manipulative content campaigns to amplify specific narratives. Prior studies on social bot detection have shown that bots may influence users through content generation, network interaction, temporal behavior, and emotional expression [1,2]. However, whether an account looks automated is not the same as whether it belongs to a coordinated operation. In cryptocurrency communities, ordinary users can also be highly active, emotionally intense, and jointly critical of the same opponents. As a result, account-level scores or shared attack targets alone can misclassify organic ideological alignment as manipulation.
 
 This paper focuses on a practical review problem: not to prove that an account is a real-world cyber troop, but to generate interpretable suspicious coordination candidates. The goal is to identify candidate groups, provide evidence, and allow analysts to inspect the relationship between account suspiciousness, shared targets, and short-window synchronized behavior.
 
@@ -76,15 +57,15 @@ The contributions of this work are as follows:
 
 \subsection{Social Bot and Coordination Detection}
 
-Early social bot detection research mainly focused on account-level classification. Ferrara et al. described the rise of social bots and discussed how bots can affect political, economic, and public discussions \cite{ferrara2016rise}. Varol et al. proposed a human-bot interaction detection framework using metadata, content, sentiment, network, and temporal features \cite{varol2017online}. These methods are useful for estimating whether a single account is automated, but they are less directly suited to explaining whether multiple accounts act together.
+Early social bot detection research mainly focused on account-level classification. Ferrara et al. described the rise of social bots and discussed how bots can affect political, economic, and public discussions [1]. Varol et al. proposed a human-bot interaction detection framework using metadata, content, sentiment, network, and temporal features [2]. These methods are useful for estimating whether a single account is automated, but they are less directly suited to explaining whether multiple accounts act together.
 
-Another line of research emphasizes group behavior and behavioral sequences. Cresci et al. proposed Social Fingerprinting, which detects groups of spambots through DNA-inspired behavioral modeling \cite{cresci2018social}. Mazza et al. introduced RTbust, which exploits temporal patterns in retweet time series to detect suspicious botnets \cite{mazza2019rtbust}. These studies show that group-level behavior and timing can reveal coordination that is not visible from single-account features alone.
+Another line of research emphasizes group behavior and behavioral sequences. Cresci et al. proposed Social Fingerprinting, which detects groups of spambots through DNA-inspired behavioral modeling [3]. Mazza et al. introduced RTbust, which exploits temporal patterns in retweet time series to detect suspicious botnets [4]. These studies show that group-level behavior and timing can reveal coordination that is not visible from single-account features alone.
 
 \subsection{Coordination Networks and Stance Analysis}
 
-Recent coordinated behavior detection research more directly addresses shared actions. Pacheco et al. proposed building coordination networks from shared behavioral traces and demonstrated how identity, image, hashtag sequence, retweet behavior, and temporal patterns can uncover coordinated networks \cite{pacheco2021uncovering}. Graham et al. introduced the Coordination Network Toolkit, which represents coordinated behavior using weighted directed multigraphs \cite{graham2024coordination}. In the Reddit context, Saeed et al. proposed TROLLMAGNIFIER and observed that accounts linked to troll behavior may show loose coordination, similar topics, and temporal synchronization \cite{saeed2021trollmagnifier}.
+Recent coordinated behavior detection research more directly addresses shared actions. Pacheco et al. proposed building coordination networks from shared behavioral traces and demonstrated how identity, image, hashtag sequence, retweet behavior, and temporal patterns can uncover coordinated networks [5]. Graham et al. introduced the Coordination Network Toolkit, which represents coordinated behavior using weighted directed multigraphs [6]. In the Reddit context, Saeed et al. proposed TROLLMAGNIFIER and observed that accounts linked to troll behavior may show loose coordination, similar topics, and temporal synchronization [7].
 
-This work also builds on stance detection. The SemEval-2016 stance detection task formulated the problem of identifying whether a text is in favor of, against, or neutral toward a target \cite{mohammad2016semeval}. We extend this idea by converting comment feedback toward post authors into signed account-to-account edges and then projecting those edges into shared negative target relations.
+This work also builds on stance detection. The SemEval-2016 stance detection task formulated the problem of identifying whether a text is in favor of, against, or neutral toward a target [8]. We extend this idea by converting comment feedback toward post authors into signed account-to-account edges and then projecting those edges into shared negative target relations.
 
 %------------------------------------------------------------------------
 \section{System Architecture}
@@ -246,15 +227,15 @@ There are still limitations. First, the current project does not have large-scal
 
 This paper presents a suspicious social coordination detection pipeline that combines LLM-based content analysis, MCA seed ranking, graph-based seed expansion, and temporal synchrony verification. Compared with simple account ranking, the proposed method shifts the question from ``which account looks suspicious'' to ``which accounts appear to act together.'' Preliminary results show that the system can reduce a large account population into reviewable candidate groups and further prioritize them using temporal evidence. Future work will expand cross-platform action traces, build a larger human-labeled validation set, and extend the method to PTT discussions with explicit push/boo stance labels.
 
-\begin{thebibliography}{8}
-\bibitem{ferrara2016rise} E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, ``The Rise of Social Bots,'' \textit{Communications of the ACM}, vol. 59, no. 7, pp. 96--104, 2016.
-\bibitem{varol2017online} O. Varol, E. Ferrara, C. Davis, F. Menczer, and A. Flammini, ``Online Human-Bot Interactions: Detection, Estimation, and Characterization,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 11, no. 1, pp. 280--289, 2017.
-\bibitem{cresci2018social} S. Cresci, R. Di Pietro, M. Petrocchi, A. Spognardi, and M. Tesconi, ``Social Fingerprinting: Detection of Spambot Groups Through DNA-Inspired Behavioral Modeling,'' \textit{IEEE Transactions on Dependable and Secure Computing}, vol. 15, no. 4, pp. 561--576, 2018.
-\bibitem{mazza2019rtbust} M. Mazza, S. Cresci, M. Avvenuti, W. Quattrociocchi, and M. Tesconi, ``RTbust: Exploiting Temporal Patterns for Botnet Detection on Twitter,'' arXiv:1902.04506, 2019.
-\bibitem{pacheco2021uncovering} D. Pacheco, P.-M. Hui, C. Torres-Lugo, B. T. Truong, A. Flammini, and F. Menczer, ``Uncovering Coordinated Networks on Social Media: Methods and Case Studies,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 15, no. 1, pp. 455--466, 2021.
-\bibitem{graham2024coordination} T. Graham, S. Hames, and E. Alpert, ``The Coordination Network Toolkit: A Framework for Detecting and Analysing Coordinated Behaviour on Social Media,'' \textit{Journal of Computational Social Science}, vol. 7, pp. 1139--1160, 2024.
-\bibitem{saeed2021trollmagnifier} M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and G. Stringhini, ``TROLLMAGNIFIER: Detecting State-Sponsored Troll Accounts on Reddit,'' arXiv:2112.00443, 2021.
-\bibitem{mohammad2016semeval} S. Mohammad, S. Kiritchenko, P. Sobhani, X. Zhu, and C. Cherry, ``SemEval-2016 Task 6: Detecting Stance in Tweets,'' \textit{Proceedings of the 10th International Workshop on Semantic Evaluation}, pp. 31--41, 2016.
-\end{thebibliography}
+\section*{References}
+\small
+\noindent [1] E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, ``The Rise of Social Bots,'' \textit{Communications of the ACM}, vol. 59, no. 7, pp. 96--104, 2016.\par
+\noindent [2] O. Varol, E. Ferrara, C. Davis, F. Menczer, and A. Flammini, ``Online Human-Bot Interactions: Detection, Estimation, and Characterization,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 11, no. 1, pp. 280--289, 2017.\par
+\noindent [3] S. Cresci, R. Di Pietro, M. Petrocchi, A. Spognardi, and M. Tesconi, ``Social Fingerprinting: Detection of Spambot Groups Through DNA-Inspired Behavioral Modeling,'' \textit{IEEE Transactions on Dependable and Secure Computing}, vol. 15, no. 4, pp. 561--576, 2018.\par
+\noindent [4] M. Mazza, S. Cresci, M. Avvenuti, W. Quattrociocchi, and M. Tesconi, ``RTbust: Exploiting Temporal Patterns for Botnet Detection on Twitter,'' arXiv:1902.04506, 2019.\par
+\noindent [5] D. Pacheco, P.-M. Hui, C. Torres-Lugo, B. T. Truong, A. Flammini, and F. Menczer, ``Uncovering Coordinated Networks on Social Media: Methods and Case Studies,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 15, no. 1, pp. 455--466, 2021.\par
+\noindent [6] T. Graham, S. Hames, and E. Alpert, ``The Coordination Network Toolkit: A Framework for Detecting and Analysing Coordinated Behaviour on Social Media,'' \textit{Journal of Computational Social Science}, vol. 7, pp. 1139--1160, 2024.\par
+\noindent [7] M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and G. Stringhini, ``TROLLMAGNIFIER: Detecting State-Sponsored Troll Accounts on Reddit,'' arXiv:2112.00443, 2021.\par
+\noindent [8] S. Mohammad, S. Kiritchenko, P. Sobhani, X. Zhu, and C. Cherry, ``SemEval-2016 Task 6: Detecting Stance in Tweets,'' \textit{Proceedings of the 10th International Workshop on Semantic Evaluation}, pp. 31--41, 2016.\par
 
 \end{document}
