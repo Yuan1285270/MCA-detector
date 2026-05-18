@@ -15,6 +15,24 @@
 \usepackage{multirow}
 \usepackage{array}
 
+\makeatletter
+\@ifundefined{thebibliography}{%
+  \providecommand{\refname}{References}%
+  \providecommand{\@biblabel}[1]{[#1]}%
+  \newenvironment{thebibliography}[1]{%
+    \section*{\refname}%
+    \small
+    \list{\@biblabel{\arabic{enumiv}}}{%
+      \usecounter{enumiv}%
+      \leftmargin=1.5em%
+      \itemindent=0pt%
+      \itemsep=0pt%
+      \parsep=0pt%
+    }%
+  }{\endlist}%
+}{}
+\makeatother
+
 \begin{document}
 
 \title{Detecting Social Coordination Behavior via\\Manipulative Content Analysis and Graph Expansion}

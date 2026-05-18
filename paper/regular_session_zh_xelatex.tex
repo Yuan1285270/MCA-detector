@@ -19,6 +19,24 @@
 \usepackage{multirow}
 \usepackage{array}
 
+\makeatletter
+\@ifundefined{thebibliography}{%
+  \providecommand{\refname}{參考文獻}%
+  \providecommand{\@biblabel}[1]{[#1]}%
+  \newenvironment{thebibliography}[1]{%
+    \section*{\refname}%
+    \small
+    \list{\@biblabel{\arabic{enumiv}}}{%
+      \usecounter{enumiv}%
+      \leftmargin=1.5em%
+      \itemindent=0pt%
+      \itemsep=0pt%
+      \parsep=0pt%
+    }%
+  }{\endlist}%
+}{}
+\makeatother
+
 \begin{document}
 
 \title{結合操縱性內容分析與圖擴張之\\社群協同行為偵測系統}
