@@ -363,3 +363,24 @@ README 與報告敘事要明確分成兩層：project pipeline 產生 evidence t
 
 Status:
 Accepted and documented.
+
+---
+
+## 2026-05-18 — Regular Session Paper Strategy
+
+Decision:
+Use the safer GPEver-style framing as the base for the regular-session paper, and merge in only the MCA Detector evidence that strengthens the paper: the JG87919 negative/control case, the harvested positive case, and the synthetic baseline. Do not add a new PTT experiment or a full CryptoCurrency experiment into this submission.
+
+Why:
+The safest paper claim is not "we confirmed cyber troops"; it is "we produce reviewable coordination candidates and separate shared ideology from stronger temporal coordination evidence." Adding PTT this week would introduce new platform-specific cleaning and stance-labeling work that cannot be finished reliably before writing. The MCA material is still valuable, but it should support the GPEver-style cautious narrative rather than make the paper overclaim.
+
+Alternatives considered:
+- Make MCA scoring optimization the main contribution.
+- Add PTT as a full second platform experiment.
+- Add r/CryptoCurrency as a full repeated pipeline experiment.
+
+Impact:
+This week should prioritize writing and polishing the paper. PTT is mentioned only as future work with explicit push/boo stance labels. MCA remains part of the system as seed ranking and evidence generation, not as a standalone final verdict.
+
+Status:
+Accepted and documented.

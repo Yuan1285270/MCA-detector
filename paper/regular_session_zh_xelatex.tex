@@ -213,17 +213,21 @@ harvested 群組包含 8 名成員，在 Stage 1 中具有 7 名 Tier 1 co-negat
 
 JG87919 類型案例說明 Stage 1 不能被當成最終判斷。該 seed expansion 形成 15 名成員、34 條群內協同邊與 20 個 shared negative targets，表面上具有強烈共同攻擊目標。然而人工檢查與時間同步分析顯示，該群更像是同一社群內立場相近的獨立使用者，而非同操控來源。此案例支持本文核心設計：co-negative-target 適合找候選群，但必須透過 Stage 2 temporal verification 或人工審查再分級。
 
+\subsection{Synthetic Baseline}
+
+除了真實案例外，本研究也以 synthetic baseline 檢查 Stage 2 是否能分辨三種狀況：同操控者型同步、協同但獨立的同立場使用者，以及隨機噪音。合成同操控者案例被設計為多個帳號在同一貼文下於短時間內重複出現；協同獨立案例則保留共同話題或共同目標，但移除短時間同步；隨機噪音則不應通過 Stage 1。結果顯示，純時序版本能保留 harvested 類型正樣本，並排除 JG87919 類型反樣本。此 baseline 不用來宣稱大規模準確率，而是驗證 pipeline 的基本邏輯是否符合預期。
+
 %------------------------------------------------------------------------
 \section{討論}
 
 本文方法的主要優點是可解釋與可審查。MCA 分數提供 seed selection，但不直接宣稱帳號有罪；co-negative-target graph 找出共同攻擊目標，但不將其視為網軍充分證據；temporal synchrony 則作為第二階段過濾器，協助區分同立場活躍用戶與更可疑的同步行動。
 
-本研究仍有三項限制。第一，目前缺乏大規模 ground truth，因此結果應解讀為 review candidates，而非 supervised accuracy。第二，時間同步可能受到熱門貼文與高活躍使用者影響，因此本文加入 temporal confidence，但仍需要人工檢查。第三，資料來源集中於 Reddit 加密貨幣社群，未來若應用到其他平台，需依平台互動形式重新定義 action traces，例如轉推、分享連結、按讚或共同 hashtag。
+本研究仍有三項限制。第一，目前缺乏大規模 ground truth，因此結果應解讀為 review candidates，而非 supervised accuracy。第二，時間同步可能受到熱門貼文與高活躍使用者影響，因此本文加入 temporal confidence，但仍需要人工檢查。第三，資料來源集中於 Reddit 加密貨幣社群，未來若應用到其他平台，需依平台互動形式重新定義 action traces，例如轉推、分享連結、按讚或共同 hashtag。本文不額外納入 PTT 實驗，因為跨平台資料清理與推噓文語意標註會引入新的變數；PTT 將作為未來工作，以 explicit push/boo stance labels 擴充本文方法。
 
 %------------------------------------------------------------------------
 \section{結論}
 
-本文提出一套結合 LLM 內容分析、MCA seed ranking、graph-based seed expansion 與 temporal synchrony verification 的社群協同行為偵測流程。相較於單純帳號分數排序，本文將偵測目標從「誰最像可疑帳號」推進到「哪些帳號像是在一起行動」。初步結果顯示，系統能從大量帳號中縮小至可審查的候選群，並透過時間同步證據進一步排序審查優先級。未來工作將擴充跨平台 action traces、建立更完整的人工標註集，並評估 temporal threshold 在不同社群與平台上的穩定性。
+本文提出一套結合 LLM 內容分析、MCA seed ranking、graph-based seed expansion 與 temporal synchrony verification 的社群協同行為偵測流程。相較於單純帳號分數排序，本文將偵測目標從「誰最像可疑帳號」推進到「哪些帳號像是在一起行動」。初步結果顯示，系統能從大量帳號中縮小至可審查的候選群，並透過時間同步證據進一步排序審查優先級。未來工作將擴充跨平台 action traces、建立更完整的人工標註集，並將方法延伸至具有 explicit push/boo stance labels 的 PTT 討論資料。
 
 \begin{thebibliography}{8}
 \bibitem{ferrara2016rise} E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, ``The Rise of Social Bots,'' \textit{Communications of the ACM}, vol. 59, no. 7, pp. 96--104, 2016.
