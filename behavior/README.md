@@ -1,6 +1,8 @@
 # Behavior Module
 
-這個資料夾負責建立 account-level behavior features，並用 Isolation Forest 做基本異常偵測。
+這個資料夾是 legacy module，負責建立 account-level behavior features，並用 Isolation Forest 做基本異常偵測。
+
+目前正式 pipeline 不再從這個資料夾作為主入口；需要的行為欄位已整合到新版 feature matrix / MCA scoring 流程。這個資料夾保留作為早期行為分析與可重現性參考。
 
 它的定位是：
 

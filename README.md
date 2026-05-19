@@ -27,7 +27,8 @@ Temporal synchrony helps separate same-ideology activity from stronger coordinat
 ## Modules
 
 - `behavior/`
-  - Account-level behavior feature and anomaly analysis module.
+  - Legacy account-level behavior feature and anomaly analysis module.
+  - Its useful outputs have been folded into the current feature matrix / MCA scoring flow; it is kept for reproducibility, not as the current main pipeline entry point.
   - See `behavior/README.md` for details.
 
 - `llm/`
