@@ -6,6 +6,23 @@ This document is the source-of-truth revision brief for updating the current dec
 
 Please revise the PPT using the current project logic, not the older "MCA score ranking only" story.
 
+## Language Requirement
+
+The revised deck must be a **Chinese PPT**.
+
+Use Traditional Chinese for titles, labels, explanations, and speaker-facing text. English technical terms can be kept in parentheses when useful.
+
+Examples:
+
+```text
+候選協同群（candidate coordination group）
+共同負向目標（co-negative target）
+時間同步驗證（temporal verification）
+審查優先順序（review priority）
+```
+
+Do not produce an English deck. Do not translate account names or file names.
+
 ## Current Core Narrative
 
 The project is no longer just an account ranking system.
@@ -71,6 +88,32 @@ Files:
 4. `slide_21_conegative_threshold_harvested.svg`
 5. `slide_36_mca_seed_expansion_pipeline.svg`
 6. `slide_47_temporal_confidence_harvested_vs_jg.svg`
+
+## Required Image Placement Table
+
+Please place the generated SVG images on the following slides.
+
+| Target slide | Image file | How to use it |
+|---:|---|---|
+| Slide 4 | `slide_04_updated_architecture.svg` | Replace the old system overview / pipeline slide. This should become the new full architecture diagram. |
+| Slide 12 | `slide_19_multigraph_edge_density.svg` | Use in the "為什麼不是單圖？" section. It explains real edge counts and why dense graphs are noisy. |
+| Slide 13 | `slide_20_count_vs_conegative_harvested.svg` | Use after the edge-density slide. It gives the harvested example comparing co-target vs co-negative. |
+| Slide 14 | `slide_21_conegative_threshold_harvested.svg` | Use on the co-negative explanation slide. It explains the `co_negative >= 0.20` threshold with real pairs. |
+| Slide 21 | `slide_36_mca_seed_expansion_pipeline.svg` | Use on the "為什麼不只用 MCA？" slide. It explains why MCA needs seed expansion and temporal verification. |
+| Slide 31 | `slide_47_temporal_confidence_harvested_vs_jg.svg` | Use in the Stage 2 temporal confidence section. It compares harvested and JG87919-type cases. |
+
+All inserted image captions and surrounding text should be in Traditional Chinese.
+
+If the image itself contains English labels, keep the image as-is, but add a Chinese title and Chinese explanation beside or below it.
+
+Suggested Chinese captions:
+
+- Slide 4: `新版 MCA Detector 分析架構`
+- Slide 12: `不同圖層的邊數差異：為什麼不能只用單一圖？`
+- Slide 13: `harvested 案例：co-target 太寬，co-negative 較精準`
+- Slide 14: `co-negative >= 0.20 的實際意義`
+- Slide 21: `MCA 只找 seed，Seed Expansion 才找群體結構`
+- Slide 31: `時間同步需要信心校正：harvested vs JG87919`
 
 ## Suggested Revised Deck Structure
 
@@ -924,4 +967,3 @@ bad actor confirmed
 ```text
 MCA Detector uses LLM-derived content and stance features to select suspicious seed accounts, expands them through co-negative target graphs into candidate coordination groups, and verifies those groups with temporal synchrony evidence for human review.
 ```
-
