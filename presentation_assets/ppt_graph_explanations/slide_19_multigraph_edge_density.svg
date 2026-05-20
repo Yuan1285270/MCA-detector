@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="575" viewBox="0 0 930 575">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <style>
+    .title{font:700 28px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .subtitle{font:500 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .label{font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .small{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .tiny{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .num{font:700 17px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .claim{font:700 18px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#0f766e}
+  </style>
+<text x="44" y="48" class="title">Why we use multiple graphs, not one graph</text>
+<text x="44" y="74" class="subtitle">Real edge counts from the current dataset. Dense graphs give context; sparse graphs carry stronger evidence.</text><text x="54" y="122" class="label">Count graph</text>
+<text x="54" y="142" class="small">Who interacted with whom?</text>
+<rect x="330" y="106" width="560.0" height="24" rx="5" fill="#2563eb" opacity="0.88"/>
+<text x="900.0" y="124" class="num">149,265</text><text x="54" y="180" class="label">Trigger-response graph</text>
+<text x="54" y="200" class="small">Who often responds after someone posts?</text>
+<rect x="330" y="164" width="560.0" height="24" rx="5" fill="#7c3aed" opacity="0.88"/>
+<text x="900.0" y="182" class="num">149,265</text><text x="54" y="238" class="label">Signed graph</text>
+<text x="54" y="258" class="small">Support or opposition direction per pair</text>
+<rect x="330" y="222" width="553.7" height="24" rx="5" fill="#334155" opacity="0.88"/>
+<text x="893.7" y="240" class="num">130,447</text><text x="54" y="296" class="label">Co-target graph</text>
+<text x="54" y="316" class="small">Who interacted with the same targets?</text>
+<rect x="330" y="280" width="497.5" height="24" rx="5" fill="#d97706" opacity="0.88"/>
+<text x="837.5" y="298" class="num">39,469</text><text x="54" y="354" class="label">Tag similarity graph</text>
+<text x="54" y="374" class="small">Who used similar rhetoric tags?</text>
+<rect x="330" y="338" width="419.3" height="24" rx="5" fill="#059669" opacity="0.88"/>
+<text x="759.3" y="356" class="num">7,475</text><text x="54" y="412" class="label">Co-negative graph</text>
+<text x="54" y="432" class="small">Who attacked the same targets?</text>
+<rect x="330" y="396" width="386.7" height="24" rx="5" fill="#dc2626" opacity="0.88"/>
+<text x="726.7" y="414" class="num">3,736</text><rect x="44" y="484" width="842" height="58" rx="10" fill="white" stroke="#d7dee8"/>
+<text x="66" y="516" class="claim">Design choice: count / trigger are broad and noisy; co-negative is sparse enough to be the expansion backbone.</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="590" viewBox="0 0 930 590">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <style>
+    .title{font:700 28px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .subtitle{font:500 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .label{font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .small{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .tiny{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .num{font:700 17px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .claim{font:700 18px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#0f766e}
+  </style>
+<text x="44" y="48" class="title">Why count / co-target alone is not enough</text>
+<text x="44" y="74" class="subtitle">Example seed: harvested. Co-target finds many shared-interaction neighbors; co-negative keeps only shared attack-target structure.</text><rect x="44" y="112" width="395" height="390" rx="12" fill="white" stroke="#d7dee8"/>
+<text x="70" y="148" class="label">Co-target / interaction context</text>
+<text x="70" y="171" class="small">Top neighbors by shared targets; useful, but broad.</text><text x="72" y="205" class="small">R3dFiveStandingBye</text><text x="350" y="205" class="small">w=0.642</text><text x="72" y="236" class="small">NectarineDirect936</text><text x="350" y="236" class="small">w=0.631</text><text x="72" y="267" class="small">Middle____Earth</text><text x="350" y="267" class="small">w=0.617</text><text x="72" y="298" class="small">rtublin</text><text x="350" y="298" class="small">w=0.606</text><text x="72" y="329" class="small">Traditional-Bed-6369</text><text x="350" y="329" class="small">w=0.605</text><text x="72" y="360" class="small">FrivolerFridolin</text><text x="350" y="360" class="small">w=0.601</text><text x="72" y="391" class="small">cheese20202</text><text x="350" y="391" class="small">w=0.598</text><text x="72" y="422" class="small">TheMoonMoth</text><text x="350" y="422" class="small">w=0.593</text><rect x="491" y="112" width="395" height="390" rx="12" fill="white" stroke="#d7dee8"/>
+<text x="517" y="148" class="label">Co-negative expansion members</text>
+<text x="517" y="171" class="small">Included because shared negative-target similarity ≥ 0.20.</text><text x="519" y="205" class="small">rtublin</text><text x="795" y="205" class="small">w=0.385</text><text x="519" y="236" class="small">NectarineDirect936</text><text x="795" y="236" class="small">w=0.335</text><text x="519" y="267" class="small">CoolPineapple6969</text><text x="795" y="267" class="small">w=0.218</text><text x="519" y="298" class="small">Fabulous-Chard3987</text><text x="795" y="298" class="small">w=0.218</text><text x="519" y="329" class="small">GooseBash</text><text x="795" y="329" class="small">w=0.218</text><text x="519" y="360" class="small">autemox</text><text x="795" y="360" class="small">w=0.218</text><text x="519" y="391" class="small">wish_I_knew_before-1</text><text x="795" y="391" class="small">w=0.218</text><text x="70" y="475" class="small">harvested has 15 co-target neighbors.</text>
+<text x="517" y="475" class="small">Only 7 pass direct co-negative Tier 1.</text>
+<text x="44" y="545" class="claim">Co-target asks “same discussion space?” Co-negative asks “same attack targets?” The second is stricter.</text>
+</svg>

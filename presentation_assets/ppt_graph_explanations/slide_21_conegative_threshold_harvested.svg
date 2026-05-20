@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="610" viewBox="0 0 930 610">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <style>
+    .title{font:700 28px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .subtitle{font:500 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .label{font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .small{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .tiny{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .num{font:700 17px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .claim{font:700 18px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#0f766e}
+  </style>
+<text x="44" y="48" class="title">What does co-negative ≥ 0.20 mean?</text>
+<text x="44" y="74" class="subtitle">It is not “both attacked one person once.” It is similarity between two accounts’ negative-target vectors.</text><line x1="320" y1="105" x2="320" y2="410" stroke="#d7dee8"/>
+<line x1="524.4444444444445" y1="105" x2="524.4444444444445" y2="410" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="532.4444444444445" y="121" class="small" fill="#dc2626">threshold 0.20</text><text x="56" y="152" class="label">rtublin</text>
+<rect x="320" y="135" width="393.4" height="24" rx="5" fill="#dc2626" opacity="0.84"/>
+<text x="723.4" y="153" class="num">0.385</text><text x="56" y="195" class="label">NectarineDirect936</text>
+<rect x="320" y="178" width="342.6" height="24" rx="5" fill="#dc2626" opacity="0.84"/>
+<text x="672.6" y="196" class="num">0.335</text><text x="56" y="238" class="label">CoolPineapple6969</text>
+<rect x="320" y="221" width="223.0" height="24" rx="5" fill="#dc2626" opacity="0.84"/>
+<text x="553.0" y="239" class="num">0.218</text><text x="56" y="281" class="label">Fabulous-Chard3987</text>
+<rect x="320" y="264" width="223.0" height="24" rx="5" fill="#dc2626" opacity="0.84"/>
+<text x="553.0" y="282" class="num">0.218</text><text x="56" y="324" class="label">GooseBash</text>
+<rect x="320" y="307" width="223.0" height="24" rx="5" fill="#dc2626" opacity="0.84"/>
+<text x="553.0" y="325" class="num">0.218</text><text x="56" y="367" class="label">autemox</text>
+<rect x="320" y="350" width="223.0" height="24" rx="5" fill="#dc2626" opacity="0.84"/>
+<text x="553.0" y="368" class="num">0.218</text><text x="56" y="410" class="label">wish_I_knew_before-1</text>
+<rect x="320" y="393" width="223.0" height="24" rx="5" fill="#dc2626" opacity="0.84"/>
+<text x="553.0" y="411" class="num">0.218</text><rect x="44" y="438" width="842" height="98" rx="12" fill="white" stroke="#d7dee8"/>
+<text x="66" y="468" class="label">Actual shared negative-target examples</text><text x="68" y="493" class="small">FuelZestyclose3541 → Amphibious333, El_y_mar</text><text x="68" y="510" class="small">GooseBash → El_y_mar, Soggy-Welder2265</text><text x="68" y="527" class="small">fanzakh → Amphibious333, Crafty_End_2205</text><text x="68" y="544" class="small">NectarineDirect936 → JerryLeeDog, Mercurius88888</text><text x="68" y="561" class="small">CoolPineapple6969 → Mercurius88888, Soggy-Welder2265</text><text x="44" y="575" class="claim">Co-negative works because it uses repeated shared opposition structure, not raw interaction volume.</text>
+</svg>
