@@ -1,0 +1,15 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+skydiver19,skydiver19,0,True,seed,0.0,0.0,0.0,0.0,0,
+skydiver19,GoodResident2000,1,True,tier1_co_negative_direct,0.2581988897471612,0.0,0.0,0.0,0,
+skydiver19,ultra_annoymnuos,1,True,tier1_co_negative_direct,0.253546276418555,0.0,0.0,0.0,0,
+skydiver19,ghgrain,1,True,tier1_co_negative_direct,0.223606797749979,0.0,0.0,0.1825741858350553,0,
+skydiver19,MushroomDizzy649,1,True,tier1_co_negative_direct,0.223606797749979,0.0,0.0,0.0,0,
+skydiver19,United-Blackberry-77,1,True,tier1_co_negative_direct,0.223606797749979,0.0,0.0,0.0,0,
+skydiver19,codemonkeysh,1,True,tier1_co_negative_direct,0.223606797749979,0.0,0.0,0.0,0,
+skydiver19,grajnapc,1,True,tier1_co_negative_direct,0.223606797749979,0.0,0.0,0.0,0,
+skydiver19,tibbon,1,True,tier1_co_negative_direct,0.223606797749979,0.0,0.0,0.0,0,
+skydiver19,CatsGotANosebleed,1,True,tier1_co_negative_direct,0.2,0.0,0.0,0.0,0,
+skydiver19,ExpensiveAd4496,1,True,tier1_co_negative_direct,0.2,0.0,0.0,0.0,0,
+skydiver19,Opposite_Attorney122,1,True,tier1_co_negative_direct,0.2,0.0,0.0,0.0,0,
+skydiver19,damiracle_NR,1,True,tier1_co_negative_direct,0.2,0.0,0.0,0.0,0,
+skydiver19,Rshellnizzle,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"tibbon, ultra_annoymnuos"

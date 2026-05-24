@@ -1,0 +1,13 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+sirspeedy99,sirspeedy99,0,True,seed,0.0,0.0,0.0,0.0,0,
+sirspeedy99,B_Traven9272,1,True,tier1_co_negative_direct,0.2886751345948128,0.0,0.0,0.1556655288401233,0,
+sirspeedy99,AlpsApprehensive4687,1,True,tier1_co_negative_direct,0.2886751345948128,0.0,0.0,0.0,0,
+sirspeedy99,Antitdeveloper,1,True,tier1_co_negative_direct,0.2886751345948128,0.0,0.0,0.0,0,
+sirspeedy99,MilStd,1,True,tier1_co_negative_direct,0.2886751345948128,0.0,0.0,0.0,0,
+sirspeedy99,AmbitiousBread,1,True,tier1_co_negative_direct,0.2357022603955158,0.0,0.0,0.1906505580994005,0,
+sirspeedy99,ApoplecticAndroid,1,True,tier1_co_negative_direct,0.2357022603955158,0.0,0.0,0.0,0,
+sirspeedy99,Halo_Chief117,1,True,tier1_co_negative_direct,0.2041241452319315,0.0,0.0,0.1556655288401233,0,
+sirspeedy99,Content_Cream2475,1,True,tier1_co_negative_direct,0.2041241452319315,0.0,0.0,0.0,0,
+sirspeedy99,Emergency_Trick_4930,1,True,tier1_co_negative_direct,0.2041241452319315,0.0,0.0,0.0,0,
+sirspeedy99,MushroomDizzy649,1,True,tier1_co_negative_direct,0.2041241452319315,0.0,0.0,0.0,0,
+sirspeedy99,TripsterX,1,True,tier1_co_negative_direct,0.2041241452319315,0.0,0.0,0.0,0,

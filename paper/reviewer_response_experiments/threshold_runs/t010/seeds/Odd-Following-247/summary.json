@@ -1,0 +1,21 @@
+{
+  "seed": "Odd-Following-247",
+  "candidate_member_count": 11,
+  "tiered_expansion_member_count": 11,
+  "tier1_co_negative_count": 7,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 3,
+  "co_target_neighbor_count": 11,
+  "co_negative_neighbor_count": 7,
+  "tag_similarity_neighbor_count": 15,
+  "internal_coordination_edge_count": 24,
+  "shared_negative_target_count": 15,
+  "avg_rhetorical_score": 9.181818181818182,
+  "avg_non_neutral_post_ratio": 0.18181818181818182,
+  "avg_oppositional_stance_ratio": 0.7871003265740107,
+  "automation_anomaly_fraction": 0.09090909090909091,
+  "avg_anomaly_score": 1.8489465305506856,
+  "total_comment_count": 170.0,
+  "total_analyzed_post_count": 6.0
+}

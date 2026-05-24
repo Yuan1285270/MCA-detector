@@ -1,0 +1,9 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+harvested,harvested,0,True,seed,0.0,0.0,0.0,0.0,0,
+harvested,rtublin,1,True,tier1_co_negative_direct,0.3848666843036719,0.0,0.0,0.6061334972827698,0,
+harvested,NectarineDirect936,1,True,tier1_co_negative_direct,0.3351095355268196,0.0,0.0,0.6314066054223066,0,
+harvested,CoolPineapple6969,1,True,tier1_co_negative_direct,0.2181264877257022,0.0,0.0,0.0,0,
+harvested,Fabulous-Chard3987,1,True,tier1_co_negative_direct,0.2181264877257022,0.0,0.0,0.0,0,
+harvested,GooseBash,1,True,tier1_co_negative_direct,0.2181264877257022,0.0,0.0,0.0,0,
+harvested,autemox,1,True,tier1_co_negative_direct,0.2181264877257022,0.0,0.0,0.0,0,
+harvested,wish_I_knew_before-1,1,True,tier1_co_negative_direct,0.2181264877257022,0.0,0.0,0.0,0,

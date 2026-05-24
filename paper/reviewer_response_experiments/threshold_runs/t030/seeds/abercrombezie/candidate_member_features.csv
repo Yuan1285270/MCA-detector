@@ -1,0 +1,5 @@
+user_id,avg_manipulative_rhetoric_score,non_neutral_post_ratio,comment_label_oppositional_ratio,anomaly_label,anomaly_score,comment_count,analyzed_post_count
+Lord_Alamar,0.0,0.0,0.5,1,4.041124873431498,4.0,0.0
+abercrombezie,23.333333333333332,1.0,0.1818181818181818,-1,-9.792791083619932,77.0,3.0
+helloipoo,0.0,0.0,1.0,1,1.7777846296451405,3.0,0.0
+soundsandsights,0.0,0.0,1.0,1,4.15040704859639,2.0,0.0

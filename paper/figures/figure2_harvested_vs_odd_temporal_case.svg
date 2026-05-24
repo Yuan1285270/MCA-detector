@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="500" viewBox="0 0 930 500">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <style>
+    .title{font:700 24px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#111827}
+    .subtitle{font:500 14px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#4b5563}
+    .head{font:700 16px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#111827}
+    .label{font:600 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#374151}
+    .value{font:700 14px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#111827}
+    .note{font:500 11px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#4b5563}
+    .ok{fill:#0f766e}
+    .caution{fill:#b45309}
+    .grid{stroke:#d1d5db;stroke-width:1}
+    .heavy{stroke:#9ca3af;stroke-width:1.4}
+  </style>
+
+  <text x="36" y="42" class="title">候選群案例比較：共同負向目標需要時間同步校準</text>
+  <text x="36" y="68" class="subtitle">兩組皆來自正式 top-20 seed groups。Stage 1 顯示共同負向目標結構；Stage 2 檢查是否具有可重複的短時間同步證據。</text>
+
+  <rect x="36" y="96" width="858" height="306" fill="#ffffff" stroke="#9ca3af"/>
+
+  <line x1="36" y1="142" x2="894" y2="142" class="heavy"/>
+  <line x1="36" y1="216" x2="894" y2="216" class="heavy"/>
+  <line x1="36" y1="290" x2="894" y2="290" class="heavy"/>
+  <line x1="36" y1="350" x2="894" y2="350" class="grid"/>
+
+  <line x1="250" y1="96" x2="250" y2="402" class="heavy"/>
+  <line x1="570" y1="96" x2="570" y2="402" class="heavy"/>
+
+  <text x="58" y="125" class="head">比較面向</text>
+  <text x="276" y="125" class="head">harvested</text>
+  <text x="596" y="125" class="head">Odd-Following-247</text>
+
+  <text x="58" y="167" class="label">Stage 1 結構證據</text>
+  <text x="276" y="160" class="value">8 成員；7 Tier 1；9 群內邊</text>
+  <text x="276" y="180" class="value">11 共同負向目標</text>
+  <text x="596" y="160" class="value">11 成員；7 Tier 1；24 群內邊</text>
+  <text x="596" y="180" class="value">15 共同負向目標</text>
+  <text x="276" y="199" class="note">結構明確，適合進入 Stage 2。</text>
+  <text x="596" y="199" class="note">結構更密，但仍只是候選群。</text>
+
+  <text x="58" y="241" class="label">Stage 2 同步強度</text>
+  <text x="276" y="236" class="value">strong = 1；moderate = 0</text>
+  <text x="596" y="236" class="value">strong = 0；moderate = 0</text>
+  <text x="276" y="258" class="note">NectarineDirect936 ↔ harvested：</text>
+  <text x="276" y="276" class="note">2 次 &lt;5min，4 次 &lt;30min。</text>
+  <text x="596" y="258" class="note">有 40 組 weak overlap，</text>
+  <text x="596" y="276" class="note">但 0 組 strong / moderate。</text>
+
+  <text x="58" y="315" class="label">Temporal confidence</text>
+  <text x="276" y="314" class="value ok">robust = 1</text>
+  <text x="596" y="314" class="value caution">robust = 0；moderate-review = 0</text>
+  <text x="276" y="336" class="note">重複短時間同步，審查信心較高。</text>
+  <text x="596" y="336" class="note">只有脈絡重疊，時間證據不足。</text>
+
+  <text x="58" y="377" class="label">案例解讀</text>
+  <text x="276" y="376" class="value ok">共同目標 + 可靠時間同步</text>
+  <text x="596" y="376" class="value caution">共同目標強，但時間同步不足</text>
+
+  <rect x="36" y="426" width="858" height="46" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="58" y="447" class="note">圖示重點：co-negative target 適合用於候選群發現；temporal synchrony 與 temporal confidence 用於校準證據。</text>
+  <text x="58" y="464" class="note">因此，同立場或同討論脈絡的自然共現，不會被直接解讀為高信心協同行動。</text>
+</svg>

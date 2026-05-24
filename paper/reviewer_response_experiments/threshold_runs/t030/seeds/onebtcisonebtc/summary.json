@@ -1,0 +1,21 @@
+{
+  "seed": "onebtcisonebtc",
+  "candidate_member_count": 7,
+  "tiered_expansion_member_count": 7,
+  "tier1_co_negative_count": 5,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 1,
+  "co_target_neighbor_count": 15,
+  "co_negative_neighbor_count": 6,
+  "tag_similarity_neighbor_count": 15,
+  "internal_coordination_edge_count": 8,
+  "shared_negative_target_count": 8,
+  "avg_rhetorical_score": 5.0,
+  "avg_non_neutral_post_ratio": 0.2857142857142857,
+  "avg_oppositional_stance_ratio": 0.35372694532358395,
+  "automation_anomaly_fraction": 0.2857142857142857,
+  "avg_anomaly_score": 0.3311466538508489,
+  "total_comment_count": 199.0,
+  "total_analyzed_post_count": 5.0
+}

@@ -1,0 +1,13 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+abercrombezie,abercrombezie,0,True,seed,0.0,0.0,0.0,0.0,0,
+abercrombezie,Lord_Alamar,1,True,tier1_co_negative_direct,0.3779644730092272,0.0,0.0,0.0,0,
+abercrombezie,soundsandsights,1,True,tier1_co_negative_direct,0.3779644730092272,0.0,0.0,0.0,0,
+abercrombezie,helloipoo,1,True,tier1_co_negative_direct,0.3086066999241838,0.0,0.0,0.0,0,
+abercrombezie,YLCZ,1,True,tier1_co_negative_direct,0.2672612419124244,0.0,0.0,0.0,0,
+abercrombezie,jasperCrow,1,True,tier1_co_negative_direct,0.2672612419124244,0.0,0.0,0.0,0,
+abercrombezie,JustinPooDough,1,True,tier1_co_negative_direct,0.2223747949983303,0.0,0.0,0.0,0,
+abercrombezie,AccomplishedScheme82,1,True,tier1_co_negative_direct,0.2182178902359924,0.0,0.0,0.0,0,
+abercrombezie,Hot_Molasses_4006,1,True,tier1_co_negative_direct,0.2182178902359924,0.0,0.0,0.0,0,
+abercrombezie,JoMadrid13,1,True,tier1_co_negative_direct,0.2182178902359924,0.0,0.0,0.0,0,
+abercrombezie,my-name-is-mine,1,True,tier1_co_negative_direct,0.2182178902359924,0.0,0.0,0.0,0,
+abercrombezie,Significant_Book1672,1,True,tier1_co_negative_direct,0.2020305089104421,0.0,0.0,0.0,0,

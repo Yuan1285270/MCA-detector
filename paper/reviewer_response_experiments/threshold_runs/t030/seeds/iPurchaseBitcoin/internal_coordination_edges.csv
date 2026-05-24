@@ -1,0 +1,11 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+MisanthropicSocrates,platour220,2,,co_negative_target,1.0
+MisanthropicSocrates,TiestoForever,2,,co_negative_target,0.5000000000000001
+TiestoForever,platour220,2,,co_negative_target,0.5000000000000001
+MisanthropicSocrates,Significant_Tap_5362,2,,co_negative_target,0.4714045207910317
+Significant_Tap_5362,platour220,2,,co_negative_target,0.4714045207910317
+MisanthropicSocrates,iPurchaseBitcoin,2,,co_negative_target,0.392232270276368
+iPurchaseBitcoin,platour220,2,,co_negative_target,0.392232270276368
+MisanthropicSocrates,Safe-Painter-9618,2,,co_negative_target,0.3333333333333333
+Safe-Painter-9618,platour220,2,,co_negative_target,0.3333333333333333
+Significant_Tap_5362,TiestoForever,2,,co_negative_target,0.2357022603955158

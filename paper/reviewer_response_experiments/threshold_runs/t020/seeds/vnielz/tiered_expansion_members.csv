@@ -1,0 +1,8 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+vnielz,vnielz,0,True,seed,0.0,0.0,0.0,0.0,0,
+vnielz,BitcoinFreedom1776,1,True,tier1_co_negative_direct,0.2156655464068768,0.0,0.0,0.0,0,
+vnielz,Impressive-Cat-3144,1,True,tier1_co_negative_direct,0.2156655464068768,0.0,0.0,0.0,0,
+vnielz,No-Recipe-4578,1,True,tier1_co_negative_direct,0.2156655464068768,0.0,0.0,0.0,0,
+vnielz,Technical_Moose8478,1,True,tier1_co_negative_direct,0.2156655464068768,0.0,0.0,0.0,0,
+vnielz,kundaliniredneck1,1,True,tier1_co_negative_direct,0.2156655464068768,0.0,0.0,0.0,0,
+vnielz,turdturd1,1,True,tier1_co_negative_direct,0.2156655464068768,0.0,0.0,0.0,0,

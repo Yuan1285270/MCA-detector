@@ -1,0 +1,93 @@
+group_seed,account_a,account_b,co_negative_weight,same_post_count,within_5min_count,within_30min_count,median_delay_minutes,min_delay_minutes,shared_link_ids,text_fingerprint_distance,account_lifecycle_overlap,verification_label,temporal_confidence
+Wsemenske,Wobbalabba776,Wsemenske,0.3779644730092272,1,0,0,1014.45,1014.45,1jcpo1x,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,TinSodder,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,abnormalinvesting,0.0,1,0,0,941.7,941.7,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,jayvm01,0.0,1,0,0,869.4166666666666,869.4166666666666,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,tkwh,0.4082482904638631,1,0,0,1067.5,1067.5,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,TinSodder,abnormalinvesting,0.0,1,0,0,198.28333333333333,198.28333333333333,1j94d38,,,weak_temporal_overlap,weak_context
+tkwh,TinSodder,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,TinSodder,jayvm01,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,TinSodder,tkwh,0.3333333333333333,3,0,0,204.38333333333333,71.4,1iqeigj; 1jzofsl; 1k0mdb3,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,devonthed00d,0.3651483716701107,2,0,0,999.0583333333334,756.4166666666666,1i4fp4r; 1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,jayvm01,0.3651483716701107,2,0,0,804.2416666666667,72.28333333333333,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,tkwh,0.0,3,0,0,407.0833333333333,125.8,1i6v7ob; 1j7i572; 1jd9kym,,,weak_temporal_overlap,weak_context
+tkwh,devonthed00d,jayvm01,0.0,1,0,0,294.5,294.5,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,devonthed00d,tkwh,0.3333333333333333,2,0,0,141.825,39.416666666666664,1i6v7ob; 1i7bsl8,,,weak_temporal_overlap,weak_context
+tkwh,jayvm01,tkwh,0.3333333333333333,2,0,0,124.17500000000001,50.266666666666666,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+Any-Regular2960,AIweWereWarned,Any-Regular2960,0.3202563076101742,1,0,0,102.28333333333333,102.28333333333333,1j16bq0,,,weak_temporal_overlap,weak_context
+Any-Regular2960,AIweWereWarned,LiveSlay,0.0,1,0,0,477.8666666666667,477.8666666666667,1j6dy0f,,,weak_temporal_overlap,weak_context
+Any-Regular2960,Any-Regular2960,LiveSlay,0.5163977794943222,2,0,0,767.6083333333333,644.8333333333334,1ic1hxl; 1iwx052,,,weak_temporal_overlap,weak_context
+Covetoast,Covetoast,Potential_Initial903,0.4472135954999578,1,1,1,1.8,1.8,1jkqahx,,,strong_temporal_sync,fragile_single_event
+lol_camis,Basic_Professor2650,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,lol_camis,0.3378299530160344,2,0,1,55.74166666666667,12.35,1jamkxo; 1k7u6fj,,,weak_temporal_overlap,moderate_review
+lol_camis,_Zzik_,lol_camis,0.3378299530160344,3,1,1,59.733333333333334,4.916666666666667,1j0rlxd; 1jr7996; 1jtfysr,,,strong_temporal_sync,moderate_review
+tzacPACO,Far-Hunter2057,btcgib,0.4207865932216609,2,0,0,440.4083333333333,215.03333333333333,1k743xw; 1khsudj,,,weak_temporal_overlap,weak_context
+tzacPACO,Far-Hunter2057,tzacPACO,0.4622797036009415,1,0,0,1154.9166666666667,1154.9166666666667,1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,btcgib,tzacPACO,0.3993541527766659,2,0,0,464.14166666666665,439.15,1k743xw; 1k8wenp,,,weak_temporal_overlap,weak_context
+abercrombezie,Lord_Alamar,abercrombezie,0.3779644730092272,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,abercrombezie,helloipoo,0.3086066999241838,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,abercrombezie,soundsandsights,0.3779644730092272,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,helloipoo,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,MatchboxVader22,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,PunkerWannaBe,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,bestjaegerpilot,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,onebtcisonebtc,0.3849001794597505,1,0,0,658.8,658.8,1iryhnw,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,MatchboxVader22,PunkerWannaBe,0.0,1,0,0,239.31666666666666,239.31666666666666,1j4erty,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,MatchboxVader22,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,MatchboxVader22,bestjaegerpilot,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,MatchboxVader22,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,MatchboxVader22,onebtcisonebtc,0.3333333333333333,2,0,0,499.2583333333333,81.56666666666666,1i2om4k; 1k0uwon,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,PunkerWannaBe,TechHonie,0.3264405933533033,3,0,0,774.45,33.56666666666667,1igwt7o; 1jcpo1x; 1kgu1j2,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,PunkerWannaBe,bestjaegerpilot,0.8164965809277261,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,PunkerWannaBe,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,PunkerWannaBe,onebtcisonebtc,0.3849001794597505,2,0,0,70.39166666666667,56.05,1jrduzr; 1jtmlzh,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,TechHonie,bestjaegerpilot,0.3998064425234855,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,TechHonie,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,TechHonie,onebtcisonebtc,0.0,2,0,0,628.1666666666666,106.48333333333333,1i6ie0i; 1k30you,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,bestjaegerpilot,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bestjaegerpilot,onebtcisonebtc,0.4714045207910317,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,jamesnaranja90,onebtcisonebtc,0.3849001794597505,1,0,0,888.8166666666667,888.8166666666667,1jqtqcv,,,weak_temporal_overlap,weak_context
+harvested,NectarineDirect936,harvested,0.3351095355268196,17,2,4,83.23333333333333,3.1,1jik58a; 1jk54fe; 1jnwjl4; 1jphrgb; 1jqavvp; 1jsngmk; 1juyvan; 1jwj2fe; 1jxam77; 1jyry1v; 1k15uws; 1k4z8ln; 1k5s4i1; 1k7dxw9; 1kb9jh7; 1kc1qoz; 1kgqb4e,,,strong_temporal_sync,robust
+harvested,NectarineDirect936,rtublin,0.0,2,0,0,454.525,119.8,1jvqxym; 1jxam77,,,weak_temporal_overlap,weak_context
+harvested,harvested,rtublin,0.3848666843036719,3,0,0,144.18333333333334,53.516666666666666,1jxam77; 1k9onso; 1kfxhcl,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,FuckYaHoeAssMom,0.0,1,0,0,3903.9166666666665,3903.9166666666665,1i2t008,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,Julian_256,0.0,1,0,0,393.25,393.25,1ij4biq,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,Local_Doubt_4029,0.371235735322565,2,0,0,424.83333333333337,256.71666666666664,1i2t008; 1ij4biq,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,OwnPersonalSatan,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,AKcryptoGUY,Vimes-NW,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,AKcryptoGUY,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,FuckYaHoeAssMom,Julian_256,0.0,1,0,0,278.26666666666665,278.26666666666665,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,FuckYaHoeAssMom,Local_Doubt_4029,0.371235735322565,2,0,0,2355.3416666666667,550.05,1i0dlzn; 1i2t008,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,FuckYaHoeAssMom,OwnPersonalSatan,0.0,1,0,0,469.98333333333335,469.98333333333335,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,FuckYaHoeAssMom,Vimes-NW,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,FuckYaHoeAssMom,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Julian_256,Local_Doubt_4029,0.371235735322565,2,0,0,628.9916666666667,271.78333333333336,1i0dlzn; 1ij4biq,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Julian_256,OwnPersonalSatan,0.0,1,0,0,191.71666666666667,191.71666666666667,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Julian_256,Vimes-NW,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Julian_256,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Local_Doubt_4029,OwnPersonalSatan,0.3031127086090645,1,0,0,80.06666666666666,80.06666666666666,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Local_Doubt_4029,Vimes-NW,0.3031127086090645,1,0,0,223.75,223.75,1jd40vk,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Local_Doubt_4029,You3betI4bet,0.3031127086090645,1,0,0,327.1166666666667,327.1166666666667,1jd40vk,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,OwnPersonalSatan,Vimes-NW,0.0,1,0,0,347.51666666666665,347.51666666666665,1j29mvg,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,OwnPersonalSatan,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Vimes-NW,You3betI4bet,0.6666666666666666,1,0,0,550.8666666666667,550.8666666666667,1jd40vk,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,Safe-Painter-9618,0.3333333333333333,1,0,0,226.33333333333334,226.33333333333334,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,Significant_Tap_5362,0.4714045207910317,2,0,0,135.09166666666667,95.6,1ictoqj; 1ixthsk,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,TiestoForever,0.5000000000000001,1,0,0,400.3333333333333,400.3333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,iPurchaseBitcoin,0.392232270276368,1,0,0,229.98333333333332,229.98333333333332,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,platour220,1.0,2,0,0,221.11666666666667,69.73333333333333,1ictoqj; 1ixthsk,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Safe-Painter-9618,Significant_Tap_5362,0.0,1,0,0,51.75,51.75,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Safe-Painter-9618,TiestoForever,0.0,2,0,0,418.5,210.33333333333334,1ictoqj; 1j7zdzm,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Safe-Painter-9618,iPurchaseBitcoin,0.0,4,1,2,48.275,3.65,1ictoqj; 1idzpvi; 1iyv29m; 1j16bq0,,,strong_temporal_sync,robust
+iPurchaseBitcoin,Safe-Painter-9618,platour220,0.3333333333333333,1,0,0,296.06666666666666,296.06666666666666,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Significant_Tap_5362,TiestoForever,0.2357022603955158,1,0,0,574.9166666666666,574.9166666666666,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Significant_Tap_5362,iPurchaseBitcoin,0.0,2,0,0,310.5833333333333,55.4,1ictoqj; 1igekvh,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Significant_Tap_5362,platour220,0.4714045207910317,2,0,0,260.60833333333335,244.31666666666666,1ictoqj; 1ixthsk,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,TiestoForever,iPurchaseBitcoin,0.0,1,0,0,630.3166666666667,630.3166666666667,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,TiestoForever,platour220,0.5000000000000001,1,0,0,330.6,330.6,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,iPurchaseBitcoin,platour220,0.392232270276368,1,0,0,299.71666666666664,299.71666666666664,1ictoqj,,,weak_temporal_overlap,weak_context

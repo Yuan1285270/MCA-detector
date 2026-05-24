@@ -1,0 +1,21 @@
+{
+  "seed": "abercrombezie",
+  "candidate_member_count": 12,
+  "tiered_expansion_member_count": 12,
+  "tier1_co_negative_count": 11,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 0,
+  "co_target_neighbor_count": 15,
+  "co_negative_neighbor_count": 11,
+  "tag_similarity_neighbor_count": 12,
+  "internal_coordination_edge_count": 15,
+  "shared_negative_target_count": 14,
+  "avg_rhetorical_score": 1.9444444444444444,
+  "avg_non_neutral_post_ratio": 0.08333333333333333,
+  "avg_oppositional_stance_ratio": 0.6013912898540626,
+  "automation_anomaly_fraction": 0.08333333333333333,
+  "avg_anomaly_score": 1.7915627319023617,
+  "total_comment_count": 214.0,
+  "total_analyzed_post_count": 5.0
+}

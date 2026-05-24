@@ -1,0 +1,3 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+DuckDuckMosss,OutlandishnessOld903,2,,co_negative_target,0.2390457218668787
+DuckDuckMosss,newtobitcoin111,2,,co_negative_target,0.2390457218668787

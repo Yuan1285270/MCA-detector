@@ -1,0 +1,21 @@
+{
+  "seed": "skydiver19",
+  "candidate_member_count": 14,
+  "tiered_expansion_member_count": 14,
+  "tier1_co_negative_count": 12,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 1,
+  "co_target_neighbor_count": 14,
+  "co_negative_neighbor_count": 12,
+  "tag_similarity_neighbor_count": 12,
+  "internal_coordination_edge_count": 16,
+  "shared_negative_target_count": 20,
+  "avg_rhetorical_score": 7.023809523809524,
+  "avg_non_neutral_post_ratio": 0.14285714285714285,
+  "avg_oppositional_stance_ratio": 0.49569091331171167,
+  "automation_anomaly_fraction": 0.07142857142857142,
+  "avg_anomaly_score": 1.983800050364205,
+  "total_comment_count": 206.0,
+  "total_analyzed_post_count": 5.0
+}

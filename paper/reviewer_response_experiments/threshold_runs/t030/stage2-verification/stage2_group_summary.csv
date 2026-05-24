@@ -1,0 +1,12 @@
+group_seed,total_pairs,strong_temporal_sync,moderate_temporal_sync,weak_temporal_overlap,no_temporal_sync,robust_temporal_pairs,moderate_review_temporal_pairs,fragile_temporal_pairs
+Any-Regular2960,3,0,0,3,0,0,0,0
+Covetoast,1,1,0,0,0,0,0,1
+Local_Doubt_4029,21,0,0,13,8,0,0,0
+Wsemenske,1,0,0,1,0,0,0,0
+abercrombezie,6,0,0,0,6,0,0,0
+harvested,3,1,0,2,0,1,0,0
+iPurchaseBitcoin,15,1,0,14,0,1,0,0
+lol_camis,3,1,0,1,1,0,2,0
+onebtcisonebtc,21,0,0,7,14,0,0,0
+tkwh,15,0,0,11,4,0,0,0
+tzacPACO,3,0,0,3,0,0,0,0

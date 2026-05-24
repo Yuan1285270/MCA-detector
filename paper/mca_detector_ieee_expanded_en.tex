@@ -1,0 +1,885 @@
+\documentclass[conference]{IEEEtran}
+\makeatletter
+\def\ps@IEEEtitlepagestyle{%
+  \def\@oddhead{}\def\@evenhead{}}
+\makeatother
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{balance}
+
+\begin{document}
+
+\title{MCA Detector: Review-Oriented Discovery of\\
+Manipulative Social Coordination}
+
+\author{
+  \IEEEauthorblockN{Tsung-Yuan Lin, Jun-Hao Chang, Jia-An Lai}
+  \IEEEauthorblockA{
+  Department of Computer Science and Information Engineering\\
+  Feng Chia University, Taichung, Taiwan\\
+  Advisor: Jun-Hong Li}
+}
+
+\maketitle
+
+\begin{abstract}
+Manipulative activity on social platforms does not always appear as a
+single automated account. In cryptocurrency communities, suspicious influence
+may emerge from accounts that repeatedly attack the same targets, amplify
+similar narratives, or appear in the same discussions within short time
+windows. However, highly active legitimate users may also share ideology,
+criticize the same opponents, and participate in the same popular threads.
+Therefore, treating either an account-level suspiciousness score or shared
+negative targets as a final verdict can produce misleading conclusions. This
+paper presents MCA Detector, a reproducible and review-oriented pipeline for
+discovering suspicious coordination candidates from Reddit cryptocurrency
+discussions. The system first uses large language models to analyze post
+rhetoric and comment stance, then converts these semantic signals into
+account features and multi-layer account graphs. A Manipulative Coordination
+Account (MCA) score ranks high-risk seed accounts, while a tiered graph
+expansion stage uses co-negative-target relations and supporting graph layers
+to form candidate groups. A second-stage temporal verification module then
+checks whether candidate group members repeatedly co-appear in the same
+thread within short time windows. In the current dataset, MCA Detector
+selected 20 seed groups and 172 unique candidate accounts, identifying 13
+strong temporal synchrony pairs and 8 moderate temporal synchrony pairs. Case
+analysis shows that the harvested group contains both shared negative targets
+and robust short-window temporal evidence, while an Odd-Following-247
+comparison group contains Stage 1 structure but no reliable Stage 2 timing
+evidence. The system is designed to produce review priorities and evidence
+tables, not to report supervised detection accuracy or directly accuse
+accounts as confirmed bots, cyber troops, or real-world operators.
+\end{abstract}
+
+\begin{IEEEkeywords}
+social media analysis, coordinated behavior detection, manipulative rhetoric,
+large language models, graph expansion, temporal synchrony, Reddit
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+Social media platforms have become important environments for public
+discussion, financial narratives, and investment sentiment formation. In
+cryptocurrency communities, market news, price volatility, policy rumors, and
+ideological conflict can quickly produce large volumes of replies. Such
+communities are also attractive targets for manipulative activities: a small
+number of accounts may attempt to amplify narratives, attack dissenting
+voices, or create the appearance of broader agreement.
+
+Detecting this behavior is difficult because manipulation is not equivalent to
+automation. Prior social bot detection systems often ask whether an individual
+account resembles a bot based on metadata, content, network, and temporal
+features \cite{ferrara2016rise,varol2017online}. However, a human-operated
+account can still participate in coordinated manipulation, while a highly
+active legitimate account may look abnormal without being manipulative. A
+second difficulty is that shared targets are ambiguous. If two Bitcoin users
+frequently criticize the same anti-Bitcoin author, this may reflect
+coordination, but it may also reflect ordinary ideological alignment.
+
+This paper therefore frames the task as suspicious coordination discovery
+rather than final account classification. The goal is not to prove that an
+account is a bot or a real-world operator. Instead, the goal is to reduce a
+large account population into interpretable candidate groups and provide
+evidence for human review. The key research question is:
+
+\begin{quote}
+How can we identify accounts that deserve further review for manipulative
+coordination without overclaiming that all discovered candidates are confirmed
+coordinated operators?
+\end{quote}
+
+To answer this question, we propose MCA Detector. The system combines
+LLM-based semantic analysis, multi-layer account graphs, account-level MCA
+seed ranking, graph-based seed expansion, and temporal synchrony verification.
+Its central design principle is separation of evidence. MCA score answers
+``which accounts are worth starting from?'' Stage 1 graph expansion answers
+``who is structurally close to the seed?'' Stage 2 temporal verification
+answers ``does this candidate group show short-window co-presence that is more
+suspicious than shared ideology alone?''
+
+The contributions of this work are:
+\begin{itemize}
+  \item We propose a review-oriented pipeline that separates account-level
+  suspiciousness, group candidate discovery, and temporal verification.
+  \item We convert LLM stance analysis into signed account-to-account
+  relations and multiple graph layers, including co-target, co-negative-target,
+  trigger-response, and tag-similarity graphs.
+  \item We introduce a tiered seed expansion strategy that uses
+  co-negative-target overlap as the main discovery signal while requiring
+  supporting evidence for noisier layers.
+  \item We use same-thread short-window co-appearance as Stage 2 temporal
+  evidence and explicitly distinguish temporal strength from temporal
+  confidence.
+  \item We report case studies and limitations using cautious review language,
+  showing how the system ranks suspicious groups without treating every
+  candidate as a confirmed cyber troop.
+\end{itemize}
+
+\section{Related Work}
+
+\subsection{Social Bot and Account-Level Detection}
+
+Early social bot detection research largely focused on account-level
+classification. Ferrara et al. summarized how social bots can affect political,
+economic, and public discussions through automated social behavior
+\cite{ferrara2016rise}. Varol et al. proposed a framework for estimating
+human-bot interactions using metadata, content, sentiment, network, friend,
+and temporal features \cite{varol2017online}. These approaches are valuable
+for identifying automated or abnormal accounts, but account-level abnormality
+does not necessarily imply coordinated manipulation. Our pipeline therefore
+uses account-level signals only for seed prioritization and review priority.
+
+\subsection{Group-Level Coordination Detection}
+
+Group-level methods focus on behavioral similarity or synchronized action.
+Cresci et al. proposed Social Fingerprinting, which models account behavior
+sequences and detects groups of spambots through DNA-inspired representations
+\cite{cresci2018social}. Mazza et al. introduced RTbust, which exploits
+temporal patterns in retweet time series to detect suspicious botnets
+\cite{mazza2019rtbust}. These studies motivate our use of group-level and
+temporal evidence rather than relying only on individual account scores.
+
+Coordination network research further represents shared behavioral traces as
+networks. Pacheco et al. construct coordination networks from arbitrary shared
+behavior traces and demonstrate their use across multiple case studies
+\cite{pacheco2021uncovering}. Graham et al. introduce the Coordination Network
+Toolkit, a framework for detecting and analyzing coordinated behavior through
+weighted, directed multigraphs over multiple behavior traces
+\cite{graham2024coordination}. Our work follows this network-oriented view but
+adapts it to Reddit reply structure, LLM-derived stance, and candidate-group
+review.
+
+\subsection{Stance Analysis and Reddit Troll Detection}
+
+Stance detection identifies whether text is in favor of, against, or neutral
+toward a target. The SemEval-2016 stance detection task formalized this
+problem for tweets \cite{mohammad2016semeval}. In this project, stance is
+used to convert Reddit comments into signed interactions between comment
+authors and post authors. This allows us to build negative-target profiles
+instead of treating all comments as identical interactions.
+
+Prior Reddit-specific work also motivates cautious interpretation. Saeed et
+al. proposed TROLLMAGNIFIER for detecting state-sponsored troll accounts on
+Reddit using 335 known Russian-sponsored troll accounts as labeled training
+data \cite{saeed2022trollmagnifier}. Their system learns the behavior of known
+troll accounts, identifies additional likely trolls, and corroborates the
+output using account-level indicators, topic similarity, and temporal
+synchronization. Our project differs in that it does not have a labeled troll
+set and does not claim supervised troll classification; it produces
+review-oriented candidate groups under limited ground truth.
+
+\section{Problem Definition}
+
+Let $A=\{a_1,\ldots,a_n\}$ be the set of accounts, $P$ the set of posts, and
+$C$ the set of comments. Each comment $c \in C$ has an author $u(c)$, a target
+post $p(c)$, a post author $v(c)$, and a timestamp $t(c)$. The LLM stance
+module assigns a feedback label $y(c)$ such as supportive, oppositional,
+neutral, mixed, or unclear.
+
+The objective is to produce a ranked list of candidate groups:
+\begin{equation}
+G_k = (s_k, M_k, E_k, R_k),
+\end{equation}
+where $s_k$ is a seed account, $M_k$ is a set of candidate members, $E_k$ is
+the evidence table for account pairs, and $R_k$ is a review priority label.
+Importantly, $R_k$ is not a legal or factual judgment that the members are
+confirmed operators. It is a prioritization signal for further review.
+
+We define suspicious manipulative coordination as a pattern in which accounts
+show a combination of:
+\begin{itemize}
+  \item manipulative or attack-oriented content;
+  \item shared interaction targets, especially shared negative targets;
+  \item sufficient interaction reach or visibility;
+  \item abnormal activity patterns;
+  \item short-window co-presence in the same discussion context.
+\end{itemize}
+
+This definition is intentionally evidence-based. No single signal is treated
+as sufficient. In particular, co-negative-target overlap is treated as a
+candidate discovery signal, while temporal synchrony is used as a stronger
+review signal.
+
+\section{System Architecture}
+
+Fig.~\ref{fig:pipeline} shows the core analysis pipeline. The demo website is
+separated from the research pipeline: it reads generated tables and visualizes
+the evidence, but it does not compute scores or make final decisions.
+
+\begin{figure}[htbp]
+\centering
+\fbox{\begin{minipage}{0.94\columnwidth}
+\centering
+\small
+Raw Reddit posts/comments\\
+$\downarrow$\\
+LLM post rhetoric and comment stance analysis\\
+$\downarrow$\\
+Account feature matrix and multi-layer adjacency graphs\\
+$\downarrow$\\
+MCA seed ranking\\
+$\downarrow$\\
+Stage 1: tiered coordination expansion\\
+$\downarrow$\\
+Stage 2: temporal synchrony verification\\
+$\downarrow$\\
+Group summary, candidate table, pair evidence, and roles
+\end{minipage}}
+\caption{MCA Detector analysis pipeline.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{LLM-Based Semantic Analysis}
+
+The post analysis module produces sentiment and manipulative rhetoric features
+such as \texttt{sentiment\_score}, \texttt{manipulative\_rhetoric\_score}, and
+\texttt{rhetoric\_tags}. The rhetoric tags include categories such as fear,
+urgency, authority claim, bandwagon, overconfidence, emotional amplification,
+us-versus-them framing, and call to action.
+
+The comment analysis module determines how a comment responds to the post
+author. For a comment written by account $i$ under a post written by account
+$j$, the system creates a directed interaction edge:
+\begin{equation}
+i \rightarrow j.
+\end{equation}
+Supportive comments contribute positive interactions; oppositional or attacking
+comments contribute negative interactions. This design converts unstructured
+comment text into account-level graph evidence while preserving interaction
+direction and stance.
+
+\subsection{Multi-Layer Account Graphs}
+
+The system constructs several sparse account-level graphs. Table
+\ref{tab:graphs} summarizes the major graph layers and their role in the
+pipeline.
+
+\begin{table}[htbp]
+\centering
+\caption{Graph layers and their formal use.}
+\label{tab:graphs}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{p{0.22\columnwidth}X}
+\toprule
+Graph layer & Role in the system \\
+\midrule
+Count & Raw comment frequency; baseline and visualization. \\
+Signed & Net supportive/oppositional interaction direction. \\
+Positive & Supportive interaction context. \\
+Negative & Oppositional interaction context. \\
+Trigger & Whether one account often responds to another account's posts; support signal. \\
+Co-target & Whether two accounts comment on the same targets; support signal. \\
+Co-negative & Whether two accounts oppose the same targets; main Stage 1 discovery signal. \\
+Tag sim. & Similarity of rhetoric tag profiles; auxiliary support and visualization. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The co-negative-target graph is defined by first building a negative target
+profile vector $\mathbf{n}_i$ for each account $i$, where each dimension
+corresponds to a target author and the value records the account's negative
+interaction strength toward that target. The edge weight is:
+\begin{equation}
+w_{ij}^{neg} =
+\frac{\mathbf{n}_i \cdot \mathbf{n}_j}
+{\|\mathbf{n}_i\|\|\mathbf{n}_j\|}.
+\end{equation}
+
+This graph is meaningful because manipulative coordination often requires
+multiple accounts to pressure or discredit similar targets. However, it is
+also limited: ideological communities may organically attack the same targets.
+For this reason, $w_{ij}^{neg}$ is used for candidate discovery, not for final
+accusation.
+
+\section{MCA Score for Seed Ranking}
+
+MCA score is an account-level review-priority score. It is used to choose
+where to start expansion, not to decide whether an account is a confirmed
+manipulator. The primary score combines four signal groups:
+\begin{equation}
+S_{MCA}=0.30S_M+0.35S_C+0.15S_R+0.20S_A,
+\end{equation}
+where $S_M$ is the manipulative-content signal, $S_C$ is the coordinative
+signal, $S_R$ is the interaction-reach signal, and $S_A$ is the automatic
+behavior signal.
+
+\begin{table}[htbp]
+\centering
+\caption{MCA signal groups.}
+\label{tab:mca}
+\small
+\begin{tabular}{p{0.25\columnwidth}p{0.62\columnwidth}}
+\toprule
+Signal & Features \\
+\midrule
+Manipulative content & Average manipulative rhetoric score, non-neutral rhetoric ratio, oppositional stance ratio. \\
+Coordinative evidence & Co-target strength, co-negative-target strength, trigger-response frequency. \\
+Interaction reach & Outgoing volume, incoming attention, interaction breadth. \\
+Automatic behavior & Isolation Forest anomaly score transformed into an anomaly percentile. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Because large-scale labeled ground truth is unavailable, the weights are
+interpretable heuristic weights rather than optimized supervised parameters.
+The paper therefore avoids claiming classification accuracy from the MCA score
+alone. The score is best understood as a seed ranking function.
+
+The manipulative-content signal mixes post-level and comment-level evidence.
+The average rhetoric score and non-neutral rhetoric ratio are computed only
+from analyzed posts; accounts with no analyzed posts receive zero for these
+two post-level terms. The oppositional stance ratio is computed from analyzed
+comments. This choice is conservative because comment-only accounts are not
+treated as rhetorically manipulative solely because they attack others, but it
+also means that pure comment attackers may receive weaker semantic-content
+scores. They can still enter later stages through co-negative-target,
+trigger-response, interaction-reach, or temporal evidence.
+
+We performed a lightweight sensitivity check by recomputing MCA rankings under
+several weight settings. Table~\ref{tab:sensitivity} shows that moderate
+variants preserve many top seeds: the earlier 40/40/10/10 alternative retained
+17 of the top 20 accounts and had Spearman correlation 0.983 with the primary
+ranking, while a coordination-heavy variant retained 18 of the top 20 accounts
+and had correlation 0.986. Removing the manipulative component entirely
+reduced stability, supporting the use of MCA as a seed-prioritization score
+rather than a final classifier.
+
+\begin{table}[htbp]
+\centering
+\caption{MCA weight sensitivity. Top-20 is overlap with the primary top-20 list.}
+\label{tab:sensitivity}
+\scriptsize
+\begin{tabular}{p{0.34\columnwidth}rrr}
+\toprule
+Setting & $\rho$ & Top-20 & harvested \\
+\midrule
+Primary 30/35/15/20 & 1.000 & 20 & 14 \\
+Alt. 40/40/10/10 & 0.983 & 17 & 15 \\
+No manipulative & 0.821 & 15 & 11 \\
+Low manipulative & 0.911 & 17 & 11 \\
+Coordination-heavy & 0.986 & 18 & 11 \\
+Automation-heavy & 0.993 & 15 & 19 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Stage 1: Tiered Coordination Expansion}
+
+Stage 1 expands each high-MCA seed into a candidate group. The expansion uses
+a tiered rule set instead of a single weighted sum so that every included
+member has an explicit reason. Table \ref{tab:tier} lists the current rules.
+
+\begin{table}[htbp]
+\centering
+\caption{Tiered seed expansion rules.}
+\label{tab:tier}
+\small
+\begin{tabular}{p{0.16\columnwidth}p{0.70\columnwidth}}
+\toprule
+Tier & Inclusion rule \\
+\midrule
+0 & The seed account itself. \\
+1 & Direct co-negative-target edge with weight $\geq 0.20$. \\
+2 & Tag similarity $\geq 0.90$ plus structural support from co-negative, co-target, or trigger-response evidence. \\
+3 & Trigger-response weight $\geq 0.50$ plus co-negative or tag support. \\
+4 & Two-hop co-negative expansion: candidate links to at least two accepted members with co-negative weight $\geq 0.20$. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The 2-hop rule is important because a peripheral account may not connect
+directly to the seed but may connect to several accepted group members.
+However, unrestricted multi-hop traversal can cause candidate explosion.
+Therefore, Stage 1 uses only co-negative-target links for 2-hop expansion and
+requires at least two links to already accepted members.
+
+The thresholds in this stage are not presented as universal optima. They are
+interpretable review settings chosen to keep candidate groups small enough for
+manual inspection. For example, the co-negative threshold of 0.20 preserves
+shared negative-target structure while avoiding the broad components produced
+by raw count or co-target graphs. Full threshold sensitivity across platforms
+is left for future work.
+
+The output of Stage 1 includes group members, inclusion reasons, internal
+coordination edges, shared negative targets, and account-level feature
+summaries. This stage should be interpreted as candidate coordination
+discovery. It is not yet a strong claim of shared operation.
+
+\section{Stage 2: Temporal Synchrony Verification}
+
+Stage 2 verifies whether accounts in a candidate group appear in the same post
+thread within short time windows. For each account pair $(i,j)$, the system
+finds all shared post IDs. For each shared post, it computes all absolute
+timestamp differences:
+\begin{equation}
+\Delta t = |t(c_i)-t(c_j)|.
+\end{equation}
+The pair-level evidence includes the number of shared posts,
+\texttt{within\_5min\_count}, \texttt{within\_30min\_count}, median delay,
+minimum delay, and shared thread IDs.
+
+\subsection{Temporal Strength Labels}
+
+The pair-level temporal strength label is:
+\begin{itemize}
+  \item \textbf{strong temporal sync}: at least one same-thread co-comment
+  event occurs within 5 minutes.
+  \item \textbf{moderate temporal sync}: at least two same-thread co-comment
+  events occur within 30 minutes, or the pair appears in at least three shared
+  posts with at least one within-30-minute event.
+  \item \textbf{weak temporal overlap}: the pair appears in the same thread
+  but lacks short-window synchrony.
+  \item \textbf{no temporal sync}: the pair has no same-thread overlap in the
+  local comments file.
+\end{itemize}
+
+The 5-minute and 30-minute windows are also review-oriented thresholds rather
+than statistically optimized cutoffs. The 5-minute window captures near
+co-arrival in the same discussion, while the 30-minute window captures repeated
+short-window response patterns. These labels are calibrated again by temporal
+confidence to avoid treating every short-window event as equally reliable.
+
+\subsection{Temporal Confidence}
+
+Temporal strength alone can overstate a single coincidence. A pair may have
+one 5-minute event in a popular thread but no repeated pattern. Therefore, the
+system also assigns temporal confidence:
+\begin{itemize}
+  \item \textbf{robust}: repeated short-window synchrony or multi-post
+  short-window evidence with a reasonable median delay.
+  \item \textbf{moderate\_review}: useful timing evidence that should be
+  reviewed manually.
+  \item \textbf{fragile}: evidence is based on a single short-window event or
+  has a long typical delay.
+  \item \textbf{none}: no usable timing evidence.
+\end{itemize}
+
+This separation is important. ``Strong'' describes the presence of a very
+short timing event, while ``robust'' describes whether the evidence is stable
+enough to trust. A strong pair may still be fragile if it depends on a single
+event.
+
+\section{Signal Pruning}
+
+Earlier prototypes included text fingerprint distance and account lifecycle
+overlap. Both were removed from formal Stage 2 evidence after testing.
+
+\begin{table}[htbp]
+\centering
+\caption{Signals tested but removed from formal Stage 2 evidence.}
+\label{tab:pruning}
+\small
+\begin{tabular}{p{0.24\columnwidth}p{0.60\columnwidth}}
+\toprule
+Signal & Reason for removal \\
+\midrule
+Text fingerprint distance & In a single-topic Bitcoin community, TF-IDF distance often captures topic similarity instead of shared authorship or shared operation. \\
+Lifecycle overlap & Activation windows and account lifetimes did not separate the harvested positive case from independent same-topic users. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These fields remain in the output schema for compatibility, but they are
+filled as empty values and do not participate in ranking, validation, or demo
+interpretation. This pruning decision makes the formal evidence narrower but
+more defensible.
+
+\section{Implementation and Outputs}
+
+The pipeline is implemented as separate modules so that each stage can be
+re-run independently. The front pipeline reads raw posts and comments, performs
+LLM analysis, builds feature matrices, and constructs adjacency graphs. The
+back pipeline performs MCA scoring, seed selection, Stage 1 expansion, Stage 2
+temporal verification, candidate validation, final group ranking, behavior
+profiles, and account role labeling.
+
+The main output tables are:
+\begin{itemize}
+  \item \texttt{account\_mca\_scores.csv}: account-level MCA scores.
+  \item \texttt{tiered\_expansion\_members.csv}: members and inclusion reasons
+  for each seed group.
+  \item \texttt{stage2\_verification\_evidence.csv}: pair-level temporal
+  evidence.
+  \item \texttt{candidate\_validation\_table.csv}: account-level review
+  priority after merging MCA, expansion, temporal, and behavior metadata.
+  \item \texttt{final\_group\_summary.csv}: group-level review priority.
+  \item \texttt{account\_role\_table.csv}: simple group-role labels such as
+  leader-instigator, comment attacker, comment supporter, and context member.
+\end{itemize}
+
+\section{Experimental Results}
+
+The current experiment uses Reddit Bitcoin-related discussion data. The system
+scored 49,767 accounts and selected the top 20 MCA accounts as seed accounts.
+After Stage 1 expansion, the pipeline produced 20 candidate seed groups, 178
+group membership rows, and 172 unique candidate accounts. Stage 2 temporal
+verification produced 13 strong temporal synchrony pairs and 8 moderate
+temporal synchrony pairs. Among the temporal evidence, 3 pairs reached robust
+confidence and 44 pairs were labeled as moderate-review evidence.
+
+\begin{table}[htbp]
+\centering
+\caption{Overall pipeline output summary.}
+\label{tab:overall}
+\small
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Selected seed accounts & 20 \\
+Candidate seed groups & 20 \\
+Group membership rows & 178 \\
+Unique candidate accounts & 172 \\
+Strong temporal sync pairs & 13 \\
+Moderate temporal sync pairs & 8 \\
+Robust temporal pairs & 3 \\
+Moderate-review temporal pairs & 44 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table \ref{tab:topgroups} shows the top five groups by final review priority.
+The ranking is not an accuracy measurement. It indicates which groups deserve
+earlier human inspection. In the table, P1 denotes accounts with the highest
+review priority, such as MCA-plus-temporal evidence or MCA-plus-extreme-outlier
+evidence; P2 denotes secondary review candidates, such as high-MCA-only or
+temporal-only accounts.
+
+\begin{table*}[htbp]
+\centering
+\caption{Top five candidate groups by review priority.}
+\label{tab:topgroups}
+\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Seed group & Members & P1 & P2 & Tier 1 & Tier 4 & Strong & Moderate & Robust \\
+\midrule
+lol\_camis & 23 & 2 & 3 & 18 & 4 & 4 & 0 & 0 \\
+BtcKing1111 & 11 & 2 & 3 & 6 & 4 & 2 & 1 & 0 \\
+tzacPACO & 6 & 2 & 1 & 5 & 0 & 0 & 3 & 1 \\
+harvested & 8 & 2 & 0 & 7 & 0 & 1 & 0 & 1 \\
+iPurchaseBitcoin & 7 & 2 & 0 & 6 & 0 & 1 & 0 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Lightweight Validation Checks}
+
+Because no large-scale confirmed ground truth is available, we do not report
+precision, recall, F1-score, or ROC-AUC. Instead, we add lightweight sanity
+checks to test whether each stage contributes different evidence. Table
+\ref{tab:stageablation} summarizes the evidence available at each stage. MCA
+alone produces only a seed ranking. Stage 1 expands these seeds into 20
+candidate groups and 172 unique candidate accounts, but the result may still
+reflect ideological alignment. Stage 2 adds 928 pair-level temporal evidence
+rows, including 13 strong pairs, 8 moderate pairs, and 3 robust pairs.
+
+\begin{table}[htbp]
+\centering
+\caption{Ablation-style comparison of pipeline stages.}
+\label{tab:stageablation}
+\scriptsize
+\begin{tabular}{p{0.36\columnwidth}rrrr}
+\toprule
+Setting & Groups & Accts. & Pairs & S/M/R \\
+\midrule
+MCA only & 0 & 20 & 0 & 0/0/0 \\
+MCA + Stage 1 & 20 & 172 & 0 & 0/0/0 \\
+MCA + Stage 1 + Stage 2 & 20 & 172 & 928 & 13/8/3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+We also compare candidate-group pairs against a random active-pair baseline.
+We sampled 5,000 random account pairs from the local comment file, requiring
+each sampled author to have at least five comments and using the same
+100-comment-per-author cap as Stage 2. This is a lightweight null baseline,
+not a formal statistical significance test. As shown in
+Table~\ref{tab:temporalbaseline}, candidate pairs are more likely to share the
+same post and more likely to show moderate or robust temporal evidence than
+random active pairs.
+
+\begin{table}[htbp]
+\centering
+\caption{Temporal random baseline.}
+\label{tab:temporalbaseline}
+\scriptsize
+\begin{tabular}{p{0.32\columnwidth}rrrr}
+\toprule
+Pair set & Same-post & Strong & Moderate & Robust \\
+\midrule
+Candidate pairs & 45.7\% & 1.40\% & 0.86\% & 0.32\% \\
+Random active pairs & 8.5\% & 0.30\% & 0.00\% & 0.02\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Case Studies}
+
+The following cases are selected to illustrate different evidence patterns,
+not to claim that they are statistically representative of all candidates.
+The harvested group is selected because it has the clearest robust temporal
+evidence among the review outputs. Odd-Following-247 is selected because it has
+strong Stage 1 shared-target structure but no reliable Stage 2 timing evidence.
+BtcKing1111 is included briefly to show how a high-MCA influence-hub candidate
+should be interpreted cautiously.
+
+\subsection{The harvested Group}
+
+The harvested group is the clearest high-priority case in the current output.
+Stage 1 finds 8 members, including 7 Tier 1 co-negative direct members, 9
+internal coordination edges, and 11 shared negative targets. Stage 2 then
+finds robust temporal evidence: the pair NectarineDirect936 and harvested
+appeared together in 17 shared posts, including 2 events within 5 minutes and
+4 events within 30 minutes. This pair is labeled
+\texttt{strong\_temporal\_sync} with \texttt{robust} temporal confidence.
+
+This case demonstrates why the two-stage design is useful. Shared negative
+targets identify a compact candidate group, while repeated short-window
+same-thread co-presence raises review confidence.
+
+\subsection{Odd-Following-247 as a Comparison Group}
+
+Odd-Following-247 is useful as a comparison case because it has Stage 1
+structure but no reliable Stage 2 timing evidence. Its group contains 11
+members, 7 Tier 1 co-negative direct members, 24 internal coordination edges,
+and 15 shared negative targets. However, Stage 2 identifies no strong temporal
+sync pairs, no moderate temporal sync pairs, and no robust temporal evidence.
+The group has weak temporal overlap, but not short-window synchrony.
+
+This comparison supports the paper's central argument: co-negative-target
+structure is useful for candidate discovery, but it should not be treated as
+proof of coordinated operation.
+
+\begin{table}[htbp]
+\centering
+\caption{Case comparison between harvested and Odd-Following-247.}
+\label{tab:casecompare}
+\scriptsize
+\begin{tabular}{p{0.48\columnwidth}rr}
+\toprule
+Metric & harvested & Odd \\
+\midrule
+Members & 8 & 11 \\
+Tier 1 co-negative members & 7 & 7 \\
+Internal coordination edges & 9 & 24 \\
+Shared negative targets & 11 & 15 \\
+Strong temporal sync pairs & 1 & 0 \\
+Moderate temporal sync pairs & 0 & 0 \\
+Robust temporal pairs & 1 & 0 \\
+Weak temporal overlap pairs & 4 & 40 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{BtcKing1111 as an Influence-Hub Candidate}
+
+BtcKing1111 illustrates a different type of output. It has a high MCA score
+of 0.819 and high sub-scores across coordination, interaction reach, and
+automatic behavior. Stage 1 expansion produces an 11-member group, and the
+role table labels the seed as a leader-instigator because it acts as the group
+entry point and has high interaction reach. However, its Stage 2 evidence is
+not robust: the group has strong and moderate temporal pairs, but no robust
+temporal pairs.
+
+This case should not be described as a confirmed same-operator group. A safer
+interpretation is that BtcKing1111 is a high-priority influence-hub candidate:
+an account that is visible, structurally connected, and worth manual review,
+but not yet proven to control or synchronize other accounts.
+
+\section{Discussion}
+
+\subsection{Why Not Use MCA Alone?}
+
+MCA is useful for ranking suspicious accounts, but it is account-centered. A
+high MCA score may indicate a highly active, aggressive, or influential user.
+It does not by itself demonstrate that a group of accounts is acting together.
+Therefore, MCA is used only to select seeds. The expansion and temporal stages
+turn the task from single-account ranking into candidate-group evidence
+generation.
+
+\subsection{Why Not Use a Single Graph?}
+
+Each graph layer has a different failure mode. Count and signed graphs can be
+dominated by raw activity volume. Co-target graphs are broad because commenting
+on the same popular authors is common. Trigger-response graphs can be noisy in
+active communities. Tag similarity may be missing for accounts with few posts
+and may reflect topic similarity rather than coordination. Co-negative-target
+is semantically closer to the suspicious behavior of shared attacking targets,
+but it still cannot prove manipulation alone. MCA Detector therefore uses a
+multi-layer design: co-negative-target is the main discovery layer, while
+other layers provide support, visualization, or review context.
+
+\subsection{What the System Can and Cannot Claim}
+
+The system can claim that it finds accounts and groups with higher review
+priority for manipulative coordination risk. It can show why a candidate was
+included, which targets were shared, which pairs appeared in the same threads,
+and whether the timing evidence is robust or fragile. It cannot claim that
+every discovered account is a bot, a cyber troop, or controlled by the same
+operator. This distinction is essential for responsible use.
+
+\section{Threats to Validity}
+
+\subsection{Lack of Large-Scale Ground Truth}
+
+The project does not currently have a large labeled dataset of confirmed
+coordinated and non-coordinated accounts. Therefore, the results are reported
+as review candidates, not precision, recall, or F1-score. The harvested and
+comparison cases are used for case-based validation, not for broad statistical
+claims.
+
+\subsection{Heuristic Weights and Thresholds}
+
+The MCA weights and Stage 1 thresholds are interpretable heuristics. They were
+chosen to create reviewable candidates and avoid candidate explosion, but they
+are not optimized supervised parameters. The lightweight weight-sensitivity
+check suggests that top seeds are reasonably stable under moderate weight
+variants, but full threshold sensitivity for co-negative weights, tag
+similarity, trigger response, and temporal windows remains future work.
+
+\subsection{Sparsity of LLM-Derived Content Signals}
+
+LLM-derived manipulative-content features are sparse in the current dataset.
+Among 49,767 feature accounts, 23.8\% have at least one analyzed post, 11.7\%
+have a nonzero average manipulative rhetoric score, and 10.3\% have non-neutral
+rhetoric tags. This does not invalidate MCA for seed selection because
+top-ranked seeds generally contain post-level signals, but it limits the use
+of manipulative content as a population-wide classifier. Accounts with few or
+no analyzed posts may receive weaker semantic-content scores, so downstream
+graph and temporal evidence remain necessary.
+
+\subsection{Temporal Coincidence in Popular Threads}
+
+Short-window co-appearance may occur by chance in popular threads. The
+temporal confidence layer reduces this risk by separating single-event
+evidence from repeated or multi-post evidence. The random active-pair baseline
+provides a sanity check, but it does not control for all confounders such as
+thread popularity, account activity volume, and overlapping active hours.
+Human review remains necessary.
+
+\subsection{Activity Inflation}
+
+High activity can inflate several signals at once: active accounts may have
+larger interaction reach, more co-target edges, more co-negative edges, and
+more opportunities for same-thread overlap. MCA Detector mitigates this by not
+interpreting MCA alone and by separating Stage 1 structure from Stage 2 timing
+evidence, but high-activity bias remains a limitation.
+
+\subsection{Platform Specificity}
+
+This experiment focuses on Reddit Bitcoin discussions. Other platforms may not
+have the same post-comment structure. Applying the method to PTT, X, Facebook,
+or messaging platforms would require redefining action traces, such as
+push/boo labels, reposts, hashtags, likes, quote posts, or shared URLs.
+
+\subsection{LLM Reliability}
+
+LLM stance and rhetoric analysis can be affected by prompt design, model
+choice, and parsing failures. In this project, LLM outputs are not used as
+standalone verdicts. Comment stance labels are relatively auditable because
+they describe the relation between a comment and the target post author.
+Rhetoric tags are more interpretive and are therefore treated only as
+auxiliary semantic features. Each LLM judgment stores a textual rationale,
+allowing analysts to inspect why a score or tag was assigned. The extracted
+signals are then converted into graph and feature signals and constrained by
+structural and temporal evidence. Future work should include prompt
+consistency checks and manually audited samples.
+
+\subsection{Demo Scope}
+
+The demo website is an evidence viewer rather than the detector itself. It
+reads generated tables from the analysis pipeline and visualizes review
+priorities, group relationships, and pair evidence. It does not perform live
+classification or compute final account verdicts.
+
+\section{Future Work}
+
+Future work includes four directions. First, we plan to build a small
+human-labeled validation set with positive, negative, and noisy cases to
+measure review precision more systematically. Second, we plan to expand the
+current lightweight sensitivity checks into threshold sensitivity and
+permutation-style temporal baselines that better control for thread popularity
+and account activity. Third, the pipeline can be extended to additional
+platforms by redefining platform-specific action traces; for example, PTT can
+use explicit push/boo stance labels. Fourth, the current pipeline can be
+packaged as a scheduled monitoring workflow, allowing analysts to periodically
+update candidate groups and compare changes over time.
+
+\section{Conclusion}
+
+This paper presented MCA Detector, a review-oriented suspicious social
+coordination discovery pipeline. The system combines LLM-based semantic
+analysis, multi-layer account graphs, MCA seed ranking, tiered graph expansion,
+and temporal synchrony verification. Instead of treating suspiciousness as a
+single account-level score, MCA Detector produces candidate groups and
+pair-level evidence. The current Reddit Bitcoin experiment selected 20 seed
+groups and 172 unique candidate accounts, with 13 strong temporal synchrony
+pairs and 8 moderate temporal synchrony pairs. Case studies show that
+co-negative-target overlap is useful for discovery but insufficient as a final
+claim, while temporal synchrony helps prioritize groups for further review.
+The system therefore achieves the practical goal of identifying accounts and
+groups that deserve inspection for manipulative coordination risk, while
+avoiding overclaims about confirmed bots or real-world operators.
+
+\balance
+
+\begin{thebibliography}{00}
+
+\bibitem{ferrara2016rise}
+E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, ``The rise of
+social bots,'' \emph{Communications of the ACM}, vol. 59, no. 7, pp. 96--104,
+2016.
+
+\bibitem{varol2017online}
+O. Varol, E. Ferrara, C. A. Davis, F. Menczer, and A. Flammini, ``Online
+human-bot interactions: Detection, estimation, and characterization,'' in
+\emph{Proc. International AAAI Conference on Web and Social Media}, vol. 11,
+no. 1, pp. 280--289, 2017.
+
+\bibitem{cresci2018social}
+S. Cresci, R. Di Pietro, M. Petrocchi, A. Spognardi, and M. Tesconi, ``Social
+fingerprinting: Detection of spambot groups through DNA-inspired behavioral
+modeling,'' \emph{IEEE Transactions on Dependable and Secure Computing},
+vol. 15, no. 4, pp. 561--576, 2018.
+
+\bibitem{mazza2019rtbust}
+M. Mazza, S. Cresci, M. Avvenuti, W. Quattrociocchi, and M. Tesconi,
+``RTbust: Exploiting temporal patterns for botnet detection on Twitter,''
+arXiv:1902.04506, 2019.
+
+\bibitem{pacheco2021uncovering}
+D. Pacheco, P.-M. Hui, C. Torres-Lugo, B. T. Truong, A. Flammini, and
+F. Menczer, ``Uncovering coordinated networks on social media: Methods and
+case studies,'' in \emph{Proc. International AAAI Conference on Web and Social
+Media}, vol. 15, no. 1, pp. 455--466, 2021.
+
+\bibitem{graham2024coordination}
+T. Graham, S. Hames, and E. Alpert, ``The coordination network toolkit: A
+framework for detecting and analysing coordinated behaviour on social media,''
+\emph{Journal of Computational Social Science}, vol. 7, pp. 1139--1160, 2024.
+
+\bibitem{mohammad2016semeval}
+S. Mohammad, S. Kiritchenko, P. Sobhani, X. Zhu, and C. Cherry,
+``SemEval-2016 task 6: Detecting stance in tweets,'' in \emph{Proc. 10th
+International Workshop on Semantic Evaluation}, pp. 31--41, 2016.
+
+\bibitem{saeed2022trollmagnifier}
+M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and
+G. Stringhini, ``TROLLMAGNIFIER: Detecting state-sponsored troll accounts on
+Reddit,'' in \emph{Proc. IEEE Symposium on Security and Privacy}, pp.
+2161--2175, 2022.
+
+\end{thebibliography}
+
+\end{document}

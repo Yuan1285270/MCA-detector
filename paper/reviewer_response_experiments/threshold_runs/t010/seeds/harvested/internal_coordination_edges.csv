@@ -1,0 +1,10 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+NectarineDirect936,harvested,3,0.6314066054223066,co_target,
+harvested,rtublin,2,0.6061334972827698,co_target,
+harvested,rtublin,2,,co_negative_target,0.3848666843036719
+NectarineDirect936,harvested,3,,co_negative_target,0.3351095355268196
+CoolPineapple6969,harvested,2,,co_negative_target,0.2181264877257022
+Fabulous-Chard3987,harvested,2,,co_negative_target,0.2181264877257022
+GooseBash,harvested,2,,co_negative_target,0.2181264877257022
+autemox,harvested,2,,co_negative_target,0.2181264877257022
+harvested,wish_I_knew_before-1,2,,co_negative_target,0.2181264877257022

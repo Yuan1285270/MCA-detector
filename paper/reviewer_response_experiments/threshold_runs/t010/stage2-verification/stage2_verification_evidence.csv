@@ -1,0 +1,929 @@
+group_seed,account_a,account_b,co_negative_weight,same_post_count,within_5min_count,within_30min_count,median_delay_minutes,min_delay_minutes,shared_link_ids,text_fingerprint_distance,account_lifecycle_overlap,verification_label,temporal_confidence
+BtcKing1111,2xfun,90020,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,2xfun,909dave,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,2xfun,Any_Mud_1628,0.2278853270458081,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,2xfun,BitcoinMD,0.0,1,0,1,5.883333333333334,5.883333333333334,1i9lqjx,,,weak_temporal_overlap,moderate_review
+BtcKing1111,2xfun,BtcKing1111,0.0,1,0,0,41.43333333333333,41.43333333333333,1j05xac,,,weak_temporal_overlap,weak_context
+BtcKing1111,2xfun,DavidGunn454,0.0,3,0,0,137.13333333333333,64.58333333333333,1idlrln; 1irkmv8; 1k9qo1r,,,weak_temporal_overlap,weak_context
+BtcKing1111,2xfun,KaleidoscopeShot8153,0.0,1,0,0,487.3666666666667,487.3666666666667,1irkmv8,,,weak_temporal_overlap,weak_context
+BtcKing1111,2xfun,_Starter,0.2042400879809496,1,0,0,42.61666666666667,42.61666666666667,1j5lekn,,,weak_temporal_overlap,weak_context
+BtcKing1111,2xfun,anonymoushusky11,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,2xfun,groobler17,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,90020,909dave,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,90020,Any_Mud_1628,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,90020,BitcoinMD,0.0,1,0,1,16.8,16.8,1jpg459,,,weak_temporal_overlap,moderate_review
+BtcKing1111,90020,BtcKing1111,0.2871751381120287,1,0,0,425.28333333333336,425.28333333333336,1jpg459,,,weak_temporal_overlap,weak_context
+BtcKing1111,90020,DavidGunn454,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,90020,KaleidoscopeShot8153,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,90020,_Starter,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,90020,anonymoushusky11,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,90020,groobler17,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,909dave,Any_Mud_1628,0.0,1,0,0,104.13333333333334,104.13333333333334,1jjhcq9,,,weak_temporal_overlap,weak_context
+BtcKing1111,909dave,BitcoinMD,0.2519763153394848,1,0,0,233.56666666666666,233.56666666666666,1jz0bhr,,,weak_temporal_overlap,weak_context
+BtcKing1111,909dave,BtcKing1111,0.234477518395919,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,909dave,DavidGunn454,0.3070097328202872,1,0,0,145.78333333333333,145.78333333333333,1jjhcq9,,,weak_temporal_overlap,weak_context
+BtcKing1111,909dave,KaleidoscopeShot8153,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,909dave,_Starter,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,909dave,anonymoushusky11,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,909dave,groobler17,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,Any_Mud_1628,BitcoinMD,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,Any_Mud_1628,BtcKing1111,0.2871751381120287,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,Any_Mud_1628,DavidGunn454,0.3066218031946368,2,0,0,380.9833333333333,249.91666666666666,1ilj954; 1jjhcq9,,,weak_temporal_overlap,weak_context
+BtcKing1111,Any_Mud_1628,KaleidoscopeShot8153,0.464091768796828,1,0,0,186.85,186.85,1ilj954,,,weak_temporal_overlap,weak_context
+BtcKing1111,Any_Mud_1628,_Starter,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,Any_Mud_1628,anonymoushusky11,0.0,1,0,0,586.55,586.55,1ilj954,,,weak_temporal_overlap,weak_context
+BtcKing1111,Any_Mud_1628,groobler17,0.0,1,0,0,475.76666666666665,475.76666666666665,1ilj954,,,weak_temporal_overlap,weak_context
+BtcKing1111,BitcoinMD,BtcKing1111,0.0,4,0,0,302.5416666666667,73.96666666666667,1i6v7ob; 1iftfui; 1ijvoj8; 1jpg459,,,weak_temporal_overlap,weak_context
+BtcKing1111,BitcoinMD,DavidGunn454,0.0,4,0,0,122.31666666666666,103.38333333333334,1jiuxfg; 1k0yjc8; 1kfivrs; 1kge9xj,,,weak_temporal_overlap,weak_context
+BtcKing1111,BitcoinMD,KaleidoscopeShot8153,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,BitcoinMD,_Starter,0.2314550249431378,1,0,0,44.81666666666667,44.81666666666667,1iftfui,,,weak_temporal_overlap,weak_context
+BtcKing1111,BitcoinMD,anonymoushusky11,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,BitcoinMD,groobler17,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,BtcKing1111,DavidGunn454,0.0,3,0,1,65.31666666666666,20.5,1id68od; 1ieize4; 1ierj4w,,,moderate_temporal_sync,moderate_review
+BtcKing1111,BtcKing1111,KaleidoscopeShot8153,0.0,1,0,0,235.43333333333334,235.43333333333334,1ix7qi9,,,weak_temporal_overlap,weak_context
+BtcKing1111,BtcKing1111,_Starter,0.231627883938726,1,0,0,617.4666666666667,617.4666666666667,1iftfui,,,weak_temporal_overlap,weak_context
+BtcKing1111,BtcKing1111,anonymoushusky11,0.222189016693211,1,0,1,23.316666666666666,23.316666666666666,1ieize4,,,weak_temporal_overlap,moderate_review
+BtcKing1111,BtcKing1111,groobler17,0.2721248586745504,1,0,0,18339.95,18339.95,1iem6qn,,,weak_temporal_overlap,weak_context
+BtcKing1111,DavidGunn454,KaleidoscopeShot8153,0.2170945302111669,8,1,1,180.19166666666666,2.3333333333333335,1ilj954; 1irjeoz; 1irkmv8; 1ivod24; 1ixun0t; 1iyv29m; 1iyxi1f; 1j41zi9,,,strong_temporal_sync,fragile_long_median
+BtcKing1111,DavidGunn454,_Starter,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,DavidGunn454,anonymoushusky11,0.0,2,1,1,38.65833333333333,2.816666666666667,1ieize4; 1ilj954,,,strong_temporal_sync,moderate_review
+BtcKing1111,DavidGunn454,groobler17,0.250355653946315,2,0,0,84.46666666666667,36.28333333333333,1idq6t1; 1ilj954,,,weak_temporal_overlap,weak_context
+BtcKing1111,KaleidoscopeShot8153,_Starter,0.464091768796828,1,0,0,146.21666666666667,146.21666666666667,1j0u2hu,,,weak_temporal_overlap,weak_context
+BtcKing1111,KaleidoscopeShot8153,anonymoushusky11,0.0,1,0,0,399.7,399.7,1ilj954,,,weak_temporal_overlap,weak_context
+BtcKing1111,KaleidoscopeShot8153,groobler17,0.0,1,0,0,288.9166666666667,288.9166666666667,1ilj954,,,weak_temporal_overlap,weak_context
+BtcKing1111,_Starter,anonymoushusky11,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,_Starter,groobler17,0.0,0,0,0,,,,,,no_temporal_sync,none
+BtcKing1111,anonymoushusky11,groobler17,0.0,1,0,0,110.78333333333333,110.78333333333333,1ilj954,,,weak_temporal_overlap,weak_context
+Wsemenske,Anzu_Yamasaki,CorneliusFudgem,0.0,1,0,0,591.55,591.55,1igrpa1,,,weak_temporal_overlap,weak_context
+Wsemenske,Anzu_Yamasaki,PolarPelly,0.0,1,0,0,116.96666666666667,116.96666666666667,1igrpa1,,,weak_temporal_overlap,weak_context
+Wsemenske,Anzu_Yamasaki,Wobbalabba776,0.0,1,0,0,617.6666666666666,617.6666666666666,1ifqvtu,,,weak_temporal_overlap,weak_context
+Wsemenske,Anzu_Yamasaki,Wsemenske,0.2036164386374079,1,0,1,24.816666666666666,24.816666666666666,1i7wyud,,,weak_temporal_overlap,moderate_review
+Wsemenske,Anzu_Yamasaki,_Starter,0.3126071225379087,2,0,0,205.88333333333333,80.18333333333334,1i6n5gd; 1ibdwq0,,,weak_temporal_overlap,weak_context
+Wsemenske,Anzu_Yamasaki,mymomsaidiamsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,CorneliusFudgem,PolarPelly,0.0,1,0,0,708.5166666666667,708.5166666666667,1igrpa1,,,weak_temporal_overlap,weak_context
+Wsemenske,CorneliusFudgem,Wobbalabba776,0.0,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,CorneliusFudgem,Wsemenske,0.2390457218668787,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,CorneliusFudgem,_Starter,0.3162277660168379,2,0,0,414.10833333333335,284.1166666666667,1iftfui; 1ikdbwu,,,weak_temporal_overlap,weak_context
+Wsemenske,CorneliusFudgem,mymomsaidiamsmart,0.0,1,0,0,14827.6,14827.6,1irkmv8,,,weak_temporal_overlap,weak_context
+Wsemenske,PolarPelly,Wobbalabba776,0.0,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,PolarPelly,Wsemenske,0.2672612419124244,1,0,1,22.25,22.25,1hsms16,,,weak_temporal_overlap,moderate_review
+Wsemenske,PolarPelly,_Starter,0.0,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,PolarPelly,mymomsaidiamsmart,0.0,1,0,0,155.1,155.1,1hsms16,,,weak_temporal_overlap,weak_context
+Wsemenske,Wobbalabba776,Wsemenske,0.3779644730092272,1,0,0,1014.45,1014.45,1jcpo1x,,,weak_temporal_overlap,weak_context
+Wsemenske,Wobbalabba776,_Starter,0.0,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,Wobbalabba776,mymomsaidiamsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,Wsemenske,_Starter,0.0,0,0,0,,,,,,no_temporal_sync,none
+Wsemenske,Wsemenske,mymomsaidiamsmart,0.2390457218668787,2,0,1,95.04166666666666,12.733333333333333,1hr69et; 1hsms16,,,weak_temporal_overlap,moderate_review
+Wsemenske,_Starter,mymomsaidiamsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,1025scrap,753UDKM,0.0,1,0,0,82.55,82.55,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,AdventurousSwim1381,0.0,1,0,0,140.98333333333332,140.98333333333332,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,El_Demetrio,0.0,1,0,0,183.48333333333332,183.48333333333332,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,Illustrious-Use-5650,0.0,1,0,0,965.5333333333333,965.5333333333333,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,JustSmokin702,0.0,1,0,0,1062.6166666666666,1062.6166666666666,1js62bi,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,Silly-Economist47,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,1025scrap,TinSodder,0.0,1,0,0,72.55,72.55,1ifdi9v,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,abnormalinvesting,0.0,1,0,1,23.833333333333332,23.833333333333332,1j7i572,,,weak_temporal_overlap,moderate_review
+tkwh,1025scrap,buffwhoppulus,0.0,1,0,0,1124.05,1124.05,1js62bi,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,1025scrap,jayvm01,0.0,1,0,0,96.11666666666666,96.11666666666666,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,mikeso623,0.0,1,0,0,386.1666666666667,386.1666666666667,1ifdi9v,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,mookizee,0.0,1,0,1,25.433333333333334,25.433333333333334,1j7i572,,,weak_temporal_overlap,moderate_review
+tkwh,1025scrap,tkwh,0.2182178902359923,2,0,0,477.5166666666667,101.96666666666667,1j7i572; 1js62bi,,,weak_temporal_overlap,weak_context
+tkwh,1025scrap,uthillygooth,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,753UDKM,AdventurousSwim1381,0.2041241452319315,2,0,0,199.33333333333334,58.43333333333333,1ib2iyt; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,El_Demetrio,0.2132007163556104,2,0,0,163.43333333333334,60.833333333333336,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,Illustrious-Use-5650,0.0,1,0,0,1048.0833333333333,1048.0833333333333,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,JustSmokin702,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,753UDKM,Silly-Economist47,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,753UDKM,TinSodder,0.0,1,0,0,419.76666666666665,419.76666666666665,1iyv29m,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,abnormalinvesting,0.2236067977499789,2,0,0,868.0916666666667,106.38333333333334,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,buffwhoppulus,0.0,3,0,1,53.766666666666666,8.516666666666667,1i6v7ob; 1ihz6dc; 1ii02q6,,,moderate_temporal_sync,moderate_review
+tkwh,753UDKM,devonthed00d,0.0,1,0,0,388.1,388.1,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,jayvm01,0.4082482904638631,2,0,0,136.13333333333333,93.6,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,mikeso623,0.0,2,0,0,190.48333333333335,52.53333333333333,1i6v7ob; 1ib2iyt,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,mookizee,0.2132007163556104,2,0,0,227.79166666666666,57.11666666666667,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,753UDKM,tkwh,0.2041241452319315,2,0,1,81.64166666666667,19.416666666666668,1i6v7ob; 1j7i572,,,weak_temporal_overlap,moderate_review
+tkwh,753UDKM,uthillygooth,0.0,2,0,0,134.2,122.05,1i6v7ob; 1iyv29m,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,El_Demetrio,0.0,1,0,0,324.46666666666664,324.46666666666664,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,Illustrious-Use-5650,0.0,1,0,0,1106.5166666666667,1106.5166666666667,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,JustSmokin702,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,AdventurousSwim1381,Silly-Economist47,0.2182178902359923,0,0,0,,,,,,no_temporal_sync,none
+tkwh,AdventurousSwim1381,TinSodder,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,AdventurousSwim1381,abnormalinvesting,0.0,2,0,0,366.1166666666667,164.81666666666666,1j7i572; 1jd9kym,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,buffwhoppulus,0.0,1,0,0,62.733333333333334,62.733333333333334,1j6sa1v,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,AdventurousSwim1381,jayvm01,0.0,1,0,0,237.1,237.1,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,mikeso623,0.0,2,1,2,6.45,1.1,1hxdi7x; 1ib2iyt,,,strong_temporal_sync,moderate_review
+tkwh,AdventurousSwim1381,mookizee,0.0,1,0,0,115.55,115.55,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,tkwh,0.0,2,0,0,99.67500000000001,39.016666666666666,1j7i572; 1jd9kym,,,weak_temporal_overlap,weak_context
+tkwh,AdventurousSwim1381,uthillygooth,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,El_Demetrio,Illustrious-Use-5650,0.0,1,0,0,782.05,782.05,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,El_Demetrio,JustSmokin702,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,El_Demetrio,Silly-Economist47,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,El_Demetrio,TinSodder,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,El_Demetrio,abnormalinvesting,0.0,3,0,0,159.65,136.5,1i6v7ob; 1ilrx07; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,El_Demetrio,buffwhoppulus,0.0,2,0,1,219.89166666666665,7.066666666666666,1i6v7ob; 1ilrx07,,,weak_temporal_overlap,fragile_long_median
+tkwh,El_Demetrio,devonthed00d,0.0,1,0,0,327.26666666666665,327.26666666666665,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,El_Demetrio,jayvm01,0.3481553119113956,2,0,0,60.06666666666666,32.766666666666666,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,El_Demetrio,mikeso623,0.0,1,0,1,8.3,8.3,1i6v7ob,,,weak_temporal_overlap,moderate_review
+tkwh,El_Demetrio,mookizee,0.0,2,0,0,273.275,208.91666666666666,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,El_Demetrio,tkwh,0.0,3,0,0,285.45,83.03333333333333,1i6v7ob; 1j7i572; 1jm0i7b,,,weak_temporal_overlap,weak_context
+tkwh,El_Demetrio,uthillygooth,0.0,1,0,0,61.21666666666667,61.21666666666667,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,JustSmokin702,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,Silly-Economist47,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,TinSodder,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,abnormalinvesting,0.0,1,0,0,941.7,941.7,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,buffwhoppulus,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,jayvm01,0.0,1,0,0,869.4166666666666,869.4166666666666,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,mikeso623,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Illustrious-Use-5650,mookizee,0.0,1,0,0,990.9666666666667,990.9666666666667,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,tkwh,0.4082482904638631,1,0,0,1067.5,1067.5,1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,Illustrious-Use-5650,uthillygooth,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,JustSmokin702,Silly-Economist47,0.0,1,0,0,816.45,816.45,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,JustSmokin702,TinSodder,0.0,1,0,0,923.9833333333333,923.9833333333333,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,JustSmokin702,abnormalinvesting,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,JustSmokin702,buffwhoppulus,0.0,2,0,0,1150.475,114.28333333333333,1hvxbmf; 1js62bi,,,weak_temporal_overlap,weak_context
+tkwh,JustSmokin702,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,JustSmokin702,jayvm01,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,JustSmokin702,mikeso623,0.0,1,0,0,1245.15,1245.15,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,JustSmokin702,mookizee,0.0,1,0,0,1121.1333333333334,1121.1333333333334,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,JustSmokin702,tkwh,0.2886751345948128,2,0,0,1455.5333333333333,995.3833333333333,1iqeigj; 1js62bi,,,weak_temporal_overlap,weak_context
+tkwh,JustSmokin702,uthillygooth,0.0,1,0,0,1041.5166666666667,1041.5166666666667,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,Silly-Economist47,TinSodder,0.0,1,0,0,107.53333333333333,107.53333333333333,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,Silly-Economist47,abnormalinvesting,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Silly-Economist47,buffwhoppulus,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Silly-Economist47,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Silly-Economist47,jayvm01,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,Silly-Economist47,mikeso623,0.3086066999241837,1,0,0,428.7,428.7,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,Silly-Economist47,mookizee,0.2279211529192758,1,0,0,304.68333333333334,304.68333333333334,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,Silly-Economist47,tkwh,0.2182178902359923,1,0,0,178.93333333333334,178.93333333333334,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,Silly-Economist47,uthillygooth,0.2519763153394848,1,0,0,225.06666666666666,225.06666666666666,1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,TinSodder,abnormalinvesting,0.0,1,0,0,198.28333333333333,198.28333333333333,1j94d38,,,weak_temporal_overlap,weak_context
+tkwh,TinSodder,buffwhoppulus,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,TinSodder,devonthed00d,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,TinSodder,jayvm01,0.0,0,0,0,,,,,,no_temporal_sync,none
+tkwh,TinSodder,mikeso623,0.0,2,0,0,317.39166666666665,313.6166666666667,1ifdi9v; 1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,TinSodder,mookizee,0.0,3,0,0,197.15,65.8,1hua2v9; 1iqeigj; 1j94d38,,,weak_temporal_overlap,weak_context
+tkwh,TinSodder,tkwh,0.3333333333333333,3,0,0,204.38333333333333,71.4,1iqeigj; 1jzofsl; 1k0mdb3,,,weak_temporal_overlap,weak_context
+tkwh,TinSodder,uthillygooth,0.0,2,0,0,341.825,117.53333333333333,1iqeigj; 1iyv29m,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,buffwhoppulus,0.0,2,0,0,1072.625,569.2166666666667,1i6v7ob; 1ilrx07,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,devonthed00d,0.3651483716701107,2,0,0,999.0583333333334,756.4166666666666,1i4fp4r; 1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,jayvm01,0.3651483716701107,2,0,0,804.2416666666667,72.28333333333333,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,mikeso623,0.0,1,0,0,1577.2666666666667,1577.2666666666667,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,mookizee,0.2860387767736776,3,0,0,1231.3333333333333,49.266666666666666,1i6v7ob; 1j7i572; 1j94d38,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,tkwh,0.0,3,0,0,407.0833333333333,125.8,1i6v7ob; 1j7i572; 1jd9kym,,,weak_temporal_overlap,weak_context
+tkwh,abnormalinvesting,uthillygooth,0.0,3,0,0,722.65,339.26666666666665,1htugjs; 1hy5liu; 1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,buffwhoppulus,devonthed00d,0.0,1,0,0,334.3333333333333,334.3333333333333,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,buffwhoppulus,jayvm01,0.0,2,0,0,648.3916666666667,39.833333333333336,1hzjjkb; 1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,buffwhoppulus,mikeso623,0.0,1,1,1,1.2333333333333334,1.2333333333333334,1i6v7ob,,,strong_temporal_sync,fragile_single_event
+tkwh,buffwhoppulus,mookizee,0.0,1,0,0,344.7,344.7,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,buffwhoppulus,tkwh,0.2182178902359923,6,0,0,248.625,40.13333333333333,1hvwpcm; 1i6v7ob; 1j0fy0y; 1js62bi; 1juub0q; 1k01xw9,,,weak_temporal_overlap,weak_context
+tkwh,buffwhoppulus,uthillygooth,0.0,2,0,0,552.0416666666666,68.28333333333333,1hzjjkb; 1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,devonthed00d,jayvm01,0.0,1,0,0,294.5,294.5,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,devonthed00d,mikeso623,0.0,1,0,0,335.56666666666666,335.56666666666666,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,devonthed00d,mookizee,0.0,1,0,1,10.366666666666667,10.366666666666667,1i6v7ob,,,weak_temporal_overlap,moderate_review
+tkwh,devonthed00d,tkwh,0.3333333333333333,2,0,0,141.825,39.416666666666664,1i6v7ob; 1i7bsl8,,,weak_temporal_overlap,weak_context
+tkwh,devonthed00d,uthillygooth,0.0,1,0,0,266.05,266.05,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,jayvm01,mikeso623,0.0,1,0,0,41.06666666666667,41.06666666666667,1i6v7ob,,,weak_temporal_overlap,weak_context
+tkwh,jayvm01,mookizee,0.3481553119113956,2,0,0,213.20833333333334,121.55,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,jayvm01,tkwh,0.3333333333333333,2,0,0,124.17500000000001,50.266666666666666,1i6v7ob; 1j7i572,,,weak_temporal_overlap,weak_context
+tkwh,jayvm01,uthillygooth,0.0,2,0,1,124.8,28.45,1hzjjkb; 1i6v7ob,,,weak_temporal_overlap,fragile_long_median
+tkwh,mikeso623,mookizee,0.2461829819586654,2,0,0,234.975,124.01666666666667,1i6v7ob; 1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,mikeso623,tkwh,0.2357022603955158,2,0,0,170.55,91.33333333333333,1i6v7ob; 1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,mikeso623,uthillygooth,0.2721655269759087,2,0,0,136.575,69.51666666666667,1i6v7ob; 1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,mookizee,tkwh,0.2611164839335467,4,0,2,101.14166666666667,21.333333333333332,1i6v7ob; 1iqeigj; 1j7i572; 1k0qdkr,,,moderate_temporal_sync,moderate_review
+tkwh,mookizee,uthillygooth,0.3015113445777636,3,0,0,276.4166666666667,79.61666666666666,1i6v7ob; 1ijc8w9; 1iqeigj,,,weak_temporal_overlap,weak_context
+tkwh,tkwh,uthillygooth,0.0,2,0,1,33.975,21.816666666666666,1i6v7ob; 1iqeigj,,,weak_temporal_overlap,moderate_review
+Any-Regular2960,AIweWereWarned,Any-Regular2960,0.3202563076101742,1,0,0,102.28333333333333,102.28333333333333,1j16bq0,,,weak_temporal_overlap,weak_context
+Any-Regular2960,AIweWereWarned,CoffeeAlternative647,0.0,0,0,0,,,,,,no_temporal_sync,none
+Any-Regular2960,AIweWereWarned,LiveSlay,0.0,1,0,0,477.8666666666667,477.8666666666667,1j6dy0f,,,weak_temporal_overlap,weak_context
+Any-Regular2960,Any-Regular2960,CoffeeAlternative647,0.2407717061715384,1,0,0,715.7333333333333,715.7333333333333,1ic1hxl,,,weak_temporal_overlap,weak_context
+Any-Regular2960,Any-Regular2960,LiveSlay,0.5163977794943222,2,0,0,767.6083333333333,644.8333333333334,1ic1hxl; 1iwx052,,,weak_temporal_overlap,weak_context
+Any-Regular2960,CoffeeAlternative647,LiveSlay,0.0,1,0,0,70.9,70.9,1ic1hxl,,,weak_temporal_overlap,weak_context
+Covetoast,Covetoast,FuckM0reFromR,0.2108185106778919,1,0,1,5.683333333333334,5.683333333333334,1jkqahx,,,weak_temporal_overlap,moderate_review
+Covetoast,Covetoast,IAMTHAT9,0.2108185106778919,1,0,0,156.61666666666667,156.61666666666667,1jy7dsn,,,weak_temporal_overlap,weak_context
+Covetoast,Covetoast,Potential_Initial903,0.4472135954999578,1,1,1,1.8,1.8,1jkqahx,,,strong_temporal_sync,fragile_single_event
+Covetoast,FuckM0reFromR,IAMTHAT9,0.0,1,0,0,250.26666666666668,250.26666666666668,1ki4v14,,,weak_temporal_overlap,weak_context
+Covetoast,FuckM0reFromR,Potential_Initial903,0.4714045207910317,2,0,1,126.91666666666666,7.483333333333333,1jhfppn; 1jkqahx,,,weak_temporal_overlap,fragile_long_median
+Covetoast,IAMTHAT9,Potential_Initial903,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,ExpensiveAd4496,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,GoodResident2000,0.0,1,0,0,414.81666666666666,414.81666666666666,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,CatsGotANosebleed,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,Opposite_Attorney122,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,Rshellnizzle,0.0,1,0,0,493.6333333333333,493.6333333333333,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,CatsGotANosebleed,United-Blackberry-77,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,codemonkeysh,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,damiracle_NR,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,CatsGotANosebleed,skydiver19,0.2,3,0,1,230.36666666666667,29.866666666666667,1hv0q68; 1i6v7ob; 1jr5hkf,,,moderate_temporal_sync,fragile_long_median
+skydiver19,CatsGotANosebleed,tibbon,0.0,1,0,0,545.4666666666667,545.4666666666667,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,CatsGotANosebleed,ultra_annoymnuos,0.0,2,0,0,145.08333333333334,38.983333333333334,1hxfiuz; 1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,ExpensiveAd4496,GoodResident2000,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,Opposite_Attorney122,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,Rshellnizzle,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,United-Blackberry-77,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,codemonkeysh,0.0,1,0,0,240.03333333333333,240.03333333333333,1ilrx07,,,weak_temporal_overlap,weak_context
+skydiver19,ExpensiveAd4496,damiracle_NR,0.0,1,0,0,1165.1333333333334,1165.1333333333334,1j41zi9,,,weak_temporal_overlap,weak_context
+skydiver19,ExpensiveAd4496,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,skydiver19,0.2,1,0,0,403.05,403.05,1ilrx07,,,weak_temporal_overlap,weak_context
+skydiver19,ExpensiveAd4496,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ExpensiveAd4496,ultra_annoymnuos,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,GoodResident2000,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,GoodResident2000,Opposite_Attorney122,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,GoodResident2000,Rshellnizzle,0.0,1,0,0,78.81666666666666,78.81666666666666,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,GoodResident2000,United-Blackberry-77,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,GoodResident2000,codemonkeysh,0.0,1,0,0,412.6166666666667,412.6166666666667,1jfihus,,,weak_temporal_overlap,weak_context
+skydiver19,GoodResident2000,damiracle_NR,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,GoodResident2000,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,GoodResident2000,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,GoodResident2000,skydiver19,0.2581988897471612,2,0,0,126.925,118.5,1i6v7ob; 1jfihus,,,weak_temporal_overlap,weak_context
+skydiver19,GoodResident2000,tibbon,0.0,1,0,0,130.65,130.65,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,GoodResident2000,ultra_annoymnuos,0.0,1,0,0,453.8,453.8,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,MushroomDizzy649,Opposite_Attorney122,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,MushroomDizzy649,Rshellnizzle,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,MushroomDizzy649,United-Blackberry-77,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,MushroomDizzy649,codemonkeysh,0.0,1,0,0,120.56666666666666,120.56666666666666,1jxmg7w,,,weak_temporal_overlap,weak_context
+skydiver19,MushroomDizzy649,damiracle_NR,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,MushroomDizzy649,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,MushroomDizzy649,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,MushroomDizzy649,skydiver19,0.223606797749979,2,0,0,145.68333333333334,113.41666666666667,1igqktz; 1jk8zku,,,weak_temporal_overlap,weak_context
+skydiver19,MushroomDizzy649,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,MushroomDizzy649,ultra_annoymnuos,0.0,1,0,0,59.21666666666667,59.21666666666667,1jk8zku,,,weak_temporal_overlap,weak_context
+skydiver19,Opposite_Attorney122,Rshellnizzle,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Opposite_Attorney122,United-Blackberry-77,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Opposite_Attorney122,codemonkeysh,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Opposite_Attorney122,damiracle_NR,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Opposite_Attorney122,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Opposite_Attorney122,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Opposite_Attorney122,skydiver19,0.2,2,0,0,367.9916666666667,46.766666666666666,1ia83kf; 1iryhnw,,,weak_temporal_overlap,weak_context
+skydiver19,Opposite_Attorney122,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Opposite_Attorney122,ultra_annoymnuos,0.0,1,0,1,6.633333333333334,6.633333333333334,1ia83kf,,,weak_temporal_overlap,moderate_review
+skydiver19,Rshellnizzle,United-Blackberry-77,0.0,1,0,0,294.9166666666667,294.9166666666667,1j2p0xa,,,weak_temporal_overlap,weak_context
+skydiver19,Rshellnizzle,codemonkeysh,0.0,2,0,0,353.95,119.98333333333333,1i2f2df; 1ij4biq,,,weak_temporal_overlap,weak_context
+skydiver19,Rshellnizzle,damiracle_NR,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Rshellnizzle,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Rshellnizzle,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,Rshellnizzle,skydiver19,0.0,1,0,0,39.68333333333333,39.68333333333333,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,Rshellnizzle,tibbon,0.2222222222222222,1,0,0,51.833333333333336,51.833333333333336,1i6v7ob,,,weak_temporal_overlap,weak_context
+skydiver19,Rshellnizzle,ultra_annoymnuos,0.2519763153394848,2,0,0,598.425,532.6166666666667,1i6v7ob; 1k1hegp,,,weak_temporal_overlap,weak_context
+skydiver19,United-Blackberry-77,codemonkeysh,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,United-Blackberry-77,damiracle_NR,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,United-Blackberry-77,ghgrain,0.0,1,0,0,88.93333333333334,88.93333333333334,1j226uj,,,weak_temporal_overlap,weak_context
+skydiver19,United-Blackberry-77,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,United-Blackberry-77,skydiver19,0.223606797749979,1,0,0,1694.6833333333334,1694.6833333333334,1j226uj,,,weak_temporal_overlap,weak_context
+skydiver19,United-Blackberry-77,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,United-Blackberry-77,ultra_annoymnuos,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,codemonkeysh,damiracle_NR,0.0,1,0,0,337.98333333333335,337.98333333333335,1isk5i4,,,weak_temporal_overlap,weak_context
+skydiver19,codemonkeysh,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,codemonkeysh,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,codemonkeysh,skydiver19,0.223606797749979,2,0,0,220.14166666666665,163.01666666666668,1ilrx07; 1jfihus,,,weak_temporal_overlap,weak_context
+skydiver19,codemonkeysh,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,codemonkeysh,ultra_annoymnuos,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,damiracle_NR,ghgrain,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,damiracle_NR,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,damiracle_NR,skydiver19,0.2,1,0,0,2009.8833333333334,2009.8833333333334,1ixghfp,,,weak_temporal_overlap,weak_context
+skydiver19,damiracle_NR,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,damiracle_NR,ultra_annoymnuos,0.0,1,0,0,115.5,115.5,1iyv29m,,,weak_temporal_overlap,weak_context
+skydiver19,ghgrain,grajnapc,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ghgrain,skydiver19,0.223606797749979,2,0,0,834.725,63.7,1j226uj; 1k8tzwm,,,weak_temporal_overlap,weak_context
+skydiver19,ghgrain,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,ghgrain,ultra_annoymnuos,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,grajnapc,skydiver19,0.223606797749979,1,0,0,131.48333333333332,131.48333333333332,1ihwqa9,,,weak_temporal_overlap,weak_context
+skydiver19,grajnapc,tibbon,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,grajnapc,ultra_annoymnuos,0.0,0,0,0,,,,,,no_temporal_sync,none
+skydiver19,skydiver19,tibbon,0.223606797749979,2,0,1,24.191666666666666,12.15,1i0sq72; 1i6v7ob,,,weak_temporal_overlap,moderate_review
+skydiver19,skydiver19,ultra_annoymnuos,0.253546276418555,3,0,0,54.2,40.13333333333333,1i6v7ob; 1ia83kf; 1jk8zku,,,weak_temporal_overlap,weak_context
+skydiver19,tibbon,ultra_annoymnuos,0.2519763153394848,1,0,0,584.45,584.45,1i6v7ob,,,weak_temporal_overlap,weak_context
+sirspeedy99,AlpsApprehensive4687,AmbitiousBread,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,Antitdeveloper,0.0,1,0,0,241.28333333333333,241.28333333333333,1ib2fl1,,,weak_temporal_overlap,weak_context
+sirspeedy99,AlpsApprehensive4687,ApoplecticAndroid,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,B_Traven9272,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,Content_Cream2475,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,Emergency_Trick_4930,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,Halo_Chief117,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,MilStd,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AlpsApprehensive4687,TripsterX,0.0,1,0,0,382.3,382.3,1ib2fl1,,,weak_temporal_overlap,weak_context
+sirspeedy99,AlpsApprehensive4687,sirspeedy99,0.2886751345948128,1,0,0,519.8666666666667,519.8666666666667,1ib2fl1,,,weak_temporal_overlap,weak_context
+sirspeedy99,AmbitiousBread,Antitdeveloper,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,ApoplecticAndroid,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,B_Traven9272,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,Content_Cream2475,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,Emergency_Trick_4930,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,Halo_Chief117,0.0,1,0,1,25.85,25.85,1k7u6fj,,,weak_temporal_overlap,moderate_review
+sirspeedy99,AmbitiousBread,MilStd,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,TripsterX,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,AmbitiousBread,sirspeedy99,0.2357022603955158,2,0,0,177.43333333333334,54.96666666666667,1j08pv5; 1k7u6fj,,,weak_temporal_overlap,weak_context
+sirspeedy99,Antitdeveloper,ApoplecticAndroid,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Antitdeveloper,B_Traven9272,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Antitdeveloper,Content_Cream2475,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Antitdeveloper,Emergency_Trick_4930,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Antitdeveloper,Halo_Chief117,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Antitdeveloper,MilStd,0.0,1,0,0,1816.8166666666666,1816.8166666666666,1ilrx07,,,weak_temporal_overlap,weak_context
+sirspeedy99,Antitdeveloper,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Antitdeveloper,TripsterX,0.0,1,0,0,141.01666666666668,141.01666666666668,1ib2fl1,,,weak_temporal_overlap,weak_context
+sirspeedy99,Antitdeveloper,sirspeedy99,0.2886751345948128,2,0,0,1131.5916666666667,278.5833333333333,1ib2fl1; 1ilrx07,,,weak_temporal_overlap,weak_context
+sirspeedy99,ApoplecticAndroid,B_Traven9272,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,ApoplecticAndroid,Content_Cream2475,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,ApoplecticAndroid,Emergency_Trick_4930,0.0,1,0,0,400.45,400.45,1jlh30q,,,weak_temporal_overlap,weak_context
+sirspeedy99,ApoplecticAndroid,Halo_Chief117,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,ApoplecticAndroid,MilStd,0.0,1,0,0,215.25,215.25,1jlh30q,,,weak_temporal_overlap,weak_context
+sirspeedy99,ApoplecticAndroid,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,ApoplecticAndroid,TripsterX,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,ApoplecticAndroid,sirspeedy99,0.2357022603955158,1,0,0,221.68333333333334,221.68333333333334,1jlh30q,,,weak_temporal_overlap,weak_context
+sirspeedy99,B_Traven9272,Content_Cream2475,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,B_Traven9272,Emergency_Trick_4930,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,B_Traven9272,Halo_Chief117,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,B_Traven9272,MilStd,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,B_Traven9272,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,B_Traven9272,TripsterX,0.0,1,0,1,15.783333333333333,15.783333333333333,1jumm0v,,,weak_temporal_overlap,moderate_review
+sirspeedy99,B_Traven9272,sirspeedy99,0.2886751345948128,2,0,1,39.858333333333334,21.666666666666668,1jumm0v; 1jxoved,,,weak_temporal_overlap,moderate_review
+sirspeedy99,Content_Cream2475,Emergency_Trick_4930,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Content_Cream2475,Halo_Chief117,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Content_Cream2475,MilStd,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Content_Cream2475,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Content_Cream2475,TripsterX,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Content_Cream2475,sirspeedy99,0.2041241452319315,2,0,0,172.64166666666668,40.75,1jnjiry; 1jpg459,,,weak_temporal_overlap,weak_context
+sirspeedy99,Emergency_Trick_4930,Halo_Chief117,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Emergency_Trick_4930,MilStd,0.0,1,0,0,185.2,185.2,1jlh30q,,,weak_temporal_overlap,weak_context
+sirspeedy99,Emergency_Trick_4930,MushroomDizzy649,0.0,1,0,1,8.7,8.7,1jk8zku,,,weak_temporal_overlap,moderate_review
+sirspeedy99,Emergency_Trick_4930,TripsterX,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Emergency_Trick_4930,sirspeedy99,0.2041241452319315,2,0,0,337.51666666666665,178.76666666666668,1jk8zku; 1jlh30q,,,weak_temporal_overlap,weak_context
+sirspeedy99,Halo_Chief117,MilStd,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Halo_Chief117,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Halo_Chief117,TripsterX,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,Halo_Chief117,sirspeedy99,0.2041241452319315,2,0,1,381.7083333333333,29.116666666666667,1k7u6fj; 1kc9j77,,,weak_temporal_overlap,fragile_long_median
+sirspeedy99,MilStd,MushroomDizzy649,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,MilStd,TripsterX,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,MilStd,sirspeedy99,0.2886751345948128,2,0,1,87.10833333333333,6.433333333333334,1ilrx07; 1jlh30q,,,weak_temporal_overlap,moderate_review
+sirspeedy99,MushroomDizzy649,TripsterX,0.0,0,0,0,,,,,,no_temporal_sync,none
+sirspeedy99,MushroomDizzy649,sirspeedy99,0.2041241452319315,2,0,0,481.06666666666666,457.1666666666667,1irkmv8; 1jk8zku,,,weak_temporal_overlap,weak_context
+sirspeedy99,TripsterX,sirspeedy99,0.2041241452319315,2,0,0,105.69999999999999,73.83333333333333,1ib2fl1; 1jumm0v,,,weak_temporal_overlap,weak_context
+lol_camis,AmphibianAway8217,Anzu_Yamasaki,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,Basic_Professor2650,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,Born-Chipmunk-7086,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,CashFlowOrBust,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,ChipNDipPlus,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,CilicianKnightAni,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,ConfidenceOk5160,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,DentedDemonCore,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,Dismal-Grapefruit966,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,Lurchco3953,0.0,1,0,0,92.16666666666667,92.16666666666667,1jr5hkf,,,weak_temporal_overlap,weak_context
+lol_camis,AmphibianAway8217,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,_Zzik_,0.0,1,1,1,2.8,2.8,1j0rlxd,,,strong_temporal_sync,fragile_single_event
+lol_camis,AmphibianAway8217,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,lol_camis,0.230828357214681,2,1,1,97.14166666666667,2.1166666666666667,1j0rlxd; 1jr5hkf,,,strong_temporal_sync,moderate_review
+lol_camis,AmphibianAway8217,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,AmphibianAway8217,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,Basic_Professor2650,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,Born-Chipmunk-7086,0.0,1,0,0,142.9,142.9,1ia38sf,,,weak_temporal_overlap,weak_context
+lol_camis,Anzu_Yamasaki,CashFlowOrBust,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,ChipNDipPlus,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,CilicianKnightAni,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,ConfidenceOk5160,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,DentedDemonCore,0.0,1,0,0,68.51666666666667,68.51666666666667,1idq1ie,,,weak_temporal_overlap,weak_context
+lol_camis,Anzu_Yamasaki,Dismal-Grapefruit966,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,Lurchco3953,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,M3Seriesz,0.0,1,0,0,205.23333333333332,205.23333333333332,1i8p8ua,,,weak_temporal_overlap,weak_context
+lol_camis,Anzu_Yamasaki,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,SXYBZZT,0.0,1,0,0,80.66666666666667,80.66666666666667,1id4ec5,,,weak_temporal_overlap,weak_context
+lol_camis,Anzu_Yamasaki,TechHonie,0.0,2,0,0,593.2,431.1,1i8p8ua; 1igwt7o,,,weak_temporal_overlap,weak_context
+lol_camis,Anzu_Yamasaki,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,choppedyota,0.0,1,0,0,202.08333333333334,202.08333333333334,1i68vum,,,weak_temporal_overlap,weak_context
+lol_camis,Anzu_Yamasaki,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,lol_camis,0.2005972683062704,2,0,0,133.70833333333331,107.81666666666666,1i7gcbc; 1if1ugz,,,weak_temporal_overlap,weak_context
+lol_camis,Anzu_Yamasaki,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Anzu_Yamasaki,zxsmart,0.2028462866947918,2,0,0,578.0583333333334,492.6166666666667,1i96zy8; 1ibqfz0,,,weak_temporal_overlap,weak_context
+lol_camis,Basic_Professor2650,Born-Chipmunk-7086,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,CashFlowOrBust,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,ChipNDipPlus,0.0,1,0,0,200.7,200.7,1jfqacu,,,weak_temporal_overlap,weak_context
+lol_camis,Basic_Professor2650,CilicianKnightAni,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,ConfidenceOk5160,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,DentedDemonCore,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,Dismal-Grapefruit966,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,Lurchco3953,0.0,1,0,0,104.11666666666666,104.11666666666666,1jand5r,,,weak_temporal_overlap,weak_context
+lol_camis,Basic_Professor2650,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,lol_camis,0.3378299530160344,2,0,1,55.74166666666667,12.35,1jamkxo; 1k7u6fj,,,weak_temporal_overlap,moderate_review
+lol_camis,Basic_Professor2650,turdturd1,0.0,1,0,1,26.0,26.0,1k7u6fj,,,weak_temporal_overlap,moderate_review
+lol_camis,Basic_Professor2650,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Basic_Professor2650,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,CashFlowOrBust,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,ChipNDipPlus,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,CilicianKnightAni,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,ConfidenceOk5160,0.5163977794943222,1,0,0,424.4,424.4,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Born-Chipmunk-7086,DentedDemonCore,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,Dismal-Grapefruit966,0.5163977794943222,1,0,0,82.88333333333334,82.88333333333334,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Born-Chipmunk-7086,Lurchco3953,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,NikEy,0.0,1,0,0,201.4,201.4,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Born-Chipmunk-7086,SXYBZZT,0.5442263835130472,1,0,0,269.75,269.75,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Born-Chipmunk-7086,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,brainrotbro,0.3565532313671496,1,0,0,47.166666666666664,47.166666666666664,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Born-Chipmunk-7086,choppedyota,0.0,1,0,0,87.25,87.25,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Born-Chipmunk-7086,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,lol_camis,0.0,1,0,0,52.233333333333334,52.233333333333334,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Born-Chipmunk-7086,turdturd1,0.0,1,0,1,5.483333333333333,5.483333333333333,1ictoqj,,,weak_temporal_overlap,moderate_review
+lol_camis,Born-Chipmunk-7086,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Born-Chipmunk-7086,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,ChipNDipPlus,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,CilicianKnightAni,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,ConfidenceOk5160,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,DentedDemonCore,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,Dismal-Grapefruit966,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,Lurchco3953,0.0,1,0,0,1783.05,1783.05,1jtfysr,,,weak_temporal_overlap,weak_context
+lol_camis,CashFlowOrBust,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,TechHonie,0.0,1,0,1,14.45,14.45,1i6ie0i,,,weak_temporal_overlap,moderate_review
+lol_camis,CashFlowOrBust,_Zzik_,0.0,1,0,0,111.03333333333333,111.03333333333333,1jtfysr,,,weak_temporal_overlap,weak_context
+lol_camis,CashFlowOrBust,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,lol_camis,0.2109591731328632,3,0,0,142.4,100.61666666666666,1hxma12; 1i3pto3; 1jtfysr,,,weak_temporal_overlap,weak_context
+lol_camis,CashFlowOrBust,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CashFlowOrBust,zxsmart,0.0,1,0,0,81.11666666666666,81.11666666666666,1j7kxuy,,,weak_temporal_overlap,weak_context
+lol_camis,ChipNDipPlus,CilicianKnightAni,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,ConfidenceOk5160,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,DentedDemonCore,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,Dismal-Grapefruit966,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,Lurchco3953,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,lol_camis,0.2109591731328632,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,user_name_checks_out,0.2570329961737055,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ChipNDipPlus,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,ConfidenceOk5160,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,DentedDemonCore,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,Dismal-Grapefruit966,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,Lurchco3953,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,lol_camis,0.2987187771381671,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,CilicianKnightAni,user_name_checks_out,0.2420268269714973,1,0,1,19.816666666666666,19.816666666666666,1jnq9x7,,,weak_temporal_overlap,moderate_review
+lol_camis,CilicianKnightAni,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ConfidenceOk5160,DentedDemonCore,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ConfidenceOk5160,Dismal-Grapefruit966,0.6666666666666666,1,0,0,507.28333333333336,507.28333333333336,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,Lurchco3953,0.0,1,0,0,31.866666666666667,31.866666666666667,1jjhcq9,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ConfidenceOk5160,NikEy,0.0,1,0,0,223.0,223.0,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,SXYBZZT,0.7025932399709076,1,0,0,154.65,154.65,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,TechHonie,0.0,1,0,0,912.4,912.4,1jcpo1x,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ConfidenceOk5160,brainrotbro,0.4603082423738035,1,0,0,471.56666666666666,471.56666666666666,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,choppedyota,0.0,1,0,0,511.65,511.65,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ConfidenceOk5160,lol_camis,0.2435946707925589,1,0,0,476.6333333333333,476.6333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,turdturd1,0.0,1,0,0,429.8833333333333,429.8833333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,ConfidenceOk5160,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,ConfidenceOk5160,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,Dismal-Grapefruit966,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,Lurchco3953,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,TechHonie,0.4219183462657265,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,lol_camis,0.2435946707925589,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,DentedDemonCore,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Dismal-Grapefruit966,Lurchco3953,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Dismal-Grapefruit966,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Dismal-Grapefruit966,NikEy,0.0,1,0,0,284.28333333333336,284.28333333333336,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Dismal-Grapefruit966,SXYBZZT,0.7025932399709076,1,0,0,352.6333333333333,352.6333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Dismal-Grapefruit966,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Dismal-Grapefruit966,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Dismal-Grapefruit966,brainrotbro,0.4603082423738035,1,0,0,35.71666666666667,35.71666666666667,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Dismal-Grapefruit966,choppedyota,0.0,1,1,1,4.366666666666666,4.366666666666666,1ictoqj,,,strong_temporal_sync,fragile_single_event
+lol_camis,Dismal-Grapefruit966,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Dismal-Grapefruit966,lol_camis,0.2435946707925589,1,0,0,30.65,30.65,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Dismal-Grapefruit966,turdturd1,0.0,1,0,0,77.4,77.4,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,Dismal-Grapefruit966,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Dismal-Grapefruit966,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,M3Seriesz,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,TechHonie,0.0,1,0,0,92.31666666666666,92.31666666666666,1hzjjkb,,,weak_temporal_overlap,weak_context
+lol_camis,Lurchco3953,_Zzik_,0.0,1,0,0,1894.0833333333333,1894.0833333333333,1jtfysr,,,weak_temporal_overlap,weak_context
+lol_camis,Lurchco3953,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,lol_camis,0.2572488173806996,3,0,0,100.0,71.51666666666667,1hzjjkb; 1jr5hkf; 1jtfysr,,,weak_temporal_overlap,weak_context
+lol_camis,Lurchco3953,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,Lurchco3953,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,M3Seriesz,NikEy,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,M3Seriesz,SXYBZZT,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,M3Seriesz,TechHonie,0.0,1,0,0,225.86666666666667,225.86666666666667,1i8p8ua,,,weak_temporal_overlap,weak_context
+lol_camis,M3Seriesz,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,M3Seriesz,brainrotbro,0.0,1,0,0,66.46666666666667,66.46666666666667,1htdk61,,,weak_temporal_overlap,weak_context
+lol_camis,M3Seriesz,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,M3Seriesz,gomurifle,0.0,1,0,0,102.8,102.8,1kb9c4r,,,weak_temporal_overlap,weak_context
+lol_camis,M3Seriesz,lol_camis,0.230828357214681,1,0,0,64.26666666666667,64.26666666666667,1kalpef,,,weak_temporal_overlap,weak_context
+lol_camis,M3Seriesz,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,M3Seriesz,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,M3Seriesz,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,NikEy,SXYBZZT,0.0,1,0,0,68.35,68.35,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,NikEy,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,NikEy,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,NikEy,brainrotbro,0.0,1,0,0,248.56666666666666,248.56666666666666,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,NikEy,choppedyota,0.0,1,0,0,288.65,288.65,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,NikEy,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,NikEy,lol_camis,0.230828357214681,2,0,1,131.48333333333332,9.333333333333334,1hr69et; 1ictoqj,,,weak_temporal_overlap,fragile_long_median
+lol_camis,NikEy,turdturd1,0.0,1,0,0,206.88333333333333,206.88333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,NikEy,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,NikEy,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,SXYBZZT,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,SXYBZZT,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,SXYBZZT,brainrotbro,0.5099564738458742,1,0,0,316.9166666666667,316.9166666666667,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,SXYBZZT,choppedyota,0.0,1,0,0,357.0,357.0,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,SXYBZZT,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,SXYBZZT,lol_camis,0.2698684662355929,1,0,0,321.98333333333335,321.98333333333335,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,SXYBZZT,turdturd1,0.0,1,0,0,275.23333333333335,275.23333333333335,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,SXYBZZT,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,SXYBZZT,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,TechHonie,_Zzik_,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,TechHonie,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,TechHonie,choppedyota,0.0,1,0,0,1115.0166666666667,1115.0166666666667,1i94ycd,,,weak_temporal_overlap,weak_context
+lol_camis,TechHonie,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,TechHonie,lol_camis,0.208203611863458,1,0,1,20.8,20.8,1hzjjkb,,,weak_temporal_overlap,moderate_review
+lol_camis,TechHonie,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,TechHonie,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,TechHonie,zxsmart,0.2704495317176025,1,0,0,434.8333333333333,434.8333333333333,1jhakc1,,,weak_temporal_overlap,weak_context
+lol_camis,_Zzik_,brainrotbro,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,_Zzik_,choppedyota,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,_Zzik_,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,_Zzik_,lol_camis,0.3378299530160344,3,1,1,59.733333333333334,4.916666666666667,1j0rlxd; 1jr7996; 1jtfysr,,,strong_temporal_sync,moderate_review
+lol_camis,_Zzik_,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,_Zzik_,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,_Zzik_,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,brainrotbro,choppedyota,0.0,1,0,0,40.083333333333336,40.083333333333336,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,brainrotbro,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,brainrotbro,lol_camis,0.0,2,0,1,90.31666666666666,5.066666666666666,1ictoqj; 1jb27k2,,,weak_temporal_overlap,moderate_review
+lol_camis,brainrotbro,turdturd1,0.0,1,0,0,41.68333333333333,41.68333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,brainrotbro,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,brainrotbro,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,choppedyota,gomurifle,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,choppedyota,lol_camis,0.2109591731328632,1,0,0,35.016666666666666,35.016666666666666,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,choppedyota,turdturd1,0.0,1,0,0,81.76666666666667,81.76666666666667,1ictoqj,,,weak_temporal_overlap,weak_context
+lol_camis,choppedyota,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,choppedyota,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,gomurifle,lol_camis,0.230828357214681,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,gomurifle,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,gomurifle,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,gomurifle,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,lol_camis,turdturd1,0.230828357214681,2,0,1,30.2,13.65,1ictoqj; 1k7u6fj,,,weak_temporal_overlap,moderate_review
+lol_camis,lol_camis,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,lol_camis,zxsmart,0.0,2,0,0,352.3583333333333,91.28333333333333,1i4c1i1; 1iksfrd,,,weak_temporal_overlap,weak_context
+lol_camis,turdturd1,user_name_checks_out,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,turdturd1,zxsmart,0.0,0,0,0,,,,,,no_temporal_sync,none
+lol_camis,user_name_checks_out,zxsmart,0.0,1,0,0,80.5,80.5,1k9amsq,,,weak_temporal_overlap,weak_context
+tzacPACO,Far-Hunter2057,Logvin,0.0,1,0,0,1043.5833333333333,1043.5833333333333,1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,Far-Hunter2057,Rent_South,0.2272507333363343,1,0,0,1125.8833333333334,1125.8833333333334,1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,Far-Hunter2057,Romando1,0.3213810691434756,1,0,0,1054.4833333333333,1054.4833333333333,1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,Far-Hunter2057,btcgib,0.4207865932216609,2,0,0,440.4083333333333,215.03333333333333,1k743xw; 1khsudj,,,weak_temporal_overlap,weak_context
+tzacPACO,Far-Hunter2057,tzacPACO,0.4622797036009415,1,0,0,1154.9166666666667,1154.9166666666667,1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,Logvin,Rent_South,0.0,2,0,0,163.43333333333334,82.3,1hv8zhv; 1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,Logvin,Romando1,0.0,1,0,1,10.9,10.9,1k743xw,,,weak_temporal_overlap,moderate_review
+tzacPACO,Logvin,btcgib,0.0,1,0,0,377.8,377.8,1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,Logvin,tzacPACO,0.2084047483586057,2,0,0,138.675,111.33333333333333,1k743xw; 1kcck8w,,,weak_temporal_overlap,weak_context
+tzacPACO,Rent_South,Romando1,0.0,2,0,0,145.025,71.4,1k743xw; 1k7ypi2,,,weak_temporal_overlap,weak_context
+tzacPACO,Rent_South,btcgib,0.0,1,0,0,460.1,460.1,1k743xw,,,weak_temporal_overlap,weak_context
+tzacPACO,Rent_South,tzacPACO,0.2156758925814941,3,0,2,29.033333333333335,26.133333333333333,1iz6u6d; 1j1v04s; 1k743xw,,,moderate_temporal_sync,robust
+tzacPACO,Romando1,btcgib,0.2182178902359923,3,0,1,160.9,18.766666666666666,1k628kd; 1k743xw; 1k7u6fj,,,moderate_temporal_sync,fragile_long_median
+tzacPACO,Romando1,tzacPACO,0.2199308901237193,2,0,2,54.483333333333334,8.533333333333333,1jt081c; 1k743xw,,,moderate_temporal_sync,moderate_review
+tzacPACO,btcgib,tzacPACO,0.3993541527766659,2,0,0,464.14166666666665,439.15,1k743xw; 1k8wenp,,,weak_temporal_overlap,weak_context
+abercrombezie,AccomplishedScheme82,Hot_Molasses_4006,0.3333333333333333,1,0,0,755.0,755.0,1jzofsl,,,weak_temporal_overlap,weak_context
+abercrombezie,AccomplishedScheme82,JoMadrid13,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,JustinPooDough,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,Lord_Alamar,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,Significant_Book1672,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,YLCZ,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,abercrombezie,0.2182178902359924,2,0,0,947.4,324.8333333333333,1i3m9sy; 1jzofsl,,,weak_temporal_overlap,weak_context
+abercrombezie,AccomplishedScheme82,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,jasperCrow,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,my-name-is-mine,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,AccomplishedScheme82,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,JoMadrid13,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,JustinPooDough,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,Lord_Alamar,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,Significant_Book1672,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,YLCZ,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,abercrombezie,0.2182178902359924,2,0,0,271.1166666666667,112.06666666666666,1j7kxuy; 1jzofsl,,,weak_temporal_overlap,weak_context
+abercrombezie,Hot_Molasses_4006,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,jasperCrow,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Hot_Molasses_4006,my-name-is-mine,0.0,5,0,0,228.68333333333334,30.683333333333334,1i784pf; 1j7kxuy; 1jdsadg; 1jj35hg; 1kge9xj,,,weak_temporal_overlap,weak_context
+abercrombezie,Hot_Molasses_4006,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JoMadrid13,JustinPooDough,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JoMadrid13,Lord_Alamar,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JoMadrid13,Significant_Book1672,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JoMadrid13,YLCZ,0.0,1,0,0,210.7,210.7,1ic60vy,,,weak_temporal_overlap,weak_context
+abercrombezie,JoMadrid13,abercrombezie,0.2182178902359924,2,0,1,109.16666666666667,28.55,1ic60vy; 1iyuk01,,,weak_temporal_overlap,moderate_review
+abercrombezie,JoMadrid13,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JoMadrid13,jasperCrow,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JoMadrid13,my-name-is-mine,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JoMadrid13,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JustinPooDough,Lord_Alamar,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JustinPooDough,Significant_Book1672,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JustinPooDough,YLCZ,0.0,1,0,0,85.38333333333334,85.38333333333334,1izy79a,,,weak_temporal_overlap,weak_context
+abercrombezie,JustinPooDough,abercrombezie,0.2223747949983303,2,0,0,87.46666666666667,36.2,1itroth; 1iyv29m,,,weak_temporal_overlap,weak_context
+abercrombezie,JustinPooDough,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,JustinPooDough,jasperCrow,0.2773500981126145,1,0,0,372.68333333333334,372.68333333333334,1idaix5,,,weak_temporal_overlap,weak_context
+abercrombezie,JustinPooDough,my-name-is-mine,0.0,1,0,0,864.8833333333333,864.8833333333333,1jsra18,,,weak_temporal_overlap,weak_context
+abercrombezie,JustinPooDough,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,Significant_Book1672,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,YLCZ,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,abercrombezie,0.3779644730092272,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,jasperCrow,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,my-name-is-mine,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Lord_Alamar,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Significant_Book1672,YLCZ,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Significant_Book1672,abercrombezie,0.2020305089104421,1,1,1,0.08333333333333333,0.08333333333333333,1k7ofg3,,,strong_temporal_sync,fragile_single_event
+abercrombezie,Significant_Book1672,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Significant_Book1672,jasperCrow,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,Significant_Book1672,my-name-is-mine,0.0,1,0,1,9.483333333333333,9.483333333333333,1ilj954,,,weak_temporal_overlap,moderate_review
+abercrombezie,Significant_Book1672,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,YLCZ,abercrombezie,0.2672612419124244,2,0,0,223.05,182.15,1ib2iyt; 1ic60vy,,,weak_temporal_overlap,weak_context
+abercrombezie,YLCZ,helloipoo,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,YLCZ,jasperCrow,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,YLCZ,my-name-is-mine,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,YLCZ,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,abercrombezie,helloipoo,0.3086066999241838,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,abercrombezie,jasperCrow,0.2672612419124244,1,0,0,148.8,148.8,1jbjchs,,,weak_temporal_overlap,weak_context
+abercrombezie,abercrombezie,my-name-is-mine,0.2182178902359924,1,0,0,81.38333333333334,81.38333333333334,1j7kxuy,,,weak_temporal_overlap,weak_context
+abercrombezie,abercrombezie,soundsandsights,0.3779644730092272,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,helloipoo,jasperCrow,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,helloipoo,my-name-is-mine,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,helloipoo,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,jasperCrow,my-name-is-mine,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,jasperCrow,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+abercrombezie,my-name-is-mine,soundsandsights,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,MatchboxVader22,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,PunkerWannaBe,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,bestjaegerpilot,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,bryanchicken,0.4082482904638631,1,0,0,47.38333333333333,47.38333333333333,1jbh02c,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,Biggie_Nuf,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,Biggie_Nuf,onebtcisonebtc,0.3849001794597505,1,0,0,658.8,658.8,1iryhnw,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,Biggie_Nuf,sixty9shadesofj,0.0,1,0,1,18.633333333333333,18.633333333333333,1jbh02c,,,weak_temporal_overlap,moderate_review
+onebtcisonebtc,MatchboxVader22,PunkerWannaBe,0.0,1,0,0,239.31666666666666,239.31666666666666,1j4erty,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,MatchboxVader22,TechHonie,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,MatchboxVader22,bestjaegerpilot,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,MatchboxVader22,bryanchicken,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,MatchboxVader22,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,MatchboxVader22,onebtcisonebtc,0.3333333333333333,2,0,0,499.2583333333333,81.56666666666666,1i2om4k; 1k0uwon,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,MatchboxVader22,sixty9shadesofj,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,PunkerWannaBe,TechHonie,0.3264405933533033,3,0,0,774.45,33.56666666666667,1igwt7o; 1jcpo1x; 1kgu1j2,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,PunkerWannaBe,bestjaegerpilot,0.8164965809277261,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,PunkerWannaBe,bryanchicken,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,PunkerWannaBe,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,PunkerWannaBe,onebtcisonebtc,0.3849001794597505,2,0,0,70.39166666666667,56.05,1jrduzr; 1jtmlzh,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,PunkerWannaBe,sixty9shadesofj,0.2886751345948128,1,0,0,398.6666666666667,398.6666666666667,1jtmlzh,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,TechHonie,bestjaegerpilot,0.3998064425234855,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,TechHonie,bryanchicken,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,TechHonie,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,TechHonie,onebtcisonebtc,0.0,2,0,0,628.1666666666666,106.48333333333333,1i6ie0i; 1k30you,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,TechHonie,sixty9shadesofj,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bestjaegerpilot,bryanchicken,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bestjaegerpilot,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bestjaegerpilot,onebtcisonebtc,0.4714045207910317,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bestjaegerpilot,sixty9shadesofj,0.3535533905932738,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bryanchicken,jamesnaranja90,0.0,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bryanchicken,onebtcisonebtc,0.2357022603955158,0,0,0,,,,,,no_temporal_sync,none
+onebtcisonebtc,bryanchicken,sixty9shadesofj,0.0,2,0,1,108.76666666666667,28.75,1jbh02c; 1jiuxfg,,,weak_temporal_overlap,moderate_review
+onebtcisonebtc,jamesnaranja90,onebtcisonebtc,0.3849001794597505,1,0,0,888.8166666666667,888.8166666666667,1jqtqcv,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,jamesnaranja90,sixty9shadesofj,0.0,1,0,0,2147.1,2147.1,1itbhik,,,weak_temporal_overlap,weak_context
+onebtcisonebtc,onebtcisonebtc,sixty9shadesofj,0.0,2,0,0,547.9833333333333,313.93333333333334,1ic60vy; 1jtmlzh,,,weak_temporal_overlap,weak_context
+vnielz,BitcoinFreedom1776,Impressive-Cat-3144,0.0,1,0,0,80.65,80.65,1ictoqj,,,weak_temporal_overlap,weak_context
+vnielz,BitcoinFreedom1776,No-Recipe-4578,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,BitcoinFreedom1776,Technical_Moose8478,0.0,1,0,0,541.5833333333334,541.5833333333334,1ictoqj,,,weak_temporal_overlap,weak_context
+vnielz,BitcoinFreedom1776,kundaliniredneck1,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,BitcoinFreedom1776,turdturd1,0.0,1,1,1,1.15,1.15,1ictoqj,,,strong_temporal_sync,fragile_single_event
+vnielz,BitcoinFreedom1776,vnielz,0.2156655464068768,0,0,0,,,,,,no_temporal_sync,none
+vnielz,Impressive-Cat-3144,No-Recipe-4578,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,Impressive-Cat-3144,Technical_Moose8478,0.0,1,0,0,460.93333333333334,460.93333333333334,1ictoqj,,,weak_temporal_overlap,weak_context
+vnielz,Impressive-Cat-3144,kundaliniredneck1,0.0,1,0,0,76.43333333333334,76.43333333333334,1i6ie0i,,,weak_temporal_overlap,weak_context
+vnielz,Impressive-Cat-3144,turdturd1,0.0,1,0,0,81.8,81.8,1ictoqj,,,weak_temporal_overlap,weak_context
+vnielz,Impressive-Cat-3144,vnielz,0.2156655464068768,1,0,0,108.2,108.2,1j05zjy,,,weak_temporal_overlap,weak_context
+vnielz,No-Recipe-4578,Technical_Moose8478,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,No-Recipe-4578,kundaliniredneck1,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,No-Recipe-4578,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,No-Recipe-4578,vnielz,0.2156655464068768,1,0,1,5.25,5.25,1jyngwi,,,weak_temporal_overlap,moderate_review
+vnielz,Technical_Moose8478,kundaliniredneck1,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,Technical_Moose8478,turdturd1,0.0,1,0,0,542.7333333333333,542.7333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+vnielz,Technical_Moose8478,vnielz,0.2156655464068768,1,0,0,3377.4166666666665,3377.4166666666665,1jb8yym,,,weak_temporal_overlap,weak_context
+vnielz,kundaliniredneck1,turdturd1,0.0,0,0,0,,,,,,no_temporal_sync,none
+vnielz,kundaliniredneck1,vnielz,0.2156655464068768,0,0,0,,,,,,no_temporal_sync,none
+vnielz,turdturd1,vnielz,0.2156655464068768,1,0,0,31.283333333333335,31.283333333333335,1k7u6fj,,,weak_temporal_overlap,weak_context
+Sweet-Hat-7946,Caesars7Hills,LuckyTrain727,0.0,0,0,0,,,,,,no_temporal_sync,none
+Sweet-Hat-7946,Caesars7Hills,SevenBlade,0.0,0,0,0,,,,,,no_temporal_sync,none
+Sweet-Hat-7946,Caesars7Hills,Sweet-Hat-7946,0.2182178902359924,3,0,1,49.3,19.65,1i3tgun; 1ixhjdy; 1j91sik,,,moderate_temporal_sync,moderate_review
+Sweet-Hat-7946,Caesars7Hills,_DANGR_,0.0,0,0,0,,,,,,no_temporal_sync,none
+Sweet-Hat-7946,LuckyTrain727,SevenBlade,0.0,0,0,0,,,,,,no_temporal_sync,none
+Sweet-Hat-7946,LuckyTrain727,Sweet-Hat-7946,0.2182178902359924,0,0,0,,,,,,no_temporal_sync,none
+Sweet-Hat-7946,LuckyTrain727,_DANGR_,0.0,0,0,0,,,,,,no_temporal_sync,none
+Sweet-Hat-7946,SevenBlade,Sweet-Hat-7946,0.2672612419124244,1,0,0,1247.2833333333333,1247.2833333333333,1igdy1m,,,weak_temporal_overlap,weak_context
+Sweet-Hat-7946,SevenBlade,_DANGR_,0.0,0,0,0,,,,,,no_temporal_sync,none
+Sweet-Hat-7946,Sweet-Hat-7946,_DANGR_,0.2182178902359924,1,0,1,15.316666666666666,15.316666666666666,1i9wcyp,,,weak_temporal_overlap,moderate_review
+harvested,CoolPineapple6969,Fabulous-Chard3987,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,CoolPineapple6969,GooseBash,0.0,1,0,0,100.81666666666666,100.81666666666666,1jfb7i2,,,weak_temporal_overlap,weak_context
+harvested,CoolPineapple6969,NectarineDirect936,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,CoolPineapple6969,autemox,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,CoolPineapple6969,harvested,0.2181264877257022,0,0,0,,,,,,no_temporal_sync,none
+harvested,CoolPineapple6969,rtublin,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,CoolPineapple6969,wish_I_knew_before-1,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,Fabulous-Chard3987,GooseBash,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,Fabulous-Chard3987,NectarineDirect936,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,Fabulous-Chard3987,autemox,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,Fabulous-Chard3987,harvested,0.2181264877257022,0,0,0,,,,,,no_temporal_sync,none
+harvested,Fabulous-Chard3987,rtublin,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,Fabulous-Chard3987,wish_I_knew_before-1,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,GooseBash,NectarineDirect936,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,GooseBash,autemox,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,GooseBash,harvested,0.2181264877257022,0,0,0,,,,,,no_temporal_sync,none
+harvested,GooseBash,rtublin,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,GooseBash,wish_I_knew_before-1,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,NectarineDirect936,autemox,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,NectarineDirect936,harvested,0.3351095355268196,17,2,4,83.23333333333333,3.1,1jik58a; 1jk54fe; 1jnwjl4; 1jphrgb; 1jqavvp; 1jsngmk; 1juyvan; 1jwj2fe; 1jxam77; 1jyry1v; 1k15uws; 1k4z8ln; 1k5s4i1; 1k7dxw9; 1kb9jh7; 1kc1qoz; 1kgqb4e,,,strong_temporal_sync,robust
+harvested,NectarineDirect936,rtublin,0.0,2,0,0,454.525,119.8,1jvqxym; 1jxam77,,,weak_temporal_overlap,weak_context
+harvested,NectarineDirect936,wish_I_knew_before-1,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,autemox,harvested,0.2181264877257022,2,0,0,237.81666666666666,59.65,1jr5hkf; 1jzulcx,,,weak_temporal_overlap,weak_context
+harvested,autemox,rtublin,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,autemox,wish_I_knew_before-1,0.0,0,0,0,,,,,,no_temporal_sync,none
+harvested,harvested,rtublin,0.3848666843036719,3,0,0,144.18333333333334,53.516666666666666,1jxam77; 1k9onso; 1kfxhcl,,,weak_temporal_overlap,weak_context
+harvested,harvested,wish_I_knew_before-1,0.2181264877257022,0,0,0,,,,,,no_temporal_sync,none
+harvested,rtublin,wish_I_knew_before-1,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,AKcryptoGUY,CryptoBlobSwag,0.0,1,0,0,64.46666666666667,64.46666666666667,1i2t008,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,FuckYaHoeAssMom,0.0,1,0,0,3903.9166666666665,3903.9166666666665,1i2t008,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,Julian_256,0.0,1,0,0,393.25,393.25,1ij4biq,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,Local_Doubt_4029,0.371235735322565,2,0,0,424.83333333333337,256.71666666666664,1i2t008; 1ij4biq,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,AKcryptoGUY,OwnPersonalSatan,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,AKcryptoGUY,Vimes-NW,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,AKcryptoGUY,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,CryptoBlobSwag,FuckYaHoeAssMom,0.0,1,0,0,3968.383333333333,3968.383333333333,1i2t008,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,CryptoBlobSwag,Julian_256,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,CryptoBlobSwag,Local_Doubt_4029,0.2145798930069792,3,0,0,193.26666666666668,192.25,1i2t008; 1i7xpjz; 1j8itqa,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,CryptoBlobSwag,OwnPersonalSatan,0.0,2,0,0,307.76666666666665,179.73333333333332,1ixxwnp; 1j29mvg,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,CryptoBlobSwag,Vimes-NW,0.0,1,0,0,88.28333333333333,88.28333333333333,1j29mvg,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,CryptoBlobSwag,You3betI4bet,0.0,1,0,0,96.46666666666667,96.46666666666667,1iyv29m,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,FuckYaHoeAssMom,Julian_256,0.0,1,0,0,278.26666666666665,278.26666666666665,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,FuckYaHoeAssMom,Local_Doubt_4029,0.371235735322565,2,0,0,2355.3416666666667,550.05,1i0dlzn; 1i2t008,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,FuckYaHoeAssMom,OwnPersonalSatan,0.0,1,0,0,469.98333333333335,469.98333333333335,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,FuckYaHoeAssMom,Vimes-NW,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,FuckYaHoeAssMom,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Julian_256,Local_Doubt_4029,0.371235735322565,2,0,0,628.9916666666667,271.78333333333336,1i0dlzn; 1ij4biq,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Julian_256,OwnPersonalSatan,0.0,1,0,0,191.71666666666667,191.71666666666667,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Julian_256,Vimes-NW,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Julian_256,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Local_Doubt_4029,OwnPersonalSatan,0.3031127086090645,1,0,0,80.06666666666666,80.06666666666666,1i0dlzn,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Local_Doubt_4029,Vimes-NW,0.3031127086090645,1,0,0,223.75,223.75,1jd40vk,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,Local_Doubt_4029,You3betI4bet,0.3031127086090645,1,0,0,327.1166666666667,327.1166666666667,1jd40vk,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,OwnPersonalSatan,Vimes-NW,0.0,1,0,0,347.51666666666665,347.51666666666665,1j29mvg,,,weak_temporal_overlap,weak_context
+Local_Doubt_4029,OwnPersonalSatan,You3betI4bet,0.0,0,0,0,,,,,,no_temporal_sync,none
+Local_Doubt_4029,Vimes-NW,You3betI4bet,0.6666666666666666,1,0,0,550.8666666666667,550.8666666666667,1jd40vk,,,weak_temporal_overlap,weak_context
+BeefSupreme2,According_Donut6672,BeefSupreme2,0.2886751345948128,1,0,0,1345.3,1345.3,1jcpo1x,,,weak_temporal_overlap,weak_context
+BeefSupreme2,According_Donut6672,LemonHaze420_,0.0,0,0,0,,,,,,no_temporal_sync,none
+BeefSupreme2,According_Donut6672,gtwooh,0.0,1,0,0,43.85,43.85,1jcpo1x,,,weak_temporal_overlap,weak_context
+BeefSupreme2,BeefSupreme2,LemonHaze420_,0.2886751345948128,2,0,1,624.2583333333333,19.066666666666666,1i8p8ua; 1kfhufq,,,weak_temporal_overlap,fragile_long_median
+BeefSupreme2,BeefSupreme2,gtwooh,0.2357022603955158,3,0,0,1200.45,967.0833333333334,1hxckq2; 1jcpo1x; 1kfhufq,,,weak_temporal_overlap,weak_context
+BeefSupreme2,LemonHaze420_,gtwooh,0.0,1,0,0,262.3666666666667,262.3666666666667,1kfhufq,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,Safe-Painter-9618,0.3333333333333333,1,0,0,226.33333333333334,226.33333333333334,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,Significant_Tap_5362,0.4714045207910317,2,0,0,135.09166666666667,95.6,1ictoqj; 1ixthsk,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,TiestoForever,0.5000000000000001,1,0,0,400.3333333333333,400.3333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,der-gaster-981,0.0,1,0,0,277.1666666666667,277.1666666666667,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,iPurchaseBitcoin,0.392232270276368,1,0,0,229.98333333333332,229.98333333333332,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,MisanthropicSocrates,platour220,1.0,2,0,0,221.11666666666667,69.73333333333333,1ictoqj; 1ixthsk,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Safe-Painter-9618,Significant_Tap_5362,0.0,1,0,0,51.75,51.75,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Safe-Painter-9618,TiestoForever,0.0,2,0,0,418.5,210.33333333333334,1ictoqj; 1j7zdzm,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Safe-Painter-9618,der-gaster-981,0.0,1,0,0,50.833333333333336,50.833333333333336,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Safe-Painter-9618,iPurchaseBitcoin,0.0,4,1,2,48.275,3.65,1ictoqj; 1idzpvi; 1iyv29m; 1j16bq0,,,strong_temporal_sync,robust
+iPurchaseBitcoin,Safe-Painter-9618,platour220,0.3333333333333333,1,0,0,296.06666666666666,296.06666666666666,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Significant_Tap_5362,TiestoForever,0.2357022603955158,1,0,0,574.9166666666666,574.9166666666666,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Significant_Tap_5362,der-gaster-981,0.0,1,0,0,102.58333333333333,102.58333333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Significant_Tap_5362,iPurchaseBitcoin,0.0,2,0,0,310.5833333333333,55.4,1ictoqj; 1igekvh,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,Significant_Tap_5362,platour220,0.4714045207910317,2,0,0,260.60833333333335,244.31666666666666,1ictoqj; 1ixthsk,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,TiestoForever,der-gaster-981,0.0,1,0,0,677.5,677.5,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,TiestoForever,iPurchaseBitcoin,0.0,1,0,0,630.3166666666667,630.3166666666667,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,TiestoForever,platour220,0.5000000000000001,1,0,0,330.6,330.6,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,der-gaster-981,iPurchaseBitcoin,0.2480694691784169,3,0,0,47.18333333333333,44.233333333333334,1i2qqs2; 1ictoqj; 1jir33z,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,der-gaster-981,platour220,0.0,1,0,0,346.9,346.9,1ictoqj,,,weak_temporal_overlap,weak_context
+iPurchaseBitcoin,iPurchaseBitcoin,platour220,0.392232270276368,1,0,0,299.71666666666664,299.71666666666664,1ictoqj,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,FuckYaHoeAssMom,0.0,1,0,0,3078.85,3078.85,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,GetRichQuickStocks,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,Complex-Card-2356,Ilovecash1,0.0,1,0,0,226.16666666666666,226.16666666666666,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,Inevitable-Notice351,1.0,2,0,0,894.2,791.7166666666667,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,Just-Shoe2689,0.5773502691896257,2,0,0,54.45,37.583333333333336,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,Nementon,0.5345224838248488,2,0,0,585.0166666666667,79.86666666666666,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,No-Plastic-4640,0.8164965809277261,2,0,0,459.93333333333334,114.3,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,Odd-Following-247,0.2143926761081096,2,0,0,285.45,96.83333333333333,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,Ovniologo2,1.0,2,0,0,955.9583333333334,121.73333333333333,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Complex-Card-2356,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,FuckYaHoeAssMom,GetRichQuickStocks,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,FuckYaHoeAssMom,Ilovecash1,0.0,1,0,0,2852.6833333333334,2852.6833333333334,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,FuckYaHoeAssMom,Inevitable-Notice351,0.0,1,0,0,3870.5666666666666,3870.5666666666666,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,FuckYaHoeAssMom,Just-Shoe2689,0.0,1,0,0,3041.266666666667,3041.266666666667,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,FuckYaHoeAssMom,Nementon,0.0,1,0,0,4169.016666666666,4169.016666666666,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,FuckYaHoeAssMom,No-Plastic-4640,0.0,1,0,0,3884.4166666666665,3884.4166666666665,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,FuckYaHoeAssMom,Odd-Following-247,0.2770985140843599,2,0,0,1917.1666666666667,658.65,1i0dlzn; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,FuckYaHoeAssMom,Ovniologo2,0.0,1,0,0,1288.6666666666667,1288.6666666666667,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,FuckYaHoeAssMom,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,GetRichQuickStocks,Ilovecash1,0.0,1,0,0,72.08333333333333,72.08333333333333,1jbvufy,,,weak_temporal_overlap,weak_context
+Odd-Following-247,GetRichQuickStocks,Inevitable-Notice351,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,GetRichQuickStocks,Just-Shoe2689,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,GetRichQuickStocks,Nementon,0.0,1,0,0,161.36666666666667,161.36666666666667,1ixjr8q,,,weak_temporal_overlap,weak_context
+Odd-Following-247,GetRichQuickStocks,No-Plastic-4640,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,GetRichQuickStocks,Odd-Following-247,0.203390751048117,1,0,0,36.28333333333333,36.28333333333333,1j0rlxd,,,weak_temporal_overlap,weak_context
+Odd-Following-247,GetRichQuickStocks,Ovniologo2,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,GetRichQuickStocks,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,Ilovecash1,Inevitable-Notice351,0.0,1,0,0,1017.8833333333333,1017.8833333333333,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Ilovecash1,Just-Shoe2689,0.0,2,0,0,1061.6166666666668,188.58333333333334,1i2t008; 1jjhcq9,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Ilovecash1,Nementon,0.0,1,0,0,1316.3333333333333,1316.3333333333333,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Ilovecash1,No-Plastic-4640,0.0,2,0,0,1202.5166666666667,1031.7333333333333,1i2t008; 1jjhcq9,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Ilovecash1,Odd-Following-247,0.2143926761081096,1,0,0,323.0,323.0,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Ilovecash1,Ovniologo2,0.0,1,0,0,1564.0166666666667,1564.0166666666667,1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Ilovecash1,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,Inevitable-Notice351,Just-Shoe2689,0.5773502691896257,2,0,0,948.65,829.3,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Inevitable-Notice351,Nementon,0.5345224838248488,2,0,0,687.5,298.45,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Inevitable-Notice351,No-Plastic-4640,0.8164965809277261,2,0,1,448.1166666666667,13.85,1i1eeya; 1i2t008,,,weak_temporal_overlap,fragile_long_median
+Odd-Following-247,Inevitable-Notice351,Odd-Following-247,0.2143926761081096,2,0,0,608.75,522.6166666666667,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Inevitable-Notice351,Ovniologo2,1.0,2,0,0,1728.4250000000002,874.95,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Inevitable-Notice351,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,Just-Shoe2689,Nementon,0.3086066999241837,2,0,1,568.15,8.55,1i1eeya; 1i2t008,,,weak_temporal_overlap,fragile_long_median
+Odd-Following-247,Just-Shoe2689,No-Plastic-4640,0.4714045207910317,3,0,0,561.35,185.61666666666667,1i1eeya; 1i2t008; 1jjhcq9,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Just-Shoe2689,Odd-Following-247,0.0,2,0,0,339.9,134.41666666666666,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Just-Shoe2689,Ovniologo2,0.5773502691896257,2,0,0,972.8249999999999,193.05,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Just-Shoe2689,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,Nementon,No-Plastic-4640,0.4364357804719847,3,0,0,284.6,194.16666666666666,1i1eeya; 1i2t008; 1j41zi9,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Nementon,Odd-Following-247,0.0,3,0,0,993.3333333333334,553.9333333333333,1i1eeya; 1i2t008; 1j41zi9,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Nementon,Ovniologo2,0.5345224838248488,2,0,0,1540.975,201.6,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Nementon,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,No-Plastic-4640,Odd-Following-247,0.0,3,0,0,607.2,359.76666666666665,1i1eeya; 1i2t008; 1j41zi9,,,weak_temporal_overlap,weak_context
+Odd-Following-247,No-Plastic-4640,Ovniologo2,0.8164965809277261,2,0,1,1301.5916666666667,7.433333333333334,1i1eeya; 1i2t008,,,weak_temporal_overlap,fragile_long_median
+Odd-Following-247,No-Plastic-4640,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Odd-Following-247,Odd-Following-247,Ovniologo2,0.2143926761081096,2,0,0,1119.675,352.3333333333333,1i1eeya; 1i2t008,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Odd-Following-247,newengland20,0.2143926761081096,2,0,0,1156.1833333333334,683.1,1hwe5yv; 1j7i572,,,weak_temporal_overlap,weak_context
+Odd-Following-247,Ovniologo2,newengland20,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Different_Walrus_574,GrandmasCervix,0.2324952774876386,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Different_Walrus_574,Human-Key-7984,0.2324952774876386,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Different_Walrus_574,LimitAlternative2629,0.0,1,0,0,966.05,966.05,1k7ypi2,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,Different_Walrus_574,Quantumosaur,0.2324952774876386,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Different_Walrus_574,supahcalah,0.2324952774876386,1,0,0,414.9,414.9,1k6i05t,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,Different_Walrus_574,the_gamer_guy56,0.2324952774876386,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,GrandmasCervix,Human-Key-7984,0.0,2,0,0,298.95,183.73333333333332,1i1i7q4; 1iyv29m,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,GrandmasCervix,LimitAlternative2629,0.0,1,0,0,351.18333333333334,351.18333333333334,1iyv29m,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,GrandmasCervix,Quantumosaur,0.0,1,0,0,194.56666666666666,194.56666666666666,1iyv29m,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,GrandmasCervix,supahcalah,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,GrandmasCervix,the_gamer_guy56,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Human-Key-7984,LimitAlternative2629,0.4082482904638631,2,0,0,115.875,64.3,1iyv29m; 1j0sqh4,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,Human-Key-7984,Quantumosaur,0.0,1,0,0,378.3,378.3,1iyv29m,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,Human-Key-7984,supahcalah,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Human-Key-7984,the_gamer_guy56,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,LimitAlternative2629,Quantumosaur,0.4082482904638631,2,0,0,618.3833333333333,545.75,1iyv29m; 1j7i572,,,weak_temporal_overlap,weak_context
+Different_Walrus_574,LimitAlternative2629,supahcalah,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,LimitAlternative2629,the_gamer_guy56,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Quantumosaur,supahcalah,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,Quantumosaur,the_gamer_guy56,0.0,0,0,0,,,,,,no_temporal_sync,none
+Different_Walrus_574,supahcalah,the_gamer_guy56,0.0,0,0,0,,,,,,no_temporal_sync,none
+DuckDuckMosss,DuckDuckMosss,OutlandishnessOld903,0.2390457218668787,0,0,0,,,,,,no_temporal_sync,none
+DuckDuckMosss,DuckDuckMosss,newtobitcoin111,0.2390457218668787,1,0,0,571.3833333333333,571.3833333333333,1ictoqj,,,weak_temporal_overlap,weak_context
+DuckDuckMosss,OutlandishnessOld903,newtobitcoin111,0.0,0,0,0,,,,,,no_temporal_sync,none

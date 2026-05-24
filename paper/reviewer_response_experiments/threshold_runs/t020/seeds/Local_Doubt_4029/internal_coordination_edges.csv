@@ -1,0 +1,10 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+Julian_256,Local_Doubt_4029,2,0.2560229543029373,co_target,
+Vimes-NW,You3betI4bet,2,,co_negative_target,0.6666666666666666
+AKcryptoGUY,Local_Doubt_4029,2,,co_negative_target,0.371235735322565
+FuckYaHoeAssMom,Local_Doubt_4029,2,,co_negative_target,0.371235735322565
+Julian_256,Local_Doubt_4029,2,,co_negative_target,0.371235735322565
+Local_Doubt_4029,OwnPersonalSatan,2,,co_negative_target,0.3031127086090645
+Local_Doubt_4029,Vimes-NW,2,,co_negative_target,0.3031127086090645
+Local_Doubt_4029,You3betI4bet,2,,co_negative_target,0.3031127086090645
+CryptoBlobSwag,Local_Doubt_4029,2,,co_negative_target,0.2145798930069792

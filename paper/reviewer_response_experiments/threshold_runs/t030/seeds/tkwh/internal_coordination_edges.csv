@@ -1,0 +1,7 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+Illustrious-Use-5650,tkwh,2,,co_negative_target,0.4082482904638631
+abnormalinvesting,devonthed00d,2,,co_negative_target,0.3651483716701107
+abnormalinvesting,jayvm01,2,,co_negative_target,0.3651483716701107
+TinSodder,tkwh,2,,co_negative_target,0.3333333333333333
+devonthed00d,tkwh,2,,co_negative_target,0.3333333333333333
+jayvm01,tkwh,2,,co_negative_target,0.3333333333333333

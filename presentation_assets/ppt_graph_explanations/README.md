@@ -28,6 +28,10 @@ Generated from current local pipeline outputs.
    Put in Stage 2 / temporal confidence section.  
    Purpose: harvested and JG87919 both have co-negative structure, but confidence separates robust timing from fragile timing.
 
+7. `slide_47_temporal_confidence_harvested_vs_odd.svg`  
+   Recommended replacement for the JG87919 version in the paper/PPT.  
+   Purpose: compares two official top-20 seed groups. harvested has Stage 1 structure plus robust temporal evidence, while Odd-Following-247 has strong Stage 1 structure but no reliable Stage 2 timing evidence.
+
 ## Key speaking point
 
 Co-negative works because it compresses many negative comment edges into a shared-target pattern. It is stricter than count/co-target because it asks whether accounts repeatedly oppose the same targets, not merely whether they appear in the same discussion space.

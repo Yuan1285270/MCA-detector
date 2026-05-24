@@ -1,0 +1,15 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+AmbitiousBread,sirspeedy99,2,0.1906505580994005,co_target,
+B_Traven9272,sirspeedy99,2,0.1556655288401233,co_target,
+Halo_Chief117,sirspeedy99,2,0.1556655288401233,co_target,
+AlpsApprehensive4687,sirspeedy99,2,,co_negative_target,0.2886751345948128
+Antitdeveloper,sirspeedy99,2,,co_negative_target,0.2886751345948128
+B_Traven9272,sirspeedy99,2,,co_negative_target,0.2886751345948128
+MilStd,sirspeedy99,2,,co_negative_target,0.2886751345948128
+AmbitiousBread,sirspeedy99,2,,co_negative_target,0.2357022603955158
+ApoplecticAndroid,sirspeedy99,2,,co_negative_target,0.2357022603955158
+Content_Cream2475,sirspeedy99,2,,co_negative_target,0.2041241452319315
+Emergency_Trick_4930,sirspeedy99,2,,co_negative_target,0.2041241452319315
+Halo_Chief117,sirspeedy99,2,,co_negative_target,0.2041241452319315
+MushroomDizzy649,sirspeedy99,2,,co_negative_target,0.2041241452319315
+TripsterX,sirspeedy99,2,,co_negative_target,0.2041241452319315

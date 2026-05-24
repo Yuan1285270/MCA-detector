@@ -1,0 +1,11 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+CorneliusFudgem,_Starter,3,0.385724353194935,co_target,
+Anzu_Yamasaki,_Starter,2,0.2659092125098189,co_target,
+Anzu_Yamasaki,CorneliusFudgem,3,0.2651527032956871,co_target,
+Wobbalabba776,Wsemenske,2,,co_negative_target,0.3779644730092272
+CorneliusFudgem,_Starter,2,,co_negative_target,0.3162277660168379
+Anzu_Yamasaki,_Starter,2,,co_negative_target,0.3126071225379087
+PolarPelly,Wsemenske,2,,co_negative_target,0.2672612419124244
+CorneliusFudgem,Wsemenske,2,,co_negative_target,0.2390457218668787
+Wsemenske,mymomsaidiamsmart,2,,co_negative_target,0.2390457218668787
+Anzu_Yamasaki,Wsemenske,2,,co_negative_target,0.2036164386374079

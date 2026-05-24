@@ -1,0 +1,7 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+tkwh,tkwh,0,True,seed,0.0,0.0,0.0,0.0,0,
+tkwh,Illustrious-Use-5650,1,True,tier1_co_negative_direct,0.4082482904638631,0.0,0.0,0.0,0,
+tkwh,TinSodder,1,True,tier1_co_negative_direct,0.3333333333333333,0.0,0.0,0.0,0,
+tkwh,devonthed00d,1,True,tier1_co_negative_direct,0.3333333333333333,0.0,0.0,0.0,0,
+tkwh,jayvm01,1,True,tier1_co_negative_direct,0.3333333333333333,0.0,0.0,0.0,0,
+tkwh,abnormalinvesting,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"devonthed00d, jayvm01"

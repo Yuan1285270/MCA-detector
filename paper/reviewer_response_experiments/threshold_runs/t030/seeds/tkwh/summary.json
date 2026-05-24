@@ -1,0 +1,21 @@
+{
+  "seed": "tkwh",
+  "candidate_member_count": 6,
+  "tiered_expansion_member_count": 6,
+  "tier1_co_negative_count": 4,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 1,
+  "co_target_neighbor_count": 15,
+  "co_negative_neighbor_count": 11,
+  "tag_similarity_neighbor_count": 15,
+  "internal_coordination_edge_count": 6,
+  "shared_negative_target_count": 19,
+  "avg_rhetorical_score": 8.333333333333334,
+  "avg_non_neutral_post_ratio": 0.16666666666666666,
+  "avg_oppositional_stance_ratio": 0.5435897435897435,
+  "automation_anomaly_fraction": 0.16666666666666666,
+  "avg_anomaly_score": 1.282562134168482,
+  "total_comment_count": 82.0,
+  "total_analyzed_post_count": 3.0
+}

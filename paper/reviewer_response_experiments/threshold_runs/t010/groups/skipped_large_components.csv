@@ -1,0 +1,2 @@
+layer,threshold,component_size,reason
+co_negative_target,0.3,927,larger_than_max_group_size
