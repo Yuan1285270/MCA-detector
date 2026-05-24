@@ -1,6 +1,6 @@
 # Adjacency Matrix Module
 
-這個資料夾負責把 Reddit account-level 資料轉成 graph artifacts。它刻意放在 repo 根目錄，和 `behavior/`、`llm/` 平行，定位是獨立的 graph construction 模組。
+這個資料夾負責把 Reddit account-level 資料轉成 graph artifacts。它刻意放在 repo 根目錄，和 `llm/`、`mca-scoring/`、`coordination-expansion/` 平行，定位是獨立的 graph construction 模組。
 
 目前輸出不使用 dense matrix，而是：
 

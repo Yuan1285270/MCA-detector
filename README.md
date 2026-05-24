@@ -26,11 +26,6 @@ Temporal synchrony helps separate same-ideology activity from stronger coordinat
 
 ## Modules
 
-- `behavior/`
-  - Legacy account-level behavior feature and anomaly analysis module.
-  - Its useful outputs have been folded into the current feature matrix / MCA scoring flow; it is kept for reproducibility, not as the current main pipeline entry point.
-  - See `behavior/README.md` for details.
-
 - `llm/`
   - LLM-based Reddit post/comment analysis pipeline.
   - Includes data cleaning, local Ollama analysis, Gemini / Vertex AI compatibility, and exploratory post clustering.
@@ -52,13 +47,12 @@ Temporal synchrony helps separate same-ideology activity from stronger coordinat
   - Turns graph layers into reviewable coordination groups, then verifies them with temporal synchrony.
   - See `coordination-expansion/README.md` for details.
 
-- `MCA-demo-site/`
-  - Static multi-page client/demo dashboard.
-  - Shows group-level risk review, account-level abnormal accounts, and methodology notes.
-  - Presentation layer only; it consumes pipeline outputs but does not define the analysis method.
-  - See `MCA-demo-site/README.md` for details.
+- `paper/`
+  - TCSE paper source, final screenshots, literature audit notes, and lightweight reviewer-response experiments.
 
-## Project vs Demo Site
+Legacy modules such as the old standalone `behavior/` analysis and removed demo-site source are kept locally under `Archive/` when needed, but are not part of the current GitHub-facing pipeline.
+
+## Project vs Visualization
 
 The core project is the reproducible analysis pipeline:
 
@@ -66,7 +60,7 @@ The core project is the reproducible analysis pipeline:
 raw data -> LLM analysis -> features / graphs -> scoring -> expansion -> verification -> output tables
 ```
 
-`MCA-demo-site/` is a separate presentation layer. It reads the generated output tables and turns them into a clearer client/demo experience. The demo site should not be treated as the research method, the source of truth, or a replacement for the pipeline outputs.
+The demo website is a separate presentation layer outside the current core repository. It reads generated output tables and turns them into a clearer review experience. The demo site should not be treated as the research method, the source of truth, or a replacement for the pipeline outputs.
 
 ## Project Manual
 
@@ -137,6 +131,6 @@ coordination-expansion/output/account-roles/account_role_table.csv
 
 - `main`: shared stable baseline
 - `feature/llm-data-pipeline`: LLM data pipeline work
-- `terry-behavior`: behavior analysis work
+- `terry-behavior`: historical behavior analysis branch
 
 Feature branches should be merged back into `main` after review.

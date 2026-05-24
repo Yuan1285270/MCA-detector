@@ -119,9 +119,9 @@ comment_author -> post_author
 
 若留言反對或攻擊原貼文，則形成負向互動；若支持或補充，則形成正向互動。
 
-### 4.2 `behavior/`（legacy）
+### 4.2 Legacy behavior analysis
 
-早期負責建立帳號行為特徵與 anomaly label。現在正式 pipeline 不再以此資料夾作為主入口；需要的行為欄位已整合到新版 account feature matrix / MCA scoring 流程。主要特徵包括：
+早期曾有獨立 `behavior/` 資料夾負責建立帳號行為特徵與 anomaly label。現在正式 pipeline 不再以此資料夾作為主入口；需要的行為欄位已整合到新版 account feature matrix / MCA scoring 流程。舊模組如需保留，放在本機 `Archive/`。主要特徵包括：
 
 - `comment_count`
 - `post_count`
