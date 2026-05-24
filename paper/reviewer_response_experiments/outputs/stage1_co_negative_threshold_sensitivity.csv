@@ -1,0 +1,4 @@
+co_negative_threshold,groups,membership_rows,candidate_accounts,pair_rows,strong_pairs,moderate_pairs,robust_pairs,moderate_review_pairs
+0.1,20,178,172,928,13,8,3,44
+0.2,20,178,172,928,13,8,3,44
+0.3,20,55,55,92,4,0,2,2

@@ -1,0 +1,4 @@
+setting,account_or_group_scope,main_output,evidence_available,main_limitation,groups,unique_accounts,pair_evidence_rows,strong_pairs,moderate_pairs,robust_pairs
+MCA only,20 seed accounts,ranked seed list,account-level score only,does not show group membership or synchronized behavior,0,20,0,0,0,0
+MCA + Stage 1 expansion,candidate coordination groups,seed neighborhoods and shared targets,"co-negative, support layers, tiers, shared negative targets",may capture ideological alignment without timing evidence,20,172,0,0,0,0
+MCA + Stage 1 + Stage 2,candidate groups with pair evidence,review-priority groups and pair-level temporal evidence,shared targets plus same-thread short-window timing,still review-oriented; temporal coincidence remains possible,20,172,928,13,8,3

@@ -37,6 +37,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--top-n", type=int, default=100)
     parser.add_argument(
+        "--min-score",
+        type=float,
+        default=0.0,
+        help="Minimum mca_score_primary to include in top_accounts output. Accounts below this threshold are excluded even if they rank in top-N.",
+    )
+    parser.add_argument(
         "--primary-weights",
         nargs=4,
         type=float,
@@ -224,15 +230,25 @@ def main() -> None:
     apply_weights(scores, args.alt_weights, "mca_score_alt")
 
     scores.to_csv(args.output_dir / "account_mca_scores.csv", index=False)
-    scores.sort_values("mca_score_primary", ascending=False).head(args.top_n).to_csv(
-        args.output_dir / "top_accounts_primary.csv", index=False
+
+    top_primary = (
+        scores[scores["mca_score_primary"] >= args.min_score]
+        .sort_values("mca_score_primary", ascending=False)
+        .head(args.top_n)
     )
-    scores.sort_values("mca_score_alt", ascending=False).head(args.top_n).to_csv(
-        args.output_dir / "top_accounts_alt.csv", index=False
+    top_primary.to_csv(args.output_dir / "top_accounts_primary.csv", index=False)
+
+    top_alt = (
+        scores[scores["mca_score_alt"] >= args.min_score]
+        .sort_values("mca_score_alt", ascending=False)
+        .head(args.top_n)
     )
+    top_alt.to_csv(args.output_dir / "top_accounts_alt.csv", index=False)
 
     print(f"MCA scores written to {args.output_dir}")
-    print(f"Accounts: {len(scores):,}")
+    print(f"Accounts scored: {len(scores):,}")
+    print(f"Candidates (primary, min_score={args.min_score}): {len(top_primary):,}")
+    print(f"Candidates (alt,     min_score={args.min_score}): {len(top_alt):,}")
 
 
 if __name__ == "__main__":

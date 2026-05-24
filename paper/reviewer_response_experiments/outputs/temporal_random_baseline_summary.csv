@@ -1,0 +1,4 @@
+pair_set,pairs,same_post_pairs,same_post_pair_rate,strong_pairs,strong_pair_rate,moderate_pairs,moderate_pair_rate,robust_pairs,robust_pair_rate,within_5min_events,within_30min_events,mean_same_post_count,random_seed,min_comments_per_random_author,max_comments_per_author,eligible_random_authors
+candidate_group_pairs,928,424,0.45689655172413796,13,0.014008620689655173,8,0.008620689655172414,3,0.003232758620689655,14,73,0.6928879310344828,42,,100,
+random_active_pairs_n5000,5000,425,0.085,15,0.003,0,0.0,1,0.0002,16,63,0.096,42,5.0,100,6385.0
+activity_controlled_random_pairs,928,110,0.11853448275862069,7,0.007543103448275862,4,0.004310344827586207,2,0.0021551724137931034,7,23,0.1540948275862069,42,5.0,100,6255.0
