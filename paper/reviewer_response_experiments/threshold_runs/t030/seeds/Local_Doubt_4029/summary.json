@@ -1,0 +1,21 @@
+{
+  "seed": "Local_Doubt_4029",
+  "candidate_member_count": 7,
+  "tiered_expansion_member_count": 7,
+  "tier1_co_negative_count": 6,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 0,
+  "co_target_neighbor_count": 15,
+  "co_negative_neighbor_count": 7,
+  "tag_similarity_neighbor_count": 15,
+  "internal_coordination_edge_count": 8,
+  "shared_negative_target_count": 12,
+  "avg_rhetorical_score": 16.309523809523807,
+  "avg_non_neutral_post_ratio": 0.2857142857142857,
+  "avg_oppositional_stance_ratio": 0.669501133786848,
+  "automation_anomaly_fraction": 0.14285714285714285,
+  "avg_anomaly_score": 1.7583801348766743,
+  "total_comment_count": 77.0,
+  "total_analyzed_post_count": 6.0
+}

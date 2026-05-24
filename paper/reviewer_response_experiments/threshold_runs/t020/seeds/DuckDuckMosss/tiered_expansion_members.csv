@@ -1,0 +1,4 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+DuckDuckMosss,DuckDuckMosss,0,True,seed,0.0,0.0,0.0,0.0,0,
+DuckDuckMosss,OutlandishnessOld903,1,True,tier1_co_negative_direct,0.2390457218668787,0.0,0.0,0.0,0,
+DuckDuckMosss,newtobitcoin111,1,True,tier1_co_negative_direct,0.2390457218668787,0.0,0.0,0.0,0,

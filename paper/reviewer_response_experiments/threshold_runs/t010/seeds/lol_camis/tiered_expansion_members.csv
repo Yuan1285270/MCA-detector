@@ -1,0 +1,24 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+lol_camis,lol_camis,0,True,seed,0.0,0.0,0.0,0.0,0,
+lol_camis,_Zzik_,1,True,tier1_co_negative_direct,0.3378299530160344,0.0,0.0,0.2430223607736704,0,
+lol_camis,Basic_Professor2650,1,True,tier1_co_negative_direct,0.3378299530160344,0.0,0.0,0.0,0,
+lol_camis,CilicianKnightAni,1,True,tier1_co_negative_direct,0.2987187771381671,0.0,0.0,0.0,0,
+lol_camis,SXYBZZT,1,True,tier1_co_negative_direct,0.2698684662355929,0.0,0.0,0.0,0,
+lol_camis,Lurchco3953,1,True,tier1_co_negative_direct,0.2572488173806996,0.0,0.0,0.0,0,
+lol_camis,ConfidenceOk5160,1,True,tier1_co_negative_direct,0.2435946707925589,0.0,0.0,0.0,0,
+lol_camis,DentedDemonCore,1,True,tier1_co_negative_direct,0.2435946707925589,0.0,0.0,0.0,0,
+lol_camis,Dismal-Grapefruit966,1,True,tier1_co_negative_direct,0.2435946707925589,0.0,0.0,0.0,0,
+lol_camis,AmphibianAway8217,1,True,tier1_co_negative_direct,0.230828357214681,0.0,0.0,0.0,0,
+lol_camis,M3Seriesz,1,True,tier1_co_negative_direct,0.230828357214681,0.0,0.0,0.0,0,
+lol_camis,NikEy,1,True,tier1_co_negative_direct,0.230828357214681,0.0,0.0,0.0,0,
+lol_camis,gomurifle,1,True,tier1_co_negative_direct,0.230828357214681,0.0,0.0,0.0,0,
+lol_camis,turdturd1,1,True,tier1_co_negative_direct,0.230828357214681,0.0,0.0,0.0,0,
+lol_camis,CashFlowOrBust,1,True,tier1_co_negative_direct,0.2109591731328632,0.0,0.0,0.0,0,
+lol_camis,ChipNDipPlus,1,True,tier1_co_negative_direct,0.2109591731328632,0.0,0.0,0.0,0,
+lol_camis,choppedyota,1,True,tier1_co_negative_direct,0.2109591731328632,0.0,0.0,0.0,0,
+lol_camis,TechHonie,1,True,tier1_co_negative_direct,0.208203611863458,0.0,0.0,0.0,0,
+lol_camis,Anzu_Yamasaki,1,True,tier1_co_negative_direct,0.2005972683062704,0.0,0.0,0.0,0,
+lol_camis,Born-Chipmunk-7086,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,3,"ConfidenceOk5160, Dismal-Grapefruit966, SXYBZZT"
+lol_camis,brainrotbro,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,3,"ConfidenceOk5160, Dismal-Grapefruit966, SXYBZZT"
+lol_camis,user_name_checks_out,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"ChipNDipPlus, CilicianKnightAni"
+lol_camis,zxsmart,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"Anzu_Yamasaki, TechHonie"

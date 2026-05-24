@@ -1,0 +1,12 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+BtcKing1111,BtcKing1111,0,True,seed,0.0,0.0,0.0,0.0,0,
+BtcKing1111,90020,1,True,tier1_co_negative_direct,0.2871751381120287,0.0,0.0,0.0,0,
+BtcKing1111,Any_Mud_1628,1,True,tier1_co_negative_direct,0.2871751381120287,0.0,0.0,0.0,0,
+BtcKing1111,groobler17,1,True,tier1_co_negative_direct,0.2721248586745504,0.0,0.0,0.0,0,
+BtcKing1111,909dave,1,True,tier1_co_negative_direct,0.234477518395919,0.0,0.0,0.0,0,
+BtcKing1111,_Starter,1,True,tier1_co_negative_direct,0.231627883938726,0.0,0.0,0.1959890310974433,0,
+BtcKing1111,anonymoushusky11,1,True,tier1_co_negative_direct,0.222189016693211,0.0,0.0,0.0,0,
+BtcKing1111,2xfun,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"Any_Mud_1628, _Starter"
+BtcKing1111,BitcoinMD,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"909dave, _Starter"
+BtcKing1111,DavidGunn454,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,3,"909dave, Any_Mud_1628, groobler17"
+BtcKing1111,KaleidoscopeShot8153,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"Any_Mud_1628, _Starter"

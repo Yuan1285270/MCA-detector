@@ -49,6 +49,11 @@ class BuildConfig:
     tag_min_nonneutral_tags: int
     tag_top_k: int
     tag_threshold: float
+    co_target_top_k: int
+    co_target_threshold: float
+    co_negative_target_threshold: float
+    co_target_min_shared_targets: int
+    co_target_max_sources_per_target: int
     restrict_tag_nodes_to_interaction_graph: bool
     include_manipulation_intensity: bool
 
@@ -115,6 +120,36 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=0.75,
         help="Minimum cosine similarity retained for tag-similarity edges.",
+    )
+    parser.add_argument(
+        "--co-target-top-k",
+        type=int,
+        default=25,
+        help="Maximum co-target neighbors retained per account.",
+    )
+    parser.add_argument(
+        "--co-target-threshold",
+        type=float,
+        default=0.15,
+        help="Minimum cosine similarity retained for shared-target engagement edges.",
+    )
+    parser.add_argument(
+        "--co-negative-target-threshold",
+        type=float,
+        default=0.20,
+        help="Minimum cosine similarity retained for shared negative-target edges.",
+    )
+    parser.add_argument(
+        "--co-target-min-shared-targets",
+        type=int,
+        default=2,
+        help="Minimum number of shared targets required for a co-target edge.",
+    )
+    parser.add_argument(
+        "--co-target-max-sources-per-target",
+        type=int,
+        default=200,
+        help="Per target, only keep the strongest source accounts before projection.",
     )
     parser.add_argument(
         "--allow-tag-only-nodes",
@@ -287,6 +322,7 @@ def build_interaction_edges(comments: pd.DataFrame) -> tuple[pd.DataFrame, dict]
     # Single/signed graph weight: stance direction from mean feedback, repeated
     # interaction strength from log frequency.
     edge_stats["weight_count"] = edge_stats["n_comments"].astype(float)
+    edge_stats["weight_target_engagement_profile"] = np.log1p(edge_stats["n_comments"])
     edge_stats["weight_signed"] = edge_stats["mean_edge_weight"] * np.log1p(
         edge_stats["n_comments"]
     )
@@ -295,6 +331,7 @@ def build_interaction_edges(comments: pd.DataFrame) -> tuple[pd.DataFrame, dict]
     # later analysis does not treat all edges as the same social relation.
     edge_stats["weight_positive"] = edge_stats["weight_signed"].clip(lower=0.0)
     edge_stats["weight_negative"] = (-edge_stats["weight_signed"]).clip(lower=0.0)
+    edge_stats["weight_target_negative_profile"] = np.log1p(edge_stats["oppositional_count"])
 
     # Zaman-inspired adjustment: low-degree interactions carry less evidence,
     # while high-activity sources and high-attention targets retain more weight.
@@ -446,6 +483,151 @@ def build_trigger_response_edges(comments: pd.DataFrame, posts: pd.DataFrame) ->
     return edge_stats, summary
 
 
+def build_co_target_edges(
+    edge_stats: pd.DataFrame,
+    *,
+    profile_weight_col: str,
+    output_weight_col: str,
+    threshold: float,
+    top_k: int,
+    min_shared_targets: int,
+    max_sources_per_target: int,
+) -> tuple[pd.DataFrame, dict]:
+    """Project commenter->target profiles into an undirected co-target graph.
+
+    Two source accounts are connected when they repeatedly point at the same
+    target authors. Cosine similarity keeps the projection from simply ranking
+    the most active commenters highest.
+    """
+    profile = edge_stats.loc[
+        edge_stats[profile_weight_col] > 0,
+        ["source_author", "target_author", profile_weight_col],
+    ].copy()
+    if profile.empty:
+        empty = pd.DataFrame(
+            columns=[
+                "source_author",
+                "target_author",
+                "shared_target_count",
+                output_weight_col,
+            ]
+        )
+        return empty, {
+            "edge_count": 0,
+            "candidate_profile_edge_count": 0,
+            "candidate_source_count": 0,
+            "candidate_target_count": 0,
+            "threshold": threshold,
+            "top_k": top_k,
+            "min_shared_targets": min_shared_targets,
+            "max_sources_per_target": max_sources_per_target,
+        }
+
+    profile = profile.sort_values(
+        ["target_author", profile_weight_col, "source_author"],
+        ascending=[True, False, True],
+    )
+    if max_sources_per_target > 0:
+        profile = profile.groupby("target_author", sort=False).head(max_sources_per_target).copy()
+
+    source_norm = (
+        profile.groupby("source_author")[profile_weight_col]
+        .apply(lambda values: float(np.sqrt(np.square(values).sum())))
+        .to_dict()
+    )
+    pair_dot: dict[tuple[str, str], float] = {}
+    pair_shared: dict[tuple[str, str], int] = {}
+
+    for _, target_edges in profile.groupby("target_author", sort=False):
+        if len(target_edges) < 2:
+            continue
+        sources = target_edges["source_author"].astype(str).to_numpy()
+        weights = target_edges[profile_weight_col].to_numpy(dtype=np.float64)
+        order = np.argsort(sources)
+        sources = sources[order]
+        weights = weights[order]
+        for left_idx in range(len(sources) - 1):
+            left = sources[left_idx]
+            left_weight = weights[left_idx]
+            for right_idx in range(left_idx + 1, len(sources)):
+                key = (left, sources[right_idx])
+                pair_dot[key] = pair_dot.get(key, 0.0) + float(left_weight * weights[right_idx])
+                pair_shared[key] = pair_shared.get(key, 0) + 1
+
+    records = []
+    for (source, target), dot_value in pair_dot.items():
+        shared_target_count = pair_shared[(source, target)]
+        if shared_target_count < min_shared_targets:
+            continue
+        denominator = source_norm.get(source, 0.0) * source_norm.get(target, 0.0)
+        if denominator <= 0:
+            continue
+        similarity = float(np.clip(dot_value / denominator, 0.0, 1.0))
+        if similarity >= threshold:
+            records.append(
+                {
+                    "source_author": source,
+                    "target_author": target,
+                    "shared_target_count": shared_target_count,
+                    output_weight_col: similarity,
+                }
+            )
+
+    co_edges = pd.DataFrame(records)
+    if co_edges.empty:
+        co_edges = pd.DataFrame(
+            columns=[
+                "source_author",
+                "target_author",
+                "shared_target_count",
+                output_weight_col,
+            ]
+        )
+    else:
+        co_edges = co_edges.sort_values(
+            [output_weight_col, "shared_target_count", "source_author", "target_author"],
+            ascending=[False, False, True, True],
+        ).reset_index(drop=True)
+        if top_k > 0:
+            left_ranked = co_edges[["source_author", "target_author", output_weight_col]].rename(
+                columns={"source_author": "account", "target_author": "neighbor"}
+            )
+            right_ranked = co_edges[["target_author", "source_author", output_weight_col]].rename(
+                columns={"target_author": "account", "source_author": "neighbor"}
+            )
+            ranked = (
+                pd.concat([left_ranked, right_ranked], ignore_index=True)
+                .sort_values(["account", output_weight_col, "neighbor"], ascending=[True, False, True])
+                .groupby("account", sort=False)
+                .head(top_k)
+            )
+            keep_pairs = {
+                tuple(sorted((str(row.account), str(row.neighbor))))
+                for row in ranked.itertuples(index=False)
+            }
+            co_edges["_pair"] = [
+                tuple(sorted((str(source), str(target))))
+                for source, target in zip(co_edges["source_author"], co_edges["target_author"], strict=True)
+            ]
+            co_edges = co_edges.loc[co_edges["_pair"].isin(keep_pairs)].drop(columns="_pair")
+            co_edges = co_edges.sort_values(
+                [output_weight_col, "shared_target_count", "source_author", "target_author"],
+                ascending=[False, False, True, True],
+            ).reset_index(drop=True)
+
+    summary = {
+        "edge_count": int(len(co_edges)),
+        "candidate_profile_edge_count": int(len(profile)),
+        "candidate_source_count": int(profile["source_author"].nunique()),
+        "candidate_target_count": int(profile["target_author"].nunique()),
+        "threshold": threshold,
+        "top_k": top_k,
+        "min_shared_targets": min_shared_targets,
+        "max_sources_per_target": max_sources_per_target,
+    }
+    return co_edges, summary
+
+
 def save_sparse_npz(
     path: Path,
     edges: pd.DataFrame,
@@ -465,8 +647,8 @@ def save_sparse_npz(
         col = edges[target_col].map(node_lookup).to_numpy(dtype=np.int64)
         data = edges[weight_col].to_numpy(dtype=np.float64)
         if mirror:
-            # Tag similarity is symmetric, so the sparse matrix stores both
-            # directions even though the edge CSV stores each pair once.
+            # Symmetric graph layers store each edge once in CSV and both
+            # directions in the sparse matrix.
             row = np.concatenate([row, col])
             col = np.concatenate([col, row[: len(col)]])
             data = np.concatenate([data, data])
@@ -479,6 +661,8 @@ def save_sparse_npz(
 def write_edge_artifacts(
     edge_stats: pd.DataFrame,
     trigger_response_edges: pd.DataFrame,
+    co_target_edges: pd.DataFrame,
+    co_negative_target_edges: pd.DataFrame,
     nodes: pd.DataFrame,
     dirs: dict[str, Path],
 ) -> dict:
@@ -551,6 +735,24 @@ def write_edge_artifacts(
             "weight_trigger_response",
             trigger_response_edges,
             False,
+        ),
+        (
+            "co_target",
+            dirs["multi"],
+            "edges_co_target.csv",
+            "matrix_co_target.npz",
+            "weight_co_target",
+            co_target_edges,
+            True,
+        ),
+        (
+            "co_negative_target",
+            dirs["multi"],
+            "edges_co_negative_target.csv",
+            "matrix_co_negative_target.npz",
+            "weight_co_negative_target",
+            co_negative_target_edges,
+            True,
         ),
     ]
 
@@ -746,6 +948,11 @@ def main() -> None:
         tag_min_nonneutral_tags=args.tag_min_nonneutral_tags,
         tag_top_k=args.tag_top_k,
         tag_threshold=args.tag_threshold,
+        co_target_top_k=args.co_target_top_k,
+        co_target_threshold=args.co_target_threshold,
+        co_negative_target_threshold=args.co_negative_target_threshold,
+        co_target_min_shared_targets=args.co_target_min_shared_targets,
+        co_target_max_sources_per_target=args.co_target_max_sources_per_target,
         restrict_tag_nodes_to_interaction_graph=not args.allow_tag_only_nodes,
         include_manipulation_intensity=not args.tag_without_manipulation_intensity,
     )
@@ -757,8 +964,33 @@ def main() -> None:
     posts, post_summary = load_and_clean_posts(args.posts_path)
     edge_stats, graph_summary = build_interaction_edges(comments)
     trigger_response_edges, trigger_response_summary = build_trigger_response_edges(comments, posts)
+    co_target_edges, co_target_summary = build_co_target_edges(
+        edge_stats,
+        profile_weight_col="weight_target_engagement_profile",
+        output_weight_col="weight_co_target",
+        threshold=args.co_target_threshold,
+        top_k=args.co_target_top_k,
+        min_shared_targets=args.co_target_min_shared_targets,
+        max_sources_per_target=args.co_target_max_sources_per_target,
+    )
+    co_negative_target_edges, co_negative_target_summary = build_co_target_edges(
+        edge_stats,
+        profile_weight_col="weight_target_negative_profile",
+        output_weight_col="weight_co_negative_target",
+        threshold=args.co_negative_target_threshold,
+        top_k=args.co_target_top_k,
+        min_shared_targets=args.co_target_min_shared_targets,
+        max_sources_per_target=args.co_target_max_sources_per_target,
+    )
     nodes = build_node_index(edge_stats)
-    artifact_summary = write_edge_artifacts(edge_stats, trigger_response_edges, nodes, dirs)
+    artifact_summary = write_edge_artifacts(
+        edge_stats,
+        trigger_response_edges,
+        co_target_edges,
+        co_negative_target_edges,
+        nodes,
+        dirs,
+    )
 
     tag_summary = None
     if not args.skip_tag_similarity:
@@ -781,6 +1013,8 @@ def main() -> None:
         "posts": post_summary,
         "interaction_graph": graph_summary,
         "trigger_response_graph": trigger_response_summary,
+        "co_target_graph": co_target_summary,
+        "co_negative_target_graph": co_negative_target_summary,
         "artifacts": artifact_summary,
     }
     write_json(dirs["root"] / "summary.json", summary)
@@ -793,6 +1027,11 @@ def main() -> None:
     print(
         "Trigger response: "
         f"{trigger_response_summary['trigger_response_edge_count']:,} directed frequency edges"
+    )
+    print(
+        "Co-target: "
+        f"{co_target_summary['edge_count']:,} shared-target edges; "
+        f"{co_negative_target_summary['edge_count']:,} shared negative-target edges"
     )
     if tag_summary:
         print(

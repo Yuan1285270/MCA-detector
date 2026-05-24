@@ -1,0 +1,8 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+Human-Key-7984,LimitAlternative2629,2,,co_negative_target,0.4082482904638631
+LimitAlternative2629,Quantumosaur,2,,co_negative_target,0.4082482904638631
+Different_Walrus_574,GrandmasCervix,2,,co_negative_target,0.2324952774876386
+Different_Walrus_574,Human-Key-7984,2,,co_negative_target,0.2324952774876386
+Different_Walrus_574,Quantumosaur,2,,co_negative_target,0.2324952774876386
+Different_Walrus_574,supahcalah,2,,co_negative_target,0.2324952774876386
+Different_Walrus_574,the_gamer_guy56,2,,co_negative_target,0.2324952774876386

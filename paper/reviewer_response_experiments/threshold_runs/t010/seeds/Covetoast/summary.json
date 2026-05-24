@@ -1,0 +1,21 @@
+{
+  "seed": "Covetoast",
+  "candidate_member_count": 4,
+  "tiered_expansion_member_count": 4,
+  "tier1_co_negative_count": 3,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 0,
+  "co_target_neighbor_count": 15,
+  "co_negative_neighbor_count": 3,
+  "tag_similarity_neighbor_count": 12,
+  "internal_coordination_edge_count": 6,
+  "shared_negative_target_count": 8,
+  "avg_rhetorical_score": 12.8125,
+  "avg_non_neutral_post_ratio": 0.25,
+  "avg_oppositional_stance_ratio": 0.35074404761904754,
+  "automation_anomaly_fraction": 0.25,
+  "avg_anomaly_score": -2.878455213502326,
+  "total_comment_count": 100.0,
+  "total_analyzed_post_count": 4.0
+}

@@ -1,0 +1,4 @@
+signal,status,reason,paper_use
+text_fingerprint_distance,removed_from_formal_stage2,"TF-IDF/cosine style text distance behaved like topic similarity in a single-topic Bitcoin community, not reliable shared-operator evidence.",Threats to validity and signal pruning table.
+account_lifecycle_overlap,removed_from_formal_stage2,Lifecycle and activation-window overlap did not separate harvested-type positives from independent same-topic users.,Threats to validity and signal pruning table.
+temporal_synchrony,kept_as_formal_stage2,Same-thread short-window co-presence is the clearest review signal for candidate group verification in the current data.,Core Stage 2 evidence.

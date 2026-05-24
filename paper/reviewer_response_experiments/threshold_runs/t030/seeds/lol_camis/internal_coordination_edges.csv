@@ -1,0 +1,4 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+_Zzik_,lol_camis,3,0.2430223607736704,co_target,
+Basic_Professor2650,lol_camis,3,,co_negative_target,0.3378299530160344
+_Zzik_,lol_camis,3,,co_negative_target,0.3378299530160344

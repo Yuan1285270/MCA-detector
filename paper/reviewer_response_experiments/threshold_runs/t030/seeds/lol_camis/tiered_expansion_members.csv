@@ -1,0 +1,4 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+lol_camis,lol_camis,0,True,seed,0.0,0.0,0.0,0.0,0,
+lol_camis,_Zzik_,1,True,tier1_co_negative_direct,0.3378299530160344,0.0,0.0,0.2430223607736704,0,
+lol_camis,Basic_Professor2650,1,True,tier1_co_negative_direct,0.3378299530160344,0.0,0.0,0.0,0,

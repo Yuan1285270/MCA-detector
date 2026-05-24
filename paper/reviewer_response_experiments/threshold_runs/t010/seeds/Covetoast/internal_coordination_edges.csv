@@ -1,0 +1,7 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+FuckM0reFromR,Potential_Initial903,2,0.1726801065502042,co_target,
+Covetoast,Potential_Initial903,2,0.1581138830084189,co_target,
+FuckM0reFromR,Potential_Initial903,2,,co_negative_target,0.4714045207910317
+Covetoast,Potential_Initial903,2,,co_negative_target,0.4472135954999578
+Covetoast,FuckM0reFromR,2,,co_negative_target,0.2108185106778919
+Covetoast,IAMTHAT9,2,,co_negative_target,0.2108185106778919

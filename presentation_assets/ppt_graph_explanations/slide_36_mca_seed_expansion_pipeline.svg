@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="570" viewBox="0 0 930 570">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <style>
+    .title{font:700 28px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .subtitle{font:500 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .label{font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .small{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .tiny{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#64748b}
+    .num{font:700 17px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#17202a}
+    .claim{font:700 18px -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;fill:#0f766e}
+  </style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs><text x="44" y="48" class="title">Why MCA alone is not enough</text>
+<text x="44" y="74" class="subtitle">MCA ranks suspicious accounts. Expansion asks whether suspicion becomes group structure.</text><rect x="48" y="130" width="190" height="160" rx="16" fill="white" stroke="#d7dee8"/>
+<text x="66" y="166" class="label">MCA ranking</text>
+<text x="66" y="194" class="small">Select review seeds</text>
+<text x="66" y="245" class="num">20 seed accounts</text><path d="M 246 210 L 283 210" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/><rect x="270" y="130" width="190" height="160" rx="16" fill="white" stroke="#d7dee8"/>
+<text x="288" y="166" class="label">Stage 1 expansion</text>
+<text x="288" y="194" class="small">Find candidate groups</text>
+<text x="288" y="245" class="num">20 groups / 172 unique accounts</text><path d="M 468 210 L 505 210" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/><rect x="492" y="130" width="190" height="160" rx="16" fill="white" stroke="#d7dee8"/>
+<text x="510" y="166" class="label">Stage 2 verification</text>
+<text x="510" y="194" class="small">Check same-post timing</text>
+<text x="510" y="245" class="num">13 strong / 8 moderate pairs</text><path d="M 690 210 L 727 210" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/><rect x="714" y="130" width="190" height="160" rx="16" fill="white" stroke="#d7dee8"/>
+<text x="732" y="166" class="label">Final summary</text>
+<text x="732" y="194" class="small">Prioritize group review</text>
+<text x="732" y="245" class="num">23 P1 accounts across ranked groups</text><rect x="70" y="360" width="790" height="96" rx="12" fill="#dbeafe" stroke="#bfdbfe"/>
+<text x="96" y="395" class="label">Design reason</text>
+<text x="96" y="424" class="small">A high MCA account can be merely active, extreme, or anomalous. Seed expansion tests whether it has structured partners.</text>
+<text x="44" y="535" class="claim">MCA = entry point. Expansion + temporal evidence = investigation pipeline.</text>
+</svg>

@@ -1,0 +1,4 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+Any-Regular2960,LiveSlay,2,,co_negative_target,0.5163977794943222
+AIweWereWarned,Any-Regular2960,2,,co_negative_target,0.3202563076101742
+Any-Regular2960,CoffeeAlternative647,2,,co_negative_target,0.2407717061715384

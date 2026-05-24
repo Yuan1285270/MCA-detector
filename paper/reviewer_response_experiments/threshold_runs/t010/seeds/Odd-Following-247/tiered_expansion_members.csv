@@ -1,0 +1,12 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+Odd-Following-247,Odd-Following-247,0,True,seed,0.0,0.0,0.0,0.0,0,
+Odd-Following-247,FuckYaHoeAssMom,1,True,tier1_co_negative_direct,0.2770985140843599,0.0,0.0,0.0,0,
+Odd-Following-247,Complex-Card-2356,1,True,tier1_co_negative_direct,0.2143926761081096,0.0,0.0,0.0,0,
+Odd-Following-247,Ilovecash1,1,True,tier1_co_negative_direct,0.2143926761081096,0.0,0.0,0.0,0,
+Odd-Following-247,Inevitable-Notice351,1,True,tier1_co_negative_direct,0.2143926761081096,0.0,0.0,0.0,0,
+Odd-Following-247,Ovniologo2,1,True,tier1_co_negative_direct,0.2143926761081096,0.0,0.0,0.0,0,
+Odd-Following-247,newengland20,1,True,tier1_co_negative_direct,0.2143926761081096,0.0,0.0,0.0,0,
+Odd-Following-247,GetRichQuickStocks,1,True,tier1_co_negative_direct,0.203390751048117,0.0,0.0,0.0,0,
+Odd-Following-247,Just-Shoe2689,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,3,"Complex-Card-2356, Inevitable-Notice351, Ovniologo2"
+Odd-Following-247,Nementon,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,3,"Complex-Card-2356, Inevitable-Notice351, Ovniologo2"
+Odd-Following-247,No-Plastic-4640,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,3,"Complex-Card-2356, Inevitable-Notice351, Ovniologo2"

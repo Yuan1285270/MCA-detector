@@ -1,0 +1,9 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+Local_Doubt_4029,Local_Doubt_4029,0,True,seed,0.0,0.0,0.0,0.0,0,
+Local_Doubt_4029,Julian_256,1,True,tier1_co_negative_direct,0.371235735322565,0.0,0.0,0.2560229543029373,0,
+Local_Doubt_4029,AKcryptoGUY,1,True,tier1_co_negative_direct,0.371235735322565,0.0,0.0,0.0,0,
+Local_Doubt_4029,FuckYaHoeAssMom,1,True,tier1_co_negative_direct,0.371235735322565,0.0,0.0,0.0,0,
+Local_Doubt_4029,OwnPersonalSatan,1,True,tier1_co_negative_direct,0.3031127086090645,0.0,0.0,0.0,0,
+Local_Doubt_4029,Vimes-NW,1,True,tier1_co_negative_direct,0.3031127086090645,0.0,0.0,0.0,0,
+Local_Doubt_4029,You3betI4bet,1,True,tier1_co_negative_direct,0.3031127086090645,0.0,0.0,0.0,0,
+Local_Doubt_4029,CryptoBlobSwag,1,True,tier1_co_negative_direct,0.2145798930069792,0.0,0.0,0.0,0,

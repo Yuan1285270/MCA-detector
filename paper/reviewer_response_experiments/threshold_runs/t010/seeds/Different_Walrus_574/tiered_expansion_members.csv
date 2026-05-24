@@ -1,0 +1,8 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+Different_Walrus_574,Different_Walrus_574,0,True,seed,0.0,0.0,0.0,0.0,0,
+Different_Walrus_574,GrandmasCervix,1,True,tier1_co_negative_direct,0.2324952774876386,0.0,0.0,0.0,0,
+Different_Walrus_574,Human-Key-7984,1,True,tier1_co_negative_direct,0.2324952774876386,0.0,0.0,0.0,0,
+Different_Walrus_574,Quantumosaur,1,True,tier1_co_negative_direct,0.2324952774876386,0.0,0.0,0.0,0,
+Different_Walrus_574,supahcalah,1,True,tier1_co_negative_direct,0.2324952774876386,0.0,0.0,0.0,0,
+Different_Walrus_574,the_gamer_guy56,1,True,tier1_co_negative_direct,0.2324952774876386,0.0,0.0,0.0,0,
+Different_Walrus_574,LimitAlternative2629,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"Human-Key-7984, Quantumosaur"

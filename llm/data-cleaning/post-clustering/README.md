@@ -4,7 +4,7 @@ This folder contains the post clustering pipeline for the final capstone outputs
 
 It builds a post-level feature matrix from:
 
-1. Final Gemini post analysis scores and rhetoric tags
+1. Final LLM post analysis scores and rhetoric tags
 2. Comment feedback labels aggregated per post
 3. Lightweight text and metadata features
 4. K-Means clusters ranked by a review-oriented suspicion score
@@ -12,7 +12,6 @@ It builds a post-level feature matrix from:
 ## Files
 
 - `cluster_analyzed_posts.py`: builds final post features, runs K-Means, and writes cluster-level outputs
-- `visualize_post_clusters.py`: writes an HTML visualization of the final clusters
 - `../../../Archive/legacy_scripts/clean_posts.py`: legacy raw-post cleaning script kept for reproducibility, not used by the final clustering step
 - `output/`: generated CSV and JSON outputs
 
@@ -28,17 +27,15 @@ Outputs:
 - `output/cluster_summary.csv`
 - `output/suspicious_clusters.csv`
 - `output/cluster_config.json`
-- `output/cluster_visualization.html`
 
 ## Run
 
 ```bash
 ../../../.venv/bin/python cluster_analyzed_posts.py
-../../../.venv/bin/python visualize_post_clusters.py
 ```
 
 ## Notes
 
 - The clustering step uses only packages already available in the repo environment: `pandas` and `numpy`
-- Suspicious clusters are heuristic review targets, not final labels
+- Suspicious clusters are heuristic post-level review targets, not final account or group labels
 - The final clustering should be regenerated whenever the files in `../../Export/` change

@@ -1,0 +1,16 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+Hot_Molasses_4006,my-name-is-mine,5,0.3061782036586921,co_target,
+AccomplishedScheme82,Hot_Molasses_4006,2,0.173421993904824,co_target,
+Lord_Alamar,abercrombezie,2,,co_negative_target,0.3779644730092272
+abercrombezie,soundsandsights,2,,co_negative_target,0.3779644730092272
+AccomplishedScheme82,Hot_Molasses_4006,2,,co_negative_target,0.3333333333333333
+abercrombezie,helloipoo,2,,co_negative_target,0.3086066999241838
+JustinPooDough,jasperCrow,2,,co_negative_target,0.2773500981126145
+YLCZ,abercrombezie,2,,co_negative_target,0.2672612419124244
+abercrombezie,jasperCrow,2,,co_negative_target,0.2672612419124244
+JustinPooDough,abercrombezie,3,,co_negative_target,0.2223747949983303
+AccomplishedScheme82,abercrombezie,2,,co_negative_target,0.2182178902359924
+Hot_Molasses_4006,abercrombezie,2,,co_negative_target,0.2182178902359924
+JoMadrid13,abercrombezie,2,,co_negative_target,0.2182178902359924
+abercrombezie,my-name-is-mine,2,,co_negative_target,0.2182178902359924
+Significant_Book1672,abercrombezie,2,,co_negative_target,0.2020305089104421

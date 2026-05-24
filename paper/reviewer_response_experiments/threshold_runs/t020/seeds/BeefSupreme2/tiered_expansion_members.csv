@@ -1,0 +1,5 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+BeefSupreme2,BeefSupreme2,0,True,seed,0.0,0.0,0.0,0.0,0,
+BeefSupreme2,According_Donut6672,1,True,tier1_co_negative_direct,0.2886751345948128,0.0,0.0,0.0,0,
+BeefSupreme2,LemonHaze420_,1,True,tier1_co_negative_direct,0.2886751345948128,0.0,0.0,0.0,0,
+BeefSupreme2,gtwooh,1,True,tier1_co_negative_direct,0.2357022603955158,0.0,0.0,0.0,0,

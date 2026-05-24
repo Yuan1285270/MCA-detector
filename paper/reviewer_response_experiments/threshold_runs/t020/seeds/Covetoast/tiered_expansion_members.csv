@@ -1,0 +1,5 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+Covetoast,Covetoast,0,True,seed,0.0,0.0,0.0,0.0,0,
+Covetoast,Potential_Initial903,1,True,tier1_co_negative_direct,0.4472135954999578,0.0,0.0,0.1581138830084189,0,
+Covetoast,FuckM0reFromR,1,True,tier1_co_negative_direct,0.2108185106778919,0.0,0.0,0.0,0,
+Covetoast,IAMTHAT9,1,True,tier1_co_negative_direct,0.2108185106778919,0.0,0.0,0.0,0,

@@ -1,0 +1,4 @@
+setting,membership_rows,unique_accounts,stage2_pairs,strong_pairs,moderate_pairs,robust_pairs
+with_tier4,178,172,928,13,8,3
+without_tier4_posthoc,155,151,676,9,7,2
+tier4_contribution_only,23,23,252,4,1,1

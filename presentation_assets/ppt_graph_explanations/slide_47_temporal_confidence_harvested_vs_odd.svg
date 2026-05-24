@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="540" viewBox="0 0 930 540">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <style>
+    .title{font:700 27px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#17202a}
+    .subtitle{font:500 15px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#64748b}
+    .label{font:700 18px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#17202a}
+    .small{font:500 13px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#64748b}
+    .tiny{font:500 11px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#64748b}
+    .num{font:800 22px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#17202a}
+    .metric{font:600 12px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#475569}
+    .claim{font:700 18px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#0f766e}
+    .warn{font:700 18px -apple-system,BlinkMacSystemFont,'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif;fill:#b45309}
+  </style>
+
+  <text x="44" y="48" class="title">正式 top-20 對照：Stage 1 找候選，Stage 2 決定信心</text>
+  <text x="44" y="76" class="subtitle">兩組都有共同負向目標結構；差別在於 harvested 有可靠短時間同步，Odd-Following-247 沒有。</text>
+
+  <rect x="56" y="108" width="392" height="328" rx="10" fill="white" stroke="#d7dee8"/>
+  <rect x="56" y="108" width="392" height="8" rx="4" fill="#0f766e"/>
+  <text x="82" y="150" class="label">harvested</text>
+  <text x="82" y="174" class="small">高信心候選：結構存在，且有 robust timing evidence</text>
+
+  <text x="82" y="212" class="small">Stage 1 結構證據</text>
+  <g>
+    <text x="95" y="247" class="num">8</text>
+    <text x="95" y="267" class="metric">成員</text>
+    <text x="185" y="247" class="num">7</text>
+    <text x="185" y="267" class="metric">Tier 1</text>
+    <text x="275" y="247" class="num">9</text>
+    <text x="275" y="267" class="metric">群內邊</text>
+    <text x="355" y="247" class="num">11</text>
+    <text x="355" y="267" class="metric">共同負向目標</text>
+  </g>
+
+  <line x1="82" y1="292" x2="422" y2="292" stroke="#d7dee8"/>
+  <text x="82" y="322" class="small">Stage 2 時間同步</text>
+
+  <rect x="92" y="344" width="105" height="42" rx="8" fill="#0f766e" opacity="0.14"/>
+  <text x="112" y="370" class="num">1</text>
+  <text x="146" y="369" class="metric">strong</text>
+
+  <rect x="212" y="344" width="105" height="42" rx="8" fill="#94a3b8" opacity="0.14"/>
+  <text x="232" y="370" class="num">0</text>
+  <text x="266" y="369" class="metric">moderate</text>
+
+  <rect x="332" y="344" width="90" height="42" rx="8" fill="#0f766e" opacity="0.20"/>
+  <text x="352" y="370" class="num">1</text>
+  <text x="382" y="369" class="metric">robust</text>
+
+  <text x="82" y="418" class="claim">保留：共同目標 + 可靠短時間同步</text>
+
+  <rect x="482" y="108" width="392" height="328" rx="10" fill="white" stroke="#d7dee8"/>
+  <rect x="482" y="108" width="392" height="8" rx="4" fill="#b45309"/>
+  <text x="508" y="150" class="label">Odd-Following-247</text>
+  <text x="508" y="174" class="small">正式 top-20 對照組：結構很強，但時間證據不可靠</text>
+
+  <text x="508" y="212" class="small">Stage 1 結構證據</text>
+  <g>
+    <text x="520" y="247" class="num">11</text>
+    <text x="520" y="267" class="metric">成員</text>
+    <text x="612" y="247" class="num">7</text>
+    <text x="612" y="267" class="metric">Tier 1</text>
+    <text x="700" y="247" class="num">24</text>
+    <text x="700" y="267" class="metric">群內邊</text>
+    <text x="792" y="247" class="num">15</text>
+    <text x="792" y="267" class="metric">共同負向目標</text>
+  </g>
+
+  <line x1="508" y1="292" x2="848" y2="292" stroke="#d7dee8"/>
+  <text x="508" y="322" class="small">Stage 2 時間同步</text>
+
+  <rect x="518" y="344" width="105" height="42" rx="8" fill="#94a3b8" opacity="0.14"/>
+  <text x="538" y="370" class="num">0</text>
+  <text x="572" y="369" class="metric">strong</text>
+
+  <rect x="638" y="344" width="105" height="42" rx="8" fill="#94a3b8" opacity="0.14"/>
+  <text x="658" y="370" class="num">0</text>
+  <text x="692" y="369" class="metric">moderate</text>
+
+  <rect x="758" y="344" width="90" height="42" rx="8" fill="#94a3b8" opacity="0.14"/>
+  <text x="778" y="370" class="num">0</text>
+  <text x="808" y="369" class="metric">robust</text>
+
+  <text x="508" y="418" class="warn">降級：只有 weak overlap，沒有可靠同步</text>
+
+  <rect x="72" y="462" width="786" height="46" rx="10" fill="#e2e8f0"/>
+  <text x="96" y="491" class="label">結論：</text>
+  <text x="150" y="491" class="subtitle">co-negative 適合找候選群；temporal confidence 用來避免把同立場共現誤判為同操控行動。</text>
+</svg>

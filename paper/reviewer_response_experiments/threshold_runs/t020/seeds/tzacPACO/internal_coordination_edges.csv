@@ -1,0 +1,11 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+Romando1,btcgib,3,0.2193817272381391,co_target,
+Far-Hunter2057,tzacPACO,2,,co_negative_target,0.4622797036009415
+Far-Hunter2057,btcgib,2,,co_negative_target,0.4207865932216609
+btcgib,tzacPACO,3,,co_negative_target,0.3993541527766659
+Far-Hunter2057,Romando1,2,,co_negative_target,0.3213810691434756
+Far-Hunter2057,Rent_South,2,,co_negative_target,0.2272507333363343
+Romando1,tzacPACO,2,,co_negative_target,0.2199308901237193
+Romando1,btcgib,2,,co_negative_target,0.2182178902359923
+Rent_South,tzacPACO,3,,co_negative_target,0.2156758925814941
+Logvin,tzacPACO,2,,co_negative_target,0.2084047483586057

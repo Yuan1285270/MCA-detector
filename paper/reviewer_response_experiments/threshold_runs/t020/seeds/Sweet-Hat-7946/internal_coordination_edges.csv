@@ -1,0 +1,5 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+SevenBlade,Sweet-Hat-7946,2,,co_negative_target,0.2672612419124244
+Caesars7Hills,Sweet-Hat-7946,2,,co_negative_target,0.2182178902359924
+LuckyTrain727,Sweet-Hat-7946,2,,co_negative_target,0.2182178902359924
+Sweet-Hat-7946,_DANGR_,2,,co_negative_target,0.2182178902359924

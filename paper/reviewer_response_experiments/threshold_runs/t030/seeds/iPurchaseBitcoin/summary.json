@@ -1,0 +1,21 @@
+{
+  "seed": "iPurchaseBitcoin",
+  "candidate_member_count": 6,
+  "tiered_expansion_member_count": 6,
+  "tier1_co_negative_count": 2,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 3,
+  "co_target_neighbor_count": 15,
+  "co_negative_neighbor_count": 3,
+  "tag_similarity_neighbor_count": 15,
+  "internal_coordination_edge_count": 10,
+  "shared_negative_target_count": 6,
+  "avg_rhetorical_score": 7.66025641025641,
+  "avg_non_neutral_post_ratio": 0.2916666666666667,
+  "avg_oppositional_stance_ratio": 0.4532689389278535,
+  "automation_anomaly_fraction": 0.5,
+  "avg_anomaly_score": -0.814423827751595,
+  "total_comment_count": 199.0,
+  "total_analyzed_post_count": 30.0
+}

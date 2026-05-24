@@ -1,0 +1,4 @@
+source_author,target_author,shared_target_count,weight_co_target,layer,weight_co_negative_target
+According_Donut6672,BeefSupreme2,2,,co_negative_target,0.2886751345948128
+BeefSupreme2,LemonHaze420_,2,,co_negative_target,0.2886751345948128
+BeefSupreme2,gtwooh,2,,co_negative_target,0.2357022603955158

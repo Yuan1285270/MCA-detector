@@ -1,0 +1,21 @@
+{
+  "seed": "Different_Walrus_574",
+  "candidate_member_count": 7,
+  "tiered_expansion_member_count": 7,
+  "tier1_co_negative_count": 5,
+  "tier2_tag_with_structure_count": 0,
+  "tier3_trigger_with_support_count": 0,
+  "tier4_two_hop_count": 1,
+  "co_target_neighbor_count": 11,
+  "co_negative_neighbor_count": 5,
+  "tag_similarity_neighbor_count": 14,
+  "internal_coordination_edge_count": 7,
+  "shared_negative_target_count": 11,
+  "avg_rhetorical_score": 9.047619047619047,
+  "avg_non_neutral_post_ratio": 0.23809523809523808,
+  "avg_oppositional_stance_ratio": 0.3986629298768027,
+  "automation_anomaly_fraction": 0.2857142857142857,
+  "avg_anomaly_score": -0.1112194880408998,
+  "total_comment_count": 248.0,
+  "total_analyzed_post_count": 11.0
+}

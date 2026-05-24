@@ -1,0 +1,2 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+Odd-Following-247,Odd-Following-247,0,True,seed,0.0,0.0,0.0,0.0,0,

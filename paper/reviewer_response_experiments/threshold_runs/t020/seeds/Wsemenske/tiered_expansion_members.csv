@@ -1,0 +1,8 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+Wsemenske,Wsemenske,0,True,seed,0.0,0.0,0.0,0.0,0,
+Wsemenske,Wobbalabba776,1,True,tier1_co_negative_direct,0.3779644730092272,0.0,0.0,0.0,0,
+Wsemenske,PolarPelly,1,True,tier1_co_negative_direct,0.2672612419124244,0.0,0.0,0.0,0,
+Wsemenske,CorneliusFudgem,1,True,tier1_co_negative_direct,0.2390457218668787,0.0,0.0,0.0,0,
+Wsemenske,mymomsaidiamsmart,1,True,tier1_co_negative_direct,0.2390457218668787,0.0,0.0,0.0,0,
+Wsemenske,Anzu_Yamasaki,1,True,tier1_co_negative_direct,0.2036164386374079,0.0,0.0,0.0,0,
+Wsemenske,_Starter,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"Anzu_Yamasaki, CorneliusFudgem"

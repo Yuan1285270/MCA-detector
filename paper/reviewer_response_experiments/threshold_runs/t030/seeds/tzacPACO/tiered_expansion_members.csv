@@ -1,0 +1,4 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+tzacPACO,tzacPACO,0,True,seed,0.0,0.0,0.0,0.0,0,
+tzacPACO,Far-Hunter2057,1,True,tier1_co_negative_direct,0.4622797036009415,0.0,0.0,0.0,0,
+tzacPACO,btcgib,1,True,tier1_co_negative_direct,0.3993541527766659,0.0,0.0,0.0,0,

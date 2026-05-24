@@ -1,0 +1,7 @@
+seed,candidate,tier,include,include_reason,co_negative_weight,tag_similarity_weight,trigger_response_weight,co_target_weight,two_hop_link_count,two_hop_connectors
+iPurchaseBitcoin,iPurchaseBitcoin,0,True,seed,0.0,0.0,0.0,0.0,0,
+iPurchaseBitcoin,MisanthropicSocrates,1,True,tier1_co_negative_direct,0.392232270276368,0.0,0.0,0.0,0,
+iPurchaseBitcoin,platour220,1,True,tier1_co_negative_direct,0.392232270276368,0.0,0.0,0.0,0,
+iPurchaseBitcoin,Safe-Painter-9618,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"MisanthropicSocrates, platour220"
+iPurchaseBitcoin,Significant_Tap_5362,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"MisanthropicSocrates, platour220"
+iPurchaseBitcoin,TiestoForever,4,True,tier4_two_hop_co_negative_multi_link,0.0,0.0,0.0,0.0,2,"MisanthropicSocrates, platour220"

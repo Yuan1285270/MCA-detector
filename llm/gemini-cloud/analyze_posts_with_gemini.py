@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 import json
 import time
@@ -331,7 +332,24 @@ def is_done(row) -> bool:
     return analysis != "" or pd.notna(score)
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Analyze cleaned Reddit posts with Gemini.")
+    parser.add_argument("--start-row", type=int, default=START_ROW)
+    parser.add_argument("--end-row", type=int, default=END_ROW)
+    return parser.parse_args()
+
+
 def main() -> None:
+    global START_ROW, END_ROW, BATCH_NAME, FULL_OUTPUT_PATH
+
+    args = parse_args()
+    START_ROW = args.start_row
+    END_ROW = args.end_row
+    if START_ROW < 0 or END_ROW <= START_ROW:
+        raise ValueError("Expected 0 <= start-row < end-row")
+    BATCH_NAME = f"{START_ROW}_{END_ROW}"
+    FULL_OUTPUT_PATH = f"{OUTPUT_DIR}/post_analysis_{BATCH_NAME}.csv"
+
     print(f"🚀 開始執行 RAG 分析 (model={MODEL_NAME}, region={LOCATION})")
     print(f"📦 本次批次區間：START_ROW={START_ROW}, END_ROW={END_ROW}")
 

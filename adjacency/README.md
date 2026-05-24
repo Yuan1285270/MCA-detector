@@ -1,6 +1,6 @@
 # Adjacency Matrix Module
 
-這個資料夾負責把 Reddit account-level 資料轉成 graph artifacts。它刻意放在 repo 根目錄，和 `behavior/`、`llm/` 平行，定位是獨立的 graph construction 模組。
+這個資料夾負責把 Reddit account-level 資料轉成 graph artifacts。它刻意放在 repo 根目錄，和 `llm/`、`mca-scoring/`、`coordination-expansion/` 平行，定位是獨立的 graph construction 模組。
 
 目前輸出不使用 dense matrix，而是：
 
@@ -96,7 +96,9 @@ adjacency/output/single-graph/matrix_single_signed.npz
 | `A_negative` | `max(-A_signed, 0)` | 反對、批評、攻擊、削弱 |
 | `A_degree_adjusted` | Zaman-inspired degree adjusted count | 強調高資訊量互動邊 |
 | `A_trigger_response` | response coverage × log frequency | A 發文是否穩定觸發 B 留言 |
-| `A_tag_similarity` | cosine similarity of rhetoric profiles | 內容/修辭相似度，不是互動關係 |
+| `A_co_target` | cosine similarity over shared targets | 兩個帳號是否常常留言到同一批作者 |
+| `A_co_negative_target` | cosine similarity over shared oppositional targets | 兩個帳號是否常常反對同一批作者 |
+| `A_tag_similarity` | cosine similarity of rhetoric profiles | 內容/修辭相似度，只作 EDA / 解釋輔助 |
 
 ### `A_count`
 
@@ -183,9 +185,54 @@ response_coverage
 
 這樣可以避免「A 只發一篇、B 留一次」就得到過強訊號，同時保留穩定跟隨與重複互動的 evidence。輸出也包含 `median_response_delay_minutes` 和 `p90_response_delay_minutes`，方便判斷 B 是否總是在 A 發文後很快出現。
 
+### `A_co_target`
+
+這張圖捕捉的不是直接互動，而是兩個 commenter 的 target set 是否重疊：
+
+```text
+A_co_target[i,j] = cosine_similarity(target_profile_i, target_profile_j)
+```
+
+其中 `target_profile_i` 是帳號 `i` 留言過的 post authors，權重使用：
+
+```text
+log(1 + n_comments_to_target)
+```
+
+所以這層回答：
+
+```text
+i 和 j 是否常常去同一批作者底下留言？
+```
+
+這是 undirected projected graph。edge list 每對帳號只存一次，`.npz` sparse matrix 會 mirror 成雙向。
+
+為了避免熱門 target 讓 projection 爆炸，預設限制：
+
+- 每個 target 最多保留互動最強的 200 個 source accounts
+- co-target edge 至少要有 2 個 shared targets
+- cosine similarity 至少 0.15
+- 每個帳號最多保留 top 25 co-target neighbors
+
+### `A_co_negative_target`
+
+這張圖是 `A_co_target` 的負向版本，只看 shared oppositional targets：
+
+```text
+target_negative_profile_i[target] = log(1 + oppositional_count_i_to_target)
+```
+
+因此它回答：
+
+```text
+i 和 j 是否常常反對 / 攻擊同一批作者？
+```
+
+這層很適合後續 suspicious coordination scoring，因為它比 rhetoric similarity 更接近「行動目標一致」。但它仍然不是最終判決；例如兩個正常使用者也可能共同批評同一個高爭議作者，所以應該和 trigger-response、manipulative signal、interaction reach 一起看。
+
 ### `A_tag_similarity`
 
-這張圖不是互動圖，而是內容相似圖。
+這張圖不是互動圖，也不進 MCA 主分數；它是內容/修辭相似的 EDA 與解釋輔助圖。
 
 ```text
 A_tag_similarity[i,j] = cosine_similarity(tag_profile_i, tag_profile_j)
@@ -203,7 +250,27 @@ A_tag_similarity[i,j] = cosine_similarity(tag_profile_i, tag_profile_j)
 - cosine similarity `>= 0.75`
 - 每個帳號最多 top 10 neighbors
 
-這個限制是刻意的。全體帳號中只有一部分有 post-level rhetoric tags，如果把 tag similarity 當主圖會很稀疏；但在 anomaly subset 中，tag coverage 明顯更高，所以它很適合作為 multi-graph 裡的一層，補足「帳號之間沒有直接互動但使用相似動員話術」的情況。
+這個限制是刻意的。全體帳號中只有一部分有 post-level rhetoric tags，而且保留下來的 pair similarity 分數通常偏高，所以它不適合單獨用來排序帳號或加進 MCA score。
+
+這層保留的用途是：
+
+- EDA / visualization
+- 解釋 top accounts 的 rhetoric-similar neighbors
+- 檢查 co-target group 裡是否也有相似 rhetoric profile
+
+換句話說，`A_tag_similarity` 回答的是：
+
+```text
+這兩個帳號的 rhetoric tag profile 像不像？
+```
+
+它不直接回答：
+
+```text
+這個帳號是否可疑？
+```
+
+因此正式 MCA scoring 不使用這層作為主分數來源。
 
 ## Output Files
 
@@ -222,6 +289,8 @@ adjacency/output/
     ├── edges_negative.csv
     ├── edges_degree_adjusted.csv
     ├── edges_trigger_response.csv
+    ├── edges_co_target.csv
+    ├── edges_co_negative_target.csv
     ├── edges_tag_similarity.csv
     ├── tag_similarity_candidate_nodes.csv
     └── matrix_*.npz
@@ -256,7 +325,7 @@ So interaction graphs remain directed. Direction matters because frequently crit
 
 ### Undirected tag similarity graph
 
-Tag similarity is symmetric. If two accounts use similar rhetoric profiles, there is no natural source/target direction. The edge list stores each pair once; the sparse matrix mirrors it.
+Tag similarity and co-target projection are symmetric. If two accounts use similar rhetoric profiles, or point at similar target sets, there is no natural source/target direction. The edge list stores each pair once; the sparse matrix mirrors it.
 
 ### Mean score times log frequency
 
@@ -282,9 +351,33 @@ A 的多少篇發文會引來 B 留言？
 
 所以兩者方向和意義不同。前者是 commenter-to-author interaction，後者是 post-author-to-responder frequency relation。這層更接近「固定跟隨某個發文者」的 coordinated behavior evidence。
 
-### Tag similarity is optional and secondary
+### Co-target is different from direct interaction
 
-The account feature matrix already contains tag ratios as node features. `A_tag_similarity` converts those node features into a content-similarity relation. This is useful, but should not replace the interaction graph because tag coverage is lower than comment feedback coverage.
+`A_count[i,j]` answers:
+
+```text
+i 是否直接留言給 j？
+```
+
+`A_co_target[i,j]` answers:
+
+```text
+i 和 j 是否經常留言到同一批 target？
+```
+
+所以 co-target 是 commenter-commenter relation，不是 commenter-author relation。這層能捕捉沒有直接互動、但行動目標高度一致的帳號對。
+
+### Tag similarity is diagnostic, not scoring
+
+The account feature matrix already contains tag ratios as node features. `A_tag_similarity` converts those node features into a pairwise rhetoric-similarity relation. This is useful for EDA and explanation, but it is not used as a primary MCA scoring input because it measures pair similarity rather than account suspiciousness.
+
+For MCA scoring, rhetoric information enters through the manipulative signal instead:
+
+```text
+avg_rhetorical_score
+non_neutral_post_ratio
+oppositional_stance_ratio
+```
 
 ## Literature Rationale
 
