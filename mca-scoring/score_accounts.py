@@ -8,6 +8,7 @@ Group evidence and seed expansion live in `coordination-expansion/`.
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 import numpy as np
@@ -17,6 +18,16 @@ import pandas as pd
 DEFAULT_GRAPH_DIR = Path("adjacency/output")
 DEFAULT_FEATURES_PATH = Path("Archive/export_working_files/account_feature_matrix.csv")
 DEFAULT_OUTPUT_DIR = Path("mca-scoring/output")
+DEFAULT_PRIMARY_WEIGHTS = [0.30, 0.35, 0.15, 0.20]
+DEFAULT_ALT_WEIGHTS = [0.40, 0.40, 0.10, 0.10]
+
+WEIGHT_PROFILES = {
+    "primary": DEFAULT_PRIMARY_WEIGHTS,
+    "coordination": [0.20, 0.50, 0.10, 0.20],
+    "behavior": [0.20, 0.25, 0.15, 0.40],
+    "rhetoric": [0.50, 0.25, 0.15, 0.10],
+    "equal": [0.25, 0.25, 0.25, 0.25],
+}
 
 NONNEUTRAL_TAG_COUNT_COLUMNS = [
     "rhetoric_tag_authority_claim_count",
@@ -46,15 +57,27 @@ def parse_args() -> argparse.Namespace:
         "--primary-weights",
         nargs=4,
         type=float,
-        default=[0.30, 0.35, 0.15, 0.20],
+        default=None,
         metavar=("M", "C", "R", "A"),
-        help="Signal weights for manipulative, coordinative, reach, automation.",
+        help=(
+            "Custom primary signal weights for manipulative, coordinative, reach, "
+            "automation. Overrides --weight-profile when provided."
+        ),
+    )
+    parser.add_argument(
+        "--weight-profile",
+        choices=sorted(WEIGHT_PROFILES),
+        default="primary",
+        help=(
+            "Named primary weight profile. Default `primary` preserves the paper "
+            "weights 0.30/0.35/0.15/0.20."
+        ),
     )
     parser.add_argument(
         "--alt-weights",
         nargs=4,
         type=float,
-        default=[0.40, 0.40, 0.10, 0.10],
+        default=DEFAULT_ALT_WEIGHTS,
         metavar=("M", "C", "R", "A"),
         help="Comparison signal weights.",
     )
@@ -221,13 +244,35 @@ def apply_weights(scores: pd.DataFrame, weights: list[float], column: str) -> No
     )
 
 
+def normalized_weights(weights: list[float]) -> dict[str, float]:
+    total = sum(weights)
+    if total <= 0:
+        raise ValueError("Weights must sum to a positive value.")
+    wm, wc, wr, wa = [weight / total for weight in weights]
+    return {
+        "manipulative": wm,
+        "coordinative": wc,
+        "interaction_reach": wr,
+        "automatic_behavior": wa,
+    }
+
+
+def resolve_primary_weights(args: argparse.Namespace) -> tuple[list[float], str]:
+    if args.primary_weights is not None:
+        return list(args.primary_weights), "custom"
+    return list(WEIGHT_PROFILES[args.weight_profile]), args.weight_profile
+
+
 def main() -> None:
     args = parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     scores = build_scores(args.graph_dir, args.features_path)
-    apply_weights(scores, args.primary_weights, "mca_score_primary")
+    primary_weights, primary_profile = resolve_primary_weights(args)
+    apply_weights(scores, primary_weights, "mca_score_primary")
     apply_weights(scores, args.alt_weights, "mca_score_alt")
+    for profile_name, profile_weights in WEIGHT_PROFILES.items():
+        apply_weights(scores, profile_weights, f"mca_score_view_{profile_name}")
 
     scores.to_csv(args.output_dir / "account_mca_scores.csv", index=False)
 
@@ -245,7 +290,37 @@ def main() -> None:
     )
     top_alt.to_csv(args.output_dir / "top_accounts_alt.csv", index=False)
 
+    for profile_name in WEIGHT_PROFILES:
+        score_col = f"mca_score_view_{profile_name}"
+        top_view = (
+            scores[scores[score_col] >= args.min_score]
+            .sort_values(score_col, ascending=False)
+            .head(args.top_n)
+        )
+        top_view.to_csv(args.output_dir / f"top_accounts_view_{profile_name}.csv", index=False)
+
+    weight_config = {
+        "primary_profile": primary_profile,
+        "primary_weights": normalized_weights(primary_weights),
+        "alt_weights": normalized_weights(list(args.alt_weights)),
+        "view_profiles": {
+            name: normalized_weights(list(weights)) for name, weights in WEIGHT_PROFILES.items()
+        },
+        "score_columns": {
+            "primary": "mca_score_primary",
+            "alt": "mca_score_alt",
+            **{
+                f"view_{name}": f"mca_score_view_{name}"
+                for name in WEIGHT_PROFILES
+            },
+        },
+    }
+    with open(args.output_dir / "mca_weight_config.json", "w", encoding="utf-8") as f:
+        json.dump(weight_config, f, indent=2)
+
     print(f"MCA scores written to {args.output_dir}")
+    print(f"Primary weight profile: {primary_profile}")
+    print(f"Primary normalized weights: {normalized_weights(primary_weights)}")
     print(f"Accounts scored: {len(scores):,}")
     print(f"Candidates (primary, min_score={args.min_score}): {len(top_primary):,}")
     print(f"Candidates (alt,     min_score={args.min_score}): {len(top_alt):,}")

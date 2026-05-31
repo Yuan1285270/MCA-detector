@@ -1,4 +1,4 @@
- \documentclass[conference]{IEEEtran}
+\documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 
 \usepackage{cite}
@@ -18,35 +18,22 @@
 \title{Detection of Coordinated Social Media Behavior with Large Language Models and Multi-Layer Account Graphs}
 
 \author{
-\IEEEauthorblockN{Tsung-Yuan Lin}
-\IEEEauthorblockA{\textit{Department of Information Engineering and} \\
-\textit{Computer Science} \\
-\textit{Feng Chia University}\\
-Taichung, Taiwan \\
-D1285270@o365.fcu.edu.tw}
-\and
-\IEEEauthorblockN{Jyun-Hao Chang}
-\IEEEauthorblockA{\textit{Department of Information Engineering and} \\
-\textit{Computer Science} \\
-\textit{Feng Chia University}\\
-Taichung, Taiwan \\
-D1285182@o365.fcu.edu.tw}
-\and
-\IEEEauthorblockN{Jia-An Lai}
-\IEEEauthorblockA{\textit{Department of Information Engineering and} \\
-\textit{Computer Science} \\
-\textit{Feng Chia University}\\
-Taichung, Taiwan \\
-D1285223@o365.fcu.edu.tw}
-\and
-\IEEEauthorblockN{Chiung-Hon Lee}
-\IEEEauthorblockA{\textit{Department of Information Engineering and} \\
-\textit{Computer Science} \\
-\textit{Feng Chia University}\\
-Taichung, Taiwan \\
-cholee@o365.fcu.edu.tw}
+\IEEEauthorblockN{
+Tsung-Yuan Lin,
+Jyun-Hao Chang,
+Jia-An Lai,
+and Chiung-Hon Lee
 }
-
+\IEEEauthorblockA{
+\textit{Dept. of Information Engineering and Computer Science} \\
+\textit{Feng Chia University} \\
+Taichung, Taiwan, R.O.C. \\
+D1285270@o365.fcu.edu.tw,
+D1285182@o365.fcu.edu.tw,
+D1285223@o365.fcu.edu.tw,
+cholee@o365.fcu.edu.tw
+}
+}
 \maketitle
 
 \begin{abstract}
@@ -81,7 +68,7 @@ semantic analysis, multi-layer graph construction with MCA seed ranking, and
 the two-stage process of group expansion and temporal verification. Section
 IV reports the experimental setting, candidate group outputs, temporal
 baseline comparison, and two contrasting case studies. Section V discusses
-system interpretation and scope, and Section VI concludes the paper.
+system interpretation and scope, and Section VI concludes.
 
 \section{Related Work}
 \subsection{Social Bots and Account Anomaly Detection}
@@ -90,7 +77,7 @@ Early research on abnormal social media behavior mainly focused on bot detection
 However, account-level bot detection is not the same as coordinated behavior detection. A highly active human user may appear abnormal, while a manually operated account may still participate in coordinated manipulation. In cryptocurrency communities, this distinction is especially important because users may naturally post frequently, react quickly to market news, or express strong opinions. Therefore, this paper uses account-level anomaly and influence features as seed-ranking signals that guide later group-level evidence collection.
 
 \subsection{Coordinated Behavior Detection and Graph Analysis}
-Compared with single-account detection, coordinated behavior detection focuses on whether multiple accounts exhibit similar or synchronized behavioral patterns. Cresci et al. proposed Social Fingerprinting, which models account behavior as digital DNA sequences and detects groups of spambots through behavioral similarity \cite{b3}. Mazza et al. focused on temporal patterns in retweet behavior and used these patterns to identify suspicious botnets \cite{b4}. These studies suggest that coordination is often clearer at the group level than at the individual-account level.
+Compared with single-account detection, coordinated behavior detection focuses on whether multiple accounts exhibit similar or synchronized behavioral patterns. Cresci et al. proposed Social Fingerprinting, which models account behavior as digital DNA sequences and detects groups of spambots through behavioral similarity \cite{b3}. Mazza et al. focused on temporal patterns in retweet behavior and used these patterns to detect retweeting social bots \cite{b4}. These studies suggest that coordination is often clearer at the group level than at the individual-account level.
 
 More recent work has further developed coordination network approaches. Pacheco et al. constructed coordination networks from shared behavioral traces, such as identities, images, hashtags, retweets, and temporal patterns, and applied the method to several influence-campaign cases, including cryptocurrency-related manipulation \cite{b5}. Graham et al. proposed the Coordination Network Toolkit, which represents different types of coordinated behavior using weighted directed multigraphs \cite{b6}. These studies show that coordination can be represented as graph structure, but the specific traces depend on the platform being analyzed.
 
@@ -102,25 +89,25 @@ Reddit-specific malicious-account studies also show that suspicious actors may n
 \subsection{Position of This Work}
 Overall, prior work provides three important lessons. First, bot and anomaly detection can help identify accounts that deserve attention. Second, graph-based coordination methods can reveal shared targets and synchronized behaviors, but a single graph layer may be affected by popular topics or natural interactions among users with similar viewpoints. Third, stance analysis can connect textual meaning with account relations. MCA Detector combines these ideas by adapting coordination networks to Reddit replies: comment stance is converted into signed account-to-account relations, multi-layer graphs are used for candidate discovery, and temporal synchronization is used as separate review evidence.
 
-\begin{figure}[htbp]
+\section{Methodology and System Architecture}
+\subsection{Overall Pipeline}
+MCA Detector is an analysis pipeline centered on high-risk candidate coordination group discovery and reviewable evidence generation. It identifies candidate groups from large-scale social media data and provides multi-layer evidence, including content, behavior, account relations, and temporal synchronization, for subsequent human review.
+
+The overall workflow is summarized in Fig.~\ref{fig:pipeline}. The pipeline begins with social media data. LLM-based stance analysis is first applied to extract post rhetoric and comment stance signals. Multi-layer account graphs are then constructed from account interactions. Next, accounts are ranked by their MCA scores to select candidate seed accounts for review. Stage 1 expands each seed account into a candidate group, adapting seed-set expansion methods from local community detection \cite{b9} to a review-oriented coordination setting, by identifying accounts with shared interaction targets or similar structural signals. Stage 2 performs temporal synchronization verification by examining whether accounts within a candidate group appear in the same discussion thread within short time intervals. Finally, the system outputs candidate coordination group summaries, account-level review rankings, intra-group relations, and temporal synchronization evidence for human interpretation.
+
+\begin{figure}[!t]
 \centering
 \includegraphics[width=0.95\linewidth]{fig1_pipeline.png}
 \caption{MCA Detector analysis pipeline.}
 \label{fig:pipeline}
 \end{figure}
 
-\section{Methodology and System Architecture}
-\subsection{Overall Pipeline}
-MCA Detector is an analysis pipeline centered on high-risk candidate coordination group discovery and reviewable evidence generation. It identifies candidate groups from large-scale social media data and provides multi-layer evidence, including content, behavior, account relations, and temporal synchronization, for subsequent human review.
-
-Fig.~\ref{fig:pipeline} summarizes the overall workflow. The pipeline begins with social media data. LLM-based stance analysis is first applied to extract post rhetoric and comment stance signals. Multi-layer account graphs are then constructed from account interactions. Next, accounts are ranked by their MCA scores to select candidate seed accounts for review. Stage 1 expands each seed account into a candidate group by identifying accounts with shared interaction targets or similar structural signals. Stage 2 performs temporal synchronization verification by examining whether accounts within a candidate group appear in the same discussion thread within short time intervals. Finally, the system outputs candidate coordination group summaries, account-level review rankings, intra-group relations, and temporal synchronization evidence for human interpretation.
-
 The generated artifacts are intended to be inspected through an evidence
-viewer. Fig.~\ref{fig:demo-placeholder} reserves space for the demo website
-screenshot, and Table~\ref{tab:outputs} summarizes the main outputs shown to
-reviewers.
+viewer. The demo evidence viewer is illustrated in
+Fig.~\ref{fig:demo-placeholder}, and Table~\ref{tab:outputs} summarizes the
+main outputs shown to reviewers.
 
-\begin{figure*}[htbp]
+\begin{figure*}[!t]
 \centering
 \begin{tabular}{cc}
 \includegraphics[width=0.48\textwidth]{final-a.png} &
@@ -185,7 +172,7 @@ Behavioral anomaly & Isolation Forest anomaly score derived from activity freque
 \end{table}
 
 \subsection{Candidate Group Expansion and Temporal Synchronization Verification}
-This paper uses a two-stage process to discover candidate coordinated groups. Stage 1 begins with high-scoring MCA seed accounts and expands candidate groups in a layered manner. Accounts whose shared negative target weights exceed a threshold can be directly included. Rhetoric label similarity and triggered response relations are used as auxiliary signals and require additional structural support before inclusion. The system also searches outward from already included members to find indirectly related accounts. To avoid excessive group expansion, a new candidate account must have shared negative target relations with at least two existing group members.
+This paper uses a two-stage process to discover candidate coordinated groups. Following the seed-set expansion idea introduced above, MCA Detector expands high-priority accounts through shared negative-target relations rather than optimizing a generic conductance objective. Stage 1 begins with high-scoring MCA seed accounts and expands candidate groups in a layered manner. Accounts whose shared negative target weights exceed a threshold can be directly included. Rhetoric label similarity and triggered response relations are used as auxiliary signals and require additional structural support before inclusion. The system also searches outward from already included members to find indirectly related accounts. To avoid excessive group expansion, a new candidate account must have shared negative target relations with at least two existing group members.
 
 The expansion rules are designed to keep the candidate groups reviewable. If the system expands groups only by loose shared targets, the candidate group may become too large and difficult to inspect manually. Therefore, accounts with strong shared negative target relations can be included directly, while weaker signals such as rhetoric similarity or triggered response relations require additional structural support. For indirect expansion, a new account must be connected to at least two existing members through shared negative target relations. This rule helps prevent candidate groups from growing only because of one weak connection.
 
@@ -308,11 +295,12 @@ Future work can build manually annotated datasets to systematically evaluate can
 \bibitem{b1} E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, ``The rise of social bots,'' \textit{Communications of the ACM}, vol. 59, no. 7, pp. 96--104, 2016.
 \bibitem{b2} O. Varol, E. Ferrara, C. Davis, F. Menczer, and A. Flammini, ``Online human-bot interactions: Detection, estimation, and characterization,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 11, no. 1, pp. 280--289, 2017.
 \bibitem{b3} S. Cresci, R. Di Pietro, M. Petrocchi, A. Spognardi, and M. Tesconi, ``Social fingerprinting: Detection of spambot groups through DNA-inspired behavioral modeling,'' \textit{IEEE Transactions on Dependable and Secure Computing}, vol. 15, no. 4, pp. 561--576, 2018.
-\bibitem{b4} M. Mazza, S. Cresci, M. Avvenuti, W. Quattrociocchi, and M. Tesconi, ``RTbust: Exploiting temporal patterns for botnet detection on Twitter,'' arXiv:1902.04506, 2019.
+\bibitem{b4} M. Mazza, S. Cresci, M. Avvenuti, W. Quattrociocchi, and M. Tesconi, ``RTbust: Exploiting temporal patterns for botnet detection on Twitter,'' in \textit{Proceedings of the 11th ACM Conference on Web Science}, 2019, pp. 183--192.
 \bibitem{b5} D. Pacheco, P.-M. Hui, C. Torres-Lugo, B. T. Truong, A. Flammini, and F. Menczer, ``Uncovering coordinated networks on social media: Methods and case studies,'' \textit{Proceedings of the International AAAI Conference on Web and Social Media}, vol. 15, no. 1, pp. 455--466, 2021.
-\bibitem{b6} T. Graham, S. Hames, and E. Alpert, ``The Coordination Network Toolkit: A framework for detecting and analysing coordinated behaviour on social media,'' \textit{Journal of Computational Social Science}, vol. 7, pp. 1139--1160, 2024.
+\bibitem{b6} T. Graham, S. Hames, and E. Alpert, ``The Coordination Network Toolkit: A framework for detecting and analysing coordinated behaviour on social media,'' \textit{Journal of Computational Social Science}, vol. 7, no. 2, pp. 1139--1160, 2024.
 \bibitem{b7} S. Mohammad, S. Kiritchenko, P. Sobhani, X. Zhu, and C. Cherry, ``SemEval-2016 Task 6: Detecting stance in tweets,'' in \textit{Proceedings of the 10th International Workshop on Semantic Evaluation}, 2016, pp. 31--41.
-\bibitem{b8} M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and G. Stringhini, ``TROLLMAGNIFIER: Detecting state-sponsored troll accounts on Reddit,'' in \textit{Proceedings of the IEEE Symposium on Security and Privacy}, 2022, pp. 2161--2175.
+\bibitem{b8} M. H. Saeed, S. Ali, J. Blackburn, E. De Cristofaro, S. Zannettou, and G. Stringhini, ``TrollMagnifier: Detecting state-sponsored troll accounts on Reddit,'' in \textit{Proceedings of the IEEE Symposium on Security and Privacy}, 2022, pp. 2161--2175.
+\bibitem{b9} J. J. Whang, D. F. Gleich, and I. S. Dhillon, ``Overlapping community detection using seed set expansion,'' in \textit{Proceedings of the 22nd ACM International Conference on Information and Knowledge Management}, 2013, pp. 2099--2108.
 \end{thebibliography}
 
 \end{document}

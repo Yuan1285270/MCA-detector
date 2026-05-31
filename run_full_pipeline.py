@@ -58,6 +58,23 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--top-n-accounts", type=int, default=100)
     parser.add_argument("--tier-max-members", type=int, default=100)
     parser.add_argument(
+        "--mca-weight-profile",
+        choices=["primary", "coordination", "behavior", "rhetoric", "equal"],
+        default="primary",
+        help="Named MCA primary weight profile. Default preserves paper weights.",
+    )
+    parser.add_argument(
+        "--mca-primary-weights",
+        nargs=4,
+        type=float,
+        default=None,
+        metavar=("M", "C", "R", "A"),
+        help=(
+            "Custom MCA primary weights for manipulative, coordinative, reach, "
+            "automation. Overrides --mca-weight-profile."
+        ),
+    )
+    parser.add_argument(
         "--skip-mca",
         action="store_true",
         help="Forwarded to the back-half runner; reuse existing MCA output.",
@@ -287,7 +304,13 @@ def run_back_half(args: argparse.Namespace, python: str) -> None:
         str(args.top_n_accounts),
         "--tier-max-members",
         str(args.tier_max_members),
+        "--mca-weight-profile",
+        args.mca_weight_profile,
     ]
+    if getattr(args, "mca_primary_weights", None) is not None:
+        command.extend(
+            ["--mca-primary-weights", *[str(weight) for weight in args.mca_primary_weights]]
+        )
     if getattr(args, "skip_mca", False):
         command.append("--skip-mca")
     run_step("MCA + expansion + validation", command)

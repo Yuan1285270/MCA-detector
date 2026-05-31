@@ -40,6 +40,23 @@ coordination-expansion/output/
 .venv/bin/python coordination-expansion/run_pipeline.py --top-n-seeds 20
 ```
 
+預設 MCA 權重維持論文設定。如果要把 seed selection 暫時切成其他 review mode：
+
+```bash
+.venv/bin/python coordination-expansion/run_pipeline.py \
+  --top-n-seeds 20 \
+  --mca-weight-profile behavior
+```
+
+也可以直接給四個自訂權重，順序是 manipulative、coordinative、
+interaction reach、automatic behavior：
+
+```bash
+.venv/bin/python coordination-expansion/run_pipeline.py \
+  --top-n-seeds 20 \
+  --mca-primary-weights 0.20 0.25 0.15 0.40
+```
+
 如果已經有最新 MCA output，可以跳過 MCA 重算：
 
 ```bash

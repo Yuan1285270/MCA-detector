@@ -54,13 +54,43 @@ MCA score = seed selection + review priority, not a final verdict.
 
 預設 `--min-score 0.0`（不過濾），行為與之前相同。
 
+可以切換內建 review mode，但預設仍是論文中的 primary weights：
+
+```bash
+.venv/bin/python mca-scoring/score_accounts.py --weight-profile behavior
+```
+
+目前內建 profiles：
+
+```text
+primary       = paper default, coordination-oriented hybrid score
+coordination  = stronger co-target / trigger-response emphasis
+behavior      = stronger automatic-behavior anomaly emphasis
+rhetoric      = stronger manipulative/rhetorical signal emphasis
+equal         = equal-weight baseline
+```
+
+也可以直接給自訂權重，順序是：
+
+```text
+Manipulative Coordinative InteractionReach AutomaticBehavior
+```
+
+例如 behavior-anomaly-heavy：
+
+```bash
+.venv/bin/python mca-scoring/score_accounts.py --primary-weights 0.20 0.25 0.15 0.40
+```
+
 預設輸出：
 
 ```text
 mca-scoring/output/
 ├── account_mca_scores.csv
 ├── top_accounts_primary.csv
-└── top_accounts_alt.csv
+├── top_accounts_alt.csv
+├── top_accounts_view_<profile>.csv
+└── mca_weight_config.json
 ```
 
 ## Default Weights
@@ -88,3 +118,8 @@ Interpretation:
 ```text
 MCA score = review priority, not a final verdict.
 ```
+
+`mca_weight_config.json` records the exact weights used for the current run so
+ranking artifacts remain reproducible. `top_accounts_primary.csv` always uses
+the active primary score: the default paper weights unless `--weight-profile` or
+`--primary-weights` is provided.

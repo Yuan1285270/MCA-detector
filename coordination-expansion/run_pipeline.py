@@ -21,6 +21,23 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--top-n-accounts", type=int, default=100)
     parser.add_argument("--tier-max-members", type=int, default=100)
     parser.add_argument(
+        "--mca-weight-profile",
+        choices=["primary", "coordination", "behavior", "rhetoric", "equal"],
+        default="primary",
+        help="Named MCA primary weight profile. Default preserves paper weights.",
+    )
+    parser.add_argument(
+        "--mca-primary-weights",
+        nargs=4,
+        type=float,
+        default=None,
+        metavar=("M", "C", "R", "A"),
+        help=(
+            "Custom MCA primary weights for manipulative, coordinative, reach, "
+            "automation. Overrides --mca-weight-profile."
+        ),
+    )
+    parser.add_argument(
         "--skip-mca",
         action="store_true",
         help="Reuse existing mca-scoring/output files instead of recomputing MCA scores.",
@@ -80,15 +97,19 @@ def main() -> None:
     python = sys.executable
 
     if not args.skip_mca:
-        run_step(
-            "MCA scoring",
-            [
-                python,
-                "mca-scoring/score_accounts.py",
-                "--top-n",
-                str(args.top_n_accounts),
-            ],
-        )
+        scoring_command = [
+            python,
+            "mca-scoring/score_accounts.py",
+            "--top-n",
+            str(args.top_n_accounts),
+            "--weight-profile",
+            args.mca_weight_profile,
+        ]
+        if args.mca_primary_weights is not None:
+            scoring_command.extend(
+                ["--primary-weights", *[str(weight) for weight in args.mca_primary_weights]]
+            )
+        run_step("MCA scoring", scoring_command)
 
     run_step(
         "Seed selection",
